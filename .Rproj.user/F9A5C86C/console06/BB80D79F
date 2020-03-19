@@ -300,4 +300,388 @@ Status: OK[0K
 $[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd e[0K[?25h[?25l$ cd[0K[6G[?25h[?25l$ cd a[0K[?25hl[0Kg[0Ko[0Krithmirt[0K[?25l
 [0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ha[0Kd[0Kd[0Ke[0Kd[0Kp[0K[?25l$ git commit -m "added[0K[?25h[24G[?25l$ git commit -m "added p[0K[?25hr[0Ke[0K_[0Kp[0Kr[0Ko[0Kc[0Ke[0Ks[0Ks[0Ki[0Kn[0Kg[0K"[0K[?25l
+[0K[?25h[master 013fedf] added pre_processing[0K[?25l
+ 21 files changed, 1097 insertions(+), 83 deletions(-)[0K
+ rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (100%)[0K
+ delete mode 100644 .Rproj.user/F9A5C86C/sources/s-D6BBD2EA/1A291E65-contents[0K
+ delete mode 100644 .Rproj.user/F9A5C86C/sources/s-D6BBD2EA/31E256C7[0K
+ delete mode 100644 .Rproj.user/F9A5C86C/sources/s-D6BBD2EA/31E256C7-contents[0K
+ delete mode 100644 .Rproj.user/F9A5C86C/sources/s-D6BBD2EA/lock_file[0K
+ create mode 100644 .gitignore[0K
+ create mode 100644 .travis.yml[0K
+ rewrite DESCRIPTION (86%)[0K
+ create mode 100644 LICENSE.md[0K
+ delete mode 100644 R/hello.R[0K
+ create mode 100644 R/pre_processing.R[0K
+ create mode 100644 README.Rmd[0K
+ create mode 100644 README.md[0K
+ create mode 100644 man/figures/README-pressure-1.png[0K
+ delete mode 100644 man/hello.Rd[0K
+ create mode 100644 man/make_polyIRT_data.Rd[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hEnumerating objects: 44, done.[0K[?25l
+Counting objects: 100% (44/44), done.[0K
+Delta compression using up to 4 threads.[0K
+Compressing objects:   9% (2/22)[0K[1G[?25hCompressing objects: 100% (22/22), done.[0K[?25l
+Writing objects: 100% (27/27), 22.12 KiB | 2.01 MiB/s, done.[0K
+Total 27 (delta 2), reused 0 (delta 0)[0K
+[0K[?25hremote: Resolving deltas: 100% (2/2), completed with 1 local object.[0K[?25l
+[0K[?25hTo https://github.com/sevvandi/algorithmirt.git[0K[?25l
+   0e43f19..013fedf  master -> master[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ p[0K[?25hw[0Kd[0K[?25l
+/c/Users/Sevvandi/Documents/repos/algorithmirt[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ pwd[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m "added pre_processing"[0K[?25h[?25l$ git add .[0K[?25h[?25l$ cd algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h ERROR[0K[?25l
+cannot change to directory 'algorithmirt'[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ p[0K[3G[?25h[4G[?25l$ pw[0K[?25hd[0K[?25l
+/c/Users/Sevvandi/Documents/repos/algorithmirt[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ cd ..[0K[?25h[?25l$ pwd[0K[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+* checking for empty or unneeded directories[0K
+* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ cd ..[0K[27G[?25h[8G[?25l$ pwd[0K[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ pwd[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m "added pre_processing"[0K[?25h[?25l$ git add .[0K[?25h[?25l$ cd algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h[?25l* usi[0K[4G[?25h[?25l* using log directory 'C:/Users/Sevvandi/D[0K[40G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using pla[0K[10G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package encoding:[0K[19G[?25h[?25l* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K
+* checking if there is a namespace ...[0K[37G[?25h[?25l* checking if there is a namespace ... OK[0K
+[0K[?25h[?25l* checking for executa[0K[21G[?25h[?25l* checking for executable files ...[0K[?25h OK[0K[?25l
+* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ... OK[0K
+* chec[0K[5G[?25h[?25l* checking whether package 'algorithmirt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking[0K[9G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking f[0K[10G[?25h[?25l* checking for left-over files ... OK[0K
+* checking index information ... OK[0K
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files for n[0K[23G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking whether the package can be unloaded cleanly ...[0K OK[0K[?25l
+* ch[0K[2G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on[0K[35G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replac[0K[16G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h NOTE[0K[?25l
+actual_vs_predicted: no visible global funct[0K[42G[?25h[?25lactual_vs_predicted: no visible global function definition for[0K
+  'fscores'[0K
+actual_vs_predicted: no visible global function definition for[0K
+  'probtrace'[0K
+model_goodness: no visible global function definition for 'coef'[0K
+Undefined global functions or vari[0K[32G[?25h[?25lUndefined global functions or variables:[0K
+  coef fscores probtrace[0K
+Consider adding[0K
+  importFrom("stats", "coef")[0K
+to your NAMESPACE file.[0K
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missin[0K[20G[?25h[?25l* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examp[0K[44G[?25h[?25l* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking PDF version of manual ...[0K OK[0K[?25l
+* DONE[0K
+[0K
+Status: 1 NOTE[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h[?25l* checking for file 'algorithmirt/DESCRIPT[0K[41G[?25h[?25l* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h[?25l* checking for LF line-endings in source and make files and sh[0K[61G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded directories[0K
+* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K[?25l
+* using R version 3.6.1[0K[22G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'algorithm[0K[27G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking packag[0K[16G[?25h[?25l* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K
+* checking if there is a namespace ... OK[0K
+[0K[?25h[?25l* check[0K[6G[?25h[?25l* checking for executable files ...[0K[?25h OK[0K[?25l
+* checking for hidd[0K[18G[?25h[?25l* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ... OK[0K
+* checking whether package 'algorithmirt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking for left-over files ... OK[0K
+* checking index information ...[0K[32G[?25h[?25l* checking index information ... OK[0K
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated[0K[56G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checkin[0K[8G[?25h[?25l* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h WARNING[0K[?25l
+'::' or ':[0K[9G[?25h[?25l'::' or ':::' import not declared from: 'mirt'[0K
+* checking S3 generic/method consistency ...[0K[?25h[?25l OK[0K[45G[?25h[?25l
+* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[47G[?25h[49G[?25l* checking for code/documentation mismatches ... OK[0K
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+* checki[0K[7G[?25h[?25l* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DONE[0K
+[0K
+Status: 1 WARNING[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[1G[?25h[?25l
+$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ...[0K OK[0K[?25l
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* c[0K[2G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+[0K[?25h* checking for empty or unneeded directories[0K[?25l
+* bu[0K[3G[?25h[?25l* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h[?25l* using log director[0K[19G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/a[0K[56G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64[0K[23G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package[0K[17G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h ERROR[0K[?25l
+Namespace dependency not required: 'mirt'[0K
+[0K
+See section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
+manual.[0K
+* DONE[0K
+[0K
+Status: 1 ERROR[0K
+See[0K
+  'C:/Users/S[0K[12G[?25h[?25l  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* che[0K[3G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded directories[0K
+[0K[?25h* building 'algorithmirt_0.0.0.9000.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h[?25l* using log directory 'C[0K[22G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
+[0K[?25h* using R version 3.6.1 (2019-07-05)[0K[?25l
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using se[0K[9G[?25h[?25l* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package enco[0K[12G[?25h[?25l* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking pack[0K[13G[?25h[?25l* checking package dependencies ...[0K[?25h ERROR[0K[?25l
+Namespace dependency not required: 'mirt'[0K
+[0K
+See section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
+manual.[0K
+* DONE[0K[?25h[?25l
+[0K
+Status: 1 ERROR[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+* checking for empty or u[0K[23G[?25h[?25l* checking for empty or unneeded directories[0K
+* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h[?25l* using log di[0K[13G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algo[0K[59G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64[0K[26G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is[0K[7G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h ERROR[0K[?25l
+Namespace dependency not required: 'mirt'[0K
+[0K
+See section 'The DESCRIPTION file'[0K[33G[?25h[?25lSee section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
+manual.[0K
+* DONE[0K
+[0K
+Status: 1 ERROR[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
+[0K[?25h[?25l* checking for f[0K[14G[?25h[?25l* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'algorithmirt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+* checking for empty or unneeded directories[0K
+[0K[?25h* building 'algorithmirt_0.0.0.9000.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/[0K[30G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using pla[0K[9G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is pack[0K[12G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package depend[0K[25G[?25h[?25l* checking package dependencies ...[0K[?25h OK[0K[?25l
+* c[0K[1G[?25h* checking if this is a source package ... OK[0K[?25l
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directories ... OK[0K
+* checking for portable file names ... OK[0K
+* checking whether package 'algorit[0K[34G[?25h[?25l* checking whether package 'algorithmirt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking[0K[8G[?25h[?25l* checking for left-over files ... OK[0K
+* checking index information ... OK[0K
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking[0K[9G[?25h[?25l* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loa[0K[40G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whet[0K[13G[?25h[?25l* checking whether the namespace can be loaded wit[0K[49G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the[0K[38G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 ge[0K[14G[?25h[?25l* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replacement functions[0K[30G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign f[0K[18G[?25h[?25l* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation entries ...[0K[?25h WARNING[0K[?25l
+Undocumented code objects:[0K
+  'irtmodel'[0K
+All user-level objects in a packag[0K[32G[?25h[?25lAll user-level objects in a package should have documentation entries.[0K
+See chapter 'Writing R documentation files' in the 'Writing R[0K
+Extensions' manual.[0K
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+*[0K[1G[?25h* checking Rd \usage sections ...[0K OK[0K[?25l
+* checking Rd c[0K[14G[?25h[?25l* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking PDF version of manual ...[0K OK[0K[?25l
+* DONE[0K
+[0K
+Status: 1 WARNING[0K
+See[0K
+  'C:/Users/Sevvandi/Doc[0K[23G[?25h[?25l  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hl[0Kf[0Ko[0K[?25l$ cd alf[0K[?25h[?25l$ cd al[0K[?25hg[0Ko[0Kr[0Ki[0Kthmirt[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
+[0K[?25herror: open(".Rproj.user/F9A5C86C/console06/BB80D79F"): Permission denied[0K[?25l
+error: unable to index file .Rproj.user/F9A5C86C/console06/BB80D79F[0K
+fatal: updating files failed[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ git add .[0K[?25h
