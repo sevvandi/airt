@@ -1,5 +1,24 @@
-#' @export
-irtmodel <- function(dat, options=NULL){
+#' Fits a polytomous IRT model.
+#'
+#' This function fits a polytomous Item Response Theory (IRT) model to the algorithm performance data.
+#'
+#' @param dat The performance data in a matrix or dataframe.
+#' @param ncycle The number of cycles for \code{mirt}. The default is 500.
+#'
+#' @return A list with the following components:
+#' \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
+#' \item{\code{anomalous}}{A binary sequence corresponding to the algorithms. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
+#'  \item{\code{stability}}{A binary sequence corresponding to the algorithms. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
+#'
+#'@examples
+#'set.seed(1)
+#'x1 <- sample(1:5, 100, replace = TRUE)
+#'x2 <- sample(1:5, 100, replace = TRUE)
+#'x3 <- sample(1:5, 100, replace = TRUE)
+#'X <- cbind.data.frame(x1, x2, x3)
+#'mod <- irtmodel(X)
+#'@export
+irtmodel <- function(dat, ncycle=NULL){
   # CHECK IF DATA IS IN A DATA FRAME OR MATRIX
   if(!(is.data.frame(dat)|is.matrix(dat))){
     stop("Data needs to be a matrix or a dataframe!")
@@ -32,19 +51,19 @@ irtmodel <- function(dat, options=NULL){
   }
 
   # DATA IS GOOD FOR A mirt POLYTOMOUS MODEL
-  if(is.null(options)){
+  if(is.null(ncycle)){
     mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = TRUE)
-  }else if(options==1){
-    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = TRUE, technical=list(NCYCLES=2000))
+  }else if(is.numeric(ncycle)){
+    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = TRUE, technical=list(NCYCLES=ncycle))
   }
 
 
   a_vals <- coef(mod, IRTpars = TRUE, simplify=TRUE)$items[ ,1]
-  flipped <- sign(a_vals)
+  flipped <- (sign(a_vals) -1 )/(-2)
   stability <- max(ceiling(abs(a_vals))) - abs(a_vals)
   out <- list()
   out$model <- mod
-  out$flipped <- flipped
+  out$anomalous <- flipped
   out$stability <- stability
   return(out)
 }
