@@ -1,17 +1,27 @@
-#' Computes the goodness of model.
+#' Computes the goodness of IRT model for a given algorithm.
 #'
-#' This function computes the goodness of the IRT model for different goodness tolerances.
+#' This function computes the goodness of the IRT model for a given algorithm for different goodness tolerances.
 #'
-#' @param mod A trained \code{mirt} model.
-#' @param num The algorithm number, for which the goodness of the IRT model gets computed.
+#' @param mod A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.
+#' @param num The algorithm number, for which the goodness of the IRT model is computed.
 #'
 #' @return  A list with the following components:
 #' \item{\code{xy}}{The \code{x} values denote the goodness tolerances. The \code{y} values denote the model goodness. }
 #' \item{\code{auc}}{The area under the model goodness curve. }
 #'
+#'@examples
+#'set.seed(1)
+#'x1 <- sample(1:5, 100, replace = TRUE)
+#'x2 <- sample(1:5, 100, replace = TRUE)
+#'x3 <- sample(1:5, 100, replace = TRUE)
+#'X <- cbind.data.frame(x1, x2, x3)
+#'mod <- irtmodel(X)
+#'out <- model_goodness_for_algo(mod$model, num=1)
+#'out
+#'
 #' @importFrom mirt fscores probtrace coef
 #' @export
-model_goodness <- function(mod, num=1){
+model_goodness_for_algo <- function(mod, num=1){
   actpred <- actual_vs_predicted(mod, num)
   dif_vals <- apply(actpred, 1, function(x) abs(diff(x)) )
   levels <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$items)[2]
@@ -78,4 +88,44 @@ actual_vs_predicted <- function(mod, num=1){
     }
   }
   return(act_prd)
+}
+
+#' Computes the goodness of IRT model for all algorithms.
+#'
+#' This function computes the goodness of the IRT model for all algorithms for different goodness tolerances.
+#'
+#' @inheritParams model_goodness_for_algo
+#'
+#' @return  A list with the following components:
+#' \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
+#' \item{\code{curves}}{The \code{x,y} coodinates for the model goodness curves for each algorithm. }
+#'
+#'@examples
+#'set.seed(1)
+#'x1 <- sample(1:5, 100, replace = TRUE)
+#'x2 <- sample(1:5, 100, replace = TRUE)
+#'x3 <- sample(1:5, 100, replace = TRUE)
+#'X <- cbind.data.frame(x1, x2, x3)
+#'mod <- irtmodel(X)
+#'out <- model_goodness(mod$model)
+#'out
+#' @export
+model_goodness <- function(mod){
+  dd <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$item)[1]
+  acc <- matrix(0, ncol=1, nrow=dd)
+  for(i in 1:dd){
+    oo <- model_goodness_for_algo(mod, num=i)
+    acc[i, 1] <- oo$auc
+    if(i==1){
+      curves <- matrix(0, ncol= (dd+1), nrow=dim(oo$xy)[1])
+      curves[ ,1] <- oo$xy[ ,1]
+    }
+    curves[ ,(i+1)] <- oo$xy[ ,2]
+  }
+  colnames(curves) <- c("x", rownames(coef(mod, simplify=TRUE)$items))
+  rownames(acc) <- rownames(coef(mod, simplify=TRUE)$items)
+  out <- list()
+  out$goodnessAUC <- acc
+  out$curves <- curves
+  return(out)
 }
