@@ -1,287 +1,4 @@
 
-[0K
-Status: 1 ERROR[0K
-See[0K
-  'C:/Users/S[0K[12G[?25h[?25l  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h* preparing 'algorithmirt':[0K[?25l
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-[0K[?25h[?25l* che[0K[3G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
-* checking for empty or unneeded directories[0K
-[0K[?25h* building 'algorithmirt_0.0.0.9000.tar.gz'[0K[?25l
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
-[0K[?25h[?25l* using log directory 'C[0K[22G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
-[0K[?25h* using R version 3.6.1 (2019-07-05)[0K[?25l
-* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* using se[0K[9G[?25h[?25l* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is package 'algorithmirt' version '0.0.0.9000'[0K
-* package enco[0K[12G[?25h[?25l* package encoding: UTF-8[0K
-* checking package namespace information ... OK[0K
-* checking pack[0K[13G[?25h[?25l* checking package dependencies ...[0K[?25h ERROR[0K[?25l
-Namespace dependency not required: 'mirt'[0K
-[0K
-See section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
-manual.[0K
-* DONE[0K[?25h[?25l
-[0K
-Status: 1 ERROR[0K
-See[0K
-  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h* preparing 'algorithmirt':[0K[?25l
-* checking DESCRIPTION meta-information ... OK[0K
-[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
-* checking for empty or u[0K[23G[?25h[?25l* checking for empty or unneeded directories[0K
-* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
-[0K[?25h[?25l* using log di[0K[13G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algo[0K[59G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
-* using R version 3.6.1 (2019-07-05)[0K
-* using platform: x86_64-w64[0K[26G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is[0K[7G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
-* package encoding: UTF-8[0K
-* checking package namespace information ... OK[0K
-* checking package dependencies ...[0K[?25h ERROR[0K[?25l
-Namespace dependency not required: 'mirt'[0K
-[0K
-See section 'The DESCRIPTION file'[0K[33G[?25h[?25lSee section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
-manual.[0K
-* DONE[0K
-[0K
-Status: 1 ERROR[0K
-See[0K
-  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l
-[0K[?25h[?25l* checking for f[0K[14G[?25h[?25l* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K
-[0K[?25h* preparing 'algorithmirt':[0K[?25l
-* checking DESCRIPTION meta-information ... OK[0K
-[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
-* checking for empty or unneeded directories[0K
-[0K[?25h* building 'algorithmirt_0.0.0.9000.tar.gz'[0K[?25l
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build algorithmirt[0K[?25h[?25l$ R CMD check algorithmirt_0.0.0.9000.tar.gz[0K[46G[?25h[?25l
-[0K[?25h[?25l* using log directory 'C:/Users/[0K[30G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
-* using R version 3.6.1 (2019-07-05)[0K
-* using pla[0K[9G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is pack[0K[12G[?25h[?25l* this is package 'algorithmirt' version '0.0.0.9000'[0K
-* package encoding: UTF-8[0K
-* checking package namespace information ... OK[0K
-* checking package depend[0K[25G[?25h[?25l* checking package dependencies ...[0K[?25h OK[0K[?25l
-* c[0K[1G[?25h* checking if this is a source package ... OK[0K[?25l
-* checking if there is a namespace ... OK[0K
-[0K[?25h* checking for executable files ...[0K OK[0K[?25l
-* checking for hidden files and directories ... OK[0K
-* checking for portable file names ... OK[0K
-* checking whether package 'algorit[0K[34G[?25h[?25l* checking whether package 'algorithmirt' can be installed ...[0K[?25h OK[0K[?25l
-* checking installed package size ...[0K[?25h OK[0K[?25l
-* checking package directory ... OK[0K
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checking top-level files ... OK[0K
-* checking[0K[8G[?25h[?25l* checking for left-over files ... OK[0K
-* checking index information ... OK[0K
-* checking package subdirectories ...[0K[?25h OK[0K[?25l
-* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking[0K[9G[?25h[?25l* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loa[0K[40G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking whet[0K[13G[?25h[?25l* checking whether the namespace can be loaded wit[0K[49G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loading without being on the[0K[38G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking dependencies in R code ...[0K[?25h OK[0K[?25l
-* checking S3 ge[0K[14G[?25h[?25l* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
-* checking replacement functions[0K[30G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking foreign f[0K[18G[?25h[?25l* checking foreign function calls ...[0K[?25h OK[0K[?25l
-* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd files ...[0K[?25h OK[0K[?25l
-* checking Rd metadata ...[0K[?25h OK[0K[?25l
-* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h WARNING[0K[?25l
-Undocumented code objects:[0K
-  'irtmodel'[0K
-All user-level objects in a packag[0K[32G[?25h[?25lAll user-level objects in a package should have documentation entries.[0K
-See chapter 'Writing R documentation files' in the 'Writing R[0K
-Extensions' manual.[0K
-* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
-*[0K[1G[?25h* checking Rd \usage sections ...[0K OK[0K[?25l
-* checking Rd c[0K[14G[?25h[?25l* checking Rd contents ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
-* checking examples ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking PDF version of manual ...[0K OK[0K[?25l
-* DONE[0K
-[0K
-Status: 1 WARNING[0K
-See[0K
-  'C:/Users/Sevvandi/Doc[0K[23G[?25h[?25l  'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hl[0Kf[0Ko[0K[?25l$ cd alf[0K[?25h[?25l$ cd al[0K[?25hg[0Ko[0Kr[0Ki[0Kthmirt[0K[?25l
-[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25herror: open(".Rproj.user/F9A5C86C/console06/BB80D79F"): Permission denied[0K[?25l
-error: unable to index file .Rproj.user/F9A5C86C/console06/BB80D79F[0K
-fatal: updating files failed[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git add .[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[3G[?25h[4G[?25l$ gi[0K[?25ht[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hA[0Kd[0Kd[0K[22G[?25l$ git commit -m "Add m[0K[22G[?25h[23G[?25l$ git commit -m "Add mo[0K[?25hr[0Ke[0K[27G[?25l$ git commit -m "Add more f[0K[?25hi[0Kl[0Ke[0Ks[0K"[0K[32G[31G[30G[29G[28G[?25l$ git commit -m "Add more fles"[0K[28G[?25h[?25l$ git commit -m "Add more fes"[0K[28G[?25h[?25l$ git commit -m "Add more fs"[0K[28G[?25h[?25l$ git commit -m "Add more f"[0K[28G[?25h[?25l$ git commit -m "Add more fu"[0K[28G[?25h[29G[?25l$ git commit -m "Add more fun"[0K[30G[?25h[?25l$ git commit -m "Add more func"[0K[31G[?25h[?25l$ git commit -m "Add more funct"[0K[32G[?25h[?25l$ git commit -m "Add more functi"[0K[33G[?25h[?25l$ git commit -m "Add more functio"[0K[34G[?25h[?25l$ git commit -m "Add more function"[0K[35G[?25h[?25l$ git commit -m "Add more functions"[0K[36G[?25h[?25l
-[0K[?25h[master 8eb203e] Add more functions[0K[?25l
- 9 files changed, 553 insertions(+), 2 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (70%)[0K
- create mode 100644 R/algo_performance.R[0K
- create mode 100644 R/irtmodel.R[0K
- create mode 100644 man/model_goodness.Rd[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 36, done.[0K[?25l
-Counting objects:  11% (4/36)[0K[2G[?25h[?25lCounting objects: 100% (36/36), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (18/18), done.[0K
-Writing objects: 100% (20/20), 8.26 KiB | 1.18 MiB/s, done.[0K
-Total 20 (delta 4), reused 0 (delta 0)[0K
-[0K[?25hremote: Resolving deltas: 100% (4/4), completed with 4 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/algorithmirt.git[0K[?25l
-   013fedf..8eb203e  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-[?25l$ p[0K[?25hw[0Kd[0K[?25l
-/c/Users/Sevvandi/Documents/repos/algorithmirt[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
-[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hl[0Kg[0Ko[0Kr[0Kithmirt[0K[?25l
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h* preparing 'algorithmirt':[0K[?25l
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
-* check[0K[6G[?25h[?25l* checking for empty or unneeded directories[0K
-* building 'algorithmirt_0.0.0.9000.tar.gz'[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R[0K[3G[?25h[4G[5G[?25l$ R C[0K[?25hN[0K[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check a[0K[?25hl[0Kgorithmirt[0K_[0K0[0K.0.0.9000.tar.gz[0K[46G[?25l
-[0K[?25h[?25l* using log direc[0K[16G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/algorithmirt.Rcheck'[0K
-* using R version 3.6.1 (2019-07-05)[0K
-* using platform: x86_64-w[0K[25G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'algorithmirt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is package 'algorithmirt' version '0.0.0.9000'[0K
-* package encoding: UTF-8[0K
-[0K[?25h* checking package namespace information ... OK[0K[?25l
-* checking package dependencies ...[0K[?25h OK[0K[?25l
-* checking if this is a source package ... OK[0K
-* checking if there is a namespace ...[0K[36G[?25h[?25l* checking if there is a namespace ... OK[0K
-[0K[?25h* checking for executable files ...[0K OK[0K[?25l
-* checking for hidden files and director[0K[39G[?25h[?25l* checking for hidden files and directories ... OK[0K
-* chec[0K[4G[?25h[?25l* checking for portable file names ... OK[0K
-* checking whether package 'algorithmirt' c[0K[42G[?25h[?25l* checking whether package 'algorithmirt' can be installed ...[0K[?25h OK[0K[?25l
-* checking installed package size ...[0K[?25h OK[0K[?25l
-* checki[0K[7G[?25h[?25l* checking package directory ... OK[0K
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checking top-level files ... OK[0K
-* checking for left-over files ... OK[0K
-* checking index information ... OK[0K
-* checking package subdirectories ...[0K[?25h[?25l OK[0K[38G[?25h[?25l
-* checking R files for non-ASCII characters .[0K[44G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
-* checking whet[0K[14G[?25h[?25l* checking whether the package can be loaded with stated dependenci[0K[66G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* chec[0K[5G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be unloade[0K[45G[?25h[?25l* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loadi[0K[15G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking dependencies in R code ...[0K[?25h OK[0K[?25l
-* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
-* checking repla[0K[14G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking foreign function calls ...[0K[?25h OK[0K[?25l
-* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd fil[0K[15G[?25h[?25l* checking Rd files ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking Rd metadata ...[0K OK[0K[?25l
-* checking Rd cro[0K[16G[?25h[?25l* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
-* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
-* checking Rd \usa[0K[16G[?25h[?25l* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
-* checking Rd contents ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking examples ...[0K OK[0K[?25l
-* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-* DONE[0K
-[0K
-Status: OK[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hl[0Kgorithmirt[0K[?25l
-[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hA[0Kd[0Kd[0K[22G[21G[?25l$ git commit -m "Ad[0K[?25h[?25l$ git commit -m "A[0K[?25h[?25l$ git commit -m "[0K[?25hA[0Kd[0Kd[0K[22G[?25l$ git commit -m "Add i[0K[?25hr[0Kt[0Km[0Ko[0Kd[0Ke[0Kl[0K[31G[?25l$ git commit -m "Add irtmodel "[0K[?25h[?25l
-[0K[?25h[master b1e47e2] Add irtmodel[0K[?25l
- 5 files changed, 161 insertions(+), 10 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- create mode 100644 man/irtmodel.Rd[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0K[?25lt[0K[5G[?25h[6G[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 26, done.[0K[?25l
-Counting objects:  23% (6/26)[0K[1G[?25hCounting objects: 100% (26/26), done.[0K[?25l
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (13/13), done.[0K
-Writing objects: 100% (14/14), 2.98 KiB | 339.00 KiB/s, done.[0K
-Total 14 (delta 5), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  80% (4/5)[0K[1G[?25hremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[0K[?25l
-[0K[?25h[?25lTo https://github.com/sevvandi/algorithmirt.git[0K[1G[?25h[?25l
-   8eb203e..b1e47e2  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K[1G[?25h[?25l
 $[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
 [?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
@@ -1179,4 +896,110 @@ $[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hl[0Kg[0Ko[
 [0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
 $[0K[3G[?25h[?25l$ c[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/algorithmirt.html.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/docsearch.css.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/docsearch.js.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in docs/link.svg.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/pkgdown.css.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in docs/pkgdown.js.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ha[0Kd[0Kd[0K[22G[?25l$ git commit -m "add v[0K[?25hi[0Kg[0Kn[0Ke[0Kt[0Kt[0Ke[0K"[0K[?25l$ git commit -m "add vignette[0K[?25h[?25l$ git commit -m "add vignet[0K[29G[?25h[28G[?25l$ git commit -m "add vigne[0K[?25h[?25l$ git commit -m "add vi[0K[?25h[?25l$ git commit -m "add v[0K[?25h[?25l$ git commit -m "add[0K[22G[?25h[?25l$ git commit -m "add p[0K[?25ho[0Kw[0K[?25l$ git commit -m "add po[0K[?25h[?25l$ git commit -m "add p[0K[?25h[?25l$ git commit -m "add[0K[23G[?25h[22G[?25l$ git commit -m "add p[0K[?25hk[0Kg[0Kd[0Ko[0Kw[0Kn[0K"[0K[?25l
+[0K[?25h[master ee8f607] add pkgdown[0K[?25l
+ 71 files changed, 4635 insertions(+), 749 deletions(-)[0K
+ rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
+ create mode 100644 R/classification-data.R[0K
+ create mode 100644 R/utils.R[0K
+ rewrite README.md (68%)[0K
+ create mode 100644 _pkgdown.yml[0K
+ create mode 100644 data/classification.rda[0K
+ create mode 100644 docs/404.html[0K
+ create mode 100644 docs/LICENSE.html[0K
+ create mode 100644 docs/apple-touch-icon-120x120.png[0K
+ create mode 100644 docs/apple-touch-icon-152x152.png[0K
+ create mode 100644 docs/apple-touch-icon-180x180.png[0K
+ create mode 100644 docs/apple-touch-icon-60x60.png[0K
+ create mode 100644 docs/apple-touch-icon-76x76.png[0K
+ create mode 100644 docs/apple-touch-icon.png[0K
+ create mode 100644 docs/articles/algorithmirt.html[0K
+ create mode 100644 docs/articles/algorithmirt_files/figure-html/effectiveness1-1.p[0Kn
+g[0K
+ create mode 100644 docs/articles/algorithmirt_files/figure-html/effectiveness2-1.p[0Kn
+g[0K
+ create mode 100644 docs/articles/algorithmirt_files/figure-html/goodness-1.png[0K
+ create mode 100644 docs/articles/index.html[0K
+ create mode 100644 docs/authors.html[0K
+ create mode 100644 docs/docsearch.css[0K
+ create mode 100644 docs/docsearch.js[0K
+ create mode 100644 docs/favicon-16x16.png[0K
+ create mode 100644 docs/favicon-32x32.png[0K
+ create mode 100644 docs/favicon.ico[0K
+ create mode 100644 docs/index.html[0K
+ create mode 100644 docs/link.svg[0K
+ create mode 100644 docs/logo.png[0K
+ create mode 100644 docs/pkgdown.css[0K
+ create mode 100644 docs/pkgdown.js[0K
+ create mode 100644 docs/pkgdown.yml[0K
+ create mode 100644 docs/reference/algo_effectiveness.html[0K
+ create mode 100644 docs/reference/classification.html[0K
+ create mode 100644 docs/reference/effectiveness.html[0K
+ create mode 100644 docs/reference/figures/README-example-1.png[0K
+ create mode 100644 docs/reference/figures/README-pressure-1.png[0K
+ create mode 100644 docs/reference/figures/logo.png[0K
+ create mode 100644 docs/reference/index.html[0K
+ create mode 100644 docs/reference/irtmodel.html[0K
+ create mode 100644 docs/reference/make_polyIRT_data.html[0K
+ create mode 100644 docs/reference/model_goodness.html[0K
+ create mode 100644 docs/reference/model_goodness_for_algo.html[0K
+ create mode 100644 docs/reference/prepare_for_plots.html[0K
+ create mode 100644 hex/algorithmirt.png[0K
+ create mode 100644 man/classification.Rd[0K
+ create mode 100644 man/figures/README-example-1.png[0K
+ create mode 100644 man/figures/logo.png[0K
+ create mode 100644 man/prepare_for_plots.Rd[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon-120x120.png[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon-152x152.png[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon-180x180.png[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon-60x60.png[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon-76x76.png[0K
+ create mode 100644 pkgdown/favicon/apple-touch-icon.png[0K
+ create mode 100644 pkgdown/favicon/favicon-16x16.png[0K
+ create mode 100644 pkgdown/favicon/favicon-32x32.png[0K
+ create mode 100644 pkgdown/favicon/favicon.ico[0K
+ create mode 100644 vignettes/.gitignore[0K
+ create mode 100644 vignettes/algorithmirt.Rmd[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Ki[0K[?25l$ git push ori[0K[16G[?25h[15G[?25l$ git push orig[0K[?25hi[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hfatal: unable to access 'https://github.com/sevvandi/algorithmirt.git/': Could not [0Kr[?25l
+esolve host: github.com[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ git push origin master[0K[?25h[?25l
+[0K[?25hEnumerating objects: 103, done.[0K[?25l
+Counting objects:  43% (45/103)[0K[1G[?25hCounting objects: 100% (103/103), done.[0K[?25l
+Delta compression using up to 4 threads.[0K
+Compressing objects:  74% (52/70)[0K[1G[?25hCompressing objects: 100% (70/70), done.[0K[?25l
+Writing objects:  34% (27/79)[0K[1G[?25h[?25lWriting objects:  65% (52/79)[0K[1G[?25h[?25lWriting objects:  86% (68/79)[0K[1G[?25hWriting objects: 100% (79/79), 194.52 KiB | 2.26 MiB/s, done.[0K[?25l
+Total 79 (delta 22), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  18% (4/22)[0K[1G[?25hremote: Resolving deltas:  72% (16/22)[0K[?25lremote: Resolving deltas: 100% (22/22), completed with 10 local objects.[0K
+[0K[?25hTo https://github.com/sevvandi/algorithmirt.git[0K[?25l
+   675eb76..ee8f607  master -> master[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K[51G[?25h[?25l
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/algorithmirt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
+[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25h[?25ld[0K[8G[?25h[9G[?25l$ git add[0K[?25h[11G[?25l$ git add .[0K[?25h[?25l
 [0K[?25h
