@@ -1,0 +1,78 @@
+---
+title: "IRT Model Goodness and Algorithm Effectiveness"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{algorithmirt}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=8, fig.height=6
+)
+```
+
+
+```{r load2, echo=FALSE, eval=TRUE, message=FALSE}
+if (!requireNamespace("algorithmirt", quietly = TRUE)) {
+    stop("Package dobin is needed for the vignette. Please install it.",
+      call. = FALSE)
+}
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+    stop("Package ggplot2 is needed for the vignette. Please install it.",
+      call. = FALSE)
+}
+if (!requireNamespace("tidyr", quietly = TRUE)) {
+    stop("Package tidyr is needed for the vignette. Please install it.",
+      call. = FALSE)
+}
+```
+
+## Load libraries
+```{r load, echo=TRUE}
+library(algorithmirt)
+library(ggplot2)
+library(tidyr)
+```
+
+Let us check the goodness of the Item Response Theory (IRT) model. 
+
+```{r, goodness, echo=TRUE}
+data("classification")
+modout <- irtmodel(classification, vpara=FALSE)
+# Model Goodness and Algorithm effectiveness
+good <- model_goodness(modout$model)
+
+stab <- modout$stability
+
+good_curves <- as.data.frame(good$curves)
+print(good_curves)
+good_df <- good_curves %>% pivot_longer(cols=2:dim(good_curves)[2], names_to=c("Algorithm"))
+ggplot(good_df, aes(x,value)) + geom_point() + geom_line(aes(color = Algorithm), size=1) + xlab("Goodness Tolerance")  + ylab("Model Goodness Curve") + theme_bw()
+```
+
+```{r, effectiveness1, echo=TRUE}
+eff <- effectiveness(modout$model)
+
+eff_curves <- as.data.frame(eff$actcurves)
+eff_df1 <- eff_curves %>% pivot_longer(cols=2:dim(eff_curves)[2], names_to=c("Algorithm"))
+
+eff_curves <- as.data.frame(eff$prdcurves)
+eff_df2 <- eff_curves %>% pivot_longer(cols=2:dim(eff_curves)[2], names_to=c("Algorithm"))
+
+eff_df <- rbind.data.frame(eff_df1, eff_df2)
+eff_df <- cbind.data.frame( eff_df, c( rep( "Actual Effectiveness", dim(eff_df1)[1]), rep("Predicted Effectiveness", dim(eff_df2)[1]) ) )
+colnames(eff_df)[4] <- "Act_Or_Pred"
+ggplot(eff_df, aes(x, value)) + geom_point() + geom_line(aes(color = Algorithm), size=1)  + facet_wrap(~Act_Or_Pred) + theme_bw()
+```
+
+```{r, effectiveness2, echo=TRUE}
+df_eff <- cbind.data.frame(as.data.frame(eff$effectivenessAUC), rownames(eff$effectivenessAUC) )
+colnames(df_eff)[3] <- "Algorithm"
+
+ggplot(df_eff, aes(Actual, Predicted)) + geom_jitter(aes(color=Algorithm), size=3) + geom_abline(aes(intercept=0,slope=1), linetype="dotted") + xlim(c(0,1)) + ylim(c(0,1)) + xlab("Area under Actual Effectiveness Curve (AUAEC)") + ylab("Area under Predicted Effectiveness Curve (AUPEC)") +  theme_bw()
+measures <- cbind.data.frame(good$goodnessAUC, eff$effectivenessAUC, stab)
+print(measures)
+```

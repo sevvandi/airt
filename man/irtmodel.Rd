@@ -4,12 +4,14 @@
 \alias{irtmodel}
 \title{Fits a polytomous IRT model.}
 \usage{
-irtmodel(dat, ncycle = NULL)
+irtmodel(dat, ncycle = NULL, vpara = TRUE)
 }
 \arguments{
 \item{dat}{The performance data in a matrix or dataframe.}
 
 \item{ncycle}{The number of cycles for \code{mirt}. The default is 500.}
+
+\item{vpara}{It \code{TRUE} the \code{verbose} parameter for the \code{mirt} would be set to true.}
 }
 \value{
 A list with the following components:

@@ -12,7 +12,8 @@ effectiveness(mod)
 \value{
 A list with the following components:
 \item{\code{effectivenessAUC}}{The area under the actual and predicted effectiveness curves. }
-\item{\code{curves}}{The \code{x,y} coodinates for the actual and predicted effectiveness curves for each algorithm. }
+\item{\code{actcurves}}{The \code{x,y} coodinates for the actual  effectiveness curves for each algorithm. }
+#' \item{\code{prdcurves}}{The \code{x,y} coodinates for the predicted  effectiveness curves for each algorithm. }
 }
 \description{
 This function computes the actual and predicted effectiveness of the collection of algorithms for different tolerance values.

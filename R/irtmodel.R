@@ -4,6 +4,7 @@
 #'
 #' @param dat The performance data in a matrix or dataframe.
 #' @param ncycle The number of cycles for \code{mirt}. The default is 500.
+#' @param vpara It \code{TRUE} the \code{verbose} parameter for the \code{mirt} would be set to true.
 #'
 #' @return A list with the following components:
 #' \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
@@ -18,7 +19,7 @@
 #'X <- cbind.data.frame(x1, x2, x3)
 #'mod <- irtmodel(X)
 #'@export
-irtmodel <- function(dat, ncycle=NULL){
+irtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
   # CHECK IF DATA IS IN A DATA FRAME OR MATRIX
   if(!(is.data.frame(dat)|is.matrix(dat))){
     stop("Data needs to be a matrix or a dataframe!")
@@ -52,9 +53,9 @@ irtmodel <- function(dat, ncycle=NULL){
 
   # DATA IS GOOD FOR A mirt POLYTOMOUS MODEL
   if(is.null(ncycle)){
-    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = TRUE)
+    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = vpara)
   }else if(is.numeric(ncycle)){
-    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = TRUE, technical=list(NCYCLES=ncycle))
+    mod <- mirt::mirt(dat, 1, itemtype = 'gpcm', verbose = vpara, technical=list(NCYCLES=ncycle))
   }
 
 

@@ -6,7 +6,8 @@
 #'
 #' @return  A list with the following components:
 #' \item{\code{effectivenessAUC}}{The area under the actual and predicted effectiveness curves. }
-#' \item{\code{curves}}{The \code{x,y} coodinates for the actual and predicted effectiveness curves for each algorithm. }
+#' \item{\code{actcurves}}{The \code{x,y} coodinates for the actual  effectiveness curves for each algorithm. }
+#' #' \item{\code{prdcurves}}{The \code{x,y} coodinates for the predicted  effectiveness curves for each algorithm. }
 #'
 #'@examples
 #'set.seed(1)
@@ -27,12 +28,22 @@ effectiveness <-  function(mod){
     oo <- algo_effectiveness(mod, num=i)
     rel[i, 1] <- oo$actualEff
     rel[i, 2] <- oo$predictedEff
-    curves[[i]] <- oo$effective
+    if(i==1){
+      actcurves <- matrix(0, ncol= (dd+1), nrow=dim(oo$effective)[1])
+      prdcurves <- matrix(0, ncol= (dd+1), nrow=dim(oo$effective)[1])
+      prdcurves[ ,1] <- oo$effective[ ,1]
+      actcurves[ ,1] <- oo$effective[ ,1]
+    }
+    actcurves[ ,(i+1)] <- oo$effective[ ,2]
+    prdcurves[ ,(i+1)] <- oo$effective[ ,3]
+
   }
+  colnames(prdcurves) <- colnames(actcurves) <- c("x", rownames(coef(mod, simplify=TRUE)$items))
   rownames(rel) <- rownames(coef(mod, simplify=TRUE)$items)
   out <- list()
   out$effectivenessAUC <- rel
-  out$curves <- curves
+  out$actcurves <- actcurves
+  out$prdcurves <- prdcurves
   return(out)
 }
 
@@ -89,7 +100,7 @@ algo_effectiveness <- function(mod, num=1){
   colnames(out) <- c("x", "y")
   auc_pred <- pracma::trapz(out[ ,1], out[ ,2])
 
-  effective <- cbind(act_rel, pred_rel)
+  effective <- cbind(x, act_rel, pred_rel)
 
   out <- list()
   out$effective <- effective
