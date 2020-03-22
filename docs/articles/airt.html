@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IRT Model Goodness and Algorithm Effectiveness • airt</title>
+<title>Introduction to airt • airt</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="IRT Model Goodness and Algorithm Effectiveness">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to airt">
 <meta property="og:description" content="">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
       </header><script src="airt_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>IRT Model Goodness and Algorithm Effectiveness</h1>
+      <h1>Introduction to airt</h1>
             
       
       
@@ -80,69 +80,135 @@
 
     
     
-<div id="load-libraries" class="section level2">
-<h2 class="hasAnchor">
-<a href="#load-libraries" class="anchor"></a>Load libraries</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(airt)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyr)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co">#&gt; Warning: package 'tidyr' was built under R version 3.6.2</span></span></code></pre></div>
-<p>Let us check the goodness of the Item Response Theory (IRT) model.</p>
+<p>The goal of <em>airt</em> is to evaluate performance of algorithms using Item Response Theory (IRT). You can use <em>airt</em> to evaluate the performance of a group of algorithms on a collection of test instances. The IRT model is fitted using the R package <strong>mirt</strong> .</p>
+<div id="classification-algorithms" class="section level2">
+<h2 class="hasAnchor">
+<a href="#classification-algorithms" class="anchor"></a>Classification Algorithms</h2>
+<p>This example is on classification algorithms. The data <em>classification</em> has performance data from 10 classification algorithms on 235 datasets. This data is discussed in <span class="citation">(Muñoz et al. 2018)</span> and can be found at the test instance library MATILDA <span class="citation">(Smith-Miles 2019)</span>.</p>
+<p>We have binned the data so that we can fit a polytomous IRT model to it. The lowest performance measurement is P1 and the highest is P5, with the others in between. The latent scores <span class="math inline">\(\theta\)</span> represent the easiness of the datasets. Let’s fit an IRT model to this data and look at the algorithm trace lines.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"classification"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>modout &lt;-<span class="st"> </span><span class="kw"><a href="../reference/irtmodel.html">irtmodel</a></span>(classification, <span class="dt">vpara=</span><span class="ot">FALSE</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Model Goodness and Algorithm effectiveness</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>good &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_goodness.html">model_goodness</a></span>(modout<span class="op">$</span>model)</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>stab &lt;-<span class="st"> </span>modout<span class="op">$</span>stability</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a>good_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(good<span class="op">$</span>curves)</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(good_curves)</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt;      x        NB       LDA       QDA      CART       J48       KNN</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; 1 0.00 0.7446809 0.7914894 0.4468085 0.9361702 0.9361702 0.9276596</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; 2 0.25 0.9829787 0.8893617 0.6936170 0.9957447 1.0000000 0.9957447</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="co">#&gt; 3 0.50 0.9914894 0.9446809 0.8723404 0.9957447 1.0000000 1.0000000</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; 4 0.75 0.9914894 0.9659574 0.8978723 0.9957447 1.0000000 1.0000000</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="co">#&gt; 5 1.00 0.9957447 1.0000000 0.9957447 0.9957447 1.0000000 1.0000000</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="co">#&gt;       L_SVM  poly_SVM   RBF_SVM     RandF</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; 1 0.9191489 0.8553191 0.9787234 0.7446809</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt; 2 0.9872340 0.9787234 0.9957447 0.9063830</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#&gt; 3 0.9914894 0.9829787 0.9957447 0.9531915</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="co">#&gt; 4 0.9957447 0.9829787 0.9957447 0.9702128</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="co">#&gt; 5 0.9957447 0.9829787 0.9957447 1.0000000</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>good_df &lt;-<span class="st"> </span>good_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(good_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="kw">ggplot</span>(good_df, <span class="kw">aes</span>(x,value)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Algorithm), <span class="dt">size=</span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Goodness Tolerance"</span>)  <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Model Goodness Curve"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>gdf &lt;-<span class="st"> </span><span class="kw"><a href="../reference/prepare_for_plots.html">prepare_for_plots</a></span>(modout<span class="op">$</span>model)</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">ggplot</span>(gdf, <span class="kw">aes</span>(Theta, value)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Level)) <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(.<span class="op">~</span>Algorithm) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Probability"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">"Classification Algorithm Trace Lines"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="airt_files/figure-html/example-1.png" width="768"></p>
+<p>The trace lines give the probability of getting performance levels from P1 to P5, for different values of dataset easiness denoted by theta. The probability of getting P5 is higher for an easy dataset, while it is lower for a difficult dataset. We see that some algorithms have only levels P3 to P5, while some have all performance levels. Also, some algorithms like QDA have gentler transitions between the most likely performance levels, and some like RBF_SVM have very sharp transitions.</p>
+</div>
+<div id="irt-model-goodness" class="section level2">
+<h2 class="hasAnchor">
+<a href="#irt-model-goodness" class="anchor"></a>IRT Model Goodness</h2>
+<p>But how good is our IRT model? Can we trust the algorithm trace lines? To check how good the IRT model is we compute the goodness of model in this way. The IRT model has computed latent scores for all the datasets. These scores tell us how easy or hard the datasets are. A high value of theta indicates an easy dataset. For each algorithm using the latent scores and the algorithm trace lines, we can predict the performance of the IRT model for each dataset. This is not 100% correct. Then we can compare the predicted performance with the actual performance values. That is what we do here. Let’s look at the model goodness curves.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Model Goodness and Algorithm effectiveness</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>good &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_goodness.html">model_goodness</a></span>(modout<span class="op">$</span>model)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>good_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(good<span class="op">$</span>curves)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(good_curves)</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt;      x        NB       LDA       QDA      CART       J48       KNN</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; 1 0.00 0.7446809 0.7914894 0.4468085 0.9361702 0.9361702 0.9276596</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; 2 0.25 0.9829787 0.8893617 0.6936170 0.9957447 1.0000000 0.9957447</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; 3 0.50 0.9914894 0.9446809 0.8723404 0.9957447 1.0000000 1.0000000</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; 4 0.75 0.9914894 0.9659574 0.8978723 0.9957447 1.0000000 1.0000000</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; 5 1.00 0.9957447 1.0000000 0.9957447 0.9957447 1.0000000 1.0000000</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt;       L_SVM  poly_SVM   RBF_SVM     RandF</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; 1 0.9191489 0.8553191 0.9787234 0.7446809</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; 2 0.9872340 0.9787234 0.9957447 0.9063830</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; 3 0.9914894 0.9829787 0.9957447 0.9531915</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; 4 0.9957447 0.9829787 0.9957447 0.9702128</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; 5 0.9957447 0.9829787 0.9957447 1.0000000</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>good_df &lt;-<span class="st"> </span>good_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(good_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="kw">ggplot</span>(good_df, <span class="kw">aes</span>(x,value)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Algorithm), <span class="dt">size=</span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Goodness Tolerance"</span>)  <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Model Goodness Curve"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
 <p><img src="airt_files/figure-html/goodness-1.png" width="768"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>eff &lt;-<span class="st"> </span><span class="kw"><a href="../reference/effectiveness.html">effectiveness</a></span>(modout<span class="op">$</span>model)</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>eff_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>actcurves)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>eff_df1 &lt;-<span class="st"> </span>eff_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>eff_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>prdcurves)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>eff_df2 &lt;-<span class="st"> </span>eff_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a>eff_df &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">rbind.data.frame</a></span>(eff_df1, eff_df2)</span>
-<span id="cb3-10"><a href="#cb3-10"></a>eff_df &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>( eff_df, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>( <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>( <span class="st">"Actual Effectiveness"</span>, <span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_df1)[<span class="dv">1</span>]), <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="st">"Predicted Effectiveness"</span>, <span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_df2)[<span class="dv">1</span>]) ) )</span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(eff_df)[<span class="dv">4</span>] &lt;-<span class="st"> "Act_Or_Pred"</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="kw">ggplot</span>(eff_df, <span class="kw">aes</span>(x, value)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Algorithm), <span class="dt">size=</span><span class="dv">1</span>)  <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Act_Or_Pred) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p>the x axis is the goodness tolerance. That is, the values at x=0 tell you the percentage of actual = predicted for each algorithm. We see that for QDA only 45% of actual performance values equals the IRT predicted performance values, while for CART more than 95% of the actual performance values equals the IRT predicted performance values.</p>
+<p>If we make the definition of goodness slightly broader and include the proportion of predicted deviating from the actual by 1, then for QDA nearly 70% of the datasets are within that margin and for CART it is this proportion is nearly 100%. In this manner we relax the tolerance. The <em>curves</em> list out these coordinates for each algorithm for each goodness tolerance level x. The area under the curve is an indication of how accurate the IRT model is on a given algorithm.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>good<span class="op">$</span>goodnessAUC</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;               [,1]</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; NB       0.9590426</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt; LDA      0.9239362</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt; QDA      0.7962766</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt; CART     0.9882979</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; J48      0.9920213</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt; KNN      0.9898936</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; L_SVM    0.9829787</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; poly_SVM 0.9659574</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; RBF_SVM  0.9936170</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; RandF    0.9255319</span></span></code></pre></div>
+<p>We see that the goodness of the IRT model is quite high for most algorithms apart from QDA. For QDA it is 0.79, which is low compared to the rest.</p>
+</div>
+<div id="algorithm-effectiveness" class="section level2">
+<h2 class="hasAnchor">
+<a href="#algorithm-effectiveness" class="anchor"></a>Algorithm Effectiveness</h2>
+<p>Suppose algorithm A gives good performance values and algorithm B gives poor performance values for most of the test instances. Then, we can say that algorithm A is more effective than algorithm B. Basically, this is our notion of effectiveness. We compute the proportion of datasets that achieve the highest performance value, P5 in this example. Then we compute the proportion of datasets that achieve the levels P5 and P4. Next the proportion of datasets that obtains P5, P4 or P3. We do this computation for actual performance values and IRT model predicted performance values. These two sets of effectiveness curves are shown in the 2 graphs below.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>eff &lt;-<span class="st"> </span><span class="kw"><a href="../reference/effectiveness.html">effectiveness</a></span>(modout<span class="op">$</span>model)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>eff_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>actcurves)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>eff_df1 &lt;-<span class="st"> </span>eff_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a>eff_curves &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>prdcurves)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>eff_df2 &lt;-<span class="st"> </span>eff_curves <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="dv">2</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_curves)[<span class="dv">2</span>], <span class="dt">names_to=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Algorithm"</span>))</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a>eff_df &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">rbind.data.frame</a></span>(eff_df1, eff_df2)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>eff_df &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>( eff_df, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>( <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>( <span class="st">"Actual Effectiveness"</span>, <span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_df1)[<span class="dv">1</span>]), <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="st">"Predicted Effectiveness"</span>, <span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(eff_df2)[<span class="dv">1</span>]) ) )</span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(eff_df)[<span class="dv">4</span>] &lt;-<span class="st"> "Act_Or_Pred"</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="kw">ggplot</span>(eff_df, <span class="kw">aes</span>(x, value)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Algorithm), <span class="dt">size=</span><span class="dv">1</span>)  <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Act_Or_Pred) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness1-1.png" width="768"></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>df_eff &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>effectivenessAUC), <span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(eff<span class="op">$</span>effectivenessAUC) )</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(df_eff)[<span class="dv">3</span>] &lt;-<span class="st"> "Algorithm"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">ggplot</span>(df_eff, <span class="kw">aes</span>(Actual, Predicted)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Algorithm), <span class="dt">size=</span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="kw">aes</span>(<span class="dt">intercept=</span><span class="dv">0</span>,<span class="dt">slope=</span><span class="dv">1</span>), <span class="dt">linetype=</span><span class="st">"dotted"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">xlim</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">ylim</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Area under Actual Effectiveness Curve (AUAEC)"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Area under Predicted Effectiveness Curve (AUPEC)"</span>) <span class="op">+</span><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p>Similar to the model goodness curves, we can find the area under the actual effectiveness curve and the predicted effectiveness curve. This will show how much the IRT predicted deviates from the actual, and also which algorithms are more effective than others. We show this in the graph below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>df_eff &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(eff<span class="op">$</span>effectivenessAUC), <span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(eff<span class="op">$</span>effectivenessAUC) )</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(df_eff)[<span class="dv">3</span>] &lt;-<span class="st"> "Algorithm"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="kw">ggplot</span>(df_eff, <span class="kw">aes</span>(Actual, Predicted)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Algorithm), <span class="dt">size=</span><span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="kw">aes</span>(<span class="dt">intercept=</span><span class="dv">0</span>,<span class="dt">slope=</span><span class="dv">1</span>), <span class="dt">linetype=</span><span class="st">"dotted"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">xlim</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/graphics/plot.window.html">ylim</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">"Area under Actual Effectiveness Curve (AUAEC)"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">"Area under Predicted Effectiveness Curve (AUPEC)"</span>) <span class="op">+</span><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness2-1.png" width="768"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>measures &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>(good<span class="op">$</span>goodnessAUC, eff<span class="op">$</span>effectivenessAUC, stab)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(measures)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;          good$goodnessAUC    Actual Predicted       stab</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt; NB              0.9590426 0.9244681 0.9553191 13.1072771</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt; LDA             0.9239362 0.8973404 0.9420213 13.9151955</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; QDA             0.7962766 0.7202128 0.8468085 14.6497163</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; CART            0.9882979 0.9521277 0.9585106  8.7233674</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt; J48             0.9920213 0.9579787 0.9606383  8.7101095</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; KNN             0.9898936 0.9563830 0.9579787  8.2837715</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt; L_SVM           0.9829787 0.9430851 0.9547872  8.7829504</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt; poly_SVM        0.9659574 0.9015957 0.9319149 11.5281357</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt; RBF_SVM         0.9936170 0.9494681 0.9553191  0.7532538</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; RandF           0.9255319 0.9148936 0.9702128 13.8216887</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2"></a>measures &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>(good<span class="op">$</span>goodnessAUC, eff<span class="op">$</span>effectivenessAUC)</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(measures)</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#&gt;          good$goodnessAUC    Actual Predicted</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">#&gt; NB              0.9590426 0.9244681 0.9553191</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#&gt; LDA             0.9239362 0.8973404 0.9420213</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#&gt; QDA             0.7962766 0.7202128 0.8468085</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">#&gt; CART            0.9882979 0.9521277 0.9585106</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co">#&gt; J48             0.9920213 0.9579787 0.9606383</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#&gt; KNN             0.9898936 0.9563830 0.9579787</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt; L_SVM           0.9829787 0.9430851 0.9547872</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">#&gt; poly_SVM        0.9659574 0.9015957 0.9319149</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt; RBF_SVM         0.9936170 0.9494681 0.9553191</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co">#&gt; RandF           0.9255319 0.9148936 0.9702128</span></span></code></pre></div>
+<p>The table above shows the area under the model goodness curve and the areas under the actual and predicted effectiveness curves.</p>
+</div>
+<div id="two-more-measures" class="section level2">
+<h2 class="hasAnchor">
+<a href="#two-more-measures" class="anchor"></a>Two more measures</h2>
+<p>We define two more measures for algorithms: stability and anomalous nature. Algoroithms are stable if the transitions between the most likely performance levels are smoother. This can be seen from the algorithm trace lines. For example QDA and LDA have smoother transitions compared to RBF_SVM. This is related to the discrimination parameter in an IRT. We define stability as K - |discrimination|, where K is the highest absolute discrimination value.</p>
+<p>In addition, some algorithms are anomalous. That is they perform well on datasets where the other algorithms perform poorly. We say an algorithm is anomalous is the IRT discrimination parameter is negative. In this example non of the algorithms are anomalous.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>stab &lt;-<span class="st"> </span>modout<span class="op">$</span>stability</span>
+<span id="cb8-2"><a href="#cb8-2"></a>anomalous &lt;-<span class="st"> </span>modout<span class="op">$</span>anomalous</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind.data.frame</a></span>(stab, anomalous)</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#&gt;                stab anomalous</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; NB       13.1072771         0</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="co">#&gt; LDA      13.9151955         0</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co">#&gt; QDA      14.6497163         0</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co">#&gt; CART      8.7233674         0</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co">#&gt; J48       8.7101095         0</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co">#&gt; KNN       8.2837715         0</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#&gt; L_SVM     8.7829504         0</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co">#&gt; poly_SVM 11.5281357         0</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co">#&gt; RBF_SVM   0.7532538         0</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="co">#&gt; RandF    13.8216887         0</span></span></code></pre></div>
+<p>More examples of algorithm evaluation is discussed in our paper. <strong>ADD CITATION AND LINK</strong></p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-munoz2018instance">
+<p>Muñoz, Mario A, Laura Villanova, Davaatseren Baatar, and Kate Smith-Miles. 2018. “Instance Spaces for Machine Learning Classification.” <em>Machine Learning</em> 107 (1): 109–47.</p>
+</div>
+<div id="ref-matilda">
+<p>Smith-Miles, Kate. 2019. <em>MATILDA: Melbourne Algorithm Test Instance Library with Data Analytics</em>. <a href="matilda.unimelb.edu.au">matilda.unimelb.edu.au</a>.</p>
+</div>
+</div>
 </div>
   </div>
 
@@ -152,7 +218,11 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#load-libraries">Load libraries</a></li>
+<li><a href="#classification-algorithms">Classification Algorithms</a></li>
+      <li><a href="#irt-model-goodness">IRT Model Goodness</a></li>
+      <li><a href="#algorithm-effectiveness">Algorithm Effectiveness</a></li>
+      <li><a href="#two-more-measures">Two more measures</a></li>
+      <li><a href="#references">References</a></li>
       </ul>
 </div>
       </div>

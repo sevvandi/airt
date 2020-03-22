@@ -18,7 +18,7 @@ This is a utility function to make a dataframe from the IRTmodel, which makes it
 \examples{
 data(classification)
 mod <- irtmodel(classification)
-dat <- prepare_for_plots(mod)
+dat <- prepare_for_plots(mod$model)
 head(dat)
 
 }

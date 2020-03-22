@@ -1,6 +1,7 @@
 ---
-title: "IRT Model Goodness and Algorithm Effectiveness"
+title: "Introduction to airt"
 output: rmarkdown::html_vignette
+bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{airt}
   %\VignetteEngine{knitr::rmarkdown}
@@ -17,7 +18,7 @@ knitr::opts_chunk$set(
 
 ```{r load2, echo=FALSE, eval=TRUE, message=FALSE}
 if (!requireNamespace("airt", quietly = TRUE)) {
-    stop("Package dobin is needed for the vignette. Please install it.",
+    stop("Package airt is needed for the vignette. Please install it.",
       call. = FALSE)
 }
 if (!requireNamespace("ggplot2", quietly = TRUE)) {
@@ -30,28 +31,56 @@ if (!requireNamespace("tidyr", quietly = TRUE)) {
 }
 ```
 
-## Load libraries
+
 ```{r load, echo=TRUE}
 library(airt)
 library(ggplot2)
 library(tidyr)
 ```
+The goal of _airt_ is to evaluate performance of algorithms using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The IRT model is fitted using the R package __mirt__ .
 
-Let us check the goodness of the Item Response Theory (IRT) model. 
 
-```{r, goodness, echo=TRUE}
+## Classification Algorithms
+
+This example is on classification algorithms. The data *classification* has performance data from 10 classification algorithms on 235 datasets. This data is discussed in  [@munoz2018instance] and can be found at the test instance library MATILDA [@matilda].
+
+We have binned the data so that we can fit a polytomous IRT model to it. The lowest performance measurement is P1 and the highest is P5, with the others in between. The latent scores $\theta$ represent the easiness of the datasets.  Let's fit an IRT model to this data and look at the algorithm trace lines. 
+
+```{r example}
 data("classification")
 modout <- irtmodel(classification, vpara=FALSE)
+
+gdf <- prepare_for_plots(modout$model)
+ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Classification Algorithm Trace Lines") + theme_bw()
+```
+
+The trace lines give the probability of getting performance levels from P1 to P5, for different values of dataset easiness denoted by theta.  The probability of getting P5 is higher for an easy dataset, while it is lower for a difficult dataset. We see that some algorithms have only levels P3 to P5, while some have all performance levels. Also, some algorithms like QDA have gentler transitions between the most likely performance levels, and some like RBF_SVM have very sharp transitions.
+
+## IRT Model Goodness
+
+But how good is our IRT model? Can we trust the algorithm trace lines? To check how good the IRT model is we compute the goodness of model in this way. The IRT model has computed latent scores for all the datasets. These scores tell us how easy or hard the datasets are. A high value of theta indicates an easy dataset. For each algorithm using the latent scores and the algorithm trace lines, we can predict the performance of the IRT model for each dataset. This is not 100% correct. Then we can compare the predicted performance with the actual performance values. That is what we do here. Let's look at the model goodness curves. 
+
+```{r, goodness, echo=TRUE}
 # Model Goodness and Algorithm effectiveness
 good <- model_goodness(modout$model)
-
-stab <- modout$stability
 
 good_curves <- as.data.frame(good$curves)
 print(good_curves)
 good_df <- good_curves %>% pivot_longer(cols=2:dim(good_curves)[2], names_to=c("Algorithm"))
 ggplot(good_df, aes(x,value)) + geom_point() + geom_line(aes(color = Algorithm), size=1) + xlab("Goodness Tolerance")  + ylab("Model Goodness Curve") + theme_bw()
 ```
+
+the x axis is the goodness tolerance. That is, the values at x=0 tell you the percentage of actual = predicted for each algorithm. We see that for QDA only 45% of actual performance values equals the IRT predicted performance values, while for CART more than 95% of the actual performance values equals the IRT predicted performance values. 
+
+If we make the definition of goodness slightly broader and include the proportion of predicted deviating from the actual by 1, then for QDA nearly 70% of the datasets are within that margin and for CART it is this proportion is nearly 100%. In this manner we relax the tolerance. The _curves_ list out these coordinates for each algorithm for each goodness tolerance level x.  The area under the curve is an indication of how accurate the IRT model is on a given algorithm. 
+
+```{r AUMGC}
+good$goodnessAUC
+```
+We see that the goodness of the IRT model is quite high for most algorithms apart from QDA. For QDA it is 0.79, which is low compared to the rest.  
+
+## Algorithm Effectiveness
+Suppose algorithm A gives good performance values and algorithm B gives poor performance values for most of the test instances. Then, we can say that algorithm A is more effective than algorithm B. Basically, this is our notion of effectiveness. We compute the proportion of datasets that achieve the highest performance value, P5 in this example. Then we compute the proportion of datasets that achieve the levels P5 and P4. Next the proportion of datasets that obtains P5, P4 or P3. We do this computation for actual performance values and IRT model predicted performance values. These two sets of effectiveness curves are shown in the 2 graphs below.  
 
 ```{r, effectiveness1, echo=TRUE}
 eff <- effectiveness(modout$model)
@@ -68,11 +97,30 @@ colnames(eff_df)[4] <- "Act_Or_Pred"
 ggplot(eff_df, aes(x, value)) + geom_point() + geom_line(aes(color = Algorithm), size=1)  + facet_wrap(~Act_Or_Pred) + theme_bw()
 ```
 
+Similar to the model goodness curves, we can find the area under the actual effectiveness curve and the predicted effectiveness curve. This will show how much the IRT predicted deviates from the actual, and also which algorithms are more effective than others. We show this in the graph below. 
+
 ```{r, effectiveness2, echo=TRUE}
 df_eff <- cbind.data.frame(as.data.frame(eff$effectivenessAUC), rownames(eff$effectivenessAUC) )
 colnames(df_eff)[3] <- "Algorithm"
 
 ggplot(df_eff, aes(Actual, Predicted)) + geom_jitter(aes(color=Algorithm), size=3) + geom_abline(aes(intercept=0,slope=1), linetype="dotted") + xlim(c(0,1)) + ylim(c(0,1)) + xlab("Area under Actual Effectiveness Curve (AUAEC)") + ylab("Area under Predicted Effectiveness Curve (AUPEC)") +  theme_bw()
-measures <- cbind.data.frame(good$goodnessAUC, eff$effectivenessAUC, stab)
+
+measures <- cbind.data.frame(good$goodnessAUC, eff$effectivenessAUC)
 print(measures)
 ```
+The table above shows the area under the model goodness curve and the areas under the actual and predicted effectiveness curves. 
+
+## Two more measures
+We define two more measures for algorithms: stability and anomalous nature. Algoroithms are stable if the transitions between the most likely performance levels are smoother. This can be seen from the algorithm trace lines. For example QDA and LDA have smoother transitions compared to RBF_SVM. This is related to the discrimination parameter in an IRT. We define stability as K - |discrimination|, where K is the highest absolute discrimination value. 
+
+In addition, some algorithms are anomalous. That is they perform well on datasets where the other algorithms perform poorly. We say an algorithm is anomalous is the IRT discrimination parameter is negative. In this example non of the algorithms are anomalous. 
+
+```{r moremeasures}
+stab <- modout$stability
+anomalous <- modout$anomalous
+cbind.data.frame(stab, anomalous)
+```
+
+More examples of algorithm evaluation is discussed in our paper. **ADD CITATION AND LINK**
+
+## References

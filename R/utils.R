@@ -9,18 +9,18 @@
 #' @examples
 #' data(classification)
 #' mod <- irtmodel(classification)
-#' dat <- prepare_for_plots(mod)
+#' dat <- prepare_for_plots(mod$model)
 #' head(dat)
 #'
 #' @export
 prepare_for_plots <- function(mod){
   # mod is the trained model
-  num_algos <- dim(mod$model@Data$data)[2]
-  names_algos <- colnames(mod$model@Data$data)
-  ori_data <- mod$model@Data$data
+  num_algos <- dim(mod@Data$data)[2]
+  names_algos <- colnames(mod@Data$data)
+  ori_data <- mod@Data$data
 
   for(i in 1:num_algos){
-    df1 <- get_trace(mod$model, num=i)
+    df1 <- get_trace(mod, num=i)
     nn <- dim(df1)[2]
     colnames(df1)[2:nn] <- paste("P", sort(unique(ori_data[ ,i])), sep="")
     df <- cbind.data.frame(df1, rep(names_algos[i], dim(df1)[1]))

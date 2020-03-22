@@ -1,5 +1,6 @@
 ---
 output: github_document
+bibliography: vignettes/bibliography.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -20,7 +21,7 @@ knitr::opts_chunk$set(
   [![Travis build status](https://travis-ci.org/sevvandi/airt.svg?branch=master)](https://travis-ci.org/sevvandi/airt)
   <!-- badges: end -->
   
-The goal of _airt_ is to evaluate algorithm performances using Item Response Theory (IRT). We evaluate the performance of a group of algorithms on a collection of test instances.  We use the R package __mirt__ to fit the IRT model. 
+The goal of _airt_ is to evaluate algorithm performances using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The IRT model is fitted using the R package __mirt__ . 
 
 ## Installation
 
@@ -37,15 +38,29 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("sevvandi/airt")
 ```
 ## Example
-
-This example is on classification algorithms. The data *classification* has performance data from 
-
 ```{r example}
 library(airt)
 library(ggplot2)
-data("classification")
-modout <- irtmodel(classification, vpara=FALSE)
+set.seed(1)
+algo1 <- sample(1:5, 100, replace = TRUE)
+inds1 <- which(algo1 %in% c(4,5))
+algo2 <- rep(0, 100)
+algo2[inds1] <- sample(4:5, length(inds1), replace = TRUE)
+algo2[-inds1] <- sample(1:3, (100-length(inds1)), replace = TRUE)
+algo3 <- rep(0, 100)
+algo3[inds1] <- sample(1:2, length(inds1), replace = TRUE)
+algo3[-inds1] <- sample(3:5, (100-length(inds1)), replace = TRUE)
+algorithms <- cbind.data.frame(algo1, algo2, algo3)
+mod <- irtmodel(algorithms)
 
-gdf <- prepare_for_plots(modout)
-ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Classification Algorithm Trace Lines") + theme_bw()
+gdf <- prepare_for_plots(mod$model)
+ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Algorithm Trace Lines") + theme_bw()
+
+mod$stability
+
+mod$anomalous
 ```
+
+
+## More on _airt_
+The pkgdown site describes the functionality of _airt_ : https://sevvandi.github.io/airt/articles//index.html. 
