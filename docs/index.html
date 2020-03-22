@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluation of Algorithm Collections Using Item Response Theory • algorithmirt</title>
+<title>Evaluation of Algorithm Collections Using Item Response Theory • airt</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -39,7 +39,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">algorithmirt</a>
+        <a class="navbar-link" href="index.html">airt</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
       </span>
     </div>
@@ -53,7 +53,7 @@
   </a>
 </li>
 <li>
-  <a href="articles/algorithmirt.html">Get started</a>
+  <a href="articles/airt.html">Get started</a>
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
@@ -71,27 +71,27 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="algorithmirt-" class="section level1">
+<div id="airt-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#algorithmirt-" class="anchor"></a>algorithmirt <img src="reference/figures/logo.png" align="right" height="137.5">
+<a href="#airt-" class="anchor"></a>airt <img src="reference/figures/logo.png" align="right" height="138.5">
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of <em>algorithmirt</em> is to evaluate algorithm performances using Item Response Theory (IRT). We evaluate the performance of a group of algorithms on a collection of test instances. We use the R package <strong>mirt</strong> to fit the IRT model.</p>
+<p>The goal of <em>airt</em> is to evaluate algorithm performances using Item Response Theory (IRT). We evaluate the performance of a group of algorithms on a collection of test instances. We use the R package <strong>mirt</strong> to fit the IRT model.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of algorithmirt from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"algorithmirt"</span>)</span></code></pre></div>
+<p>You can install the released version of airt from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"airt"</span>)</span></code></pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"sevvandi/algorithmirt"</span>)</span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"sevvandi/airt"</span>)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This example is on classification algorithms. The data <em>classification</em> has performance data from</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(algorithmirt)</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(airt)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"classification"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4"></a>modout &lt;-<span class="st"> </span><span class="kw"><a href="reference/irtmodel.html">irtmodel</a></span>(classification, <span class="dt">vpara=</span><span class="ot">FALSE</span>)</span>
@@ -121,7 +121,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/sevvandi/algorithmirt"><img src="https://travis-ci.org/sevvandi/algorithmirt.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://travis-ci.org/sevvandi/airt"><img src="https://travis-ci.org/sevvandi/airt.svg?branch=master" alt="Travis build status"></a></li>
 </ul>
 </div>
 </div>

@@ -1,33 +1,33 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# algorithmirt <img src='man/figures/logo.png' align="right" height="137.5" />
+# airt <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.org/sevvandi/algorithmirt.svg?branch=master)](https://travis-ci.org/sevvandi/algorithmirt)
+status](https://travis-ci.org/sevvandi/airt.svg?branch=master)](https://travis-ci.org/sevvandi/airt)
 <!-- badges: end -->
 
-The goal of *algorithmirt* is to evaluate algorithm performances using
-Item Response Theory (IRT). We evaluate the performance of a group of
+The goal of *airt* is to evaluate algorithm performances using Item
+Response Theory (IRT). We evaluate the performance of a group of
 algorithms on a collection of test instances. We use the R package
 **mirt** to fit the IRT model.
 
 ## Installation
 
-You can install the released version of algorithmirt from
+You can install the released version of airt from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("algorithmirt")
+install.packages("airt")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("sevvandi/algorithmirt")
+devtools::install_github("sevvandi/airt")
 ```
 
 ## Example
@@ -36,7 +36,7 @@ This example is on classification algorithms. The data *classification*
 has performance data from
 
 ``` r
-library(algorithmirt)
+library(airt)
 library(ggplot2)
 data("classification")
 modout <- irtmodel(classification, vpara=FALSE)
