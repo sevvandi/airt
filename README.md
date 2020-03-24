@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# airt <img src='man/figures/logo.png' align="right" height="138.5" />
+# airt <img src='man/figures/logo.png' align="right" height="125" />
 
 <!-- badges: start -->
 
@@ -67,5 +67,5 @@ mod$anomalous
 
 ## More on *airt*
 
-The pkgdown site describes the functionality of *airt*:
+The pkgdown site describes the functionality of *airt* :
 <https://sevvandi.github.io/airt/articles//index.html>.
