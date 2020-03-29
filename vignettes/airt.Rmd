@@ -10,6 +10,7 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning=FALSE,
   comment = "#>",
   fig.width=8, fig.height=6
 )
@@ -32,7 +33,7 @@ if (!requireNamespace("tidyr", quietly = TRUE)) {
 ```
 
 
-```{r load, echo=TRUE}
+```{r load, message=FALSE}
 library(airt)
 library(ggplot2)
 library(tidyr)

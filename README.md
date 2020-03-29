@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# airt <img src='man/figures/logo.png' align="right" height="125" />
+# airt <img src='man/figures/logo.png' align="right" height="138" />
 
 <!-- badges: start -->
 
@@ -65,7 +65,23 @@ mod$anomalous
 #>     0     0     1
 ```
 
+We see that *algo3* is anomalous. That is, it performs well on test
+instances that others perform poorly. For *algo1* and *algo\_2*, the
+highest level of performance P5 is achieved for high values of
+\(\theta\). But for *algo3* the P5 is achieved for low values of
+\(\theta\).
+
 ## More on *airt*
 
 The pkgdown site describes the functionality of *airt* :
 <https://sevvandi.github.io/airt/articles//index.html>.
+
+## Acknowledgements
+
+Firstly, thanks to Rob Hyndman for coming up with the name *airt*, which
+is an old Scottish word meaing *to guide*. Also, a big thank you to
+Patricia Menendez Galvan for patiently giving me feedback on how to
+improve the hex sticker. Nishka and Sashenka Fernando also helped a lot
+with the design of the hex sticker. Finally, where did I get the hex
+sticker template from? From Emi Tanaka’s blogpost
+<https://emitanaka.org/post/hexsticker/>. Thanks Emi.

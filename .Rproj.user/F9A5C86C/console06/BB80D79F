@@ -1,36 +1,4 @@
 
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in docs/link.svg.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/pkgdown.css.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/pkgdown.js.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/algorithmirt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ha[0Kd[0Kd[0K[22G[?25l$ git commit -m "add v[0K[?25hi[0Kg[0Kn[0Ke[0Kt[0Kt[0Ke[0K"[0K[?25l$ git commit -m "add vignette[0K[?25h[?25l$ git commit -m "add vignet[0K[29G[?25h[28G[?25l$ git commit -m "add vigne[0K[?25h[?25l$ git commit -m "add vi[0K[?25h[?25l$ git commit -m "add v[0K[?25h[?25l$ git commit -m "add[0K[22G[?25h[?25l$ git commit -m "add p[0K[?25ho[0Kw[0K[?25l$ git commit -m "add po[0K[?25h[?25l$ git commit -m "add p[0K[?25h[?25l$ git commit -m "add[0K[23G[?25h[22G[?25l$ git commit -m "add p[0K[?25hk[0Kg[0Kd[0Ko[0Kw[0Kn[0K"[0K[?25l
-[0K[?25h[master ee8f607] add pkgdown[0K[?25l
- 71 files changed, 4635 insertions(+), 749 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- create mode 100644 R/classification-data.R[0K
- create mode 100644 R/utils.R[0K
- rewrite README.md (68%)[0K
- create mode 100644 _pkgdown.yml[0K
- create mode 100644 data/classification.rda[0K
- create mode 100644 docs/404.html[0K
- create mode 100644 docs/LICENSE.html[0K
- create mode 100644 docs/apple-touch-icon-120x120.png[0K
- create mode 100644 docs/apple-touch-icon-152x152.png[0K
- create mode 100644 docs/apple-touch-icon-180x180.png[0K
- create mode 100644 docs/apple-touch-icon-60x60.png[0K
- create mode 100644 docs/apple-touch-icon-76x76.png[0K
- create mode 100644 docs/apple-touch-icon.png[0K
- create mode 100644 docs/articles/algorithmirt.html[0K
- create mode 100644 docs/articles/algorithmirt_files/figure-html/effectiveness1-1.p[0Kn
-g[0K
- create mode 100644 docs/articles/algorithmirt_files/figure-html/effectiveness2-1.p[0Kn
 g[0K
  create mode 100644 docs/articles/algorithmirt_files/figure-html/goodness-1.png[0K
  create mode 100644 docs/articles/index.html[0K
@@ -1002,4 +970,35 @@ Total 35 (delta 18), reused 0 (delta 0)[0K
 $[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
 [?25l$ g[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25h
+[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in docs/index.html.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hA[0K[?25l$ git commit -m "[0K[?25hc[0Kh[0Ka[0Kn[0Kg[0Ke[0K[25G[?25l$ git commit -m "change l[0K[?25ho[0Kg[0Ko[0K"[0K[?25l
+[0K[?25h[master 152e613] change logo[0K[?25l
+ 10 files changed, 47 insertions(+), 545 deletions(-)[0K
+ rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
+ rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (96%)[0K
+ rewrite docs/logo.png (99%)[0K
+ rewrite docs/reference/figures/logo.png (99%)[0K
+ rewrite hex/airt.png (99%)[0K
+ rewrite man/figures/logo.png (99%)[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hEnumerating objects: 41, done.[0K[?25l
+Counting objects: 100% (41/41), done.[0K
+Delta compression using up to 4 threads.[0K
+Compressing objects:   5% (1/20)[0K[1G[?25hCompressing objects: 100% (20/20), done.[0K[?25l
+Writing objects: 100% (21/21), 72.62 KiB | 9.08 MiB/s, done.[0K
+Total 21 (delta 12), reused 0 (delta 0)[0K
+[0K[?25hremote: Resolving deltas:  66% (8/12)[0K[1Gremote: Resolving deltas: 100% (12/12), completed with 12 local objects.[0K[?25l
+[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
+   ad44c46..152e613  master -> master[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h
