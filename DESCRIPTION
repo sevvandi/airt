@@ -5,9 +5,9 @@ Version: 0.0.0.9000
 Authors@R: person("Sevvandi", "Kandanaarachchi", email = "sevvandik@gmail.com",
   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0337-0395"))
 Maintainer: Sevvandi Kandanaarachchi <sevvandik@gmail.com>
-Description: An evaluation framework for algorithm collections using Item Response
+Description: An evaluation framework for algorithm portfolios using Item Response
     Theory (IRT). We use polytomous IRT models to evaluate algorithms and introduce
-    algorithm attributes such as stability, effectiveness and anomalousness.
+    algorithm characteristics such as stability, effectiveness and anomalousness.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
