@@ -16,14 +16,16 @@ is fitted using the R package **mirt** .
 
 ## Installation
 
-You can install the released version of airt from
-[CRAN](https://CRAN.R-project.org) with:
+<!-- You can install the released version of airt from [CRAN](https://CRAN.R-project.org) with: -->
 
-``` r
-install.packages("airt")
-```
+<!-- ``` r -->
 
-And the development version from [GitHub](https://github.com/) with:
+<!-- install.packages("airt") -->
+
+<!-- ``` -->
+
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
