@@ -74,7 +74,7 @@ highest level of performance P5 is achieved for high values of
 ## More on *airt*
 
 The pkgdown site describes the functionality of *airt* :
-<https://sevvandi.github.io/airt/articles//index.html>.
+<https://sevvandi.github.io/airt/>.
 
 ## Acknowledgements
 
