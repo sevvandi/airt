@@ -122,6 +122,6 @@ anomalous <- modout$anomalous
 cbind.data.frame(stab, anomalous)
 ```
 
-More examples of algorithm evaluation is discussed in our paper. **ADD CITATION AND LINK**
+More examples of algorithm evaluation using airt are discussed in our paper [@airtPaper]. 
 
 ## References
