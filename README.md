@@ -81,9 +81,13 @@ The pkgdown site describes the functionality of *airt* :
 ## Acknowledgements
 
 Firstly, thanks to Rob Hyndman for coming up with the name *airt*, which
-is an old Scottish word meaing *to guide*. Also, a big thank you to
-Patricia Menendez Galvan for patiently giving me feedback on how to
-improve the hex sticker. Nishka and Sashenka Fernando also helped a lot
-with the design of the hex sticker. Finally, where did I get the hex
-sticker template from? From Emi Tanaka’s blogpost
-<https://emitanaka.org/post/hexsticker/>. Thanks Emi.
+is an old Scottish word meaing *to guide*. Also, thanks to Phil Chalmers
+for being very quick in responding to emails about his R package *mirt*.
+
+Many people helped me with the hex sticker. A big thank you to Patricia
+Menendez Galvan for patiently giving me feedback on how to improve the
+hex sticker. Also, thanks for Di Cook and Emi Tanaka for giving good
+feedback. Nishka and Sashenka Fernando also helped with the design of
+the hex sticker. Finally, where did I get the hex sticker template from?
+From Emi Tanaka’s blogpost <https://emitanaka.org/post/hexsticker/>.
+Thanks again, Emi.
