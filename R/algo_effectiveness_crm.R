@@ -11,21 +11,23 @@
 #'
 #'@examples
 #'set.seed(1)
-#'x1 <- sample(1:5, 100, replace = TRUE)
-#'x2 <- sample(1:5, 100, replace = TRUE)
-#'x3 <- sample(1:5, 100, replace = TRUE)
+#'x1 <- runif(100)
+#'x2 <- runif(100)
+#'x3 <- runif(100)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- irtmodel(X)
-#'out <- effectiveness(mod$model)
+#'max_item <- rep(1,3)
+#'min_item <- rep(0,3)
+#'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
+#'out <- effectiveness_crm(mod$model)
 #'out
 #' @export
-effectiveness <-  function(mod){
-  dd <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$item)[1]
+effectiveness_crm <-  function(mod){
+  dd <- dim(mod$data)[2]
   rel <- matrix(0, ncol=2, nrow=dd)
   colnames(rel) <- c("Actual", "Predicted")
   curves <- list()
   for(i in 1:dd){
-    oo <- algo_effectiveness(mod, num=i)
+    oo <- algo_effectiveness_crm(mod, num=i)
     rel[i, 1] <- oo$actualEff
     rel[i, 2] <- oo$predictedEff
     if(i==1){
@@ -38,8 +40,8 @@ effectiveness <-  function(mod){
     prdcurves[ ,(i+1)] <- oo$effective[ ,3]
 
   }
-  colnames(prdcurves) <- colnames(actcurves) <- c("x", rownames(coef(mod, simplify=TRUE)$items))
-  rownames(rel) <- rownames(coef(mod, simplify=TRUE)$items)
+  colnames(prdcurves) <- colnames(actcurves) <- c("x", rownames(mod$param))
+  rownames(rel) <- rownames(mod$param)
   out <- list()
   out$effectivenessAUC <- rel
   out$actcurves <- actcurves
@@ -52,39 +54,43 @@ effectiveness <-  function(mod){
 #'
 #' This function computes the actual and predicted effectiveness of a given algorithm for different tolerance values.
 #'
-#' @inheritParams model_goodness_for_algo
+#' @inheritParams model_goodness_for_algo_crm
 #'
 #' @return  A list with the following components:
 #' \item{\code{effective}}{The \code{x,y} coodinates for the actual and predicted effectiveness curves for algorithm \code{num}. }
 #' \item{\code{predictedEff}}{The area under the predicted effectiveness curve. }
 #' \item{\code{actualEff}}{The area under the actual effectiveness curve. }
 #'
-#'#'@examples
+#'@examples
 #'set.seed(1)
-#'x1 <- sample(1:5, 100, replace = TRUE)
-#'x2 <- sample(1:5, 100, replace = TRUE)
-#'x3 <- sample(1:5, 100, replace = TRUE)
+#'x1 <- runif(100)
+#'x2 <- runif(100)
+#'x3 <- runif(100)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- irtmodel(X)
-#'out <- algo_effectiveness(mod$model, num=1)
+#'max_item <- rep(1,3)
+#'min_item <- rep(0,3)
+#'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
+#'out <- algo_effectiveness_crm(mod$model, num=1)
 #'out
 #' @export
-algo_effectiveness <- function(mod, num=1){
-  actpred <- actual_vs_predicted(mod, num)
+algo_effectiveness_crm <- function(mod, num=1){
+  actpred <- actual_vs_predicted_crm(mod, num)
   act <- actpred[ ,1]
   preds <- actpred[ ,2]
-  levels <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$items)[2]
+  levels <- 100
 
   act_rel <- rep(0, levels)
   for(i in levels:1){
-    k <- levels - i + 1
-    act_rel[k] <- length(which(act >= i))/length(act)
+    k <- (levels - i + 1)
+    ii <- i/levels
+    act_rel[k] <- length(which(act >= ii))/length(act)
   }
 
   pred_rel <- rep(0, levels)
   for(i in levels:1){
     k <- levels - i + 1
-    pred_rel[k] <- length(which(preds >= i))/length(preds)
+    ii <- i/levels
+    pred_rel[k] <- length(which(preds >= ii))/length(preds)
   }
 
   x <- seq(0, 1, by = 1/(levels-1))

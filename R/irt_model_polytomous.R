@@ -8,8 +8,9 @@
 #'
 #' @return A list with the following components:
 #' \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
-#' \item{\code{anomalous}}{A binary sequence corresponding to the algorithms. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
-#'  \item{\code{stability}}{A binary sequence corresponding to the algorithms. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
+#' \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
+#'  \item{\code{stability}}{The stability of each algorithm.}
+#'  \item{\code{easiness_threshold}}{The easiness thresholds for each algorithm.  Lower thresholds indicates that the algorithm finds more test instances easy.}
 #'
 #'@examples
 #'set.seed(1)
@@ -17,9 +18,9 @@
 #'x2 <- sample(1:5, 100, replace = TRUE)
 #'x3 <- sample(1:5, 100, replace = TRUE)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- irtmodel(X)
+#'mod <- pirtmodel(X)
 #'@export
-irtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
+pirtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
   # CHECK IF DATA IS IN A DATA FRAME OR MATRIX
   if(!(is.data.frame(dat)|is.matrix(dat))){
     stop("Data needs to be a matrix or a dataframe!")
@@ -60,11 +61,21 @@ irtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
 
 
   a_vals <- coef(mod, IRTpars = TRUE, simplify=TRUE)$items[ ,1]
-  flipped <- (sign(a_vals) -1 )/(-2)
-  stability <- max(ceiling(abs(a_vals))) - abs(a_vals)
+  flipped <- sign(a_vals)
+  anomalous <- rep(0, length(flipped))
+  anomalous[flipped==-1] <- 1
+  stability <-  1/abs(a_vals)
+
+  # easiness threshold parameters
+  # all_coeffs <- coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
+  # coefdim <- dim(all_coeffs)[2]
+  # diff_start <- 2
+  easiness_threshold <- coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
+
   out <- list()
   out$model <- mod
-  out$anomalous <- flipped
+  out$anomalous <- anomalous
   out$stability <- stability
+  out$easiness_threshold <- easiness_threshold
   return(out)
 }

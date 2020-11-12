@@ -1,928 +1,4 @@
 
-Iteration: 13, Log-Lik: -1471.384, Max-Change: 0.12243[0K
-Iteration: 14, Log-Lik: -1471.229, Max-Change: 4.89077[0K
-Iter[0K[2G[?25h[?25lIteration: 15, Log-Lik: -1470.836, Max-Change: 0.85307[0K
-Iteration: 16, Log-Lik: -1470.802, Max-Change: 3.15196[0K
-Iteration: 17, Log-Lik: -1470.608, Max-Change: 1.53277[0K
-Iteration: 18, Log-[0K[18G[?25h[?25lIteration: 18, Log-Lik: -1470.495, Max-Change: 0.05526[0K
-Iteration: 19, Log-Lik: -1470.492, Max-Change: 1.85413[0K
-Iteration: 20, Log-Lik: -1470.399, Max-Change: 0.08930[0K
-Iteration: 21, Log-Lik: -1470.344, Max-Change: 0.12474[0K
-Iteration: 22, Log-Lik: -1[0K[26G[?25h[?25lIteration: 22, Log-Lik: -1470.271, Max-Change: 0.03388[0K
-Iteration: 23, Log-Lik: -1470.234, Max-Change: 0.03706[0K
-Iteration: 24, Log-Lik: -1470.202, Max-Change: 1.27550[0K
-Iteration: 25, Log-L[0K[19G[?25h[?25lIteration: 25, Log-Lik: -1470.161, Max-Change: 0.03283[0K
-Iteration: 26, Log-Lik: -1470.134, Max-Change: 0.02845[0K
-Iteration: 27, Log-Lik: -1470.110, Max-Change: 0.02732[0K
-Iteration: 28, Log-Lik: -1469.988, Max-Change: 0.01825[0K
-Iteration: 29, Log-Lik: -14[0K[26G[?25h[?25lIteration: 29, Log-Lik: -1469.972, Max-Change: 0.02106[0K
-Iteration: 30, Log-Lik: -1469.957, Max-Change: 0.01885[0K
-Iteration: 31, Log-Lik: -1469.910, Max-Change: 0.02621[0K
-Iteration: 32, Log-Lik: -1469.897, Max-Change: 0.0227[0K[52G[?25h[?25lIteration: 32, Log-Lik: -1469.897, Max-Change: 0.02270[0K
-Iteration: 33, Log-Lik: -1469.885, Max-Change: 0.02084[0K
-Iteration: 34, Log-Lik: -1469.831, Max-Change: 0.01643[0K
-Iteration: 35, Log-Lik: -1469.821, Max-Change: 0.01633[0K
-Iteration: 36, Log-Lik: -1469.812, Max-Change: 0.01659[0K
-Iteration: 37, Log-Lik[0K[21G[?25h[?25lIteration: 37, Log-Lik: -1469.774, Max-Change: 0.01712[0K
-Iteration: 38, Log-Lik: -1469.766, Max-Change: 0.01380[0K
-Iteration: 39, Log-Lik: -1469.759, Max-Change: 0.01634[0K
-Iteration: 40, Log-Lik:[0K[?25h -1469.747, Max-Change: 0.01339[0K[?25l
-Iteration: 41, Log-Lik: -1469.741, Max-Change: 0.01372[0K
-Iteration: 42, Log-Lik: -1469.736, Max-Change: 0.01524[0K
-Iteration: 43, Log-Lik: -1469.709, Max-Change: 0.00702[0K
-Iteration: 44, Log-Lik: -1469.704, Max-Cha[0K[?25hnge: 0.00875[0K[?25l
-Iteration: 45, Log-Lik: -1469.700, Max-Change: 0.00954[0K
-Iteration: 46, Log-Lik: -1469.689, Max-Change: 0.02790[0K
-Iteration: 47, Log-Lik: -1469.684, Max-Change: 0.00751[0K
-Iteration: 48, Log-Lik: -1469.682, Max-Change: 0.01045[0K
-Iteration: 49, L[0K[15G[?25h[?25lIteration: 49, Log-Lik: -1469.678, Max-Change: 0.00825[0K
-Iteration: 50, Log-Lik: -1469.675, Max[0K[38G[?25h[?25lIteration: 50, Log-Lik: -1469.675, Max-Change: 0.00895[0K
-Iteration: 51, Log-Lik: -1469.673, Max-Change: 0.00678[0K
-Iteration: 52, Log-Lik: -1469.671, Max-Change: 0.00644[0K
-Iteration: 53, Log-Lik: -1469.6[0K[?25h69, Max-Change: 0.00715[0K[?25l
-Iteration: 54, Log-Lik: -1469.668, Max-Change: 0.00452[0K
-Iteration: 55, Log-Lik: -1469.665, Max-[0K[38G[?25h[?25lIteration: 55, Log-Lik: -1469.665, Max-Change: 0.00622[0K
-Iteration: 56, Log-Lik: -1469.663, Max-Change: 0.00641[0K
-Iteration: 57, Log-Lik: -1469.662, Max-Change: 0.00436[0K
-Iteration: 58, Log-Lik: -1469.660, Max-Change: 0.00687[0K
-Iteration: 59, Log-Lik: -1469.659, Max-Change: 0.00382[0K
-Iteration: 60[0K[12G[?25h[?25lIteration: 60, Log-Lik: -1469.658, Max-Change: 0.00565[0K
-Iteration: 61, Log-Lik: -1469.655, Max-Change: 0.00282[0K
-Iteration: 62, Log-Lik: -1469.654, Max-Change: 0.00436[0K
-Iteration: 63, Log-Lik:[0K[22G[?25h[?25lIteration: 63, Log-Lik: -1469.653, Max-Change: 0.00613[0K
-Iteration: 64, Log-Lik: -1469.652, Max-Change: 0.00229[0K
-Iteration: 65, Log-Lik: -1469.651, Max-Change: 0.00368[0K
-Iteration: 66, Log-Lik: -1469.651, Max-Change: 0.00422[0K
-Iterat[0K[5G[?25h[?25lIteration: 67, Log-Lik: -1469.649, Max-Change: 0.00209[0K
-Iteration: 68, Log-Lik: -1469.649, Max-Change: 0.00139[0K
-Iteration: 69, Log-Lik: -1469.648, Max-Change: 0.06291[0K
-Iterat[0K[5G[?25h[?25lIteration: 70, Log-Lik: -1469.646, Max-Change: 0.00396[0K
-Iteration: 71, Log-Lik: -1469.645, Max-Change: 0.00145[0K
-Iteration: 72, Log-Lik: -1469.645, Max-Change: 0.00185[0K
-Iteration: 73, Log-Lik: -1469.644, Max-Change: 0.00328[0K
-Iteration: 74, Log-Li[0K[20G[?25h[?25lIteration: 74, Log-Lik: -1469.643, Max-Change: 0.00208[0K
-Iteration: 75, Log-Lik: -1469.643, Max-Change: 0.00116[0K
-Iteration: 76, Log-Lik: -1469.643, Max-Change: 0.00223[0K
-Iteration: 77, Log-Lik: -1469.[0K[29G[?25h[?25lIteration: 77, Log-Lik: -1469.643, Max-Change: 0.00221[0K
-Iteration: 78, Log-Lik: -1469.643, Max-Change: 0.00210[0K
-Iteration: 79, Log-Lik: -1469.642, Max-Change: 0.00207[0K
-Iteration: 80, Log-Lik: -1469.642, Max-Change: 0.00163[0K
-Iteration: 81, Log-Lik: -1469.641, Max-Change:[0K[45G[?25h[?25lIteration: 81, Log-Lik: -1469.641, Max-Change: 0.00085[0K
-Iteration: 82, Log-Lik: -1469.641, Max-Change: 0.00059[0K
-Iteration: 83, Log-Lik: -1469.641, Max-Change: 0.00022[0K
-Iteration: 84, Log-Lik: -1469.641, Max-C[0K[38G[?25h[?25lIteration: 84, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 85, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 86, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 87, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 88, Log-Lik: -1469.[0K[29G[?25h[?25lIteration: 88, Log-Lik: -1469.641, Max-Change: 0.00025[0K
-Iteration: 89, Log-Lik: -1469.641, Max-Change: 0.00025[0K
-Iteration: 90, Log-Lik: -1469.641, Max-Change: 0.00026[0K
-Iteration: 91, Log-Lik: -1469.641,[0K[33G[?25h[?25lIteration: 91, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 92, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 93, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 94, Log-Lik: -1469.641[0K[32G[?25h[?25lIteration: 94, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 95, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 96, Log-Lik: -1469.641, Max-Change: 0.00022[0K
-Iteration: 97, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 98, Log-Lik: -1469.641, Max-Change: 0.000[0K[51G[?25h[?25lIteration: 98, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 99, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 100, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 101, Log-Lik: -1469.641, Max-Change:[0K[46G[?25h[?25lIteration: 101, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 102, Log-Lik: -1469.641, Max-Change: 0.00021[0K
-Iteration: 103, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 104, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 105, Log-Lik: -1469.641, Max-Change: 0.00020[0K[55G[?25h[?25l
-Iteration: 106, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 107, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-Iteration: 108, Log-Lik: -1469.641, Max-Change: 0.00020[0K
-I[0K[1G[?25hIteration: 109, Log-Lik: -1469.641, Max-Change: 0.00019[0K[?25l
-Iteration: 110, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 111, Log-Lik: -1469.641, Max-Change: 0.[0K[49G[?25h[?25lIteration: 111, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 112, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 113, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 114, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 115, Log-Lik: -1469.641,[0K[34G[?25h[?25lIteration: 115, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 116, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 117, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 118, Log-Lik: -1469.641, M[0K[35G[?25h[?25lIteration: 118, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 119, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 120, Log-Lik: -1469.641, Max-Change: 0.00019[0K
-Iteration: 121, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 122, Log-Lik: -1469.641, Max[0K[38G[?25h[?25lIteration: 122, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 123, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 124, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 125, Log-Lik: -1469.[0K[30G[?25h[?25lIteration: 125, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 126, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 127, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 128, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 129,[0K[15G[?25h[?25lIteration: 129, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 130, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 131, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 132,[0K[14G[?25h[?25lIteration: 132, Log-Lik: -1469.641, Max-Change: 0.00018[0K
-Iteration: 133, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 134, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 135, Log-Lik: -1469.641, Max-Change: 0.00[0K[52G[?25h[?25lIteration: 135, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 136, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 137, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 138, Log-Lik: -1469.641, Max-Change: 0.[0K[49G[?25h[?25lIteration: 138, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 139, Log-Lik: -1469.641, Max-Change: 0.00016[0K
-Iteration: 140, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 141, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 142, Log-Lik: -1[0K[26G[?25h[?25lIteration: 142, Log-Lik: -1469.641, Max-Change: 0.00016[0K
-Iteration: 143, Log-Lik: -1469.641, Max-Change: 0.00016[0K
-Iteration: 144, Log-Lik: -1469.641, Max-Change: 0.00017[0K
-Iteration: 145, Log-Lik: -1469.6[0K[30G[?25h[?25lIteration: 145, Log-Lik: -1469.641, Max-Change: 0.00016[0K
-Iteration: 146, Log-Lik: -1469.641, Max-Cha[0K[?25hnge: 0.00016[0K[?25l
-Iteration: 147, Log-Lik: -1469.641, Max-Change: 0.00016[0K
-Iteration: 148, Log-Lik: -1469.640, Max-Change: 0.00016[0K
-Iter[0K[4G[?25h[?25lIteration: 149, Log-Lik: -1469.640, Max-Change: 0.00016[0K
-Iteration: 150, Log-Lik: -1469.640, Max-Change: 0.00016[0K
-Iteration: 151, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 152, Log-Lik: -1469.640, Max-Change: 0.00016[0K[54G[?25h[?25l
-Iteration: 153, Log-Lik: -1469.640, Max-Change: 0.00016[0K
-Iteration: 154, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 155, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Ite[0K[2G[?25h[?25lIteration: 156, Log-Lik: -1469.640, Max-Change: 0.00016[0K
-Iteration: 157, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 158, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 159, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 160, Log-Li[0K[21G[?25h[?25lIteration: 160, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 161, Log-Lik: -1469.640, Max-Ch[0K[?25hange: 0.00015[0K[?25l
-Iteration: 162, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration:[0K[12G[?25h[?25lIteration: 163, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 164, Log-Lik: -1469.640, Max-C[0K[39G[?25h[?25lIteration: 164, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 165, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 166, Log-Lik: -1469.640, Max-Change: 0.00014[0K[55G[?25h[?25l
-Iteration: 167, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 168, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 169, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 170, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 171, L[0K[16G[?25h[?25lIteration: 171, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 172, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 173, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 174, Log-Lik: -1469.640, Max-Change: 0.00015[0K
-Iteration: 175, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 176, L[0K[15G[?25h[?25lIteration: 176, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 177, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 178, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 179, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 180, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 181, Log-Lik: -146[0K[27G[?25h[?25lIteration: 181, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 182, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 183, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 184, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-[0K[?25hIteration: 185, Log-Lik: -1469.640, Max-Change: 0.00013[0K[?25l
-Iteration: 186, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 187, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 188, Log[0K[18G[?25h[?25lIteration: 188, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 189, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 190, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 191, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 1[0K[11G[?25h[?25lIteration: 192, Log-Lik: -1469.640, Max-Change: 0.00014[0K
-Iteration: 193, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 194, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 195, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 196, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 197, Log-Lik: -1469.640, Max-Ch[0K[40G[?25h[?25lIteration: 197, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 198, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 199, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 200, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 201, Log-Lik: -1[0K[25G[?25h[?25lIteration: 201, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 202, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 203, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 204, Log-Lik: -1469.640,[0K[35G[?25h[?25lIteration: 204, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 205, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 206, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 207, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 208,[0K[15G[?25h[?25lIteration: 208, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 209, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 210, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 211, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Itera[0K[3G[?25h[?25lIteration: 212, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 213, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 214, Log-Lik: -1469.640, Max-Change: 0.000[0K[52G[?25h[?25lIteration: 214, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 215, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 216, Log-Lik: -1469.640, Max-Change: 0.00013[0K
-Iteration: 217, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 218, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iterat[0K[5G[?25h[?25lIteration: 219, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 220, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 221, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-It[0K[2G[?25h[?25lIteration: 222, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 223, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 224, Lo[0K[17G[?25h[?25lIteration: 224, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 225, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 226, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 227, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 228, Log-Lik: -1469.[0K[30G[?25h[?25lIteration: 228, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 229, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 230, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 231, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 232, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 233, Log[0K[18G[?25h[?25lIteration: 233, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 234, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 235, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 236, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 237, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 238, Log-Lik: -1469.640, Max[0K[?25h-Change: 0.00011[0K[?25l
-Iteration: 239, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 240, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 241, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 242, Log-Lik: -1[0K[26G[?25h[?25lIteration: 242, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 243, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 244, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 245, Log-Lik: -146[0K[29G[?25h[?25lIteration: 245, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 246, Log-Lik: -1469.640, Max-Change: 0.00012[0K
-Iteration: 247, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 248, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 249, Log-Lik: -[0K[25G[?25h[?25lIteration: 249, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 250, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 251, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 252, Log-Lik: -1469.640, Max-Ch[0K[40G[?25h[?25lIteration: 252, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 253, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 254, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 255, Log-Lik: -1469.640, Max-Change: 0.000[0K[52G[?25h[?25lIteration: 255, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 256, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 257, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 258, Log-Lik: -1469.64[0K[31G[?25h[?25lIteration: 258, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 259, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 260, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 261, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 262, Log-L[0K[21G[?25h[?25lIteration: 262, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 263, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 264, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 265, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 26[0K[13G[?25h[?25lIteration: 266, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 267, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 268, Log-Lik: -1469.640, Max-Change: 0.000[0K[52G[?25h[?25lIteration: 268, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 269, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 270, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 271, Log-Lik: -1469.640, Max-Change: 0.[0K[49G[?25h[?25lIteration: 271, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 272, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 273, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 274, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 275, Log-Li[0K[21G[?25h[?25lIteration: 275, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 276, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 277, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-[0K[?25h[?25lIteration[0K[9G[?25h[?25lIteration: 278, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 279, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 280, Log-Lik: -1469.[0K[31G[?25h[?25lIteration: 280, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 281, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-Iteration: 282, Log-Lik: -1469.640, Max-Change: 0.00011[0K
-Iteration: 283, Log-Lik: -1469.640, M[0K[37G[?25h[?25lIteration: 283, Log-Lik: -1469.640, Max-Change: 0.00010[0K
-> dat <- prepare_for_plots(mod)[0K
-Error in prepare_for_plots(mod) :[0K
-  trying to get slot "Data" from an object of a basic class ("list") with no slots[0K
-Execution[0K[8G[?25h[?25lExecution halted[0K
-* checking for unstated dependencies in vignettes ...[0K[53G[?25h[54G[?25l* checking for unstated dependencies in vignettes ... OK[0K
-* checking package vignettes in 'inst/[0K[37G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
-[0K[?25h* checking running R code from vignettes ...[0K[?25l
-[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
- NONE[0K
-* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
-* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-[0K[?25h* DONE[0K[?25l
-[0K
-Status: 1 ERROR[0K
-See[0K
-  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check airt_0.0.0.9000.tar.gz[0K[38G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
-[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h* preparing 'airt':[0K[?25l
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-[0K[?25h* installing the package to build vignettes[0K[?25l
-[0K[?25h* creating vignettes ...[0K OK[0K[?25l
-[0K[?25h[?25l* check[0K[5G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
-* checking for empty or unneeded directories[0K
-* looking to see if a 'data[0K[25G[?25h[?25l* looking to see if a 'data/datalist' file should be added[0K
-* building 'airt_0.0.0.9000.tar.gz'[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.0.0.9000.tar.gz[0K[38G[?25h[?25l
-[0K[?25h[?25l* using log dire[0K[15G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rche[0K[65G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
-* using R version 3.6.1 (2019-07-05)[0K
-* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* usi[0K[4G[?25h[?25l* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is package 'airt' version '0.0.0.9000'[0K
-* package encoding: UTF-8[0K
-* checking package namespace information ...[0K[?25h OK[0K[?25l
-* checking package dependencies ...[0K[?25h OK[0K[?25l
-* checking if this is a source package ... OK[0K
-* checking if there is a[0K[24G[?25h[?25l* checking if there is a namespace ... OK[0K
-[0K[?25h* checking for executable files ...[0K OK[0K[?25l
-* checking for hidden files and directories ... OK[0K
-* checking for portable file names ...[0K[?25h OK[0K[?25l
-* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
-* checking installed package size ...[0K[?25h OK[0K[?25l
-* checking package directory ... OK[0K
-* checking 'build' directory ... OK[0K
-* checking DESCRIPTION meta-informat[0K[35G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checking top-level files ... OK[0K
-* checking for left-over files ...[0K[?25h OK[0K[?25l
-* checking index information ...[0K[?25h OK[0K[?25l
-* checking package subdirectories ...[0K[?25h OK[0K[?25l
-* ch[0K[3G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking R files for syntax errors ...[0K[?25h[?25l OK[0K[42G[?25h[?25l
-* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* ch[0K[2G[?25h[?25l* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loadin[0K[16G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking dependencies in R code ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking S3 generic/method consistency ...[0K OK[0K[?25l
-* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking foreign function calls ...[0K[?25h OK[0K[?25l
-* checking R[0K[12G[?25h[?25l* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd files ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking Rd metadata ...[0K OK[0K[?25l
-* checking Rd cro[0K[15G[?25h[?25l* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
-*[0K[1G[?25h* checking for code/documentation mismatches ...[0K OK[0K[?25l
-*[0K[1G[?25h* checking Rd \usage sections ...[0K OK[0K[?25l
-* checking Rd contents ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking for unstated dependencies in examples ...[0K OK[0K[?25l
-* checking contents of 'da[0K[24G[?25h[?25l* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
-* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking data for ASCII and uncompressed saves .[0K[49G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking installed files from 'inst/doc' ... OK[0K[?25l
-* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
-* checking examples ...[0K[?25h[?25l O[0K[24G[?25h[?25l* checking examples ... OK[0K
-* checking for unstated dependencies in vignettes ...[0K[?25h OK[0K[?25l
-* checking package vignettes in 'in[0K[33G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
-* checking running R code from vignettes ...[0K
-[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
- NONE[0K
-* checking re-building of vignette outputs .[0K[42G[?25h[?25l* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
-* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-* DONE[0K
-[0K
-Status: OK[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD I[0K[?25hN[0KS[0KT[0KA[0KL[0KL[0K[17G[?25l$ R CMD INSTALL a[0K[?25hi[0Kr[0Kt[0K_[0K0.0.0.9000.tar.gz[0K[40G[?25l
-[0K[?25h* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K[?25l
-[0K[?25h* installing *source* package 'airt' ...[0K[?25l
-[0K[?25h** using staged installation[0K[?25l
-[0K[?25h** R[0K[?25l
-[0K[?25h** data[0K[?25l
-***[0K[2G[?25h[?25l*** moving datasets to lazyloa[0K[30G[?25h[?25l*** moving datasets to lazyload DB[0K
-[0K[?25h** inst[0K[?25l
-[0K[?25h** byte-compile and prepare package for lazy loading[0K[?25l
-[0K[?25h[?25l** he[0K[3G[?25h[?25l** help[0K
-[0K[?25h*** installing help indices[0K[?25l
-[0K[?25h  converting help for package 'airt'[0K[?25l
-    find[0K[7G[?25h[?25l    finding HTML links ...[0K[?25h done[0K[?25l
-[0K[?25h    algo_effectiveness                      html[0K[51G[?25l
-    classification                          html[0K[51G[?25h[?25l
-    effectiveness                           html[0K[51G[?25h[?25l
-    irtmodel                                html[0K[51G[?25h[?25l
-    make_polyIRT_data                       html[0K
-    mo[0K[5G[?25h[?25l    model_goodness                          html[0K[51G[?25h[?25l
-    model_goodness_for_algo                 html[0K
-[0K[?25h    prepare_for_plots                       html[0K[?25l
-*** copy[0K[6G[?25h[?25l*** copying figures[0K
-** building package indices[0K
-[0K[?25h[?25l** in[0K[4G[?25h[?25l** installing vignettes[0K
-** testing if installed package can be loaded from temporary location[0K
-*** arch - i386[0K
-[0K[?25h*** arch - x64[0K[?25l
-[0K[?25h[?25l** testing if[0K[11G[?25h[?25l** testing if installed package can be loaded from final location[0K
-*** arch - i386[0K
-[0K[?25h*** arch - x64[0K[?25l
-[0K[?25h[?25l** testing if installed packa[0K[27G[?25h[?25l** testing if installed package keeps a record of temporary installation path[0K
-[0K[?25h* DONE (airt)[0K[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hi[0Kr[0Kt[0K[?25l
-[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[14G[?25h[15G[?25l$ git commit -m[0K[?25h"[0K[?25l$ git commit -m[0K[?25h[17G[?25l$ git commit -m "[0K[?25ht[0Ki[0Kd[0Ky[0K[23G[?25l$ git commit -m "tidy v[0K[?25hi[0Kg[0Kn[0Ke[0Kt[0Kt[0Ke[0Kr[0K[?25l$ git commit -m "tidy vignette[0K[?25h"[0K[?25l
-[0K[?25hREADME.md is out of date; please re-knit README.Rmd[0K[?25l
-use 'git commit --no-verify' to override this check[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git commit -m "tidy vignette"[0K[?25h[?25l
-[0K[?25h[master ad44c46] tidy vignette[0K[?25l
- 18 files changed, 953 insertions(+), 426 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (96%)[0K
- create mode 100644 docs/articles/airt_files/figure-html/example-1.png[0K
- rewrite docs/reference/figures/README-example-1.png (99%)[0K
- rewrite man/figures/README-example-1.png (99%)[0K
- create mode 100644 vignettes/bibliography.bib[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git commit -m "tidy vignette"[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 67, done.[0K[?25l
-Counting objects: 100% (67/67), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects:  69% (23/33)[0K[1G[?25hCompressing objects: 100% (33/33), done.[0K[?25l
-Writing objects:  80% (28/35)[0K[1G[?25hWriting objects: 100% (35/35), 83.88 KiB | 4.66 MiB/s, done.[0K[?25l
-Total 35 (delta 18), reused 0 (delta 0)[0K
-[0K[?25hremote: Resolving deltas:  27% (5/18)[0K[1Gremote: Resolving deltas: 100% (18/18), completed with 17 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   2ce8105..ad44c46  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-[?25l$ g[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in docs/index.html.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hA[0K[?25l$ git commit -m "[0K[?25hc[0Kh[0Ka[0Kn[0Kg[0Ke[0K[25G[?25l$ git commit -m "change l[0K[?25ho[0Kg[0Ko[0K"[0K[?25l
-[0K[?25h[master 152e613] change logo[0K[?25l
- 10 files changed, 47 insertions(+), 545 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (96%)[0K
- rewrite docs/logo.png (99%)[0K
- rewrite docs/reference/figures/logo.png (99%)[0K
- rewrite hex/airt.png (99%)[0K
- rewrite man/figures/logo.png (99%)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 41, done.[0K[?25l
-Counting objects: 100% (41/41), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects:   5% (1/20)[0K[1G[?25hCompressing objects: 100% (20/20), done.[0K[?25l
-Writing objects: 100% (21/21), 72.62 KiB | 9.08 MiB/s, done.[0K
-Total 21 (delta 12), reused 0 (delta 0)[0K
-[0K[?25hremote: Resolving deltas:  66% (8/12)[0K[1Gremote: Resolving deltas: 100% (12/12), completed with 12 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   ad44c46..152e613  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hu[0Kp[0Kd[0Ka[0Kt[0Ke[0K[25G[?25l$ git commit -m "update r[0K[?25he[0Ka[0Kd[0Km[0Ke[0K"[0K[?25l
-[0K[?25h[master b9809fd] update readme[0K[?25l
- 14 files changed, 67 insertions(+), 40 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (87%)[0K
- rewrite docs/logo.png (99%)[0K
- rewrite docs/reference/figures/logo.png (99%)[0K
- rewrite hex/airt.png (99%)[0K
- rewrite man/figures/logo.png (99%)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 59, done.[0K[?25l
-Counting objects:   5% (3/59)[0K[1G[?25hCounting objects: 100% (59/59), done.[0K[?25l
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (27/27), done.[0K
-Writing objects:  86% (26/30)[0K[1G[?25hWriting objects: 100% (30/30), 72.89 KiB | 6.63 MiB/s, done.[0K[?25l
-Total 30 (delta 15), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  40% (6/15)[0K[1G[?25hremote: Resolving deltas: 100% (15/15), completed with 15 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   152e613..b9809fd  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[7G[?25h[8G[?25l$ git ad[0K[?25hd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Kmi[0Kt[0K[14G[?25l$ git commit -[0K[14G[?25h[15G[?25l$ git commit -m[0K[?25h[17G[?25l$ git commit -m "[0K[?25hf[0Ki[0Kr[0Ks[0Kt[0K[24G[?25l$ git commit -m "first c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[31G[?25l$ git commit -m "first commit a[0K[?25h[?25lf[0K[32G[?25h[33G[?25l$ git commit -m "first commit aft[0K[?25he[0Kr[0K[37G[?25l$ git commit -m "first commit after m[0K[?25ha[0Kk[0Ki[0Kn[0Kg[0K[44G[?25l$ git commit -m "first commit after making p[0K[?25hu[0Kb[0Kl[0Ki[0Kc[0K"[0K[?25l
-[0K[?25h[master b72110b] first commit after making public[0K[?25l
- 3 files changed, 40 insertions(+), 40 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0K[?25le[0K[23G[?25h[24G[?25l$ git push origin master[0K[?25h[?25l
-[0K[?25hEnumerating objects: 15, done.[0K[?25l
-Counting objects: 100% (15/15), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (8/8), done.[0K
-Writing objects: 100% (8/8), 1.04 KiB | 356.00 KiB/s, done.[0K
-Total 8 (delta 4), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  50% (2/4)[0K[1G[?25hremote: Resolving deltas: 100% (4/4), completed with 4 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   b9809fd..b72110b  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[11G[?25h[12Gwarning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hu[0Kp[0Kd[0Ka[0Kt[0Ke[0K[25G[?25l$ git commit -m "update r[0K[?25he[0Ka[0Kd[0Km[0Ke[0K"[0K[?25l
-[0K[?25hREADME.md is out of date; please re-knit README.Rmd[0K[?25l
-use 'git commit --no-verify' to override this check[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEverything up-to-date[0K[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m "update readme"[0K[25G[?25h[32G[?25l$ git add .[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git add .[0K[?25h[?25l$ git push origin master[0K[?25h[?25l$ git commit -m "update readme"[0K[?25h[?25l
-[0K[?25h[master 7fc8d0b] update readme[0K[?25l
- 4 files changed, 39 insertions(+), 3 deletions(-)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git commit -m "update readme"[0K[?25h[?25l$ git add .[0K[?25h[?25l$ git push origin master[0K[?25h[?25l
-[0K[?25hEnumerating objects: 21, done.[0K[?25l
-Counting objects: 100% (21/21), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (10/10), done.[0K
-Writing objects: 100% (11/11), 1.33 KiB | 455.00 KiB/s, done.[0K
-Total 11 (delta 5), reused 0 (delta 0)[0K
-[0K[?25hremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   b72110b..7fc8d0b  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hu[0Kp[0Kd[0Ka[0Kt[0Ke[0K[25G[?25l$ git commit -m "update d[0K[?25ho[0Kc[0Ku[0Km[0Ke[0Kn[0Kt[0Ka[0Kt[0Ki[0Ko[0Kn[0K"[0K[?25l
-[0K[?25h[master 3ab5493] update documentation[0K[?25l
- 8 files changed, 73 insertions(+), 101 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (93%)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[3G[?25h[4G[?25l$ gi[0K[4G[?25h[5G[?25l$ git[0K[?25h[7G[?25l$ git p[0K[?25hu[0Ks[0K[?25lh[0K[10G[?25h[11G[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 41, done.[0K[?25l
-Counting objects: 100% (41/41), done.[0K
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (19/19), done.[0K
-Writing objects: 100% (21/21), 25.09 KiB | 2.79 MiB/s, done.[0K
-Total 21 (delta 11), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  54% (6/11)[0K[1G[?25h[?25lremote: Resolving deltas: 100% (11/11), completed with 11 local objects.[0K[39G[?25h[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   7fc8d0b..3ab5493  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ p[0K[?25hw[0Kd[0K[?25l
-/c/Users/Sevvandi/Documents/repos/airt[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[9G[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[20G[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
-$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0K[?25lt[0K[18G[?25h[19G[?25l[0K[19G[?25h[?25l$ R CMD build airt[0K
-[0K[?25h[?25l* che[0K[3G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
-[0K[?25h* preparing 'airt':[0K[?25l
-* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-[0K[?25h* installing the package to build vignettes[0K[?25l
-[0K[?25h* creating vignettes ...[0K OK[0K[?25l
-[0K[?25h[?25l* checking for LF line-endings in source and make files and shell s[0K[66G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
-* checking for empty or unneeded directories[0K
-*[0K[1G[?25h* looking to see if a 'data/datalist' file should be added[0K[?25l
-[0K[?25h* building 'airt_0.0.0.9000.tar.gz'[0K[?25l
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
-[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h* preparing 'airt':[0K[?25l
-* checking DESCRIPTION met[0K[25G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
-[0K[?25h[?25l*[0K[1G[?25h* installing the package to build vignettes[0K[?25l
-[0K[?25h* creating vignettes ...[0K OK[0K[?25l
-[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
-[0K[?25h* checking for empty or unneeded directories[0K[?25l
-* looking to see if a 'data/datalist' file should be added[0K
-[0K[?25h* building 'airt_0.1.0.0000.tar.gz'[0K[?25l
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check a[0K[?25hi[0K[?25lrt[0K[17G[?25h[19G[?25l$ R CMD check airt_[0K[?25h0[0K.[0K1[0K.0.0000.tar.gz[0K[38G[?25l
-[0K[?25h[?25l*[0K[1G[?25h* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K[?25l
-* using R ve[0K[?25hrsion 3.6.1 (2019-07-05)[0K[?25l
-* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* using session charset: ISO8859-1[0K
-[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Pac[0K[31G[?25h[?25l* checking extension type ... Package[0K
-* this is package 'airt' version '0.1.0.0000'[0K
-* package encoding: UTF-8[0K
-* checking package namespace information ... OK[0K
-* checking package dependen[0K[26G[?25h[?25l* checking package dependencies ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking if this is a source package ... OK[0K[?25l
-* checking if there is a namespace ... OK[0K
-[0K[?25h* checking for executable files ...[0K OK[0K[?25l
-* checking for hidden files and direc[0K[36G[?25h[?25l* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
-* checking for portable file names ... OK[0K
-[0K[?25h* checking whether package 'airt' can be installed ...[0K OK[0K[?25l
-* checking inst[0K[14G[?25h[?25l* checking installed package size ...[0K[?25h OK[0K[?25l
-* checking package directory ... OK[0K
-* checking 'build' directory ... OK[0K
-* ch[0K[2G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checking top-level files ... OK[0K
-* checking for left-over files ... OK[0K
-* checki[0K[6G[?25h[?25l* checking index information ...[0K[?25h OK[0K[?25l
-* checking package subdirectories ..[0K[34G[?25h[?25l* checking package subdirectories ...[0K[?25h OK[0K[?25l
-* checking R files for non-ASCII ch[0K[34G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking R[0K[12G[?25h[?25l* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
-* checking whether the package c[0K[31G[?25h[?25l* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded with stated dependencies[0K[68G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can[0K[36G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loading[0K[18G[?25h[?25l* checking loading without being on the library search p[0K[55G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking dependencies in R code ...[0K[?25h OK[0K[?25l
-* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
-* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking foreign function calls ...[0K[?25h OK[0K[?25l
-* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd files ...[0K[?25h OK[0K[?25l
-* checking[0K[10G[?25h[?25l* checking Rd metadata ...[0K[?25h OK[0K[?25l
-* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
-* checking[0K[9G[?25h[?25l* checking for code/documentation mismatches ...[0K[47G[?25h[49G[?25l* checking for code/documentation mismatches ... OK[0K
-* checking Rd \usage sections ...[0K[33G[?25h[34G[?25l* checking Rd \usage sections ... OK[0K
-* checking Rd c[0K[13G[?25h[?25l* checking Rd contents ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in examples ...[0K[?25h[?25l O[0K[53G[?25h[?25l* checking for unstated dependencies in examples ... OK[0K
-* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
-* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking data for ASCII and uncompressed saves ..[0K[50G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking installed files from 'inst/doc' ...[0K OK[0K[?25l
-* checking files in 'vignettes' ... OK[0K
-* checking examples ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in vignettes ...[0K[?25h OK[0K[?25l
-* checking package vignettes in 'inst/doc' ... OK[0K
-* checking running R code from vignettes ...[0K
-[0K[?25h[?25l  'airt.Rmd'using 'UTF-8'... OK[0K[29G[?25h[?25l
- NONE[0K
-* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
-* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-* DONE[0K
-[0K
-Status: OK[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.0000.tar.gz[0K[38G[?25h[37G[36G[35G[34G[32G[30G[29G[28G[27G[26G[25G[24G[23G[22G[21G[20G[19G[18G[17G[15G[14G[13G[?25l$ R CMD chec k airt_0.1.0.0000.tar.gz[0K[14G[?25h[?25l$ R CMD check airt_0.1.0.0000.tar.gz[0K[13G[?25h[14G[?25l$ R CMD check- airt_0.1.0.0000.tar.gz[0K[15G[?25h[?25l$ R CMD check-- airt_0.1.0.0000.tar.gz[0K[16G[?25h[?25l$ R CMD check- airt_0.1.0.0000.tar.gz[0K[15G[?25h[?25l$ R CMD check airt_0.1.0.0000.tar.gz[0K[14G[?25h[?25l$ R CMD check  airt_0.1.0.0000.tar.gz[0K[15G[?25h[?25l$ R CMD check - airt_0.1.0.0000.tar.gz[0K[16G[?25h[?25l$ R CMD check -- airt_0.1.0.0000.tar.gz[0K[17G[?25h[?25l$ R CMD check --a airt_0.1.0.0000.tar.gz[0K[18G[?25h[?25l$ R CMD check --as airt_0.1.0.0000.tar.gz[0K[19G[?25h[?25l$ R CMD check --as- airt_0.1.0.0000.tar.gz[0K[20G[?25h[?25l$ R CMD check --as-c airt_0.1.0.0000.tar.gz[0K[21G[?25h[?25l$ R CMD check --as-cr airt_0.1.0.0000.tar.gz[0K[22G[?25h[?25l$ R CMD check --as-cra airt_0.1.0.0000.tar.gz[0K[23G[?25h[?25l$ R CMD check --as-cran airt_0.1.0.0000.tar.gz[0K[24G[?25h[?25l
-[0K[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.R[0K[62G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
-* using R version 3.6.1[0K[23G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
-* using platform: x8[0K[?25h6_64-w64-mingw32 (64-bit)[0K[?25l
-* using session charset: ISO8859-1[0K[?25h[?25l
-[0K[?25h[?25l* using option '-[0K[16G[?25h[?25l* using option '--as-cran'[0K
-* checking for file 'airt/DESCRIPTION' ... OK[0K
-* checking extension type ... Package[0K[?25h[?25l
-* this is package 'airt' version '0.1.0.0000'[0K
-* package enc[0K[12G[?25h[?25l* package encoding: UTF-8[0K
-* checking CRAN incoming feasibility ...[0K[?25h NOTE[0K[?25l
-Maintainer: 'Sevvandi Kandanaarachchi <sevvandik@gmail.com>'[0K
-[0K
-New submission[0K
-[0K
-Version contains leading zeroes (0.1.0.0000)[0K
-* checking package namespace information ...[0K[?25h OK[0K[?25l
-* checking package dependencies ...[0K[?25h OK[0K[?25l
-* checking if this is a source package ... O[0K[44G[?25h[?25l* checking if this is a source package ... OK[0K
-* checking if there is a namespace ... OK[0K
-[0K[?25h[?25l* checkin[0K[8G[?25h[?25l* checking for executable files ...[0K[?25h OK[0K[?25l
-* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
-* checking[0K[8G[?25h[?25l* checking for portable file names ... OK[0K
-[0K[?25h* checking serialization versions ... OK[0K[?25l
-* checking whether pac[0K[21G[?25h[?25l* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
-* checking installed package size ...[0K[?25h OK[0K[?25l
-[0K[?25h[?25l* checking packa[0K[15G[?25h[?25l* checking package directory ... OK[0K
-* checking for future file timestamps ...[0K[?25h OK[0K[?25l
-* checking 'build[0K[15G[?25h[?25l* checking 'build' directory ... OK[0K
-* checking DESCRIPTION meta-in[0K[28G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checki[0K[7G[?25h[?25l* checking top-level files ...[0K[?25h NOTE[0K[?25l
-Non-standard file/directory found at top level:[0K
-[0K[?25h  'hex'[0K[?25l
-* checking for left-over files ... OK[0K
-* checking ind[0K[13G[?25h[?25l* checking index information ...[0K[?25h OK[0K[?25l
-* checking package subdirectories ...[0K[?25h OK[0K[?25l
-* ch[0K[3G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
-* checking whether the package can b[0K[35G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the package can be unloaded[0K[45G[?25h[?25l* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking whether the name[0K[26G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies[0K[69G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking use of S3 registration ...[0K[?25h OK[0K[?25l
-* checking dependencies in R code ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
-* checking S3 generic/method consistency ...[0K[?25h[?25l OK[0K[46G[?25h[?25l
-* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking fo[0K[12G[?25h[?25l* checking foreign function calls ...[0K[?25h OK[0K[?25l
-* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd files ...[0K[?25h OK[0K[?25l
-* checking Rd metadata ...[0K[?25h OK[0K[?25l
-* checking Rd line widths ...[0K[?25h OK[0K[?25l
-* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
-* checking for code/documen[0K[26G[?25h[?25l* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
-* checking Rd[0K[12G[?25h[?25l* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
-* checking Rd contents ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
-* checking contents of 'data' directory ... OK[0K
-* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
-* checki[0K[7G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h[?25l OK[0K[54G[?25h[?25l
-[0K[?25h[?25l* checking in[0K[12G[?25h[?25l* checking installed files[0K[?25h[?25l from 'i[0K[33G[?25h[?25l* checking installed files from 'inst/doc' ...[0K[?25h OK[0K[?25l
-* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
-* c[0K[2G[?25h[?25l* checking examples ...[0K[?25h NOTE[0K[?25l
-Examples with CPU or elapsed time > 5s[0K
-[0K[?25h         user system elapsed[0K[?25l
-irtmodel 4.14   0.06    5.12[0K
-[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
-* c[0K[2G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
-[0K[?25h* checking re-building of vignette outputs ...[0K OK[0K[?25l
-* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-* DONE[0K
-[0K
-Status: 3 NOTEs[0K
-See[0K
-  'C:/Use[0K[8G[?25h[?25l  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
-for details.[0K
-[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD check --as-cran airt_0.1.0.0000.tar.gz[0K[48G[?25h[?25l$ R CMD check airt_0.1.0.0000.tar.gz[0K[38G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
-[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
-[0K[?25h[?25l*[0K[1G[?25h* preparing 'airt':[0K[?25l
-* checking DESCRIPTION meta-information ... OK[0K
-[0K[?25h[?25l* in[0K[3G[?25h[?25l* installing the package to build vignettes[0K
-[0K[?25h* creating vignettes ...[0K OK[0K[?25l
-[0K[?25h[?25l* checking for LF line-en[0K[24G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
-* checking for empty or unneeded directories[0K
-[0K[?25h* looking to see if a 'data/datalist' file should be added[0K[?25l
-* buildin[0K[8G[?25h[?25l* building 'airt_0.1.0.0000.tar.gz'[0K
-[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check --as-cran airt_0.1.0.0000.tar.gz[0K[48G[?25h[?25l
-[0K[?25h[?25l* using log dir[0K[14G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos[0K[55G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
-* using R versio[0K[15G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
-* using platform:[0K[16G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
-* usin[0K[5G[?25h[?25l* using session charset: ISO8859-1[0K
-[0K[?25h[?25l*[0K[1G[?25h* using option '--as-cran'[0K[?25l
-* checking[0K[?25h for file 'airt/DESCRIPTION' ... OK[0K[?25l
-* checking extension type ... Package[0K
-* this is package 'airt' v[0K[25G[?25h[?25l* this is package 'airt' version '0.1.0.0000'[0K
-* package encoding: UTF-8[0K
-* checking CRAN incoming feasibility ...[0K[?25h NOTE[0K[?25l
-Maintainer: 'Sevvandi Kandanaarachch[0K[35G[?25h[?25lMaintainer: 'Sevvandi Kandanaarachchi <sevvandik@gmail.com>'[0K
-[0K
-New submission[0K
-[0K
-Version contains leading zeroes (0.1.0.0000)[0K
-* checking package namespace information ... OK[0K
-* checking package dependencies ...[0K[?25h OK[0K[?25l
-* checking if this is a source package ... OK[0K
-* che[0K[4G[?25h[?25l* checking if there is a namespace ... OK[0K
-[0K[?25h* checking for executable files ...[0K OK[0K[?25l
-* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
-* checking for portable[0K[22G[?25h[?25l* checking for portable file names ... OK[0K
-* checking serialization versions ... OK[0K
-* checking whether package 'airt' can be installed ...[0K[?25h[?25l O[0K[55G[?25h[?25l* checking whether package 'airt' can be installed ... OK[0K
-* checking installed package size ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
-[0K[?25h* checking package directory ... OK[0K[?25l
-* checking for future file timestamps ...[0K[?25h[?25l OK[0K[44G[?25h[?25l
-* checking 'build' directory ... OK[0K
-* ch[0K[2G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
-* checking top-level files ...[0K[?25h[?25l OK[0K[32G[?25h[?25l
-* checking for left-over files ... OK[0K
-* checking index information ...[0K[?25h OK[0K[?25l
-* checking package subdi[0K[23G[?25h[?25l* checking package subdirectories ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
-* checking R files for non-ASCII ch[0K[?25h[?25larac[0K[38G[?25h[?25l* checking R files for non-ASCII characte[0K[?25hrs ...[0K OK[0K[?25l
-* checking R files for syntax errors[0K[36G[?25h[?25l* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
-* checking whether the package can be loaded ...[0K[?25h[?25l O[0K[49G[?25h[?25l* checking whether the package can be loaded ... OK[0K
-* checking whether the pack[0K[?25hage can be loade[0K[?25ld with stated depende[0K[63G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checking whether the package can be unloaded cleanly ...[0K[?25h[?25l OK[0K[61G[?25h[?25l
-* checking whether the namespace can be loaded with stated dependenci[0K[65G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
-* checkin[0K[8G[?25h[?25l* checking whether the namespace can be unloaded clea[0K[53G[?25h[?25l* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
-* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
-* checking use of S3 registration ...[0K[?25h OK[0K[?25l
-* checking depen[0K[14G[?25h[?25l* checking dependencies in R code ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
-* checking S3 generic/method consistency ...[0K[?25h[?25l O[0K[45G[?25h[?25l* checking S3 generic/method consistency ... OK[0K
-* checking replacement functions ...[0K[?25h OK[0K[?25l
-* checking foreign function calls ...[0K[35G[?25h[38G[?25l* checking foreign function calls ... OK[0K
-* checking R code for possible problems ...[0K[?25h OK[0K[?25l
-* checking Rd files ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking Rd metadata ...[0K OK[0K[?25l
-* checking Rd line widths ...[0K[?25h OK[0K[?25l
-* checking Rd cross-references ...[0K[?25h OK[0K[?25l
-* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
-* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
-* checking Rd[0K[12G[?25h[?25l* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
-* checking Rd contents ...[0K[?25h OK[0K[?25l
-* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
-* checkin[0K[8G[?25h[?25l* checking contents of 'data' directory ...[0K[45G[?25h[?25l* checking contents of 'data' directory ... OK[0K
-[0K[?25h*[0K[3G[?25l* check[0K[6G[?25h[?25l* checki[0K[?25h[?25lng d[0K[11G[?25h[?25l* checking data for non-ASCII characters ...[0K[?25h[?25l OK[0K[46G[?25h[?25l
-* checking data for ASCII an[0K[?25h[?25ld uncompresse[0K[40G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h[?25l O[0K[53G[?25h[?25l* checking data for ASCII and uncompressed saves ... OK[0K
-* checking installed files from 'inst/doc' ...[0K[?25h OK[0K[?25l
-* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
-* checking examples ...[0K[?25h NOTE[0K[?25l
-Examples with CPU or elapsed time > 5s[0K
-                  user system elapsed[0K
-prepare_[0K[7G[?25h[?25lprepare_for_plots 5.28   0.17    6.37[0K
-* checking for[0K[14G[?25h[?25l* checking for unstated dependencies in vignettes ...[0K[?25h OK[0K[?25l
-* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
-[0K[?25h* checking re-building of vignette outputs ...[0K OK[0K[?25l
-* checking PDF[0K[13G[?25h[?25l* checking PDF version of manual ...[0K[?25h OK[0K[?25l
-* DONE[0K
-[0K
-Status: 2 NOTEs[0K
-See[0K
-  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
-for[0K[2G[?25h[?25lfor details.[0K
-[0K
-[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h[?25l
-[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25hwarning: LF will be replaced by CRLF in docs/index.html.[0K[?25l
-The file will have its original line endings in your working directory.[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hm[0Ki[0Kn[0Ko[0Kr[0K[24G[?25l$ git commit -m "minor c[0K[?25hh[0Ka[0Kn[0Kg[0Ke[0Ks[0K"[0K[?25l
-[0K[?25h[master a65f14c] minor changes[0K[?25l
- 24 files changed, 340 insertions(+), 325 deletions(-)[0K
- rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
- rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (95%)[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
-[0K[?25hEnumerating objects: 76, done.[0K[?25l
-Counting objects:  39% (30/76)[0K[1G[?25hCounting objects: 100% (76/76), done.[0K[?25l
-Delta compression using up to 4 threads.[0K
-Compressing objects: 100% (37/37), done.[0K
-Writing objects:  23% (9/39)[0K[1G[?25hWriting objects: 100% (39/39), 35.20 KiB | 2.20 MiB/s, done.[0K[?25l
-Total 39 (delta 25), reused 0 (delta 0)[0K
-[0K[?25h[?25lremote: Resolving deltas:  32% (8/25)[0K[1G[?25hremote: Resolving deltas: 100% (25/25), completed with 25 local objects.[0K[?25l
-[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
-   3ab5493..a65f14c  master -> master[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0Kt[0K[?25l
-[0K[?25h ERROR[0K[?25l
-cannot change to directory 'airt'[0K
-[0K[?25h[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[6G[?25h[7G[?25l$ cd ..[0K[?25h[?25l
-[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
-[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
-$[0K[3G[?25h[?25l$ cd ..[0K[?25h[?25l$ R CMD build airt[0K[8G[?25h[19G[?25l
-[0K[?25h[?25l* checking for file 'airt/DESCRIPTION' .[0K[39G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
-[0K[?25h* preparing 'airt':[0K[?25l
-* checking DESCRIPTION meta-information ... OK[0K
-[0K[?25h[?25l* installing the packag[0K[22G[?25h[?25l* installing the package to build vignettes[0K
-[0K[?25h* creating vignettes ...[0K OK[0K[?25l
-[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
-[0K[?25h* checking for empty or unneeded directories[0K[?25l
-* l[0K[2G[?25h[?25l* looking to see if a 'data/datalist' file should be added[0K
-[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
-[0K[?25h[?25l
-[0K[?25h[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
 $[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check -[0K[?25h-[0Ka[0Ks[0K-[0Kc[0K[?25lr[0K[21G[?25h[22G[?25l$ R CMD check --as-cra[0K[?25hn[0K[25G[?25l$ R CMD check --as-cran a[0K[?25hi[0Kr[0K[?25lt[0K[28G[?25h[29G[?25l$ R CMD check --as-cran airt_[0K[?25h0[0K.1.0.[0Kt[0Kar.gz[0K[43G[?25l
 [0K[?25h[?25l* using l[0K[7G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
@@ -1029,4 +105,1204 @@ error: unable to index file .Rproj.user/F9A5C86C/console06/BB80D79F[0K
 fatal: updating files failed[0K
 [0K[?25h[?25l
 [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ git add .[0K[?25h
+$[0K[3G[?25h[?25l$ git add .[0K[?25hwarning: LF will be replaced by CRLF in docs/articles/airt.html.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25lwarning: LF will be replaced by CRLF in docs/index.html.[0K[1G[?25h[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25h[?25lu[0K[18G[?25h[19G[?25l$ git commit -m "up[0K[?25hd[0Ka[0Kt[0Ke[0K[25G[?25l$ git commit -m "update r[0K[?25hm[0K[?25l$ git commit -m "update r[0K[?25h[?25l$ git commit -m "update[0K[25G[?25h[?25l$ git commit -m "update r[0K[?25he[0Ka[0Kd[0Km[0Ke[0K"[0K[?25l
+[0K[?25h[master bfecf70] update readme[0K[?25l
+ 21 files changed, 188 insertions(+), 154 deletions(-)[0K
+ rewrite .Rproj.user/F9A5C86C/console06/INDEX001 (85%)[0K
+ rewrite docs/articles/airt_files/figure-html/effectiveness2-1.png (92%)[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[12G[?25l$ git push o[0K[?25hr[0Ki[0Kg[0Ki[0Kn[0K[19G[?25l$ git push origin m[0K[?25ha[0Ks[0Kt[0Ke[0Kr[0K[?25l
+[0K[?25hEnumerating objects: 60, done.[0K[?25l
+Counting objects:  51% (31/60)[0K[1G[?25hCounting objects: 100% (60/60), done.[0K[?25l
+Delta compression using up to 4 threads.[0K
+Compressing objects: 100% (31/31), done.[0K
+Writing objects:  16% (5/31)[0K[1G[?25hWriting objects: 100% (31/31), 33.18 KiB | 2.55 MiB/s, done.[0K[?25l
+Total 31 (delta 22), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  27% (6/22)[0K[1G[?25h[?25lremote: Resolving deltas:  36% (8/22)[0K[1G[?25hremote: Resolving deltas: 100% (22/22), completed with 22 local objects.[0K[?25l
+[0K[?25hTo https://github.com/sevvandi/airt.git[0K[?25l
+   a65f14c..bfecf70  master -> master[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[1A[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0Kt[0K[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+[0K[?25h* checking DESCRIPTION meta-information ... OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h[?25l* c[0K[1G[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+*[0K[1G[?25h* checking for empty or unneeded directories[0K[?25l
+* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check -[0K[?25h-[0Ka[0Ks[0K-[0Kc[0Kr[0Ka[0Kn[0K[25G[?25l$ R CMD check --as-cran a[0K[?25hirt[0K_[0K0[0K.1.0.tar.gz[0K[43G[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/Sevvandi/Docume[0K[46G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using se[0K[9G[?25h[?25l* using session charset: ISO8859-1[0K
+[0K[?25h* using option '--as-cran'[0K[?25l
+* checking for file 'airt/DESCRIPTION' ... OK[0K
+* c[0K[2G[?25h[?25l* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking CRAN incoming feasibility ...[0K[?25h[?25l NO[0K[42G[?25h[?25l* checking CRAN incoming feasibility ... NOTE[0K
+Maintainer: 'Sevvandi Kandanaarach[0K[33G[?25h[?25lMaintainer: 'Sevvandi Kandanaarachchi <sevvandik@gmail.com>'[0K
+[0K
+New submission[0K
+* checking package namespace[0K[28G[?25h[?25l* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is[0K[21G[?25h[?25l* checking if this is a source package ... OK[0K
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directories ... OK[0K[48G[?25h[?25l
+* checking for portable file names ...[0K[?25h[?25l OK[0K[41G[?25h[?25l
+* checking ser[0K[?25hialization versions ... OK[0K[?25l
+* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking package directory ... OK[0K[?25l
+* checking for future[0K[20G[?25h[?25l* checking for future file timestamps ...[0K[?25h OK[0K[?25l
+* c[0K[2G[?25h[?25l* checking 'build' directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ...[0K[?25h OK[0K[?25l
+* checking for left-over files ... OK[0K
+* checking index information ...[0K[?25h OK[0K[?25l
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* c[0K[2G[?25h[?25l* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking wh[0K[11G[?25h[?25l* checking whether the namespace can be loaded with stated dep[0K[61G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking use of S3 registration ...[0K[?25h OK[0K[?25l
+* checking depen[0K[15G[?25h[?25l* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h[?25l OK[0K[29G[?25h[?25l
+* checking Rd line widths ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismat[0K[38G[?25h[?25l* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h[?25l OK[0K[28G[?25h[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking c[0K[11G[?25h[?25l* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-ASCII charact[0K[35G[?25h[?25l* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking da[0K[11G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+* checking install[0K[17G[?25h[?25l* checking installed files from 'inst/doc' ... OK[0K
+* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checki[0K[7G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
+* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DONE[0K
+[0K
+Status: 1 NOTE[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[1G[?25h[3G[?25l[1A   [0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[?25l$[0K[3G[?25h[4G[3G[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[?25l$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[5G[?25l$ c[0K[?25h[?25l$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD b[0K[9G[?25h[10G[?25l$ R CMD bu[0K[?25hi[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0Kt[0K[?25l
+[0K[?25h[?25l* checking for file 'airt/DESCRIPTI[0K[33G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h[?25l* creating vi[0K[12G[?25h[?25l* creating vignettes ...[0K[?25h ERROR[0K[?25l
+--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warning: package 'tidyr' was built under R version[0K[49G[?25h[?25lWarning: package 'tidyr' was built under R version 3.6.3[0K
+Quitting from lines 51-56 (airt.Rmd)[0K
+Error: processing vignette 'airt.Rmd' failed with diagnostics:[0K
+could not find function "irtmodel"[0K
+--- failed re-building 'airt.[0K[27G[?25h[?25l--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+Error: Vignette re-building failed.[0K
+Execution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K ERROR[0K[?25l
+--- re-building 'air[0K[19G[?25h[?25l--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warning: package 'tidyr' was built under R version 3.6.3[0K
+Quitting from lines 51-56 (airt.Rmd)[0K
+Error: processing[0K[?25h vignette 'airt.Rmd' failed with diagnostics:[0K[?25l
+could not find function "irtmodel"[0K
+--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+E[0K[1G[?25hError: Vignette re-building failed.[0K[?25l
+Execution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information .[0K[40G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K ERROR[0K[?25l
+--- re-bu[0K[8G[?25h[?25l--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warning: package 'tidyr' was built under R version 3.6.3[0K
+Quitting from lines 65-72 (ai[0K[28G[?25h[?25lQuitting from lines 65-72 (airt.Rmd)[0K
+Error: processing vignette 'airt.Rmd' failed with diagnostics:[0K
+could not find function "actual_vs_predicted"[0K
+--- failed re-building 'airt.[0K[28G[?25h[?25l--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+Error: Vignette re-building failed.[0K
+Execution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+[0K[?25h* checking for empty or unneeded directories[0K[?25l
+* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD I[0K[?25hN[0KS[0KT[0KA[0KL[0KL[0K[17G[?25l$ R CMD INSTALL a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[35G[?25l
+[0K[?25h* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K[?25l
+* installing *source* package 'airt' ...[0K
+[0K[?25h[?25l** using staged[0K[14G[?25h[?25l** using staged installation[0K
+[0K[?25h** R[0K[?25l
+[0K[?25h** data[0K[?25l
+*** moving datasets to lazyload DB[0K
+[0K[?25h** inst[0K[?25l
+[0K[?25h[?25l** byte-compile and prepare package for lazy[0K[43G[?25h[?25l** byte-compile and prepare package for lazy loading[0K
+[0K[?25h** help[0K[?25l
+[0K[?25h*** installing help indices[0K[?25l
+[0K[?25h  converting help for package 'airt'[0K[?25l
+    finding HTML links ...[0K[?25h done[0K[?25l
+    algo_effectiveness_crm                  html[0K[51G[?25h[?25l
+    algo_eff[0K[12G[?25h[?25l    algo_effectiveness_poly                 html[0K[51G[?25h[?25l
+    cirtmodel                               html[0K
+    clas[0K[6G[?25h[?25l    classification                          html[0K
+    effectiveness_crm[0K[25G[?25h[?25l    effectiveness_crm                       html[0K[51G[?25h[?25l
+    effectiveness_poly                      html[0K[51G[?25h[?25l
+    make_polyIRT_data                       html[0K[51G[?25h[?25l
+    model_goodness_crm                      html[0K[51G[?25h[?25l
+    model_goodness_for_algo_crm             html[0K[51G[?25h[?25l
+    model_goodness_for_algo_poly            html[0K[51G[?25h[?25l
+    model_goodness_poly                     html[0K[51G[?25h[?25l
+    pirtmodel                               html[0K[51G[?25h[?25l
+    prepare_for_plots_poly                  html[0K
+*** copying figures[0K
+[0K[?25h** building package indices[0K[?25l
+[0K[?25h[?25l**[0K[1G[?25h** installing vignettes[0K[?25l
+[0K[?25h[?25l** testing if installed pac[0K[26G[?25h[?25l** testing if installed package can be loaded from temporary location[0K
+*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h[?25l** testing if installed pack[0K[26G[?25h[?25l** testing if installed package can be loaded from final location[0K
+[0K[?25h*** arch - i386[0K[?25l
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package keeps a record of temporary installation path[0K[?25l
+[0K[?25h* DONE (airt)[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0m[0K[1G[?25h[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[?25l
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[33G[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/[0K[31G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h[?25l* checking for file 'airt/DESCRIP[0K[31G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ..[0K[42G[?25h[?25l* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ... OK[0K
+* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking packa[0K[15G[?25h[?25l* checking package directory ... OK[0K
+* che[0K[5G[?25h[?25l* checking 'build' directory ... OK[0K
+* checking[0K[10G[?25h[?25l* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+[0K[?25h* checking for left-over files ... OK[0K[?25l
+[0K[?25h* checking index information ...[0K OK[0K[?25l
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking[0K[10G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[58G[?25h[59G[?25l* checking whether the package can be unloaded cleanly ... OK[0K
+* checking whether the na[0K[24G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unload[0K[45G[?25h[?25l* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking lo[0K[11G[?25h[?25l* checking loading without being on the library search path ..[0K[60G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[35G[?25h[38G[?25l* checking dependencies in R code ... OK[0K
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* chec[0K[5G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function call[0K[31G[?25h[?25l* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h NOTE[0K[?25l
+EstCRMitem2: no visible[0K[21G[?25h[?25lEstCRMitem2: no visible global function definition for 'na.omit'[0K[64G[?25h[?25l
+EstCRMitem2: no visible global function definiti[0K[48G[?25h[?25lEstCRMitem2: no visible global function definition for 'sd'[0K
+EstCRMitem2 : estEM: no visible global function definitio[0K[56G[?25h[?25lEstCRMitem2 : estEM: no visible global function definition for 'var'[0K
+EstCRMitem2 : estEM: no visible global function definition for 'cov'[0K
+Undefined global functions or variables:[0K
+  cov na.omit sd var[0K
+Consider adding[0K[14G[?25h[?25l
+  importFrom("stats", "cov", "na.omit", "sd", "var")[0K
+to your NAMESPACE file.[0K
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd m[0K[13G[?25h[?25l* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* che[0K[3G[?25h[?25l* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* c[0K[2G[?25h[?25l* checking for missing documentation entries ...[0K[?25h WARNING[0K[?25l
+Undocumented code objects:[0K
+  'prepare_for_plots_crm'[0K
+All user-level objects in a packag[0K[33G[?25h[?25lAll user-level objects in a package should have documentation entries.[0K
+See chapter 'Writing R documentation files' in the 'Writing R[0K
+Extensions' manual.[0K
+* checking for code/documentation mismatches ...[0K[46G[?25h[49G[?25l* checking for code/documentation mismatches ... OK[0K
+* checking Rd \usage sect[0K[24G[?25h[?25l* checking Rd \usage sections ...[0K[?25h WARNING[0K[?25l
+Undocumented arguments in documenta[0K[33G[?25h[?25lUndocumented arguments in documentation object 'cirtmodel'[0K
+  'df'[0K
+Documented a[0K[11G[?25h[?25lDocumented arguments not in \usage in documentation object 'cirtmodel':[0K
+  'dat'[0K
+[0K
+[0K[?25hFunctions with \usage entries need to have the appropriate \alias[0K[?25l
+entries, and all their arguments documented.[0K
+The \usage entries must correspond to syntactical[0K[48G[?25h[?25lThe \usage entries must correspond to syntactically valid R code.[0K
+See chapter 'Writing R documentation files' in the 'Writing R[0K
+Extensions' manual.[0K
+[0K[?25h* checking Rd contents ...[0K OK[0K[?25l
+* checking for unstated de[0K[25G[?25h[?25l* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents[0K[19G[?25h[?25l* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-[0K[23G[?25h[?25l* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data for[0K[19G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* checking installed files fr[0K[28G[?25h[?25l* checking installed files from 'inst/doc' ...[0K[?25h OK[0K[?25l
+* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking examples ...[0K OK[0K[?25l
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checking package vignettes[0K[26G[?25h[?25l* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* checking running R code from v[0K[31G[?25h[?25l* checking running R code from vignettes ...[0K
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manu[0K[29G[?25h[?25l* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DONE[0K
+[0K
+Status: 2 WARNINGs, 1 NOTE[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
+for detai[0K[8G[?25h[?25lfor details.[0K
+[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD INSTALL airt_0.1.0.tar.gz[0K[35G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION me[0K[24G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h[?25l* installing the package to[0K[27G[?25h[?25l* installing the package to build vignettes[0K
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+[0K[?25h* checking for empty or unneeded directories[0K[?25l
+* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/Sevvandi/Document[0K[48G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R ve[0K[10G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bi[0K[42G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h[?25l* checking for file 'airt/DESC[0K[29G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+[0K[?25h* checking package namespace information ... OK[0K[?25l
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K[45G[?25h[?25l
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ... OK[0K
+* checking whether pac[0K[21G[?25h[?25l* checking whether package 'airt' can be installed ...[0K[?25h[?25l O[0K[55G[?25h[?25l* checking whether package 'airt' can be installed ... OK[0K
+* checki[0K[8G[?25h[?25l* checking installed package size[0K[?25h[35G[?25l* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking 'build'[0K[17G[?25h[?25l* checking 'build' directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checki[0K[6G[?25h[?25l* checking top-level f[0K[?25h[?25liles ..[0K[28G[?25h[?25l* checking top-level files ... OK[0K
+* checking for left-over files ... O[0K[35G[?25h[?25l* checking for left-over files ... OK[0K
+* checking index informatio[0K[?25hn ...[0K OK[0K[?25l
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files f[0K[19G[?25h[?25l* checking R files for non-ASCII characters[0K[?25h[?25l ...[0K[46G[?25h[48G[?25l* checking R files for non-ASCII characters ... OK[0K
+* checking R files for syntax errors ...[0K[?25h[?25l OK[0K[42G[?25h[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* chec[0K[5G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* chec[0K[5G[?25h[?25l* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3[0K[12G[?25h[?25l* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checki[0K[7G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking foreign function calls ...[0K OK[0K[?25l
+* checking R code fo[0K[19G[?25h[?25l* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation ent[0K[39G[?25h[?25l* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h WARNING[0K[?25l
+Undocumented arguments in documentati[0K[36G[?25h[?25lUndocumented arguments in documentation object 'prepare_for_plots_crm'[0K
+  'thetarange'[0K
+[0K
+Functions with \usage entries need to have the appro[0K[51G[?25h[?25lFunctions with \usage entries need to have the appropriate \alias[0K
+entries, and all their arguments documented.[0K
+The \usage entries must correspond to syntactically[0K[53G[?25h[?25lThe \usage entries must correspond to syntactically valid R code.[0K
+See chapter 'Writing R documentation files' in the 'Writing R[0K[59G[?25h[?25l
+Extensions' manual.[0K
+[0K[?25h* checking Rd contents ...[0K OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of 'data'[0K[28G[?25h[?25l* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data for ASCII and uncompres[0K[37G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+* checking installed files from 'inst/doc' ...[0K[?25h[?25l OK[0K[48G[?25h[?25l
+* checking files in 'vignettes' ...[0K[?25h[?25l OK[0K[37G[?25h[?25l
+* checking examples ...[0K[?25h ERROR[0K[?25l
+[0K[?25hRunning examples in 'airt-Ex.R' failed[0K[?25l
+The error most likely occurred in:[0K
+[0K
+> ### Name: prepare[0K[18G[?25h[?25l> ### Name: prepare_for_plots_crm[0K
+> ### Title: Utility function to make a dataframe from the continuous[0K
+> ###   IRTmodel[0K
+> ### Aliases: prepare_for_plots_crm[0K
+>[0K
+[0K[?25h> ### ** Examples[0K[?25l
+>[0K
+> data(classification)[0K
+> mod <- cirtmodel(classification)[0K
+Error in EstCRMitem2(df, max.item, min.item, max.EMCycle = 200, type = "Shojima") :[0K
+[0K
+  The input response data is not[0K[30G[?25h[?25l  The input response data is not a data frame.[0K
+           Please use as.data.frame() and convert your response data to a data fram[0Ke
+ object before the analysis[0K
+Calls:[0K[5G[?25h[?25lCalls: cirtmodel -> EstCRMitem2[0K
+Execution halted[0K
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
+* checking running R code from vig[0K[32G[?25h[?25l* checking running R code from vignettes ...[0K
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-bui[0K[16G[?25h[?25l* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ [A[0K[3G[?25h[5G[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h[?25l
+Exe[0K[1G[?25hExecution halted[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking[0K[10G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K ERROR[0K[?25l
+--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warni[0K[4G[?25h[?25lWarning: package 'tidyr' was built under R version 3.6.3[0K
+Warning in data("classification") : data set 'classification' not found[0K
+Quitting from lines 51-56 (airt.Rmd)[0K
+Error: processing vignette 'airt.Rmd' fail[0K[41G[?25h[?25lError: processing vignette 'airt.Rmd' failed with diagnostics:[0K
+object 'classification' not found[0K
+--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following fil[0K[36G[?25h[?25lSUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+Error: Vignette re-building failed.[0K
+Execution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K ERROR[0K[?25l
+--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warning: package[0K[16G[?25h[?25lWarning: package 'tidyr' was built under R version 3.6.3[0K
+Quitting from lines 51-56 (airt.Rmd)[0K
+Error: processing vignette 'airt.Rmd' failed with diagnostics:[0K
+object 'classification' not found[0K
+--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+Error: Vignette re-building failed.[0K
+Execution[0K[8G[?25h[?25lExecution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* installing the package to[0K[25G[?25h[?25l* installing the package to build vignettes[0K
+[0K[?25h* creating vignettes ...[0K ERROR[0K[?25l
+--- re-building 'airt.Rmd' using rmarkdown[0K
+Warning: package 'ggplot2' was built under R version 3.6.3[0K
+Warning: package 'tidyr' was built u[0K[35G[?25h[?25lWarning: package 'tidyr' was built under R version 3.6.3[0K
+Quitting from lines 51-56 (airt.Rmd)[0K
+Error: processing vignette 'airt.Rmd' failed with diagnostics:[0K
+object 'classification' not fou[0K[30G[?25h[?25lobject 'classification' not found[0K
+--- failed re-building 'airt.Rmd'[0K
+[0K
+SUMMARY: processing the following file failed:[0K
+  'airt.Rmd'[0K
+[0K
+Error: Vignette re-building failed.[0K
+Execution halted[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h[?25l* checking for file 'airt/DESCRIPTION'[0K[38G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information .[0K[40G[?25h[?25l* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+[0K[?25h* checking for empty or unneeded directories[0K[?25l
+[0K[?25h* looking to see if a 'data/datalist' file should be added[0K[?25l
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l
+[0K[?25h[?25l* using log dir[0K[14G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h[?25l* checking for[0K[14G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking[0K[10G[?25h[?25l* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source pa[0K[32G[?25h[?25l* checking if this is a source package ... OK[0K
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and[0K[31G[?25h[?25l* checking for hidden files and directories ... OK[0K
+* checking for portable file names ...[0K[?25h OK[0K[?25l
+* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking 'build' directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ...[0K[?25h OK[0K[?25l
+* checking for left-over files ... OK[0K
+* checking index information ...[0K[?25h OK[0K[?25l
+* checking package subdirectories ...[0K[37G[?25h[38G[?25l* checking package subdirectories ... OK[0K
+* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the[0K[20G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded w[0K[47G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking repl[0K[14G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code[0K[15G[?25h[?25l* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checkin[0K[9G[?25h[?25l* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents .[0K[22G[?25h[?25l* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of[0K[21G[?25h[?25l* checking contents of 'data' directory ... OK[0K
+* checkin[0K[7G[?25h[?25l* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+* checking installed files from 'inst/doc' ...[0K[?25h OK[0K[?25l
+* checking files in 'vignettes' ... OK[0K
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checking package vignettes in 'inst/doc'[0K[41G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
+* checking runni[0K[14G[?25h[?25l* checking running R code from vignettes ...[0K
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
+* DONE[0K
+[0K
+Status: OK[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD INSTALL airt_0.1.0.tar.gz[0K[35G[?25h[?25l
+[0K[?25h* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K[?25l
+[0K[?25h* installing *source* package 'airt' ...[0K[?25l
+[0K[?25h** using staged installation[0K[?25l
+[0K[?25h** R[0K[?25l
+[0K[?25h** data[0K[?25l
+[0K[?25h*** moving datasets to lazyload DB[0K[?25l
+[0K[?25h** inst[0K[?25l
+[0K[?25h** byte-compile and prepare package for lazy loading[0K[?25l
+[0K[?25h** help[0K[?25l
+[0K[?25h[?25l*** inst[0K[6G[?25h[?25l*** installing help indices[0K
+[0K[?25h  converting help for package 'airt'[0K[?25l
+    find[0K[7G[?25h[?25l    finding HTML links ...[0K[?25h done[0K[?25l
+[0K[?25h    algo_effectiveness_crm                  html[0K[?25l
+    algo_effectiveness_poly                 html[0K[51G[?25h[?25l
+    cirtmodel                               html[0K[51G[?25h[?25l
+    classification_cts                      html[0K[51G[?25h[?25l
+    classification_poly                     html[0K[51G[?25h[?25l
+[0K[?25h    effectiveness_crm                       html[0K[?25l
+    effectiveness_pol[0K[20G[?25h[?25l    effectiveness_poly                      html[0K[51G[?25h[?25l
+    make_polyIRT_data                       html[0K
+    model_goodness_crm[0K[42G[?25h[?25l    model_goodness_crm                      html[0K
+    model_goodness_for_algo_crm             html[0K[51G[?25h[?25l
+    model_goodness_for_algo_poly            html[0K[51G[?25h[?25l
+    model_goodness_poly                     html[0K
+    pir[0K[5G[?25h[?25l    pirtmodel                               html[0K
+    prepare_for_[0K[15G[?25h[?25l    prepare_for_plots_crm                   html[0K
+    prepare_for_plots_poly                  html[0K[51G[?25h[?25l
+*** copying figures[0K
+[0K[?25h** building package indices[0K[?25l
+[0K[?25h** installing vignettes[0K[?25l
+[0K[?25h** testing if installed package can be loaded from temporary location[0K[?25l
+*** arch - i386[0K
+[0K[?25h[?25l**[0K[1G[?25h*** arch - x64[0K[?25l
+[0K[?25h[?25l** t[0K[2G[?25h[?25l** testing if installed package can be loaded from final loc[0K[59G[?25h[?25l** testing if installed package can be loaded from final location[0K
+*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package keeps a record of temporary installation path[0K[?25l
+[0K[?25h* DONE (airt)[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0K[?25l$ R CMD ch[0K[?25h[?25l$ R CMD c[0K[11G[?25h[10G[?25l$ R CMD[0K[9G[?25h[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0Kt[0K[?25l
+[0K[?25h[?25l*[0K[1G[?25h* c[0K[?25lheck[0K[6G[?25h[?25l* checking for file[0K[21G[?25h[?25l* checking for file 'airt/D[0K[26G[?25h[?25l* checking for file 'airt/DESCRIPTI[0K[?25h[?25lON' .[0K[40G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h[?25l* c[0K[2G[?25h[?25l* chec[0K[?25hki[0K[?25lng f[0K[11G[?25h[?25l* checking fo[0K[?25hr[0K[16G[?25l* checking for LF l[0K[18G[?25h[?25l* checking for LF li[0K[?25hn[0Ke-en[0Kdings in source and make files and shell scripts[0K[?25l
+*[0K[1G[?25h* c[0Khecking f[0K[?25lor emp[0K[18G[?25h[?25l* checking for empty or unneeded directories[0K
+[0K[?25h[?25l* l[0K[2G[?25h[?25l* looking to see if a 'data/datalist' file should be adde[0K[57G[?25h[?25l* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD[0K[9G[?25h[?25l$ R CMD c[0K[?25hh[0K[?25le[0K[11G[?25h[12G[?25l$ R CMD check[0K[?25h[15G[?25l$ R CMD check ai[0K[?25hr[0Kt[0K_0[0K.1.0.tar.gz[0K[33G[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rche[0K[29G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K
+[0K[?25h[?25l* checking f[0K[11G[?25h[?25l* checking fo[0K[?25h[?25lr fi[0K[16G[?25h[?25l* checking for fil[0K[?25he[0K[?25l 'ai[0K[22G[?25h[?25l* checking for file 'airt/D[0K[?25h[?25lESC[0K[29G[?25h[?25l* checking for file 'airt/DESCRIPTION' ...[0K[?25h OK[0K[?25l
+* checking extension type ... Package[0K
+* this is[0K[9G[?25h[?25l* this is package 'airt' ver[0K[?25hsion '0.1.0'[0K[?25l
+* pack[0K[?25hage encoding: UTF-8[0K[?25l
+* c[0K[2G[?25h[?25l* ch[0K[?25hecking[0K[12G[?25l* checking package namespace information ...[0K[?25h OK[0K[?25l
+*[0K[1G[?25h* ch[0K[?25leck[0K[6G[?25h[?25l* checking package depend[0K[24G[?25h[?25l* checking package dependencies ...[0K[?25h[?25l O[0K[36G[?25h[?25l* checking package dependencies ... OK[0K
+* checking if this is a source package ... OK[0K
+[0K[?25h[?25l* checking if there[0K[19G[?25h[?25l* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ... OK[0K
+* checking whether pa[0K[20G[?25h[?25l* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+*[0K[1G[?25h* checking 'build' directory ... OK[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking for left-over files ...[0K[?25h OK[0K[?25l
+* checking index information ...[0K[?25h OK[0K[?25l
+* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R file[0K[16G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the[0K[22G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ..[0K[34G[?25h[?25l* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for code/documentation mismatches ...[0K OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking fo[0K[12G[?25h[?25l* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of 'data' directory ... OK[0K
+* chec[0K[4G[?25h[?25l* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking[0K[10G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking installed files from 'inst/doc' ...[0K OK[0K[?25l
+* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in vignettes ...[0K[?25h OK[0K[?25l
+* checking package vignettes in[0K[30G[?25h[?25l* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking running R code from vignettes ...[0K[?25l
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+*[0K[1G[?25h* checking re-building of vignette outputs ...[0K OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+[0K[?25h* DONE[0K[?25l
+[0K
+Status[0K[5G[?25h[?25lStatus: OK[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[21G[?25h[?25l
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h[?25l* installing the package to b[0K[27G[?25h[?25l* installing the package to build vignettes[0K
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h* checking for LF line-endings in source and make files and shell scripts[0K[?25l
+[0K[?25h[?25l* checking[0K[9G[?25h[?25l* checking for empty or unneede[0K[?25h[?25ld d[0K[33G[?25h[?25l* checking for empty or unneeded direc[0K[37G[?25h[?25l* checking for empty or unneeded directories[0K
+* looking to see if a 'data/datalist' file should be added[0K[58G[?25h[?25l
+[0K[?25h[?25l* building 'airt_0.1.0.tar.gz'[0K[8G[?25h[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l
+[0K[?25h[?25l*[0K[1G[?25h* u[0K[?25lsing log dir[0K[14G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+*[0K[1G[?25h* using R version[0K[?25l 3.6.1 (2019-07[0K[32G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-[0K[?25hmingw32 (64-bit)[0K[?25l
+* using session charset: ISO8859-1[0K
+[0K[?25h[?25l*[0K[1G[?25h* checking fo[0K[?25lr fil[0K[17G[?25h[?25l* checking for file 'airt/DESCRIPTION' ...[0K[?25h OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding:[0K[17G[?25h[?25l* package encoding: UTF-8[0K
+* checking package namespace information ...[0K[?25h[46G[?25l* checking package namespace information ... OK[0K[47G[?25h[?25l
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K[44G[?25h[?25l
+* checking if ther[0K[?25he[0K[21G[?25l* checking if there is a[0K[23G[?25h[26G[?25l* checking if there is a n[0K[?25ha[0K[?25lmes[0K[29G[?25h[?25l* checking if there is a namespac[0K[?25he[0K[36G[?25l* checking if there is a namespace ... OK[0K[40G[?25h[?25l
+[0K[?25h[?25l* c[0K[2G[?25h[?25l* checking fo[0K[?25h[?25lr ex[0K[16G[?25h[?25l* checking for executable files ...[0K[?25h OK[0K[?25l
+* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file names ...[0K[?25h OK[0K[?25l
+* checking whe[0K[13G[?25h[?25l* checking whether package 'airt'[0K[?25h can be installed ...[0K OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking pack[0K[14G[?25h[?25l* checking package directory ... OK[0K
+* checking 'build' directory ...[0K[?25h[?25l OK[0K[35G[?25h[?25l
+* che[0K[?25hcking[0K DESCRIPTION meta-information ...[0K OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking for left-over[0K[24G[?25h[?25l* checking for left-over files ... OK[0K
+* checking index informat[0K[?25hion ...[0K OK[0K[?25l
+* checking package subdirectories ...[0K[?25h[?25l OK[0K[39G[?25h[?25l
+* checking R files for[0K[24G[?25h[?25l* checking R files for non-ASCII characters .[0K[?25h..[0K OK[0K[?25l
+* checking R files[0K[17G[?25h[?25l* checking R files for syntax errors ...[0K[?25h[?25l OK[0K[42G[?25h[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* che[0K[4G[?25h[?25l* checking whether the package can be loaded[0K[46G[?25h[?25l* checking whether the package can be loaded with stated dependencie[0K[67G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h[?25l OK[0K[74G[?25h[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded with stated dependencies ...[0K[1G[?25h[76G[?25l* checking whether the namespace can be loaded with stated dependencies ... OK[0K
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking loading without being on the library search path ...[0K[?25l OK[0K[65G[?25h[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replacement functi[0K[14G[?25h[?25l* checking replacement functions ...[0K[?25h[?25l O[0K[37G[?25h[?25l* checking replacement functions ... OK[0K
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cr[0K[14G[?25h[?25l* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h[?25l OK[0K[50G[?25h[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking installed files from 'inst/doc' ...[0K OK[0K[?25l
+* checking files in 'v[0K[20G[?25h[?25l* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checking package vignettes in 'inst/doc' ...[0K[45G[?25h[?25l* checking package vignettes in 'inst/doc' ... OK[0K
+[0K[?25h* checking running R code from vignettes ...[0K[?25l
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-building of vign[0K[29G[?25h[?25l* checking re-building of vignette outputs ...[0K[?25h[?25l OK[0K[47G[?25h[?25l
+* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DO[0K[3G[?25h[?25l* DONE[0K
+[0K[?25h[?25l
+Status: OK[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[3G[?25h[33G[32G[?25l$ R CMD check airt_0.1.0.tar.g[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.[0K[?25h[?25l$ R CMD check airt_0.1.0.ta[0K[29G[?25h[28G[?25l$ R CMD check airt_0.1.0.[0K[27G[?25h[?25l$ R CMD check airt_0.1[0K[?25h[?25l$ R CMD check airt_0.[0K[23G[?25h[21G[?25l$ R CMD check airt_[0K[?25h[?25l$ R CMD check airt[0K[?25h[?25l$ R CMD check air[0K[?25h[?25l$ R CMD check ai[0K[?25h[?25l$ R CMD check a[0K[?25h[?25l$ R CMD check[0K[15G[?25h[14G[?25l$ R CMD chec[0K[?25h[?25l$ R CMD che[0K[13G[?25h[12G[?25l$ R CMD ch[0K[?25h[?25l$ R CMD c[0K[?25h[?25l$ R CMD[0K[9G[?25h[?25l$ R CMD I[0K[?25hN[0KS[0KT[0KA[0KL[0KL[0K[17G[?25l$ R CMD INSTALL a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[35G[?25l
+[0K[?25h* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K[?25l
+[0K[?25h* installing *source* package 'airt' ...[0K[?25l
+[0K[?25h** using staged installation[0K[?25l
+[0K[?25h** R[0K[?25l
+[0K[?25h** data[0K[?25l
+[0K[?25h*** moving datasets to lazyload DB[0K[?25l
+[0K[?25h** inst[0K[?25l
+[0K[?25h** byte-compile and prepare package for lazy loading[0K[?25l
+[0K[?25h** help[0K[?25l
+[0K[?25h*** installing help indices[0K[?25l
+[0K[?25h[?25l  co[0K[2G[?25h[?25l  converting help for package 'airt'[0K
+    finding HTML links ...[0K[?25h done[0K[?25l
+[0K[?25h    algo_effectiveness_crm                  html[0K[51G[?25l
+    algo_effectiveness[0K[20G[?25h[?25l    algo_effectiveness_poly                 htm[0K[?25hl[0K[51G[?25l
+    cirtmodel                               html[0K[10G[?25h[51G[?25l
+[0K[?25h    classification_cts                      html[0K[51G[?25l
+    classification_poly[0K[28G[?25h[?25l    classification_poly                     html[0K[50G[?25h[?25l
+    effe[0K[?25hctive[0Kness_crm[0K[24G[?25l    effectiveness_crm                       html[0K[51G[?25h[?25l
+    effectiveness_poly[0K[40G[?25h[?25l    effectiveness_poly                      html[0K[51G[?25h[?25l
+    make_polyIRT_data                       html[0K[51G[?25h[?25l
+    model_goodnes[0K[16G[?25h[?25l    model_goodness_crm                      html[0K[51G[?25h[?25l
+[0K[?25h[?25l    model[0K[8G[?25h[?25l    model_[0K[?25hgoodness_for[0K_algo_crm             html[0K[51G[?25l
+    model_goodness_for_algo_poly            html[0K[51G[?25h[?25l
+    model_goodness_poly                     html[0K[51G[?25h[?25l
+    pir[0K[1G[?25h    pirtmodel                               html[0K[51G[?25l
+    prepare_for_plots_crm                   html[0K[51G[?25h[?25l
+    prepare_for_plots_poly                  html[0K[51G[?25h[?25l
+*** copying figures[0K
+[0K[?25h** building package indices[0K[?25l
+[0K[?25h** installing vignettes[0K[?25l
+[0K[?25h[?25l** testing[0K[5G[?25h[?25l** testing if installed package can be loaded from temporary location[0K
+*** arch - i386[0K
+[0K[?25h[?25l**[0K[1G[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package can be loaded from final location[0K[?25l
+**[0K[1G[?25h*** arch - i386[0K[?25l
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h[?25l** testing if installed package keeps a record of tempora[0K[55G[?25h[?25l** testing if installed package keeps a record of temporary installation path[0K
+[0K[?25h* DONE (airt)[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[14G[?25l$ R CMD chec[0K[?25h[?25l$ R CMD che[0K[?25h[?25l$ R CMD ch[0K[?25h[?25l$ R CMD c[0K[?25h[?25l$ R CMD[0K[9G[?25h[?25l$ R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[15G[?25l$ R CMD build a[0K[?25hi[0Kr[0Kt[0K[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h[?25l* check[0K[5G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded directories[0K
+[0K[?25h* looking to see if a 'data/datalist' file should be added[0K[?25l
+[0K[?25h[?25l* building 'airt_0.1.[0K[18G[?25h[?25l* building 'airt_0.1.0.tar.gz'[0K
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD i[0K[?25hn[0Ks[0Kt[0Ka[0K[?25l$ R CMD inst[0K[?25h[?25l$ R CMD ins[0K[?25h[?25l$ R CMD in[0K[?25h[?25l$ R CMD i[0K[?25h[?25l$ R CMD[0K[9G[?25h[?25l$ R CMD I[0K[?25hN[0KS[0KT[0KA[0KL[0KL[0K[17G[?25l$ R CMD INSTALL a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[35G[?25l
+[0K[?25h* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K[?25l
+[0K[?25h* installing *source* package 'airt' ...[0K[?25l
+[0K[?25h** using staged installation[0K[?25l
+[0K[?25h** R[0K[?25l
+[0K[?25h** data[0K[?25l
+*** moving datasets to lazyload DB[0K
+[0K[?25h** inst[0K[?25l
+[0K[?25h** byte-compile and prepare package for lazy loading[0K[?25l
+[0K[?25h** help[0K[?25l
+[0K[?25h*** installing help indices[0K[?25l
+[0K[?25h  converting help for package 'airt'[0K[?25l
+    finding HTML links ...[0K[?25h done[0K[?25l
+    algo_effectiveness_crm                  html[0K[51G[?25h[?25l
+    algo_effectiveness_poly                 html[0K[51G[?25h[?25l
+    cirtmodel                               html[0K[51G[?25h[?25l
+[0K[?25h    classification_cts                      html[0K[?25l
+    classification_poly[0K[43G[?25h[?25l    classification_poly                     html[0K[51G[?25h[?25l
+    effectiveness_crm[0K[35G[?25h[?25l    effectiveness_crm                       html[0K[51G[?25h[?25l
+    effectiveness_poly                      html[0K[51G[?25h[?25l
+    make_polyIRT_data                       html[0K[51G[?25h[?25l
+    model_goodness_crm                      html[0K[51G[?25h[?25l
+    model_goodness_for_algo_crm             html[0K[51G[?25h[?25l
+    model_goodness_for_algo_poly            html[0K[51G[?25h[?25l
+    model_goodness_poly                     html[0K[51G[?25h[?25l
+    pirtmodel                               html[0K[51G[?25h[?25l
+    prepare_for_plots[0K[20G[?25h[?25l    prepare_for_plots_crm                   html[0K
+    prepare_[0K[?25hfor_plots_poly                  html[0K[?25l
+*** copying figures[0K[18G[?25h[?25l
+[0K[?25h** building package indices[0K[?25l
+[0K[?25h[?25l** installing vig[0K[16G[?25h[?25l** installing vignettes[0K
+** testing if installed package can[0K[35G[?25h[?25l** testing if installed package can be loaded from temporary location[0K
+*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package can be loaded from final location[0K[?25l
+*** arch - i3[0K[12G[?25h[?25l*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package keeps a record of temporary installation path[0K[?25l
+[0K[?25h* DONE (airt)[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[0m[0K]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+[?25l$ c[0K[?25hd[0K[6G[?25l$ cd .[0K[?25h.[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd R[0K[?25h[8G[?25l$ cd R C[0K[?25hM[0KD[0K[12G[?25l$ cd R CMD b[0K[?25hu[0Ki[0Kl[0Kd[0K[18G[?25l$ cd R CMD build a[0K[?25h[?25li[0K[19G[?25h[20G[?25l$ cd R CMD build air[0K[?25ht[0K[?25l
+bash: cd: too many arguments[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ cd R CMD build airt[0K[?25h[3G[?25l$ d R CMD build airt[0K[3G[?25h[?25l$  R CMD build airt[0K[3G[?25h[?25l$ R CMD build airt[0K[3G[?25h[?25l
+[0K[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K[44G[?25h[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ... OK[0K
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h[?25l* checking for LF line-endings in so[0K[35G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded dire[0K[37G[?25h[?25l* checking for empty or unneeded directories[0K
+* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD c[0K[?25hh[0Ke[0Kc[0Kk[0K[15G[?25l$ R CMD check a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[33G[?25l
+[0K[?25h[?25l* u[0K[2G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* u[0K[2G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session char[0K[19G[?25h[?25l* using session charset: ISO8859-1[0K
+[0K[?25h* checking for file 'airt/DESCRIPTION' ...[0K OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ... OK[0K
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and directo[0K[37G[?25h[?25l* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking for portable file nam[0K[30G[?25h[?25l* checking for portable file names ... OK[0K
+* checking whether package 'airt' can be installed ...[0K[?25h OK[0K[?25l
+* checking installed packa[0K[25G[?25h[?25l* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking[0K[9G[?25h[?25l* checking 'build' directory ... OK[0K
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files ... OK[0K
+* checking for left-over files ... OK[0K
+* checking index information ...[0K[?25h OK[0K[?25l
+* checking package subdirectories ...[0K[?25h[?25l OK[0K[38G[?25h[?25l
+* checking R files for non-AS[0K[29G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be[0K[37G[?25h[?25l* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded wit[0K[49G[?25h[?25l* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether th[0K[19G[?25h[?25l* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loa[0K[13G[?25h[?25l* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consist[0K[35G[?25h[?25l* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R code for possible problems ...[0K[?25h NOTE[0K[?25l
+latent[0K[5G[?25h[?25llatent_length: no visible binding for global variable 'group'[0K
+latent_len[0K[?25hgth: no visible binding for global variable 'y'[0K[?25l
+latent_trait_analysis: no visible binding for global variable[0K
+  'Latent_Trait'[0K
+latent_trait_analysis: no visible binding for global variable 'value'[0K
+latent_trait[0K[11G[?25h[?25llatent_trait_analysis: no visible binding for global variable[0K
+  'Algorithm'[0K
+Undefined global functions or variables:[0K
+  Algorithm Latent_Trait group value y[0K
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h[?25l OK[0K[36G[?25h[?25l
+* chec[0K[?25hking for missing documentation entries ...[0K OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd[0K[13G[?25h[?25l* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for un[0K[16G[?25h[?25l* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+* checking installed files from 'inst/doc' ... OK[0K[49G[?25h[?25l
+* checking files in 'vignettes' ... OK[0K
+* ch[0K[3G[?25h[?25l* checking examples ...[0K[?25h OK[0K[?25l
+* checking for unstated dependenc[0K[31G[?25h[?25l* checking for unstated dependencies in vignettes ...[0K[?25h OK[0K[?25l
+* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
+* checking running R code from vignettes ...[0K
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DONE[0K
+[0K
+Status: 1[0K[9G[?25h[?25lStatus: 1 NOTE[0K
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h* installing the package to build vignettes[0K[?25l
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h[?25l* checking for LF line-endings in source and make[0K[47G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded directories[0K
+* looking to see if a 'data/datalist' file should be added[0K
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[3G[?25h[19G[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rch[0K[64G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* using R version 3.6.1 (2019-07-0[0K[33G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32[0K[35G[?25h[?25l* using platform: x86_64-w64-mingw32 (64-bit)[0K
+* using session charset: ISO8859-1[0K[34G[?25h[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ... OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1[0K[36G[?25h[?25l* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking package dependencies ...[0K[?25h ERROR[0K[?25l
+Namespace dependency not required: 'rlang'[0K
+[0K
+See section 'The DESCRIPTION file' in the 'Writing R Extensions'[0K
+manual.[0K
+* DONE[0K
+[0K
+Status: 1 ERROR[0K[?25h[?25l
+See[0K
+  'C:/Users/Sevvandi/Documents/repos/airt.Rcheck/00check.log'[0K
+for details.[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l$ R CMD build airt[0K[?25h[?25l
+[0K[?25h[?25l* checki[0K[6G[?25h[?25l* checking for file 'airt/DESCRIPTION' ... OK[0K
+[0K[?25h* preparing 'airt':[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* installing[0K[11G[?25h[?25l* installing the package to build vignettes[0K
+[0K[?25h* creating vignettes ...[0K OK[0K[?25l
+[0K[?25h[?25l* checking for[0K[13G[?25h[?25l* checking for LF line-endings in source and make files and shell scripts[0K
+* checking for empty or unneeded directories[0K
+[0K[?25h* looking to see if a 'data/datalist' file should be added[0K[?25l
+[0K[?25h* building 'airt_0.1.0.tar.gz'[0K[?25l
+[0K[?25h[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K[1G[?25h[?25l
+$[0K[3G[?25h[?25l$ R CMD build airt[0K[?25h[?25l$ R CMD check airt_0.1.0.tar.gz[0K[33G[?25h[?25l
+[0K[?25h[?25l* using log directory 'C:/Users/Sevvand[0K[38G[?25h[?25l* using log directory 'C:/Users/Sevvandi/Documents/repos/airt.Rcheck'[0K
+* us[0K[3G[?25h[?25l* using R version 3.6.1 (2019-07-05)[0K
+* using platform: x86_64-w64-mingw32 (64-bit)[0K
+[0K[?25h* using session charset: ISO8859-1[0K[?25l
+[0K[?25h* checking for file 'airt/DESCRIPTION' ...[0K OK[0K[?25l
+* checking extension type ... Package[0K
+* this is package 'airt' version '0.1.0'[0K
+* package encoding: UTF-8[0K
+* checking package namespace information ... OK[0K
+* checking packag[0K[15G[?25h[?25l* checking package dependencies ...[0K[?25h OK[0K[?25l
+* checking if this is a source package ...[0K[?25h OK[0K[?25l
+* checking if there is a namespace ... OK[0K
+[0K[?25h* checking for executable files ...[0K OK[0K[?25l
+* checking for hidden files and[0K[30G[?25h[?25l* checking for hidden files and directories ...[0K[?25h OK[0K[?25l
+* checking[0K[10G[?25h[?25l* checking for portable file names ... OK[0K
+* checking whether package 'air[0K[?25ht' can be installed ...[0K OK[0K[?25l
+* checking installed package size ...[0K[?25h OK[0K[?25l
+* checking package directory ... OK[0K
+* checking 'build' directory ...[0K[?25h OK[0K[?25l
+* checking DESCRIPTION meta-information ...[0K[?25h OK[0K[?25l
+* checking top-level files .[0K[26G[?25h[?25l* checking top-level files ... OK[0K
+* checking for left-over files ...[0K[34G[?25h[?25l* checking for left-over files ... OK[0K
+* checking index information ...[0K[?25h OK[0K[?25l
+* checking packa[0K[15G[?25h[?25l* checking package subdirectories[0K[32G[?25h[?25l* checking package subdirectories ...[0K[?25h OK[0K[?25l
+* checking R files for non-ASCII char[0K[36G[?25h[?25l* checking R files for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking R files for syntax errors ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded ...[0K[?25h OK[0K[?25l
+* checking whether the package can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the package can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be loaded with stated dependencies ...[0K[?25h OK[0K[?25l
+* checking whether the namespace can be unloaded cleanly ...[0K[?25h OK[0K[?25l
+* checking loading without being on the library search path ...[0K[?25h OK[0K[?25l
+* checking dependencies in R code ...[0K[?25h OK[0K[?25l
+* checking S3 generic/method consist[0K[34G[?25h[?25l* checking S3 generic/method consistency ...[0K[?25h OK[0K[?25l
+* checking repl[0K[13G[?25h[?25l* checking replacement functions ...[0K[?25h OK[0K[?25l
+* checking foreign function calls ...[0K[?25h OK[0K[?25l
+* checking R[0K[11G[?25h[?25l* checking R code for possible problems ...[0K[?25h OK[0K[?25l
+* checking Rd files ...[0K[?25h OK[0K[?25l
+* checking Rd metadata ...[0K[?25h OK[0K[?25l
+* checking Rd cross-references ...[0K[?25h OK[0K[?25l
+* checking for missing documentat[0K[31G[?25h[?25l* checking for missing documentation entries ...[0K[?25h OK[0K[?25l
+* checking for code/documentation mismatches ...[0K[?25h OK[0K[?25l
+* checking Rd \usage sections ...[0K[?25h OK[0K[?25l
+* checking Rd contents ...[0K[?25h OK[0K[?25l
+* checking for unstated dependencies in examples ...[0K[?25h OK[0K[?25l
+* checking contents of 'data' directory ...[0K[?25h OK[0K[?25l
+* checking data for non-ASCII characters ...[0K[?25h OK[0K[?25l
+* checking data[0K[14G[?25h[?25l* checking data for ASCII and uncompressed saves ...[0K[?25h OK[0K[?25l
+* checking[0K[9G[?25h[?25l* checking installed files from 'inst/doc' ... OK[0K
+* checking files in 'vignettes' ...[0K[?25h OK[0K[?25l
+* checking examples ...[0K[?25h OK[0K[?25l
+[0K[?25h* checking for unstated dependencies in vignettes ...[0K OK[0K[?25l
+* checking pa[0K[12G[?25h[?25l* checking package vignettes in 'inst/doc' ...[0K[?25h OK[0K[?25l
+[0K[?25h[?25l* ch[0K[2G[?25h[?25l* checking running R code from vignettes ...[0K
+[0K[?25h  'airt.Rmd'using 'UTF-8'... OK[0K[?25l
+ NONE[0K
+* checking re-building of vignette outputs ...[0K[?25h OK[0K[?25l
+* checking PDF version of manual ...[0K[?25h OK[0K[?25l
+* DONE[0K
+[0K[?25h[?25l
+Status: OK[0K
+[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hi[0Kr[0Kt[0K[?25l$ cd air[0K[?25h[?25l$ cd ai[0K[?25h[?25l$ cd a[0K[?25h[?25l$ c[0K[?25h[?25l$[0K[3G[?25h[?25l$ R[0K[?25h[5G[?25l$ R C[0K[?25hM[0KD[0K[9G[?25l$ R CMD I[0K[?25hN[0KS[0KT[0KA[0KL[0KL[0K[17G[?25l$ R CMD INSTALL a[0K[?25hi[0Kr[0Kt[0K_[0K0[0K.1.0.tar.gz[0K[35G[?25l
+[0K[?25h[?25l* installing to library 'C:/Users/Sevvandi/Documents/R/win-libr[0K[62G[?25h[?25l* installing to library 'C:/Users/Sevvandi/Documents/R/win-library/3.6'[0K
+* installing *source* package 'airt' ...[0K
+[0K[?25h** using staged installation[0K[?25l
+[0K[?25h** R[0K[?25l
+[0K[?25h** data[0K[?25l
+[0K[?25h*** moving datasets to lazyload DB[0K[?25l
+[0K[?25h** inst[0K[?25l
+[0K[?25h[?25l** byte-compile and prepare package for lazy[0K[43G[?25h[?25l** byte-compile and prepare package for lazy loading[0K
+[0K[?25h** help[0K[?25l
+[0K[?25h*** installing help indices[0K[?25l
+[0K[?25h  converting help for package 'airt'[0K[?25l
+    finding HTML links ...[0K[?25h done[0K[?25l
+[0K[?25h    algo_effectiveness_crm                  html[0K[?25l
+    algo_effectiveness_poly                 ht[0K[45G[?25h[?25l    algo_effectiveness_poly                 html[0K
+    cirtmodel                               html[0K[51G[?25h[?25l
+    cl[0K[5G[?25h[?25l    classification_cts                      html[0K
+    classification_poly                     html[0K[51G[?25h[?25l
+    effectiveness_crm                       html[0K[51G[?25h[?25l
+    effectiveness_poly                      html[0K
+    laten[0K[8G[?25h[?25l    latent_trait_analysis                   html[0K[51G[?25h[?25l
+    make_polyIRT_data                       html[0K
+    model_goodness_crm                      html[0K[51G[?25h[?25l
+    model_goodness_for_algo_crm             html[0K[51G[?25h[?25l
+    model_goodness_for_algo_poly            html[0K[51G[?25h[?25l
+    model_go[0K[11G[?25h[?25l    model_goodness_poly                     html[0K[51G[?25h[?25l
+    pirtmodel                               html[0K[51G[?25h[?25l
+[0K[?25h    prepare_for_plots_crm                   html[0K[?25l
+    prepare_for_plots_poly                  html[0K[51G[?25h[?25l
+*** copying figures[0K
+[0K[?25h** building package indices[0K[?25l
+[0K[?25h** installing vignettes[0K[?25l
+[0K[?25h[?25l** testing if installed package can be loaded from tem[0K[52G[?25h[?25l** testing if installed package can be loaded from temporary location[0K
+*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h** testing if installed package can be loaded from final location[0K[?25l
+*** arch - i386[0K
+[0K[?25h*** arch - x64[0K[?25l
+[0K[?25h[?25l** testing if install[0K[20G[?25h[?25l** testing if installed package keeps a record of temporary[0K[58G[?25h[?25l** testing if installed package keeps a record of temporary installation path[0K
+[0K[?25h* DONE (airt)[0K[?25l
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos[0m[0K
+$[0K[3G[?25h[?25l$ c[0K[?25hd[0K[6G[?25l$ cd a[0K[?25hi[0Kr[0Kt[0K[?25l
+[0K[?25h]0;:/c/Users/Sevvandi/Documents/repos/airt[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/F9A5C86C/sources/prop/INDEX.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/shared/notebooks/paths.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/algo_effectiveness_crm.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/algo_effectiveness_poly.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/cirtmodel.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/classification_cts.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/classification_poly.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/effectiveness_crm.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/effectiveness_poly.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/latent_trait_analysis.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/model_goodness_crm.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/model_goodness_for_algo_crm.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/model_goodness_for_algo_poly.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/model_goodness_poly.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/pirtmodel.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in man/prepare_for_plots_crm.Rd.[0K[?25l
+The file will have its original line endings in your working directory.[0K
+warning: LF will be replaced by CRLF in man/prepare_for_plots_poly.Rd.[0K
+The file will have its original line endings in your working directory.[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hm[0Ka[0Kn[0Ky[0K[23G[?25l$ git commit -m "many c[0K[?25hh[0Ka[0Kn[0Kg[0Ke[0Ks[0K"[0K[?25l
+[0K[?25hREADME.md is out of date; please re-knit README.Rmd[0K[?25l
+use 'git commit --no-verify' to override this check[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ git commit -m "many changes"[0K[?25h[?25l
+[0K[?25hREADME.Rmd and README.md should be both staged[0K[?25l
+use 'git commit --no-verify' to override this check[0K
+[0K[?25h[?25l
+[0;32mSevvandi@Prushtaya [0;35m [0;33m~/Documents/repos/airt[0;36m (master)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add .[0K[?25h

@@ -1,4 +1,4 @@
-#'A dataset containing classification algorithm performance data.
+#'A dataset containing classification algorithm performance data in a polytomous format.
 #'
 #'This dataset contains the performance of 10 classification algorithms on 235 datasets discussed in the paper Instance Spaces for Machine Learning Classification by M. A. Munoz, L. Villanova, D. Baatar, and K. A. Smith-Miles .
 #'
@@ -10,4 +10,4 @@
 #'}
 #'
 #'@source \url{https://matilda.unimelb.edu.au/matilda/problems/learning/classification#classification}
-"classification"
+"classification_poly"

@@ -1,13 +1,14 @@
-#' Computes the goodness of IRT model for a given algorithm.
+#' Computes the goodness of the IRT model fit for a given algorithm.
 #'
-#' This function computes the goodness of the IRT model for a given algorithm for different goodness tolerances.
+#' This function computes the goodness of the IRT model fit for a given algorithm using the empirical cumulative distribution function of errors.
 #'
 #' @param mod A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.
-#' @param num The algorithm number, for which the goodness of the IRT model is computed.
+#' @param num The algorithm number
 #'
 #' @return  A list with the following components:
-#' \item{\code{xy}}{The \code{x} values denote the goodness tolerances. The \code{y} values denote the model goodness. }
-#' \item{\code{auc}}{The area under the model goodness curve. }
+#' \item{\code{xy}}{The \code{x} values denote the error tolerances. The \code{y} values denotes its empirical cumulative distribution function. }
+#' \item{\code{auc}}{The area under the CDF. }
+#' \item{\code{mse}}{The mean squared error. }
 #'
 #'@examples
 #'set.seed(1)
@@ -15,14 +16,14 @@
 #'x2 <- sample(1:5, 100, replace = TRUE)
 #'x3 <- sample(1:5, 100, replace = TRUE)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- irtmodel(X)
-#'out <- model_goodness_for_algo(mod$model, num=1)
+#'mod <- pirtmodel(X)
+#'out <- model_goodness_for_algo_poly(mod$model, num=1)
 #'out
 #'
 #' @importFrom mirt fscores probtrace coef
 #' @export
-model_goodness_for_algo <- function(mod, num=1){
-  actpred <- actual_vs_predicted(mod, num)
+model_goodness_for_algo_poly <- function(mod, num=1){
+  actpred <- actual_vs_predicted_poly(mod, num)
   dif_vals <- apply(actpred, 1, function(x) abs(diff(x)) )
   levels <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$items)[2]
   len <- levels
@@ -34,14 +35,16 @@ model_goodness_for_algo <- function(mod, num=1){
   x <- seq(0, 1, length.out = (len))
   y <- c(arr)
   auc <- pracma::trapz(x, y)
+  mse <- mean(dif_vals^2)
   out <- list()
   out$xy <- cbind(x,y)
   out$auc <- auc
+  out$mse <- mse
   return(out)
 }
 
 
-actual_vs_predicted <- function(mod, num=1){
+actual_vs_predicted_poly <- function(mod, num=1){
   # actual values
   dat <- mod@Data$data
   algo_vals <- dat[ ,num]
@@ -92,12 +95,13 @@ actual_vs_predicted <- function(mod, num=1){
 
 #' Computes the goodness of IRT model for all algorithms.
 #'
-#' This function computes the goodness of the IRT model for all algorithms for different goodness tolerances.
+#' This function computes the goodness of the IRT model for all algorithms using the empirical cumulative distribution function of errors.
 #'
-#' @inheritParams model_goodness_for_algo
+#' @inheritParams model_goodness_for_algo_poly
 #'
 #' @return  A list with the following components:
 #' \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
+#' \item{\code{mse}}{The mean squared error. }
 #' \item{\code{curves}}{The \code{x,y} coodinates for the model goodness curves for each algorithm. }
 #'
 #'@examples
@@ -106,16 +110,17 @@ actual_vs_predicted <- function(mod, num=1){
 #'x2 <- sample(1:5, 100, replace = TRUE)
 #'x3 <- sample(1:5, 100, replace = TRUE)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- irtmodel(X)
-#'out <- model_goodness(mod$model)
+#'mod <- pirtmodel(X)
+#'out <- model_goodness_poly(mod$model)
 #'out
 #' @export
-model_goodness <- function(mod){
+model_goodness_poly <- function(mod){
   dd <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$item)[1]
-  acc <- matrix(0, ncol=1, nrow=dd)
+  mse <- acc <- matrix(0, ncol=1, nrow=dd)
   for(i in 1:dd){
-    oo <- model_goodness_for_algo(mod, num=i)
+    oo <- model_goodness_for_algo_poly(mod, num=i)
     acc[i, 1] <- oo$auc
+    mse[i, 1] <- oo$mse
     if(i==1){
       curves <- matrix(0, ncol= (dd+1), nrow=dim(oo$xy)[1])
       curves[ ,1] <- oo$xy[ ,1]
@@ -126,6 +131,7 @@ model_goodness <- function(mod){
   rownames(acc) <- rownames(coef(mod, simplify=TRUE)$items)
   out <- list()
   out$goodnessAUC <- acc
+  out$mse <- mse
   out$curves <- curves
   return(out)
 }

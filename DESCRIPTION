@@ -7,17 +7,20 @@ Authors@R: person("Sevvandi", "Kandanaarachchi", email = "sevvandik@gmail.com",
 Maintainer: Sevvandi Kandanaarachchi <sevvandik@gmail.com>
 Description: An evaluation framework for algorithm portfolios using Item Response
     Theory (IRT). We use polytomous IRT models to evaluate algorithms and introduce
-    algorithm characteristics such as stability, effectiveness and anomalousness.
+    algorithm characteristics such as stability, effectiveness and anomalousness 
+    (Kandanaarachchi, Smith-Miles 2020) <doi:10.13140/RG.2.2.11363.09760>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Depends: 
     R (>= 3.4.0)
 Imports: 
     pracma,
     mirt,
-    tidyr
+    tidyr,
+    EstCRM,
+    rlang
 Suggests: 
     knitr,
     rmarkdown,

@@ -48,10 +48,10 @@ This example is on classification algorithms. The data *classification* has perf
 We have binned the data so that we can fit a polytomous IRT model to it. The lowest performance measurement is P1 and the highest is P5, with the others in between. The latent scores $\theta$ represent the easiness of the datasets.  Let's fit an IRT model to this data and look at the algorithm trace lines. 
 
 ```{r example}
-data("classification")
-modout <- irtmodel(classification, vpara=FALSE)
+data("classification_poly")
+modout <- pirtmodel(classification_poly, vpara=FALSE)
 
-gdf <- prepare_for_plots(modout$model)
+gdf <- prepare_for_plots_poly(modout$model)
 ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Classification Algorithm Trace Lines") + theme_bw()
 ```
 
@@ -63,7 +63,7 @@ But how good is our IRT model? Can we trust the algorithm trace lines? To check 
 
 ```{r, goodness, echo=TRUE}
 # Model Goodness and Algorithm effectiveness
-good <- model_goodness(modout$model)
+good <- model_goodness_poly(modout$model)
 
 good_curves <- as.data.frame(good$curves)
 print(good_curves)
@@ -84,7 +84,7 @@ We see that the goodness of the IRT model is quite high for most algorithms apar
 Suppose algorithm A gives good performance values and algorithm B gives poor performance values for most of the test instances. Then, we can say that algorithm A is more effective than algorithm B. Basically, this is our notion of effectiveness. We compute the proportion of datasets that achieve the highest performance value, P5 in this example. Then we compute the proportion of datasets that achieve the levels P5 and P4. Next the proportion of datasets that obtains P5, P4 or P3. We do this computation for actual performance values and IRT model predicted performance values. These two sets of effectiveness curves are shown in the 2 graphs below.  
 
 ```{r, effectiveness1, echo=TRUE}
-eff <- effectiveness(modout$model)
+eff <- effectiveness_poly(modout$model)
 
 eff_curves <- as.data.frame(eff$actcurves)
 eff_df1 <- eff_curves %>% pivot_longer(cols=2:dim(eff_curves)[2], names_to=c("Algorithm"))

@@ -51,9 +51,9 @@ algo3 <- rep(0, 100)
 algo3[inds1] <- sample(1:2, length(inds1), replace = TRUE)
 algo3[-inds1] <- sample(3:5, (100-length(inds1)), replace = TRUE)
 algorithms <- cbind.data.frame(algo1, algo2, algo3)
-mod <- irtmodel(algorithms)
+mod <- pirtmodel(algorithms)
 
-gdf <- prepare_for_plots(mod$model)
+gdf <- prepare_for_plots_poly(mod$model)
 ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Algorithm Trace Lines") + theme_bw()
 
 mod$stability
