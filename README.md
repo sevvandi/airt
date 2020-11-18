@@ -11,18 +11,19 @@ status](https://travis-ci.org/sevvandi/airt.svg?branch=master)](https://travis-c
 
 The goal of *airt* is to evaluate algorithm performances using Item
 Response Theory (IRT). You can use *airt* to evaluate the performance of
-a group of algorithms on a collection of test instances. The IRT model
-is fitted using the R package **mirt** .
+a group of algorithms on a collection of test instances. The polytomous
+IRT model is fitted using the R package *mirt* and the continuous IRT
+model is fitted using some updates to the code in the R package
+*EstCRM*.
 
 ## Installation
 
-<!-- You can install the released version of airt from [CRAN](https://CRAN.R-project.org) with: -->
+You can install the released version of airt from
+[CRAN](https://CRAN.R-project.org) with:
 
-<!-- ``` r -->
-
-<!-- install.packages("airt") -->
-
-<!-- ``` -->
+``` r
+install.packages("airt")
+```
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -32,12 +33,148 @@ You can install the development version from
 devtools::install_github("sevvandi/airt")
 ```
 
-## Example
+## Example - continuous
+
+Let us consider some synthetic performance data. In this example the
+performance of algorithm A is positively correlated with the performance
+of algorithm B, but negatively correlated with the performanc of
+algorithm C. Algorithm D is positively correlated with algorithm A.
+However, algorithm D has very high performance values.
 
 ``` r
 library(airt)
 library(ggplot2)
 #> Warning: package 'ggplot2' was built under R version 3.6.3
+library(gridExtra)
+
+
+set.seed(1)
+algo1 <- runif(200)
+algo2 <- 2*algo1 + rnorm(200, mean=0, sd=0.1)
+algo2 <- (algo2 - min(algo2))/(max(algo2) - min(algo2))
+
+algo3 <- 1 - algo1 + rnorm(200, mean=0, sd=0.1)
+algo3 <- (algo3 - min(algo3))/(max(algo3) - min(algo3))
+
+algo4 <- 2 + 0.2*algo1 + rnorm(200, mean=0, sd=0.1)
+algo4 <- algo4/max(algo4)
+
+
+df <- cbind.data.frame(algo1, algo2, algo3, algo4)
+colnames(df) <- c("A", "B", "C", "D")
+g1 <- ggplot(df, aes(A, B)) + geom_point()+ coord_fixed() + xlab("Algorithm A") + ylab("Algorithm B") + theme_bw()
+
+g2 <- ggplot(df, aes(A, C)) + geom_point() + coord_fixed() + xlab("Algorithm A") + ylab("Algorithm C")  + theme_bw()
+
+g3 <- ggplot(df, aes(A, D)) + geom_point()+  xlab("Algorithm A") + ylab("Algorithm D") + coord_fixed() + ylim(0,1) + theme_bw()
+grid.arrange(g1, g2, g3, layout_matrix=cbind(1,2,3))
+```
+
+<img src="man/figures/README-excont-1.png" width="100%" />
+
+Let us fit a continuous IRT model to this data.
+
+``` r
+df2 <- df
+max_item  <- max(df2)
+min_item <- 0
+max.item <- rep(max_item, dim(df2)[2])
+min.item <- rep(min_item, dim(df2)[2])
+df2 <- as.data.frame(df2)
+modout <- cirtmodel(df2, max.item, min.item)
+paras <- modout$model$param
+
+gdf <- prepare_for_plots_crm(modout$model) # , thetarange = c(-8, -2)
+ggplot(gdf, aes(theta, z)) + geom_raster(aes(fill=pdf))  + xlab("Theta") + facet_wrap(~Algorithm, nrow=1) + coord_fixed(ratio=1) + theme_bw()  +  scale_fill_viridis_c(option = "plasma")
+```
+
+<img src="man/figures/README-ctsirtfit-1.png" width="100%" />
+
+The figure above shows the probability density of the fitted IRT model
+over Theta and z values. The y axis denotes the normalized performance
+values. The high density regions are showed by the lighter coloured
+parts. We see that algorithms A and B obtain high performance values for
+high Theta values. Theta denotes the dataset easiness. However,
+algorithm C obtains high performance values for low Theta values. These
+are difficult datasets. Algorithm C gets low performance values for easy
+datasets. Algorithm D, does not discriminate among the datasets, as such
+it is a stable algorithm.
+
+We can also look at the datasets and their easiness with respect to the
+algorithms. This is called the latent trait analysis.
+
+``` r
+
+obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item )
+
+dfl <- obj$longdf
+
+g1 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw() 
+g1
+```
+
+<img src="man/figures/README-latenttrait-1.png" width="100%" />
+
+The figure above shows the performance of the 4 algorithms on different
+datasets ordered by dataset easiness. Again, we see that the performance
+of algorithms A and B increase with dataset easiness while the
+performance of algorithm C decreases with dataset easiness. Even though
+the performance of Algorithm D increases with dataset easiness it is
+very stable.
+
+``` r
+
+g3 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=6) + ylab("Performance") + theme_bw() 
+g3
+```
+
+<img src="man/figures/README-latent2-1.png" width="100%" />
+
+The above figure shows the performance by algorithm.
+
+``` r
+
+### Curve fitting - smoothing splines - latent trait
+g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
+g2
+```
+
+<img src="man/figures/README-latent3-1.png" width="100%" /> We fit
+smoothing-splines to the performance data by algorithm. The figure above
+shows these smoothing splines for each algorithm as a function of the
+dataset easiness. From this figure, we can get the best algorithm for a
+given dataset easiness. This gives us the proportion of the latent trait
+spectrum occupied by each algorithm. We call this the latent trait
+occupancy.
+
+``` r
+latent <- obj$latent
+latent$proportions
+#>   group algorithm Proportion  colour
+#> 1     1         A       0.25 #F8766D
+#> 2     3         C       0.20 #00BFC4
+#> 3     4         D       0.55 #C77CFF
+
+setColors <- setNames( latent$proportions$colour, latent$proportions$algorithm)
+
+df2 <- latent$latent
+df3 <- cbind(df2, y=1)
+df3 <- df3[ ,c(1,3,2)]
+g4 <- ggplot(df3, aes(x,y)) + geom_point(aes(color=Algorithm),size=2, shape=15) + ylab("") + coord_fixed(ratio = 2) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) + scale_color_manual(values = setColors) + xlab("Latent Trait") + theme(legend.position="bottom", legend.box="vertical", legend.margin=margin())  +guides(group=guide_legend(nrow=3))
+g4
+```
+
+<img src="man/figures/README-latent4-1.png" width="100%" /> We see that
+algorithms A, C and D occupy 0.25, 0.2 and 0.55 of the latent trait
+respectively. Algorithm C is best for difficult datasets, while
+algorithm D dominates the middle of the spectrum. Algorithm A is better
+for easy datasets.
+
+Next we look at a polytomous example.
+
+## Example - polytomous
+
+``` r
 set.seed(1)
 algo1 <- sample(1:5, 100, replace = TRUE)
 inds1 <- which(algo1 %in% c(4,5))

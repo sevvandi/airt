@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • airt</title>
+<title>Utility function to make a dataframe from the continuous IRTmodel — prepare_for_plots_crm • airt</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,7 +42,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Utility function to make a dataframe from the continuous IRTmodel — prepare_for_plots_crm" />
+<meta property="og:description" content="This is a utility function to make a dataframe from the continuous IRTmodel, which makes it easier to plot the surfaces" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -63,7 +64,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,132 +109,56 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Utility function to make a dataframe from the continuous IRTmodel</h1>
+    
+    <div class="hidden name"><code>prepare_for_plots_crm.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This is a utility function to make a dataframe from the continuous IRTmodel, which makes it easier to plot the surfaces</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>prepare_for_plots_crm</span>(<span class='no'>mod</span>, <span class='kw'>thetarange</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>6</span>, <span class='fl'>6</span>))</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="algo_effectiveness_crm.html">algo_effectiveness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="algo_effectiveness_poly.html">algo_effectiveness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cirtmodel.html">cirtmodel()</a></code> </p>
-        </td>
-        <td><p>Fits a continuous IRT model.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="classification_cts.html">classification_cts</a></code> </p>
-        </td>
-        <td><p>A dataset containing classification algorithm performance data in a continuous format.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="classification_poly.html">classification_poly</a></code> </p>
-        </td>
-        <td><p>A dataset containing classification algorithm performance data in a polytomous format.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="effectiveness_crm.html">effectiveness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of the collection of algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="effectiveness_poly.html">effectiveness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of the collection of algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="latent_trait_analysis.html">latent_trait_analysis()</a></code> </p>
-        </td>
-        <td><p>Performs the latent trait analysis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="make_polyIRT_data.html">make_polyIRT_data()</a></code> </p>
-        </td>
-        <td><p>Converts continuous performance data to polytomous data with 5 categories.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_crm.html">model_goodness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for all algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_for_algo_crm.html">model_goodness_for_algo_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_for_algo_poly.html">model_goodness_for_algo_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of the IRT model fit for a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_poly.html">model_goodness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for all algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pirtmodel.html">pirtmodel()</a></code> </p>
-        </td>
-        <td><p>Fits a polytomous IRT model.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prepare_for_plots_crm.html">prepare_for_plots_crm()</a></code> </p>
-        </td>
-        <td><p>Utility function to make a dataframe from the continuous IRTmodel</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prepare_for_plots_poly.html">prepare_for_plots_poly()</a></code> </p>
-        </td>
-        <td><p>Utility function to make a dataframe from the polytomous IRTmodel</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>mod</th>
+      <td><p>IRT model, either from function <code>cirtmodel</code> or the <code>R</code> package <code>EstCRM</code>.</p></td>
+    </tr>
+    <tr>
+      <th>thetarange</th>
+      <td><p>The range for <code>theta</code>, default from -6 to 6.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Dataframe with output probabilities from the IRT model for all algorithms.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>classification_cts</span>)
+<span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='cirtmodel.html'>cirtmodel</a></span>(<span class='no'>classification_cts</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='input'><span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'>prepare_for_plots_crm</span>(<span class='no'>mod</span>$<span class='no'>model</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>dat</span>)</div><div class='output co'>#&gt;   theta  z        pdf Algorithm
+#&gt; 1  -6.0 -6 0.13788683        NB
+#&gt; 2  -5.9 -6 0.11739606        NB
+#&gt; 3  -5.8 -6 0.09890093        NB
+#&gt; 4  -5.7 -6 0.08244480        NB
+#&gt; 5  -5.6 -6 0.06800523        NB
+#&gt; 6  -5.5 -6 0.05550568        NB</div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 

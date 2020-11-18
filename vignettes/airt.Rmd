@@ -30,6 +30,7 @@ if (!requireNamespace("tidyr", quietly = TRUE)) {
     stop("Package tidyr is needed for the vignette. Please install it.",
       call. = FALSE)
 }
+
 ```
 
 
@@ -41,10 +42,75 @@ library(tidyr)
 The goal of _airt_ is to evaluate performance of algorithms using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The IRT model is fitted using the R package __mirt__ .
 
 
-## Classification Algorithms
+## Classification Algorithms - Continuous IRT model
 
 This example is on classification algorithms. The data *classification* has performance data from 10 classification algorithms on 235 datasets. This data is discussed in  [@munoz2018instance] and can be found at the test instance library MATILDA [@matilda].
 
+```{r example2}
+data("classification_cts")
+df2 <- classification_cts
+max_item  <- max(df2)
+min_item <- 0
+max.item <- rep(max_item, dim(df2)[2])
+min.item <- rep(min_item, dim(df2)[2])
+df2 <- as.data.frame(df2)
+modout <- cirtmodel(df2, max.item, min.item)
+paras <- modout$model$param
+
+gdf <- prepare_for_plots_crm(modout$model) 
+ggplot(gdf, aes(theta, z)) + geom_raster(aes(fill=pdf))  + xlab("theta") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=1) + theme_bw()  +  scale_fill_viridis_c(option = "plasma")  
+```
+
+The figure above shows the probability density of the fitted IRT model over Theta and z values. The y axis denotes the normalized performance values.  The high density regions are showed by the lighter coloured parts.
+
+## Classification Algorithms -Latent Trait Analysis
+We can also look at the datasets and their easiness with respect to the algorithms. This is called the latent trait analysis. 
+```{r latenttrait}
+
+obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item )
+
+dfl <- obj$longdf
+
+g1 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw() 
+g1
+```
+
+The figure above shows the performance of the 10 algorithms on different datasets ordered by dataset easiness. Or, we can split it by algorithm. 
+
+
+```{r latent2}
+
+g3 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=6) + ylab("Performance") + theme_bw() 
+g3
+
+```
+
+```{r latent3}
+
+### Curve fitting - smoothing splines - latent trait
+g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
+g2
+```
+
+Next, we fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
+
+```{r latent 4}
+latent <- obj$latent
+latent$proportions
+
+setColors <- setNames( latent$proportions$colour, latent$proportions$algorithm)
+
+df2 <- latent$latent
+df3 <- cbind(df2, y=1)
+df3 <- df3[ ,c(1,3,2)]
+g4 <- ggplot(df3, aes(x,y)) + geom_point(aes(color=Algorithm),size=2, shape=15) + ylab("") + coord_fixed(ratio = 2) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) + scale_color_manual(values = setColors) + xlab("Latent Trait") + theme(legend.position="bottom", legend.box="vertical", legend.margin=margin())  +guides(group=guide_legend(nrow=3))
+g4
+
+```
+
+We see latent trait occupancy in the graph above. The 5 algorithms J48, KNN L_SVM, poly_SVM and RBF_SVM occupy parts of the latent trait spectrum. That is, for some dataset easiness values, these algorithms display superiority. 
+
+## Classification Algorithms - Polytomous IRT model
 We have binned the data so that we can fit a polytomous IRT model to it. The lowest performance measurement is P1 and the highest is P5, with the others in between. The latent scores $\theta$ represent the easiness of the datasets.  Let's fit an IRT model to this data and look at the algorithm trace lines. 
 
 ```{r example}
@@ -71,7 +137,7 @@ good_df <- good_curves %>% pivot_longer(cols=2:dim(good_curves)[2], names_to=c("
 ggplot(good_df, aes(x,value)) + geom_point() + geom_line(aes(color = Algorithm), size=1) + xlab("Goodness Tolerance")  + ylab("Model Goodness Curve") + theme_bw()
 ```
 
-the x axis is the goodness tolerance. That is, the values at x=0 tell you the percentage of actual = predicted for each algorithm. We see that for QDA only 45% of actual performance values equals the IRT predicted performance values, while for CART more than 95% of the actual performance values equals the IRT predicted performance values. 
+The x axis is the goodness tolerance. That is, the values at x=0 tell you the percentage of actual = predicted for each algorithm. We see that for QDA only 45% of actual performance values equals the IRT predicted performance values, while for CART more than 95% of the actual performance values equals the IRT predicted performance values. 
 
 If we make the definition of goodness slightly broader and include the proportion of predicted deviating from the actual by 1, then for QDA nearly 70% of the datasets are within that margin and for CART it is this proportion is nearly 100%. In this manner we relax the tolerance. The _curves_ list out these coordinates for each algorithm for each goodness tolerance level x.  The area under the curve is an indication of how accurate the IRT model is on a given algorithm. 
 

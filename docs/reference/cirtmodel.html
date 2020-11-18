@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • airt</title>
+<title>Fits a continuous IRT model. — cirtmodel • airt</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,7 +42,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Fits a continuous IRT model. — cirtmodel" />
+<meta property="og:description" content="This function fits a continuous Item Response Theory (IRT) model to the algorithm performance data. The function EstCRMitem in the R package EstCRM is updated to accommodate negative discrimination." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -63,7 +64,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,132 +109,63 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Fits a continuous IRT model.</h1>
+    
+    <div class="hidden name"><code>cirtmodel.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function fits a continuous Item Response Theory (IRT) model to the algorithm performance data. The function EstCRMitem in the R package EstCRM is updated to accommodate negative discrimination.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>cirtmodel</span>(<span class='no'>df</span>, <span class='kw'>max.item</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>min.item</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="algo_effectiveness_crm.html">algo_effectiveness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="algo_effectiveness_poly.html">algo_effectiveness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cirtmodel.html">cirtmodel()</a></code> </p>
-        </td>
-        <td><p>Fits a continuous IRT model.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="classification_cts.html">classification_cts</a></code> </p>
-        </td>
-        <td><p>A dataset containing classification algorithm performance data in a continuous format.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="classification_poly.html">classification_poly</a></code> </p>
-        </td>
-        <td><p>A dataset containing classification algorithm performance data in a polytomous format.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="effectiveness_crm.html">effectiveness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of the collection of algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="effectiveness_poly.html">effectiveness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the actual and predicted effectiveness of the collection of algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="latent_trait_analysis.html">latent_trait_analysis()</a></code> </p>
-        </td>
-        <td><p>Performs the latent trait analysis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="make_polyIRT_data.html">make_polyIRT_data()</a></code> </p>
-        </td>
-        <td><p>Converts continuous performance data to polytomous data with 5 categories.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_crm.html">model_goodness_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for all algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_for_algo_crm.html">model_goodness_for_algo_crm()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_for_algo_poly.html">model_goodness_for_algo_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of the IRT model fit for a given algorithm.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_goodness_poly.html">model_goodness_poly()</a></code> </p>
-        </td>
-        <td><p>Computes the goodness of IRT model for all algorithms.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pirtmodel.html">pirtmodel()</a></code> </p>
-        </td>
-        <td><p>Fits a polytomous IRT model.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prepare_for_plots_crm.html">prepare_for_plots_crm()</a></code> </p>
-        </td>
-        <td><p>Utility function to make a dataframe from the continuous IRTmodel</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prepare_for_plots_poly.html">prepare_for_plots_poly()</a></code> </p>
-        </td>
-        <td><p>Utility function to make a dataframe from the polytomous IRTmodel</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>The performance data in a matrix or dataframe.</p></td>
+    </tr>
+    <tr>
+      <th>max.item</th>
+      <td><p>A vector with the maximum performance value for each algorithm.</p></td>
+    </tr>
+    <tr>
+      <th>min.item</th>
+      <td><p>A vector with the minimum performance value for each algorithm.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A list with the following components:</p>
+<dt><code>model</code></dt><dd><p>The IRT model.</p></dd>
+<dt><code>anomalous</code></dt><dd><p>A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.</p></dd>
+ <dt><code>stability</code></dt><dd><p>The stability of each algorithm.</p></dd>
+ <dt><code>easiness_threshold</code></dt><dd><p>The easiness threshold of each algorithm. A lower threshold indicates that the algorithm finds more test instances easy.</p></dd>
+
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
+<span class='no'>x1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
+<span class='no'>x2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
+<span class='no'>x3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
+<span class='no'>X</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind.data.frame</a></span>(<span class='no'>x1</span>, <span class='no'>x2</span>, <span class='no'>x3</span>)
+<span class='no'>max_item</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>)
+<span class='no'>min_item</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>,<span class='fl'>3</span>)
+<span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='fu'>cirtmodel</span>(<span class='no'>X</span>, <span class='kw'>max.item</span><span class='kw'>=</span><span class='no'>max_item</span>, <span class='kw'>min.item</span><span class='kw'>=</span><span class='no'>min_item</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
