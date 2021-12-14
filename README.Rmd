@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
   [![Travis build status](https://travis-ci.org/sevvandi/airt.svg?branch=master)](https://travis-ci.org/sevvandi/airt)
   <!-- badges: end -->
   
-The goal of _airt_ is to evaluate algorithm performances using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The polytomous IRT model is fitted using the R package _mirt_ and the continuous IRT model is fitted using some updates to the code in the R package _EstCRM_.  
+The goal of _airt_ is to evaluate algorithm performances using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The polytomous IRT model is fitted using the R package _mirt_ and the continuous IRT model is fitted using updates to the code in _EstCRM_.  
 
 ## Installation
 
@@ -87,7 +87,7 @@ The figure above shows the probability density of the fitted IRT model over Thet
 We can also look at the datasets and their easiness with respect to the algorithms. This is called the latent trait analysis. 
 ```{r latenttrait}
 
-obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item )
+obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item, epsilon = 0 )
 
 dfl <- obj$longdf
 
@@ -110,24 +110,43 @@ The above figure shows the performance by algorithm.
 
 ### Curve fitting - smoothing splines - latent trait
 g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
-g2
+# g2
 ```
 We fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
 
 ```{r latent4}
-latent <- obj$latent
+latent <- obj$strengths
 latent$proportions
 
-setColors <- setNames( latent$proportions$colour, latent$proportions$algorithm)
+num_algos <- length(unique(dfl$Algorithm))
+colrs <- scales::hue_pal()(num_algos)
+ 
+latenttr <- obj$strengths$multilatent
+dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
+colnames(dfl2)[2] <- "Algorithm"
+dfl2 <- dfl2[dfl2$value!=0, ]
+new_vals <- seq(1, length(unique(dfl2$value)), by = 1)
+dfl2$value <- new_vals[as.factor(dfl2$value )]
+dfl2$value <- dfl2$value*0.1
+colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl2$Algorithm))]
+g6 <- ggplot(dfl2, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  + scale_fill_manual(values = colrs2) +  ggtitle("Algorithm Strengths") +  coord_fixed(ratio=1)
 
-df2 <- latent$latent
-df3 <- cbind(df2, y=1)
-df3 <- df3[ ,c(1,3,2)]
-g4 <- ggplot(df3, aes(x,y)) + geom_point(aes(color=Algorithm),size=2, shape=15) + ylab("") + coord_fixed(ratio = 2) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) + scale_color_manual(values = setColors) + xlab("Latent Trait") + theme(legend.position="bottom", legend.box="vertical", legend.margin=margin())  +guides(group=guide_legend(nrow=3))
-g4
+
+latenttr2 <- obj$weakness$multilatent
+dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
+colnames(dfl3)[2] <- "Algorithm"
+dfl3 <- dfl3[dfl3$value!=0, ]
+new_vals <- seq(1, length(unique(dfl3$value)), by = 1)
+dfl3$value <- new_vals[as.factor(dfl3$value )]
+dfl3$value <- dfl3$value*0.1
+colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl3$Algorithm))]
+g7 <- ggplot(dfl3, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) +  scale_fill_manual(values = colrs2)  + ggtitle("Algorithm Weaknesses") +  coord_fixed(ratio=1)
+
+g2
+grid.arrange(g6, g7)
 
 ```
-We see that algorithms A, C and D occupy 0.25, 0.2 and 0.55 of the latent trait respectively. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets. 
+We see that algorithms A, C and D occupy 0.065, 0.0.065 and 0.87 of the latent trait respectively. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets. 
 
 Next we look at a polytomous example. 
 
@@ -161,4 +180,4 @@ The pkgdown site describes the functionality of _airt_ : https://sevvandi.github
 ## Acknowledgements
 Firstly, thanks to Rob Hyndman for coming up with the name _airt_, which is an old Scottish word meaing _to guide_. Also, thanks to Phil Chalmers for being very quick in responding to emails about his R package _mirt_. 
 
-Many people helped me with the hex sticker. A big thank you to Patricia Menendez Galvan for patiently giving me feedback on how to improve the hex sticker. Also,  thanks for Di Cook and Emi Tanaka for giving good feedback. Nishka and Sashenka Fernando also helped with the design of the hex sticker. Finally, where did I get the hex sticker template from? From Emi Tanaka's blogpost https://emitanaka.org/post/hexsticker/. Thanks again, Emi. 
+Many people helped me with the hex sticker. A big thank you to Patricia Menendez Galvan, Di Cook,  Emi Tanaka, Nishka and Sashenka Fernando for giving me great feedback. 

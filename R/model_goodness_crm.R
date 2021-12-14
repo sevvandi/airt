@@ -9,7 +9,7 @@
 #' \item{\code{xy}}{The \code{x} values denote the goodness tolerances. The \code{y} values denote the model goodness. }
 #' \item{\code{auc}}{The area under the model goodness curve. }
 #'
-#'@examples
+#'@examples \donttest{
 #'set.seed(1)
 #'x1 <- runif(100)
 #'x2 <- runif(100)
@@ -20,6 +20,7 @@
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- model_goodness_for_algo_crm(mod$model, num=1)
 #'out
+#'}
 #'
 #' @importFrom mirt fscores probtrace coef
 #' @export
@@ -92,7 +93,7 @@ actual_vs_predicted_crm <- function(mod, num=1, min_item=0, max_item=1){
 #' \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
 #' \item{\code{curves}}{The \code{x,y} coodinates for the model goodness curves for each algorithm. }
 #'
-#'@examples
+#'@examples \donttest{
 #'set.seed(1)
 #'x1 <- runif(100)
 #'x2 <- runif(100)
@@ -103,6 +104,7 @@ actual_vs_predicted_crm <- function(mod, num=1, min_item=0, max_item=1){
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- model_goodness_crm(mod$model)
 #'out
+#'}
 #' @export
 model_goodness_crm <- function(mod){
   dd <- dim(mod$data)[2]

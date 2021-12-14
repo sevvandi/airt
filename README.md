@@ -13,8 +13,7 @@ The goal of *airt* is to evaluate algorithm performances using Item
 Response Theory (IRT). You can use *airt* to evaluate the performance of
 a group of algorithms on a collection of test instances. The polytomous
 IRT model is fitted using the R package *mirt* and the continuous IRT
-model is fitted using some updates to the code in the R package
-*EstCRM*.
+model is fitted using updates to the code in *EstCRM*.
 
 ## Installation
 
@@ -44,7 +43,6 @@ However, algorithm D has very high performance values.
 ``` r
 library(airt)
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 3.6.3
 library(gridExtra)
 
 
@@ -105,7 +103,13 @@ algorithms. This is called the latent trait analysis.
 
 ``` r
 
-obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item )
+obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item, epsilon = 0 )
+#> Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
+#> Using compatibility `.name_repair`.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_warnings()` to see where this warning was generated.
+#> Joining, by = "group"
+#> Joining, by = "group"
 
 dfl <- obj$longdf
 
@@ -136,36 +140,61 @@ The above figure shows the performance by algorithm.
 
 ### Curve fitting - smoothing splines - latent trait
 g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
+# g2
+```
+
+We fit smoothing-splines to the performance data by algorithm. The
+figure above shows these smoothing splines for each algorithm as a
+function of the dataset easiness. From this figure, we can get the best
+algorithm for a given dataset easiness. This gives us the proportion of
+the latent trait spectrum occupied by each algorithm. We call this the
+latent trait occupancy.
+
+``` r
+latent <- obj$strengths
+latent$proportions
+#> # A tibble: 3 x 4
+#>   group Proportion algorithm colour 
+#>   <dbl>      <dbl> <chr>     <chr>  
+#> 1     4      0.87  D         #C77CFF
+#> 2     1      0.065 A         #F8766D
+#> 3     3      0.065 C         #00BFC4
+
+num_algos <- length(unique(dfl$Algorithm))
+colrs <- scales::hue_pal()(num_algos)
+ 
+latenttr <- obj$strengths$multilatent
+dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
+colnames(dfl2)[2] <- "Algorithm"
+dfl2 <- dfl2[dfl2$value!=0, ]
+new_vals <- seq(1, length(unique(dfl2$value)), by = 1)
+dfl2$value <- new_vals[as.factor(dfl2$value )]
+dfl2$value <- dfl2$value*0.1
+colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl2$Algorithm))]
+g6 <- ggplot(dfl2, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  + scale_fill_manual(values = colrs2) +  ggtitle("Algorithm Strengths") +  coord_fixed(ratio=1)
+
+
+latenttr2 <- obj$weakness$multilatent
+dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
+colnames(dfl3)[2] <- "Algorithm"
+dfl3 <- dfl3[dfl3$value!=0, ]
+new_vals <- seq(1, length(unique(dfl3$value)), by = 1)
+dfl3$value <- new_vals[as.factor(dfl3$value )]
+dfl3$value <- dfl3$value*0.1
+colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl3$Algorithm))]
+g7 <- ggplot(dfl3, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) +  scale_fill_manual(values = colrs2)  + ggtitle("Algorithm Weaknesses") +  coord_fixed(ratio=1)
+
 g2
 ```
 
-<img src="man/figures/README-latent3-1.png" width="100%" /> We fit
-smoothing-splines to the performance data by algorithm. The figure above
-shows these smoothing splines for each algorithm as a function of the
-dataset easiness. From this figure, we can get the best algorithm for a
-given dataset easiness. This gives us the proportion of the latent trait
-spectrum occupied by each algorithm. We call this the latent trait
-occupancy.
+<img src="man/figures/README-latent4-1.png" width="100%" />
 
 ``` r
-latent <- obj$latent
-latent$proportions
-#>   group algorithm Proportion  colour
-#> 1     1         A       0.25 #F8766D
-#> 2     3         C       0.20 #00BFC4
-#> 3     4         D       0.55 #C77CFF
-
-setColors <- setNames( latent$proportions$colour, latent$proportions$algorithm)
-
-df2 <- latent$latent
-df3 <- cbind(df2, y=1)
-df3 <- df3[ ,c(1,3,2)]
-g4 <- ggplot(df3, aes(x,y)) + geom_point(aes(color=Algorithm),size=2, shape=15) + ylab("") + coord_fixed(ratio = 2) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) + scale_color_manual(values = setColors) + xlab("Latent Trait") + theme(legend.position="bottom", legend.box="vertical", legend.margin=margin())  +guides(group=guide_legend(nrow=3))
-g4
+grid.arrange(g6, g7)
 ```
 
-<img src="man/figures/README-latent4-1.png" width="100%" /> We see that
-algorithms A, C and D occupy 0.25, 0.2 and 0.55 of the latent trait
+<img src="man/figures/README-latent4-2.png" width="100%" /> We see that
+algorithms A, C and D occupy 0.065, 0.0.065 and 0.87 of the latent trait
 respectively. Algorithm C is best for difficult datasets, while
 algorithm D dominates the middle of the spectrum. Algorithm A is better
 for easy datasets.
@@ -222,9 +251,5 @@ is an old Scottish word meaing *to guide*. Also, thanks to Phil Chalmers
 for being very quick in responding to emails about his R package *mirt*.
 
 Many people helped me with the hex sticker. A big thank you to Patricia
-Menendez Galvan for patiently giving me feedback on how to improve the
-hex sticker. Also, thanks for Di Cook and Emi Tanaka for giving good
-feedback. Nishka and Sashenka Fernando also helped with the design of
-the hex sticker. Finally, where did I get the hex sticker template from?
-From Emi Tanaka’s blogpost <https://emitanaka.org/post/hexsticker/>.
-Thanks again, Emi.
+Menendez Galvan, Di Cook, Emi Tanaka, Nishka and Sashenka Fernando for
+giving me great feedback.

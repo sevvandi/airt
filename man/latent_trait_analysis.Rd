@@ -4,7 +4,7 @@
 \alias{latent_trait_analysis}
 \title{Performs the latent trait analysis}
 \usage{
-latent_trait_analysis(df, paras, min_item = 0, max_item = 1)
+latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
 }
 \arguments{
 \item{df}{The performance data in a matrix or dataframe.}
@@ -14,14 +14,18 @@ latent_trait_analysis(df, paras, min_item = 0, max_item = 1)
 \item{min_item}{A vector with the minimum performance value for each algorithm.}
 
 \item{max_item}{A vector with the maximum performance value for each algorithm.}
+
+\item{epsilon}{A value defining good algorithm performance. If \code{epsilon = 0}, then only the best algorithm is considered. A default}
 }
 \value{
 A list with the following components:
 \item{\code{crmtheta}}{The problem trait output computed from the R package EstCRM.}
 \item{\code{crmtheta}}{The problem trait output computed from the R package EstCRM.}
-\item{\code{latent}}{Thelatent trait occupancy of each algorithm.}
+\item{\code{strengths}}{The strengths of each algorithm and positions on the latent trait that they performs well. }
 \item{\code{dfl}}{The dataset in a long format of latent trait occupancy.}
 \item{\code{plt}}{The ggplot object showing the fitted smoothing splines.}
+\item{\code{thetas}}{The easiness of the problem set instances.}
+\item{\code{weakness}}{The weaknesses of each algorithm and positions on the latent trait that they performs poorly.}
 }
 \description{
 This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model. It fits a smoothing spline to the points to compute the latent trait.

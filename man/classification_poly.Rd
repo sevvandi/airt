@@ -13,7 +13,7 @@ A dataframe of 235 x 10 dimensions.
 }
 }
 \source{
-\url{https://matilda.unimelb.edu.au/matilda/problems/learning/classification#classification}
+\url{https://katesmithmiles.wixsite.com/home/matilda}
 }
 \usage{
 classification_poly

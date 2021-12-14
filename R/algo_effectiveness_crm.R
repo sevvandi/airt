@@ -10,7 +10,7 @@
 #' #' \item{\code{prdcurves}}{The \code{x,y} coodinates for the predicted  effectiveness curves for each algorithm. }
 #'
 #'@examples
-#'set.seed(1)
+#'set.seed(1)\donttest{
 #'x1 <- runif(100)
 #'x2 <- runif(100)
 #'x3 <- runif(100)
@@ -20,6 +20,7 @@
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- effectiveness_crm(mod$model)
 #'out
+#'}
 #' @export
 effectiveness_crm <-  function(mod){
   dd <- dim(mod$data)[2]
@@ -61,7 +62,7 @@ effectiveness_crm <-  function(mod){
 #' \item{\code{predictedEff}}{The area under the predicted effectiveness curve. }
 #' \item{\code{actualEff}}{The area under the actual effectiveness curve. }
 #'
-#'@examples
+#'@examples \donttest{
 #'set.seed(1)
 #'x1 <- runif(100)
 #'x2 <- runif(100)
@@ -72,6 +73,7 @@ effectiveness_crm <-  function(mod){
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- algo_effectiveness_crm(mod$model, num=1)
 #'out
+#'}
 #' @export
 algo_effectiveness_crm <- function(mod, num=1){
   actpred <- actual_vs_predicted_crm(mod, num)

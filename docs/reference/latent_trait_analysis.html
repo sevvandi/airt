@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +49,6 @@
 <meta property="og:title" content="Performs the latent trait analysis — latent_trait_analysis" />
 <meta property="og:description" content="This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model. It fits a smoothing spline to the points to compute the latent trait." />
 <meta property="og:image" content="/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -63,7 +66,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -77,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">airt</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -85,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +123,7 @@
     <p>This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model. It fits a smoothing spline to the points to compute the latent trait.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>latent_trait_analysis</span>(<span class='no'>df</span>, <span class='no'>paras</span>, <span class='kw'>min_item</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>max_item</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre class="usage"><span class='fu'>latent_trait_analysis</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>paras</span>, min_item <span class='op'>=</span> <span class='fl'>0</span>, max_item <span class='op'>=</span> <span class='fl'>1</span>, epsilon <span class='op'>=</span> <span class='fl'>0.01</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,6 +144,10 @@
       <th>max_item</th>
       <td><p>A vector with the maximum performance value for each algorithm.</p></td>
     </tr>
+    <tr>
+      <th>epsilon</th>
+      <td><p>A value defining good algorithm performance. If <code>epsilon = 0</code>, then only the best algorithm is considered. A default</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -148,21 +155,28 @@
     <p>A list with the following components:</p>
 <dt><code>crmtheta</code></dt><dd><p>The problem trait output computed from the R package EstCRM.</p></dd>
 <dt><code>crmtheta</code></dt><dd><p>The problem trait output computed from the R package EstCRM.</p></dd>
-<dt><code>latent</code></dt><dd><p>Thelatent trait occupancy of each algorithm.</p></dd>
+<dt><code>strengths</code></dt><dd><p>The strengths of each algorithm and positions on the latent trait that they performs well.</p></dd>
 <dt><code>dfl</code></dt><dd><p>The dataset in a long format of latent trait occupancy.</p></dd>
 <dt><code>plt</code></dt><dd><p>The ggplot object showing the fitted smoothing splines.</p></dd>
+<dt><code>thetas</code></dt><dd><p>The easiness of the problem set instances.</p></dd>
+<dt><code>weakness</code></dt><dd><p>The weaknesses of each algorithm and positions on the latent trait that they performs poorly.</p></dd>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
-<span class='no'>x1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
-<span class='no'>x2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
-<span class='no'>x3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>100</span>)
-<span class='no'>X</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind.data.frame</a></span>(<span class='no'>x1</span>, <span class='no'>x2</span>, <span class='no'>x3</span>)
-<span class='no'>max_item</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>)
-<span class='no'>min_item</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>,<span class='fl'>3</span>)
-<span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='cirtmodel.html'>cirtmodel</a></span>(<span class='no'>X</span>, <span class='kw'>max.item</span><span class='kw'>=</span><span class='no'>max_item</span>, <span class='kw'>min.item</span><span class='kw'>=</span><span class='no'>min_item</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='input'><span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'>latent_trait_analysis</span>(<span class='no'>X</span>, <span class='no'>mod</span>$<span class='no'>model</span>$<span class='no'>param</span>, <span class='kw'>min_item</span><span class='kw'>=</span> <span class='no'>min_item</span>, <span class='kw'>max_item</span> <span class='kw'>=</span> <span class='no'>max_item</span>)
-<span class='no'>out</span></div><div class='output co'>#&gt; $crmtheta
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>x1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>)</span>
+<span class='va'>x2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>)</span>
+<span class='va'>x3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>)</span>
+<span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind.data.frame</a></span><span class='op'>(</span><span class='va'>x1</span>, <span class='va'>x2</span>, <span class='va'>x3</span><span class='op'>)</span>
+<span class='va'>max_item</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>3</span><span class='op'>)</span>
+<span class='va'>min_item</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>3</span><span class='op'>)</span>
+<span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='cirtmodel.html'>cirtmodel</a></span><span class='op'>(</span><span class='va'>X</span>, max.item<span class='op'>=</span><span class='va'>max_item</span>, min.item<span class='op'>=</span><span class='va'>min_item</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='output co'>#&gt; <span class='warning'>Warning: NaNs produced</span></div><div class='input'><span class='va'>out</span> <span class='op'>&lt;-</span> <span class='fu'>latent_trait_analysis</span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>mod</span><span class='op'>$</span><span class='va'>model</span><span class='op'>$</span><span class='va'>param</span>, min_item<span class='op'>=</span> <span class='va'>min_item</span>, max_item <span class='op'>=</span> <span class='va'>max_item</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.</span>
+#&gt; <span class='warning'>Using compatibility `.name_repair`.</span>
+#&gt; <span class='warning'><span style='color: #555555;'>This warning is displayed once every 8 hours.</span><span></span>
+#&gt; <span class='warning'></span><span style='color: #555555;'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span><span></span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "group"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "group"</span></div><div class='input'><span class='va'>out</span>
+</div><div class='output co'>#&gt; $crmtheta
 #&gt; $thetas
 #&gt;         ID  Theta Est.       SE
 #&gt;   [1,]   1 -0.75167479 1.235089
@@ -269,123 +283,452 @@
 #&gt; attr(,"class")
 #&gt; [1] "CRMtheta"
 #&gt; 
-#&gt; $latent
-#&gt; $latent$proportions
-#&gt;   group algorithm Proportion  colour
-#&gt; 1     1        x1      0.525 #F8766D
-#&gt; 2     2        x2      0.475 #00BA38
+#&gt; $strengths
+#&gt; $strengths$proportions
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 4</span><span>
+#&gt;   group Proportion algorithm colour 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span>     2      0.510 x2        #00BA38
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span>     1      0.490 x1        #F8766D
 #&gt; 
-#&gt; $latent$latent
-#&gt;              x Algorithm
-#&gt; 1  -2.77887927        x2
-#&gt; 2  -2.70277850        x2
-#&gt; 3  -2.62667774        x2
-#&gt; 4  -2.55057697        x2
-#&gt; 5  -2.47447620        x2
-#&gt; 6  -2.39837543        x2
-#&gt; 7  -2.32227467        x2
-#&gt; 8  -2.24617390        x2
-#&gt; 9  -2.17007313        x2
-#&gt; 10 -2.09397237        x2
-#&gt; 11 -2.01787160        x2
-#&gt; 12 -1.94177083        x2
-#&gt; 13 -1.86567006        x2
-#&gt; 14 -1.78956930        x2
-#&gt; 15 -1.71346853        x2
-#&gt; 16 -1.63736776        x2
-#&gt; 17 -1.56126699        x2
-#&gt; 18 -1.48516623        x2
-#&gt; 19 -1.40906546        x2
-#&gt; 20 -1.33296469        x2
-#&gt; 21 -1.25686393        x2
-#&gt; 22 -1.18076316        x2
-#&gt; 23 -1.10466239        x2
-#&gt; 24 -1.02856162        x2
-#&gt; 25 -0.95246086        x2
-#&gt; 26 -0.87636009        x2
-#&gt; 27 -0.80025932        x2
-#&gt; 28 -0.72415856        x2
-#&gt; 29 -0.64805779        x2
-#&gt; 30 -0.57195702        x2
-#&gt; 31 -0.49585625        x2
-#&gt; 32 -0.41975549        x2
-#&gt; 33 -0.34365472        x2
-#&gt; 34 -0.26755395        x2
-#&gt; 35 -0.19145318        x2
-#&gt; 36 -0.11535242        x2
-#&gt; 37 -0.03925165        x2
-#&gt; 38  0.03684912        x2
-#&gt; 39  0.11294988        x1
-#&gt; 40  0.18905065        x1
-#&gt; 41  0.26515142        x1
-#&gt; 42  0.34125219        x1
-#&gt; 43  0.41735295        x1
-#&gt; 44  0.49345372        x1
-#&gt; 45  0.56955449        x1
-#&gt; 46  0.64565526        x1
-#&gt; 47  0.72175602        x1
-#&gt; 48  0.79785679        x1
-#&gt; 49  0.87395756        x1
-#&gt; 50  0.95005832        x1
-#&gt; 51  1.02615909        x1
-#&gt; 52  1.10225986        x1
-#&gt; 53  1.17836063        x1
-#&gt; 54  1.25446139        x1
-#&gt; 55  1.33056216        x1
-#&gt; 56  1.40666293        x1
-#&gt; 57  1.48276369        x1
-#&gt; 58  1.55886446        x1
-#&gt; 59  1.63496523        x1
-#&gt; 60  1.71106600        x1
-#&gt; 61  1.78716676        x1
-#&gt; 62  1.86326753        x1
-#&gt; 63  1.93936830        x1
-#&gt; 64  2.01546907        x1
-#&gt; 65  2.09156983        x1
-#&gt; 66  2.16767060        x1
-#&gt; 67  2.24377137        x1
-#&gt; 68  2.31987213        x1
-#&gt; 69  2.39597290        x1
-#&gt; 70  2.47207367        x1
-#&gt; 71  2.54817444        x1
-#&gt; 72  2.62427520        x1
-#&gt; 73  2.70037597        x1
-#&gt; 74  2.77647674        x1
-#&gt; 75  2.85257751        x1
-#&gt; 76  2.92867827        x1
-#&gt; 77  3.00477904        x1
-#&gt; 78  3.08087981        x1
-#&gt; 79  3.15698057        x1
-#&gt; 80  3.23308134        x1
+#&gt; $strengths$latent
+#&gt; </span><span style='color: #949494;'># A tibble: 80 x 1</span><span>
+#&gt;        x
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> -</span><span style='color: #BB0000;'>2.78</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> -</span><span style='color: #BB0000;'>2.70</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> -</span><span style='color: #BB0000;'>2.63</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> -</span><span style='color: #BB0000;'>2.55</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> -</span><span style='color: #BB0000;'>2.47</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> -</span><span style='color: #BB0000;'>2.40</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> -</span><span style='color: #BB0000;'>2.32</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> -</span><span style='color: #BB0000;'>2.25</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> -</span><span style='color: #BB0000;'>2.17</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> -</span><span style='color: #BB0000;'>2.09</span><span>
+#&gt; </span><span style='color: #949494;'># ... with 70 more rows</span><span>
+#&gt; 
+#&gt; $strengths$multilatent
+#&gt;    latenttrait x1 x2 x3
+#&gt; 1  -2.77887927  0  2  0
+#&gt; 2  -2.70277850  0  2  0
+#&gt; 3  -2.62667774  0  2  0
+#&gt; 4  -2.55057697  0  2  0
+#&gt; 5  -2.47447620  0  2  0
+#&gt; 6  -2.39837543  0  2  0
+#&gt; 7  -2.32227467  0  2  0
+#&gt; 8  -2.24617390  0  2  0
+#&gt; 9  -2.17007313  0  2  0
+#&gt; 10 -2.09397237  0  2  0
+#&gt; 11 -2.01787160  0  2  0
+#&gt; 12 -1.94177083  0  2  0
+#&gt; 13 -1.86567006  0  2  0
+#&gt; 14 -1.78956930  0  2  0
+#&gt; 15 -1.71346853  0  2  0
+#&gt; 16 -1.63736776  0  2  0
+#&gt; 17 -1.56126699  0  2  0
+#&gt; 18 -1.48516623  0  2  0
+#&gt; 19 -1.40906546  0  2  0
+#&gt; 20 -1.33296469  0  2  0
+#&gt; 21 -1.25686393  0  2  0
+#&gt; 22 -1.18076316  0  2  0
+#&gt; 23 -1.10466239  0  2  0
+#&gt; 24 -1.02856162  0  2  0
+#&gt; 25 -0.95246086  0  2  0
+#&gt; 26 -0.87636009  0  2  0
+#&gt; 27 -0.80025932  0  2  0
+#&gt; 28 -0.72415856  0  2  0
+#&gt; 29 -0.64805779  0  2  0
+#&gt; 30 -0.57195702  0  2  0
+#&gt; 31 -0.49585625  0  2  0
+#&gt; 32 -0.41975549  0  2  0
+#&gt; 33 -0.34365472  0  2  0
+#&gt; 34 -0.26755395  0  2  0
+#&gt; 35 -0.19145318  0  2  0
+#&gt; 36 -0.11535242  0  2  0
+#&gt; 37 -0.03925165  0  2  0
+#&gt; 38  0.03684912  1  2  0
+#&gt; 39  0.11294988  1  0  0
+#&gt; 40  0.18905065  1  0  0
+#&gt; 41  0.26515142  1  0  0
+#&gt; 42  0.34125219  1  0  0
+#&gt; 43  0.41735295  1  0  0
+#&gt; 44  0.49345372  1  0  0
+#&gt; 45  0.56955449  1  0  0
+#&gt; 46  0.64565526  1  0  0
+#&gt; 47  0.72175602  1  0  0
+#&gt; 48  0.79785679  1  0  0
+#&gt; 49  0.87395756  1  0  0
+#&gt; 50  0.95005832  1  0  0
+#&gt; 51  1.02615909  1  0  0
+#&gt; 52  1.10225986  1  0  0
+#&gt; 53  1.17836063  1  0  0
+#&gt; 54  1.25446139  1  0  0
+#&gt; 55  1.33056216  1  0  0
+#&gt; 56  1.40666293  1  0  0
+#&gt; 57  1.48276369  1  0  0
+#&gt; 58  1.55886446  1  0  0
+#&gt; 59  1.63496523  1  0  0
+#&gt; 60  1.71106600  1  0  0
+#&gt; 61  1.78716676  1  0  0
+#&gt; 62  1.86326753  1  0  0
+#&gt; 63  1.93936830  1  0  0
+#&gt; 64  2.01546907  1  0  0
+#&gt; 65  2.09156983  1  0  0
+#&gt; 66  2.16767060  1  0  0
+#&gt; 67  2.24377137  1  0  0
+#&gt; 68  2.31987213  1  0  0
+#&gt; 69  2.39597290  1  0  0
+#&gt; 70  2.47207367  1  0  0
+#&gt; 71  2.54817444  1  0  0
+#&gt; 72  2.62427520  1  0  0
+#&gt; 73  2.70037597  1  0  0
+#&gt; 74  2.77647674  1  0  0
+#&gt; 75  2.85257751  1  0  0
+#&gt; 76  2.92867827  1  0  0
+#&gt; 77  3.00477904  1  0  0
+#&gt; 78  3.08087981  1  0  0
+#&gt; 79  3.15698057  1  0  0
+#&gt; 80  3.23308134  1  0  0
 #&gt; 
 #&gt; 
 #&gt; $longdf
-#&gt; <span style='color: #555555;'># A tibble: 300 x 3</span><span>
-#&gt;    Latent_Trait Algorithm  value
-#&gt;           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>        -</span><span style='color: #BB0000;'>2.78</span><span> x1        0.013</span><span style='text-decoration: underline;'>4</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span>        -</span><span style='color: #BB0000;'>2.78</span><span> x2        0.511 
-#&gt; </span><span style='color: #555555;'> 3</span><span>        -</span><span style='color: #BB0000;'>2.78</span><span> x3        0.258 
-#&gt; </span><span style='color: #555555;'> 4</span><span>        -</span><span style='color: #BB0000;'>2.42</span><span> x1        0.023</span><span style='text-decoration: underline;'>3</span><span>
-#&gt; </span><span style='color: #555555;'> 5</span><span>        -</span><span style='color: #BB0000;'>2.42</span><span> x2        0.175 
-#&gt; </span><span style='color: #555555;'> 6</span><span>        -</span><span style='color: #BB0000;'>2.42</span><span> x3        0.429 
-#&gt; </span><span style='color: #555555;'> 7</span><span>        -</span><span style='color: #BB0000;'>2.03</span><span> x1        0.058</span><span style='text-decoration: underline;'>9</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span>        -</span><span style='color: #BB0000;'>2.03</span><span> x2        0.389 
-#&gt; </span><span style='color: #555555;'> 9</span><span>        -</span><span style='color: #BB0000;'>2.03</span><span> x3        0.131 
-#&gt; </span><span style='color: #555555;'>10</span><span>        -</span><span style='color: #BB0000;'>1.79</span><span> x1        0.099</span><span style='text-decoration: underline;'>5</span><span>
-#&gt; </span><span style='color: #555555;'># ... with 290 more rows</span><span>
+#&gt; </span><span style='color: #949494;'># A tibble: 300 x 4</span><span>
+#&gt;    Latent_Trait_Order Latent_Trait Algorithm  value
+#&gt;                 </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span>                  1        -</span><span style='color: #BB0000;'>2.78</span><span> x1        0.013</span><span style='text-decoration: underline;'>4</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span>                  1        -</span><span style='color: #BB0000;'>2.78</span><span> x2        0.511 
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span>                  1        -</span><span style='color: #BB0000;'>2.78</span><span> x3        0.258 
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span>                  2        -</span><span style='color: #BB0000;'>2.42</span><span> x1        0.023</span><span style='text-decoration: underline;'>3</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span>                  2        -</span><span style='color: #BB0000;'>2.42</span><span> x2        0.175 
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span>                  2        -</span><span style='color: #BB0000;'>2.42</span><span> x3        0.429 
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span>                  3        -</span><span style='color: #BB0000;'>2.03</span><span> x1        0.058</span><span style='text-decoration: underline;'>9</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span>                  3        -</span><span style='color: #BB0000;'>2.03</span><span> x2        0.389 
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span>                  3        -</span><span style='color: #BB0000;'>2.03</span><span> x3        0.131 
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span>                  4        -</span><span style='color: #BB0000;'>1.79</span><span> x1        0.099</span><span style='text-decoration: underline;'>5</span><span>
+#&gt; </span><span style='color: #949494;'># ... with 290 more rows</span><span>
 #&gt; 
-#&gt; $plt</div><div class='img'><img src='latent_trait_analysis-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; </div><div class='input'>
+#&gt; $plt</div><div class='img'><img src='latent_trait_analysis-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $widedf
+#&gt;     Latent_Trait         x1         x2         x3
+#&gt; 27   -2.77887927 0.01339033 0.51116978 0.25762126
+#&gt; 47   -2.41986102 0.02333120 0.17512677 0.42875037
+#&gt; 92   -2.02881577 0.05893438 0.38890510 0.13141653
+#&gt; 56   -1.79497991 0.09946616 0.18086636 0.10880632
+#&gt; 55   -1.57803359 0.07067905 0.50044097 0.48498968
+#&gt; 10   -1.47292469 0.06178627 0.59876097 0.71793528
+#&gt; 88   -1.42131419 0.12169192 0.72449889 0.15483161
+#&gt; 69   -1.30617605 0.08424691 0.72372595 0.62041003
+#&gt; 90   -1.28831890 0.14330438 0.54764659 0.22130593
+#&gt; 24   -1.28566432 0.12555510 0.17344233 0.51012521
+#&gt; 38   -1.24473092 0.10794363 0.52602772 0.55490062
+#&gt; 86   -1.24311689 0.20269226 0.18919362 0.13862825
+#&gt; 12   -1.23814088 0.17655675 0.73179251 0.10014085
+#&gt; 22   -1.07535619 0.21214252 0.49559358 0.16545393
+#&gt; 5    -1.05687349 0.20168193 0.63349326 0.18116833
+#&gt; 66   -0.94461279 0.25801678 0.41312421 0.16502764
+#&gt; 28   -0.89652021 0.38238796 0.20754511 0.04646089
+#&gt; 91   -0.85290197 0.23962942 0.71174387 0.22638080
+#&gt; 71   -0.83022215 0.33907294 0.63041412 0.06221405
+#&gt; 81   -0.82257568 0.43465948 0.29373016 0.02778712
+#&gt; 89   -0.81027706 0.24548851 0.94372482 0.13222817
+#&gt; 34   -0.77502909 0.18621760 0.64279549 0.63142023
+#&gt; 1    -0.75167479 0.26550866 0.65472393 0.26750821
+#&gt; 74   -0.72568886 0.33377493 0.39135928 0.16931091
+#&gt; 67   -0.69435199 0.47854525 0.06380848 0.06445754
+#&gt; 57   -0.65595705 0.31627171 0.52963060 0.24772683
+#&gt; 54   -0.63788344 0.24479728 0.45313145 0.60358807
+#&gt; 97   -0.63207488 0.45527445 0.11036060 0.09916910
+#&gt; 2    -0.58317938 0.37212390 0.35319727 0.21864528
+#&gt; 84   -0.54014859 0.32535215 0.50333949 0.37306337
+#&gt; 62   -0.52462330 0.29360337 0.89509410 0.31714467
+#&gt; 78   -0.46270095 0.38998954 0.74107865 0.18123182
+#&gt; 98   -0.45226159 0.41008408 0.84050703 0.11890256
+#&gt; 16   -0.45151058 0.49769924 0.01307758 0.30829233
+#&gt; 73   -0.35501170 0.34668349 0.85613166 0.38171635
+#&gt; 33   -0.34254681 0.49354131 0.03554058 0.37448686
+#&gt; 48   -0.30714053 0.47723007 0.74669827 0.13268998
+#&gt; 26   -0.30052837 0.38611409 0.45389549 0.51095970
+#&gt; 63   -0.28735035 0.45906573 0.44623532 0.27796603
+#&gt; 40   -0.26113266 0.41127443 0.50764182 0.45272006
+#&gt; 44   -0.25660728 0.55303631 0.25816593 0.14260408
+#&gt; 32   -0.25521149 0.59956583 0.07706438 0.13144232
+#&gt; 75   -0.24744097 0.47635125 0.38049389 0.29865254
+#&gt; 53   -0.23404809 0.43809711 0.32877732 0.47067850
+#&gt; 58   -0.14376414 0.51863426 0.07527575 0.49851453
+#&gt; 31   -0.14265805 0.48208012 0.57487220 0.34723068
+#&gt; 25   -0.13314411 0.26722067 0.75482094 0.92396847
+#&gt; 64   -0.13230992 0.33239467 0.77998489 0.78754051
+#&gt; 30   -0.09556032 0.34034900 0.59571200 0.85400150
+#&gt; 11   -0.04207133 0.20597457 0.97617069 0.96140994
+#&gt; 8     0.06434833 0.66079779 0.47811803 0.12915685
+#&gt; 45    0.06723824 0.52971958 0.72930962 0.41504763
+#&gt; 3     0.10418729 0.57285336 0.27026015 0.51679684
+#&gt; 60    0.10770175 0.40683019 0.21269952 0.93469137
+#&gt; 51    0.15491230 0.47761962 0.61464497 0.76197386
+#&gt; 14    0.16118580 0.38410372 0.43147369 0.94796635
+#&gt; 19    0.17536709 0.38003518 0.44628435 0.95373265
+#&gt; 83    0.21113901 0.39999437 0.88645094 0.88031907
+#&gt; 23    0.23441637 0.65167377 0.48434952 0.32216806
+#&gt; 59    0.23784160 0.66200508 0.27775593 0.37286671
+#&gt; 9     0.29792593 0.62911404 0.92407447 0.25636760
+#&gt; 85    0.30960752 0.75708715 0.87705754 0.04795913
+#&gt; 99    0.32345284 0.81087024 0.31796368 0.05043966
+#&gt; 49    0.41734244 0.73231374 0.10498764 0.46009645
+#&gt; 42    0.43014446 0.64706019 0.60154122 0.57835394
+#&gt; 82    0.45048239 0.71251468 0.19126011 0.52731078
+#&gt; 87    0.48192536 0.71112122 0.75810305 0.32149212
+#&gt; 46    0.54902424 0.78935623 0.45257083 0.21092575
+#&gt; 36    0.56630382 0.66846674 0.59809242 0.68962785
+#&gt; 13    0.61137976 0.68702285 0.35672691 0.76322269
+#&gt; 65    0.63889825 0.65087047 0.88061903 0.70246251
+#&gt; 20    0.66781453 0.77744522 0.64010105 0.33997920
+#&gt; 95    0.68414645 0.77891468 0.28323250 0.50693950
+#&gt; 17    0.71179004 0.71761851 0.71556607 0.64957946
+#&gt; 72    0.74750569 0.83944035 0.84061455 0.10902927
+#&gt; 79    0.75197265 0.77732070 0.60530345 0.47731371
+#&gt; 100   0.75521302 0.60493329 0.78285134 0.92925392
+#&gt; 39    0.80517078 0.72371095 0.98509522 0.42962441
+#&gt; 41    0.81938566 0.82094629 0.68278808 0.30644326
+#&gt; 68    0.83910293 0.76631067 0.33548749 0.75470562
+#&gt; 15    0.84141064 0.76984142 0.14821156 0.81863469
+#&gt; 93    0.84479113 0.64228826 0.10087313 0.98156346
+#&gt; 70    0.84961662 0.87532133 0.33761533 0.16957677
+#&gt; 37    0.94701648 0.79423986 0.56090075 0.68941341
+#&gt; 96    0.96061301 0.79730883 0.59057316 0.68144251
+#&gt; 77    0.96547418 0.86433947 0.64431576 0.25717002
+#&gt; 29    0.98996617 0.86969085 0.22865814 0.41785626
+#&gt; 35    1.03070371 0.82737332 0.92861520 0.39007893
+#&gt; 43    1.06153439 0.78293276 0.23886868 0.91037030
+#&gt; 50    1.06557023 0.69273156 0.86454495 0.94295706
+#&gt; 76    1.16760358 0.89219834 0.89544543 0.19220954
+#&gt; 94    1.21917749 0.87626921 0.92730209 0.32701373
+#&gt; 6     1.22045854 0.89838968 0.21320814 0.51857614
+#&gt; 61    1.35277366 0.91287592 0.28479048 0.52398608
+#&gt; 52    1.53569365 0.86120948 0.55715954 0.93290983
+#&gt; 4     1.53680629 0.90820779 0.99268406 0.26895059
+#&gt; 7     1.60535009 0.94467527 0.12937235 0.56278294
+#&gt; 21    1.74634626 0.93470523 0.99183862 0.26247411
+#&gt; 80    2.26299259 0.96061800 0.90308161 0.77073704
+#&gt; 18    3.23308134 0.99190609 0.10318424 0.95335545
+#&gt; 
+#&gt; $thetas
+#&gt;         ID  Theta Est.       SE
+#&gt;   [1,]   1 -0.75167479 1.235089
+#&gt;   [2,]   2 -0.58317938 1.235089
+#&gt;   [3,]   3  0.10418729 1.235089
+#&gt;   [4,]   4  1.53680629 1.235089
+#&gt;   [5,]   5 -1.05687349 1.235089
+#&gt;   [6,]   6  1.22045854 1.235089
+#&gt;   [7,]   7  1.60535009 1.235089
+#&gt;   [8,]   8  0.06434833 1.235089
+#&gt;   [9,]   9  0.29792593 1.235089
+#&gt;  [10,]  10 -1.47292469 1.235089
+#&gt;  [11,]  11 -0.04207133 1.235089
+#&gt;  [12,]  12 -1.23814088 1.235089
+#&gt;  [13,]  13  0.61137976 1.235089
+#&gt;  [14,]  14  0.16118580 1.235089
+#&gt;  [15,]  15  0.84141064 1.235089
+#&gt;  [16,]  16 -0.45151058 1.235089
+#&gt;  [17,]  17  0.71179004 1.235089
+#&gt;  [18,]  18  3.23308134 1.235089
+#&gt;  [19,]  19  0.17536709 1.235089
+#&gt;  [20,]  20  0.66781453 1.235089
+#&gt;  [21,]  21  1.74634626 1.235089
+#&gt;  [22,]  22 -1.07535619 1.235089
+#&gt;  [23,]  23  0.23441637 1.235089
+#&gt;  [24,]  24 -1.28566432 1.235089
+#&gt;  [25,]  25 -0.13314411 1.235089
+#&gt;  [26,]  26 -0.30052837 1.235089
+#&gt;  [27,]  27 -2.77887927 1.235089
+#&gt;  [28,]  28 -0.89652021 1.235089
+#&gt;  [29,]  29  0.98996617 1.235089
+#&gt;  [30,]  30 -0.09556032 1.235089
+#&gt;  [31,]  31 -0.14265805 1.235089
+#&gt;  [32,]  32 -0.25521149 1.235089
+#&gt;  [33,]  33 -0.34254681 1.235089
+#&gt;  [34,]  34 -0.77502909 1.235089
+#&gt;  [35,]  35  1.03070371 1.235089
+#&gt;  [36,]  36  0.56630382 1.235089
+#&gt;  [37,]  37  0.94701648 1.235089
+#&gt;  [38,]  38 -1.24473092 1.235089
+#&gt;  [39,]  39  0.80517078 1.235089
+#&gt;  [40,]  40 -0.26113266 1.235089
+#&gt;  [41,]  41  0.81938566 1.235089
+#&gt;  [42,]  42  0.43014446 1.235089
+#&gt;  [43,]  43  1.06153439 1.235089
+#&gt;  [44,]  44 -0.25660728 1.235089
+#&gt;  [45,]  45  0.06723824 1.235089
+#&gt;  [46,]  46  0.54902424 1.235089
+#&gt;  [47,]  47 -2.41986102 1.235089
+#&gt;  [48,]  48 -0.30714053 1.235089
+#&gt;  [49,]  49  0.41734244 1.235089
+#&gt;  [50,]  50  1.06557023 1.235089
+#&gt;  [51,]  51  0.15491230 1.235089
+#&gt;  [52,]  52  1.53569365 1.235089
+#&gt;  [53,]  53 -0.23404809 1.235089
+#&gt;  [54,]  54 -0.63788344 1.235089
+#&gt;  [55,]  55 -1.57803359 1.235089
+#&gt;  [56,]  56 -1.79497991 1.235089
+#&gt;  [57,]  57 -0.65595705 1.235089
+#&gt;  [58,]  58 -0.14376414 1.235089
+#&gt;  [59,]  59  0.23784160 1.235089
+#&gt;  [60,]  60  0.10770175 1.235089
+#&gt;  [61,]  61  1.35277366 1.235089
+#&gt;  [62,]  62 -0.52462330 1.235089
+#&gt;  [63,]  63 -0.28735035 1.235089
+#&gt;  [64,]  64 -0.13230992 1.235089
+#&gt;  [65,]  65  0.63889825 1.235089
+#&gt;  [66,]  66 -0.94461279 1.235089
+#&gt;  [67,]  67 -0.69435199 1.235089
+#&gt;  [68,]  68  0.83910293 1.235089
+#&gt;  [69,]  69 -1.30617605 1.235089
+#&gt;  [70,]  70  0.84961662 1.235089
+#&gt;  [71,]  71 -0.83022215 1.235089
+#&gt;  [72,]  72  0.74750569 1.235089
+#&gt;  [73,]  73 -0.35501170 1.235089
+#&gt;  [74,]  74 -0.72568886 1.235089
+#&gt;  [75,]  75 -0.24744097 1.235089
+#&gt;  [76,]  76  1.16760358 1.235089
+#&gt;  [77,]  77  0.96547418 1.235089
+#&gt;  [78,]  78 -0.46270095 1.235089
+#&gt;  [79,]  79  0.75197265 1.235089
+#&gt;  [80,]  80  2.26299259 1.235089
+#&gt;  [81,]  81 -0.82257568 1.235089
+#&gt;  [82,]  82  0.45048239 1.235089
+#&gt;  [83,]  83  0.21113901 1.235089
+#&gt;  [84,]  84 -0.54014859 1.235089
+#&gt;  [85,]  85  0.30960752 1.235089
+#&gt;  [86,]  86 -1.24311689 1.235089
+#&gt;  [87,]  87  0.48192536 1.235089
+#&gt;  [88,]  88 -1.42131419 1.235089
+#&gt;  [89,]  89 -0.81027706 1.235089
+#&gt;  [90,]  90 -1.28831890 1.235089
+#&gt;  [91,]  91 -0.85290197 1.235089
+#&gt;  [92,]  92 -2.02881577 1.235089
+#&gt;  [93,]  93  0.84479113 1.235089
+#&gt;  [94,]  94  1.21917749 1.235089
+#&gt;  [95,]  95  0.68414645 1.235089
+#&gt;  [96,]  96  0.96061301 1.235089
+#&gt;  [97,]  97 -0.63207488 1.235089
+#&gt;  [98,]  98 -0.45226159 1.235089
+#&gt;  [99,]  99  0.32345284 1.235089
+#&gt; [100,] 100  0.75521302 1.235089
+#&gt; 
+#&gt; $weakness
+#&gt; $weakness$proportions
+#&gt; </span><span style='color: #949494;'># A tibble: 3 x 4</span><span>
+#&gt;   group Proportion algorithm colour 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span>     3      0.496 x3        #619CFF
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span>     1      0.301 x1        #F8766D
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span>     2      0.204 x2        #00BA38
+#&gt; 
+#&gt; $weakness$latent
+#&gt; </span><span style='color: #949494;'># A tibble: 80 x 1</span><span>
+#&gt;        x
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> -</span><span style='color: #BB0000;'>2.78</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> -</span><span style='color: #BB0000;'>2.70</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> -</span><span style='color: #BB0000;'>2.63</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> -</span><span style='color: #BB0000;'>2.55</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> -</span><span style='color: #BB0000;'>2.47</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> -</span><span style='color: #BB0000;'>2.40</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> -</span><span style='color: #BB0000;'>2.32</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> -</span><span style='color: #BB0000;'>2.25</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> -</span><span style='color: #BB0000;'>2.17</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> -</span><span style='color: #BB0000;'>2.09</span><span>
+#&gt; </span><span style='color: #949494;'># ... with 70 more rows</span><span>
+#&gt; 
+#&gt; $weakness$multilatent
+#&gt;    latenttrait x1 x2 x3
+#&gt; 1  -2.77887927  1  0  0
+#&gt; 2  -2.70277850  1  0  0
+#&gt; 3  -2.62667774  1  0  0
+#&gt; 4  -2.55057697  1  0  0
+#&gt; 5  -2.47447620  1  0  0
+#&gt; 6  -2.39837543  1  0  0
+#&gt; 7  -2.32227467  1  0  0
+#&gt; 8  -2.24617390  1  0  0
+#&gt; 9  -2.17007313  1  0  0
+#&gt; 10 -2.09397237  1  0  0
+#&gt; 11 -2.01787160  1  0  0
+#&gt; 12 -1.94177083  1  0  0
+#&gt; 13 -1.86567006  1  0  0
+#&gt; 14 -1.78956930  1  0  0
+#&gt; 15 -1.71346853  1  0  0
+#&gt; 16 -1.63736776  1  0  0
+#&gt; 17 -1.56126699  1  0  0
+#&gt; 18 -1.48516623  1  0  0
+#&gt; 19 -1.40906546  1  0  0
+#&gt; 20 -1.33296469  1  0  0
+#&gt; 21 -1.25686393  1  0  0
+#&gt; 22 -1.18076316  1  0  0
+#&gt; 23 -1.10466239  1  0  0
+#&gt; 24 -1.02856162  1  0  0
+#&gt; 25 -0.95246086  1  0  0
+#&gt; 26 -0.87636009  1  0  0
+#&gt; 27 -0.80025932  1  0  0
+#&gt; 28 -0.72415856  1  0  0
+#&gt; 29 -0.64805779  1  0  0
+#&gt; 30 -0.57195702  1  0  0
+#&gt; 31 -0.49585625  1  0  3
+#&gt; 32 -0.41975549  1  0  3
+#&gt; 33 -0.34365472  0  0  3
+#&gt; 34 -0.26755395  0  0  3
+#&gt; 35 -0.19145318  0  0  3
+#&gt; 36 -0.11535242  0  0  3
+#&gt; 37 -0.03925165  0  0  3
+#&gt; 38  0.03684912  0  0  3
+#&gt; 39  0.11294988  0  0  3
+#&gt; 40  0.18905065  0  0  3
+#&gt; 41  0.26515142  0  0  3
+#&gt; 42  0.34125219  0  0  3
+#&gt; 43  0.41735295  0  0  3
+#&gt; 44  0.49345372  0  0  3
+#&gt; 45  0.56955449  0  0  3
+#&gt; 46  0.64565526  0  0  3
+#&gt; 47  0.72175602  0  0  3
+#&gt; 48  0.79785679  0  2  3
+#&gt; 49  0.87395756  0  2  3
+#&gt; 50  0.95005832  0  2  3
+#&gt; 51  1.02615909  0  2  0
+#&gt; 52  1.10225986  0  2  0
+#&gt; 53  1.17836063  0  2  0
+#&gt; 54  1.25446139  0  2  0
+#&gt; 55  1.33056216  0  2  0
+#&gt; 56  1.40666293  0  2  0
+#&gt; 57  1.48276369  0  2  0
+#&gt; 58  1.55886446  0  2  0
+#&gt; 59  1.63496523  0  2  0
+#&gt; 60  1.71106600  0  2  0
+#&gt; 61  1.78716676  0  2  0
+#&gt; 62  1.86326753  0  2  0
+#&gt; 63  1.93936830  0  2  0
+#&gt; 64  2.01546907  0  2  0
+#&gt; 65  2.09156983  0  2  0
+#&gt; 66  2.16767060  0  2  0
+#&gt; 67  2.24377137  0  2  0
+#&gt; 68  2.31987213  0  2  0
+#&gt; 69  2.39597290  0  2  0
+#&gt; 70  2.47207367  0  2  0
+#&gt; 71  2.54817444  0  2  0
+#&gt; 72  2.62427520  0  2  0
+#&gt; 73  2.70037597  0  2  0
+#&gt; 74  2.77647674  0  2  0
+#&gt; 75  2.85257751  0  2  0
+#&gt; 76  2.92867827  0  2  0
+#&gt; 77  3.00477904  0  2  0
+#&gt; 78  3.08087981  0  2  0
+#&gt; 79  3.15698057  0  2  0
+#&gt; 80  3.23308134  0  2  0
+#&gt; 
+#&gt; </div><div class='input'>
 </div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -396,7 +739,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

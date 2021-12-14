@@ -18,6 +18,7 @@ A list with the following components:
 This function computes the goodness of the IRT model for all algorithms for different goodness tolerances.
 }
 \examples{
+\donttest{
 set.seed(1)
 x1 <- runif(100)
 x2 <- runif(100)
@@ -28,4 +29,5 @@ min_item <- rep(0,3)
 mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 out <- model_goodness_crm(mod$model)
 out
+}
 }

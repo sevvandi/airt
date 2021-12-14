@@ -1,7 +1,7 @@
 Package: airt
 Type: Package
 Title: Evaluation of Algorithm Collections Using Item Response Theory
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person("Sevvandi", "Kandanaarachchi", email = "sevvandik@gmail.com",
   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0337-0395"))
 Maintainer: Sevvandi Kandanaarachchi <sevvandik@gmail.com>
@@ -20,10 +20,15 @@ Imports:
     mirt,
     tidyr,
     EstCRM,
-    rlang
+    rlang,
+    dplyr,
+    magrittr,
+    tibble
 Suggests: 
     knitr,
     rmarkdown,
-    ggplot2
+    ggplot2,
+    gridExtra,
+    scales
 VignetteBuilder: knitr
 URL: https://sevvandi.github.io/airt/

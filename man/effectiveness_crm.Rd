@@ -19,7 +19,7 @@ A list with the following components:
 This function computes the actual and predicted effectiveness of the collection of algorithms for different tolerance values.
 }
 \examples{
-set.seed(1)
+set.seed(1)\donttest{
 x1 <- runif(100)
 x2 <- runif(100)
 x3 <- runif(100)
@@ -29,4 +29,5 @@ min_item <- rep(0,3)
 mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 out <- effectiveness_crm(mod$model)
 out
+}
 }

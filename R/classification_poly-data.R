@@ -9,5 +9,5 @@
 #'
 #'}
 #'
-#'@source \url{https://matilda.unimelb.edu.au/matilda/problems/learning/classification#classification}
+#'@source \url{https://katesmithmiles.wixsite.com/home/matilda}
 "classification_poly"
