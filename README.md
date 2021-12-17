@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.org/sevvandi/airt.svg?branch=master)](https://travis-ci.org/sevvandi/airt)
+[![R-CMD-check](https://github.com/sevvandi/airt/workflows/R-CMD-check/badge.svg)](https://github.com/sevvandi/airt/actions)
 <!-- badges: end -->
 
 The goal of *airt* is to evaluate algorithm performances using Item
