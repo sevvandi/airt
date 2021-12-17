@@ -53,7 +53,7 @@ prepare_for_plots_poly <- function(mod){
 #'
 #' @export
 #' @export
-prepare_for_plots_crm <- function(mod, thetarange=c(-6,6)){
+prepare_for_plots_crm <- function(mod, thetarange = c(-6,6)){
   num_algos <- dim(mod$data)[2]
   names_algos <- colnames(mod$data)
   ori_data <- mod$data
