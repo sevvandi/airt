@@ -93,8 +93,8 @@ latent_length <- function(gplot, group_names, thetas, epsilon, good = TRUE){
   res <- hist(sorthedtheta, breaks = xvals3, plot = FALSE)
   algodf <- as_tibble(algo) %>% mutate(count = res$counts) %>% tidyr::uncount(.data$count) %>% select(-.data$count)
   algos <- as_tibble(as.vector(as.matrix(algodf))) %>% filter(.data$value > 0) %>% rename(algo = .data$value)
-  props <- algos %>% group_by(algo) %>% summarize(prop = n()/NROW(algos) )
-
+  # updated to NROW(thetas) because when epsilon > 0, the total props is > 1
+  props <- algos %>% group_by(algo) %>% summarize(prop = n()/NROW(thetas) )
   algorithm <- grp_ord[props$algo]
   df11 <- props %>% mutate(algorithm = algorithm) %>% rename(Proportion = .data$prop, group = algo) %>% left_join(group_colour) %>% arrange(desc(.data$Proportion))
   multilatent <- cbind.data.frame(df_wide[, 1], algo)
