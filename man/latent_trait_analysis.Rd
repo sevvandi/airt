@@ -20,10 +20,10 @@ latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
 \value{
 A list with the following components:
 \item{\code{crmtheta}}{The problem trait output computed from the R package EstCRM.}
-\item{\code{crmtheta}}{The problem trait output computed from the R package EstCRM.}
 \item{\code{strengths}}{The strengths of each algorithm and positions on the latent trait that they performs well. }
-\item{\code{dfl}}{The dataset in a long format of latent trait occupancy.}
+\item{\code{longdf}}{The dataset in long format of latent trait occupancy.}
 \item{\code{plt}}{The ggplot object showing the fitted smoothing splines.}
+\item{\code{widedf}}{The dataset in wide format with latent trait.}
 \item{\code{thetas}}{The easiness of the problem set instances.}
 \item{\code{weakness}}{The weaknesses of each algorithm and positions on the latent trait that they performs poorly.}
 }
