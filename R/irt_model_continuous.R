@@ -10,7 +10,7 @@
 #' \item{\code{model}}{The IRT model.  }
 #' \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
 #'  \item{\code{stability}}{The stability of each algorithm.}
-#'  \item{\code{easiness_threshold}}{The easiness threshold of each algorithm. A lower threshold indicates that the algorithm finds more test instances easy.}
+#'  \item{\code{difficulty_limit}}{The difficulty limit of each algorithm. A higher difficulty limit indicates that the algorithm can tackle harder problems.}
 #'
 #'@examples
 #'set.seed(1)
@@ -41,7 +41,7 @@ cirtmodel <- function(df, max.item=NULL, min.item=NULL){
   out$model <- mod
   out$anomalous <- anomalous
   out$stability <- stability
-  out$easiness_threshold <- paras[ ,2]
+  out$difficulty_limit <- -1*paras[ ,2]  # updated to change to difficulty
   return(out)
 }
 

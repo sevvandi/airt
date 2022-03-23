@@ -18,7 +18,7 @@ A list with the following components:
 \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
 \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
  \item{\code{stability}}{The stability of each algorithm.}
- \item{\code{easiness_threshold}}{The easiness thresholds for each algorithm.  Lower thresholds indicates that the algorithm finds more test instances easy.}
+ \item{\code{difficulty_limit}}{The difficulty limits for each algorithm.  A higher threshold indicates that the algorithm can tackle harder problems.}
 }
 \description{
 This function fits a polytomous Item Response Theory (IRT) model to the algorithm performance data.

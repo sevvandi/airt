@@ -65,23 +65,31 @@ actual_vs_predicted_crm <- function(mod, num=1, min_item=0, max_item=1){
   z_vals <- log(algo_vals/(max_item - algo_vals))
   theta <- seq(from = min(scores), to=max(scores), by=0.01)
   # z <- seq(from = min(z_vals), to=max(z_vals), by=0.01)
-  z <- seq(from = -6, to=6, by=0.01)
-  theta_z <- expand.grid(theta, z)
-  colnames(theta_z) <- c("theta", "z")
+  # z <- seq(from = -6, to=6, by=0.01)
+  # theta_z <- expand.grid(theta, z)
+  # colnames(theta_z) <- c("theta", "z")
 
-  pdf <- alpha*gamma/sqrt(2*pi)*exp(-alpha^2/2*(theta_z[ ,1]-beta-gamma*theta_z[ ,2])^2)
-  pdfdf <- cbind.data.frame(theta_z, pdf)
-  for(i in 1:length(scores)){
-    ind1 <- which.min(abs(pdfdf[ ,1] - scores[i]))
-    min_val <- pdfdf[ind1, 1]
-    inds <- which(pdfdf[ ,1] == min_val)
-    df2 <- pdfdf[inds, ]
-    val <- df2[which.max(df2[, 3]) ,2]
-    act_prd[i, 2] <- max_item*exp(val)/(1 + exp(val))
+  pdf2 <- (scores - beta)/gamma
+  indsbig <- which(pdf2 > 10)
+  if(length(indsbig) > 0){
+    pdf2[indsbig] <- 10
   }
+  act_prd[ ,2] <- max_item*exp(pdf2)/(1 + exp(pdf2))
+  # pdf <- alpha*gamma/sqrt(2*pi)*exp(-alpha^2/2*(theta_z[ ,1]-beta-gamma*theta_z[ ,2])^2)
+  # pdfdf <- cbind.data.frame(theta_z, pdf)
+  # for(i in 1:length(scores)){
+  #   ind1 <- which.min(abs(pdfdf[ ,1] - scores[i]))
+  #   min_val <- pdfdf[ind1, 1]
+  #   inds <- which(pdfdf[ ,1] == min_val)
+  #   df2 <- pdfdf[inds, ]
+  #   val <- df2[which.max(df2[, 3]) ,2]
+  #   act_prd[i, 2] <- max_item*exp(val)/(1 + exp(val))
+  # }
 
   return(act_prd)
 }
+
+
 
 #' Computes the goodness of IRT model for all algorithms.
 #'

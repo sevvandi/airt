@@ -10,7 +10,7 @@
 #' \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
 #' \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
 #'  \item{\code{stability}}{The stability of each algorithm.}
-#'  \item{\code{easiness_threshold}}{The easiness thresholds for each algorithm.  Lower thresholds indicates that the algorithm finds more test instances easy.}
+#'  \item{\code{difficulty_limit}}{The difficulty limits for each algorithm.  A higher threshold indicates that the algorithm can tackle harder problems.}
 #'
 #'@examples
 #'set.seed(1)
@@ -70,12 +70,13 @@ pirtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
   # all_coeffs <- coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
   # coefdim <- dim(all_coeffs)[2]
   # diff_start <- 2
-  easiness_threshold <- coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
+  # easiness_threshold <- coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
+  difficulty_limit <- -1*coef(mod, IRTpars=TRUE, simplify=TRUE)$items[ ,-1]
 
   out <- list()
   out$model <- mod
   out$anomalous <- anomalous
   out$stability <- stability
-  out$easiness_threshold <- easiness_threshold
+  out$difficulty_limit <- difficulty_limit
   return(out)
 }

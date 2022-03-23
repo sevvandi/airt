@@ -18,7 +18,7 @@ A list with the following components:
 \item{\code{model}}{The IRT model.  }
 \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
  \item{\code{stability}}{The stability of each algorithm.}
- \item{\code{easiness_threshold}}{The easiness threshold of each algorithm. A lower threshold indicates that the algorithm finds more test instances easy.}
+ \item{\code{difficulty_limit}}{The difficulty limit of each algorithm. A higher difficulty limit indicates that the algorithm can tackle harder problems.}
 }
 \description{
 This function fits a continuous Item Response Theory (IRT) model to the algorithm performance data. The function EstCRMitem in the R package EstCRM is updated to accommodate negative discrimination.

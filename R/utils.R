@@ -59,8 +59,6 @@ prepare_for_plots_crm <- function(mod, thetarange = c(-6,6)){
   ori_data <- mod$data
   theta <- seq(thetarange[1], thetarange[2], by=0.1)
   z <- seq(-6, 6, by=0.1)
-  # theta <- seq(-6, 6, by=0.1)
-  # z <- seq(6, 12, by=0.1)
   theta_z <- expand.grid(theta, z)
   colnames(theta_z) <- c("theta", "z")
 
