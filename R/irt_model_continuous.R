@@ -21,6 +21,10 @@
 #'max_item <- rep(1,3)
 #'min_item <- rep(0,3)
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
+#'
+#'@references Zopluoglu C (2022). EstCRM: Calibrating Parameters for the Samejima's Continuous IRT Model. R
+#'package version 1.6, \url{https://CRAN.R-project.org/package=EstCRM}.
+#'
 #' @importFrom stats cov na.omit sd var
 #' @export
 cirtmodel <- function(df, max.item=NULL, min.item=NULL){
