@@ -15,6 +15,7 @@ model_goodness_for_algo_crm(mod, num = 1)
 A list with the following components:
 \item{\code{xy}}{The \code{x} values denote the goodness tolerances. The \code{y} values denote the model goodness. }
 \item{\code{auc}}{The area under the model goodness curve. }
+\item{\code{residuals}}{The different between actual and fitted performance values.}
 }
 \description{
 This function computes the goodness of the IRT model for a given algorithm for different goodness tolerances.

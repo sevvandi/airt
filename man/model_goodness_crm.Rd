@@ -12,7 +12,8 @@ model_goodness_crm(mod)
 \value{
 A list with the following components:
 \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
-\item{\code{curves}}{The \code{x,y} coodinates for the model goodness curves for each algorithm. }
+\item{\code{curves}}{The \code{x,y} coordinates for the model goodness curves for each algorithm. }
+\item{\code{residuals}}{The residuals for each algorithm using the AIRT model.}
 }
 \description{
 This function computes the goodness of the IRT model for all algorithms for different goodness tolerances.

@@ -8,6 +8,7 @@
 #' @return  A list with the following components:
 #' \item{\code{xy}}{The \code{x} values denote the goodness tolerances. The \code{y} values denote the model goodness. }
 #' \item{\code{auc}}{The area under the model goodness curve. }
+#' \item{\code{residuals}}{The different between actual and fitted performance values.}
 #'
 #'@examples \donttest{
 #'set.seed(1)
@@ -41,6 +42,7 @@ model_goodness_for_algo_crm <- function(mod, num=1){
   out$xy <- cbind(x,y)
   out$auc <- auc
   out$mse <- mse
+  out$residuals <- dif_vals
   return(out)
 }
 
@@ -99,8 +101,8 @@ actual_vs_predicted_crm <- function(mod, num=1, min_item=0, max_item=1){
 #'
 #' @return  A list with the following components:
 #' \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
-#' \item{\code{curves}}{The \code{x,y} coodinates for the model goodness curves for each algorithm. }
-#'
+#' \item{\code{curves}}{The \code{x,y} coordinates for the model goodness curves for each algorithm. }
+#' \item{\code{residuals}}{The residuals for each algorithm using the AIRT model.}
 #'@examples \donttest{
 #'set.seed(1)
 #'x1 <- runif(100)
@@ -116,7 +118,9 @@ actual_vs_predicted_crm <- function(mod, num=1, min_item=0, max_item=1){
 #' @export
 model_goodness_crm <- function(mod){
   dd <- dim(mod$data)[2]
+  nn <- dim(mod$data)[1]
   mse <- acc <- matrix(0, ncol=1, nrow=dd)
+  residuals <- matrix(0, ncol = dd, nrow = nn)
   for(i in 1:dd){
     oo <- model_goodness_for_algo_crm(mod, num=i)
     acc[i, 1] <- oo$auc
@@ -126,12 +130,15 @@ model_goodness_crm <- function(mod){
       curves[ ,1] <- oo$xy[ ,1]
     }
     curves[ ,(i+1)] <- oo$xy[ ,2]
+    residuals[ ,i] <-  oo$residuals
   }
   colnames(curves) <- c("x", rownames(mod$param))
   rownames(acc) <-rownames(mod$param)
+  colnames(residuals) <- rownames(mod$param)
   out <- list()
   out$goodnessAUC <- acc
   out$mse <- mse
   out$curves <- curves
+  out$residuals <- residuals
   return(out)
 }
