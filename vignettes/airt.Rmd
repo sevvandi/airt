@@ -4,7 +4,7 @@ output: rmarkdown::html_vignette
 bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{Introduction to airt}
-  %\VignetteEngine{knitr::knitr}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 ```{r setup, include = FALSE}
