@@ -144,8 +144,8 @@ We have binned the data so that we can fit a polytomous IRT model to it. The low
 data("classification_poly")
 modout <- pirtmodel(classification_poly, vpara=FALSE)
 
-gdf <- tracelines_poly(modout$model)
-ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Classification Algorithm Trace Lines") + theme_bw()
+obj <- tracelines_poly(modout)
+autoplot(obj)
 ```
 
 The trace lines give the probability of getting performance levels from P1 to P5, for different values of dataset easiness denoted by theta.  The probability of getting P5 is higher for an easy dataset, while it is lower for a difficult dataset. We see that some algorithms have only levels P3 to P5, while some have all performance levels. Also, some algorithms like QDA have gentler transitions between the most likely performance levels, and some like RBF_SVM have very sharp transitions.

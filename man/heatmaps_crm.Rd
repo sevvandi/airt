@@ -17,7 +17,7 @@ heatmaps_crm(model, thetarange = c(-6, 6))
 )
 }
 \arguments{
-\item{model}{IRT model, either from function \code{cirtmodel} or the \code{R} package \code{EstCRM}.}
+\item{model}{Output from the function \code{cirtmodel}.}
 
 \item{thetarange}{The range for \code{theta}, default from -6 to 6.}
 
@@ -34,7 +34,8 @@ heatmaps_crm(model, thetarange = c(-6, 6))
 \item{...}{Other arguments currently ignored.}
 }
 \value{
-Dataframe with output probabilities from the IRT model for all algorithms.
+Dataframe with output probabilities from the IRT model for all algorithms, an object
+of class heatmapcrm.
 }
 \description{
 This function makes a dataframe from the continuous IRTmodel the autoplot function

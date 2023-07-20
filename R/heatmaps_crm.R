@@ -3,7 +3,7 @@
 #' This function makes a dataframe from the continuous IRTmodel the autoplot function
 #' produces the heatmaps.
 #'
-#' @param model IRT model, either from function \code{cirtmodel} or the \code{R} package \code{EstCRM}.
+#' @param model Output from the function \code{cirtmodel}.
 #' @param thetarange The range for \code{theta}, default from -6 to 6.
 #' @param object For autoplot: output of heatmaps_crm function.
 #' @param xlab For autoplot: xlabel.
@@ -12,7 +12,8 @@
 #' @param col_scheme For autoplot: the color scheme for heatmaps. Default value is plasma.
 #' @param ... Other arguments currently ignored.
 #'
-#' @return Dataframe with output probabilities from the IRT model for all algorithms.
+#' @return Dataframe with output probabilities from the IRT model for all algorithms, an object
+#' of class heatmapcrm.
 #'
 #' @examples
 #' data(classification_cts)
