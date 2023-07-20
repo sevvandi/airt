@@ -4,7 +4,7 @@ output: rmarkdown::html_vignette
 bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{Introduction to airt}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knitr}
   %\VignetteEncoding{UTF-8}
 ---
 ```{r setup, include = FALSE}
@@ -65,8 +65,9 @@ df2 <- as.data.frame(df2)
 modout <- cirtmodel(df2, max.item, min.item)
 paras <- modout$model$param
 
-gdf <- prepare_for_plots_crm(modout$model) 
-ggplot(gdf, aes(theta, z)) + geom_raster(aes(fill=pdf))  + xlab("theta") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=1) + theme_bw()  +  scale_fill_viridis_c(option = "plasma")  
+obj <- heatmaps_crm(modout) 
+autoplot(obj)
+# ggplot(gdf, aes(theta, z)) + geom_raster(aes(fill=pdf))  + xlab("theta") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=1) + theme_bw()  +  scale_fill_viridis_c(option = "plasma")  
 ```
 
 The figure above shows the probability density of the fitted IRT model over Theta and z values. The y axis denotes the normalized performance values.  The high density regions are showed by the lighter coloured parts.
@@ -143,7 +144,7 @@ We have binned the data so that we can fit a polytomous IRT model to it. The low
 data("classification_poly")
 modout <- pirtmodel(classification_poly, vpara=FALSE)
 
-gdf <- prepare_for_plots_poly(modout$model)
+gdf <- tracelines_poly(modout$model)
 ggplot(gdf, aes(Theta, value)) + geom_line(aes(color=Level)) + facet_wrap(.~Algorithm) + ylab("Probability") + ggtitle("Classification Algorithm Trace Lines") + theme_bw()
 ```
 

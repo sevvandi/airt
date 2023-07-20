@@ -77,8 +77,8 @@ df2 <- as.data.frame(df2)
 modout <- cirtmodel(df2, max.item, min.item)
 paras <- modout$model$param
 
-gdf <- prepare_for_plots_crm(modout$model) # , thetarange = c(-8, -2)
-ggplot(gdf, aes(theta, z)) + geom_raster(aes(fill=pdf))  + xlab("Theta") + facet_wrap(~Algorithm, nrow=1) + coord_fixed(ratio=1) + theme_bw()  +  scale_fill_viridis_c(option = "plasma")
+obj <- heatmaps_crm(modout) # , thetarange = c(-8, -2)
+autoplot(obj,nrow = 1)
 ```
 
 The figure above shows the probability density of the fitted IRT model over Theta and z values. The y axis denotes the normalized performance values.  The high density regions are showed by the lighter coloured parts. We see that algorithms A and B obtain high performance values for high Theta values. Theta denotes the dataset easiness. However, algorithm C obtains high performance values for low Theta values. These are difficult datasets. Algorithm C gets low performance values for easy datasets. Algorithm D, does not discriminate among the datasets, as such it is a stable algorithm. 
