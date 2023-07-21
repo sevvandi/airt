@@ -102,11 +102,12 @@ the best algorithm is considered. A default</p></dd>
 
 <dt>plottype</dt>
 <dd><p>For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
-for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.</p></dd>
+for using facet_wrap to plot individual algorithms, plottype = 3 to plot the smoothing splines and
+plottype = 4 to plot strengths and weaknesses.</p></dd>
 
 
 <dt>nrow</dt>
-<dd><p>For autoplot: If <code>individual = TRUE</code>, the number of rows for facet_wrap.</p></dd>
+<dd><p>For autoplot: If <code>plottype = 2</code>, the number of rows for facet_wrap.</p></dd>
 
 
 <dt>se</dt>
@@ -1020,6 +1021,7 @@ for using facet_wrap to plot individual algorithms and plottype = 3 to plot the 
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "latenttrait"</span>
+<span class="r-in"><span><span class="co"># To plot performance against the problem difficulty</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="latent_trait_analysis-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="co"># To plot individual panels</span></span></span>
@@ -1028,6 +1030,9 @@ for using facet_wrap to plot individual algorithms and plottype = 3 to plot the 
 <span class="r-in"><span><span class="co"># To plot smoothing splines</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="latent_trait_analysis-4.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="co"># To plot strengths and weaknesses</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span>, plottype <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="latent_trait_analysis-5.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

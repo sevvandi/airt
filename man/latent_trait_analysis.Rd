@@ -36,9 +36,10 @@ the best algorithm is considered. A default}
 \item{ylab}{For autoplot: the ylabel.}
 
 \item{plottype}{For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
-for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.}
+for using facet_wrap to plot individual algorithms, plottype = 3 to plot the smoothing splines and
+plottype = 4 to plot strengths and weaknesses.}
 
-\item{nrow}{For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.}
+\item{nrow}{For autoplot: If \code{plottype = 2}, the number of rows for facet_wrap.}
 
 \item{se}{For autoplot: for plotting splines with standard errors.}
 
@@ -71,10 +72,13 @@ min_item <- rep(min(x1, x2, x3),3)
 mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
 out
+# To plot performance against the problem difficulty
 autoplot(out)
 # To plot individual panels
 autoplot(out, plottype = 2)
 # To plot smoothing splines
 autoplot(out, plottype = 3)
+# To plot strengths and weaknesses
+autoplot(out, plottype = 4)
 
 }

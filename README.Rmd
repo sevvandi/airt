@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 
 # airt <img src='man/figures/logo.png' align="right" height="138" />
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/sevvandi/airt/workflows/R-CMD-check/badge.svg)](https://github.com/sevvandi/airt/actions)
 [![R-CMD-check](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -104,36 +103,7 @@ autoplot(obj, plottype = 3)
 We fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
 
 ```{r latent4}
-dfl <- obj$longdf
-latent <- obj$strengths
-latent$proportions
-
-num_algos <- length(unique(dfl$Algorithm))
-colrs <- scales::hue_pal()(num_algos)
- 
-latenttr <- obj$strengths$multilatent
-dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
-colnames(dfl2)[2] <- "Algorithm"
-dfl2 <- dfl2[dfl2$value!=0, ]
-new_vals <- seq(1, length(unique(dfl2$value)), by = 1)
-dfl2$value <- new_vals[as.factor(dfl2$value )]
-dfl2$value <- dfl2$value*0.1
-colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl2$Algorithm))]
-g6 <- ggplot(dfl2, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  + scale_fill_manual(values = colrs2) +  ggtitle("Algorithm Strengths") +  coord_fixed(ratio=1)
-
-
-latenttr2 <- obj$weakness$multilatent
-dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
-colnames(dfl3)[2] <- "Algorithm"
-dfl3 <- dfl3[dfl3$value!=0, ]
-new_vals <- seq(1, length(unique(dfl3$value)), by = 1)
-dfl3$value <- new_vals[as.factor(dfl3$value )]
-dfl3$value <- dfl3$value*0.1
-colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl3$Algorithm))]
-g7 <- ggplot(dfl3, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) +  scale_fill_manual(values = colrs2)  + ggtitle("Algorithm Weaknesses") +  coord_fixed(ratio=1)
-
-grid.arrange(g6, g7)
-
+autoplot(obj, plottype = 4)
 ```
 We see that algorithms A, C and D occupy 0.065, 0.0.065 and 0.87 of the latent trait respectively. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets. 
 

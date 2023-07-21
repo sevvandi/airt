@@ -5,7 +5,6 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/sevvandi/airt/workflows/R-CMD-check/badge.svg)](https://github.com/sevvandi/airt/actions)
 [![R-CMD-check](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -146,41 +145,7 @@ spectrum occupied by each algorithm. We call this the latent trait
 occupancy.
 
 ``` r
-dfl <- obj$longdf
-latent <- obj$strengths
-latent$proportions
-#> # A tibble: 3 × 4
-#>   group Proportion algorithm colour 
-#>   <dbl>      <dbl> <chr>     <chr>  
-#> 1     4      0.87  D         #C77CFF
-#> 2     1      0.065 A         #F8766D
-#> 3     3      0.065 C         #00BFC4
-
-num_algos <- length(unique(dfl$Algorithm))
-colrs <- scales::hue_pal()(num_algos)
- 
-latenttr <- obj$strengths$multilatent
-dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
-colnames(dfl2)[2] <- "Algorithm"
-dfl2 <- dfl2[dfl2$value!=0, ]
-new_vals <- seq(1, length(unique(dfl2$value)), by = 1)
-dfl2$value <- new_vals[as.factor(dfl2$value )]
-dfl2$value <- dfl2$value*0.1
-colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl2$Algorithm))]
-g6 <- ggplot(dfl2, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  + scale_fill_manual(values = colrs2) +  ggtitle("Algorithm Strengths") +  coord_fixed(ratio=1)
-
-
-latenttr2 <- obj$weakness$multilatent
-dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
-colnames(dfl3)[2] <- "Algorithm"
-dfl3 <- dfl3[dfl3$value!=0, ]
-new_vals <- seq(1, length(unique(dfl3$value)), by = 1)
-dfl3$value <- new_vals[as.factor(dfl3$value )]
-dfl3$value <- dfl3$value*0.1
-colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl3$Algorithm))]
-g7 <- ggplot(dfl3, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) +  scale_fill_manual(values = colrs2)  + ggtitle("Algorithm Weaknesses") +  coord_fixed(ratio=1)
-
-grid.arrange(g6, g7)
+autoplot(obj, plottype = 4)
 ```
 
 <img src="man/figures/README-latent4-1.png" width="100%" /> We see that

@@ -14,8 +14,9 @@
 #' @param xlab For autoplot: the xlabel.
 #' @param ylab For autoplot: the ylabel.
 #' @param plottype For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
-#' for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.
-#' @param nrow For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.
+#' for using facet_wrap to plot individual algorithms, plottype = 3 to plot the smoothing splines and
+#' plottype = 4 to plot strengths and weaknesses.
+#' @param nrow For autoplot: If \code{plottype = 2}, the number of rows for facet_wrap.
 #' @param se For autoplot: for plotting splines with standard errors.
 #' @param ...  Other arguments currently ignored.
 #'
@@ -41,11 +42,14 @@
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
 #'out
+#' # To plot performance against the problem difficulty
 #'autoplot(out)
 #'# To plot individual panels
 #'autoplot(out, plottype = 2)
 #'# To plot smoothing splines
 #'autoplot(out, plottype = 3)
+#' # To plot strengths and weaknesses
+#'autoplot(out, plottype = 4)
 #'
 #' @importFrom rlang .data
 #' @importFrom magrittr  %>%
@@ -102,30 +106,65 @@ autoplot.latenttrait <- function(object,
                                 se = TRUE,
                                 ...){
 
-  Latent_Trait <- value <- Algorithm <- NULL
+  latenttrait <- Latent_Trait <- value <- Algorithm <- NULL
 
   dfl <- object$longdf
   if(plottype == 1){
+    # algorithm performance vs latent trait
     g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
       geom_point(aes(color=Algorithm)) +
       xlab(xlab) +
       ylab(ylab) +
       theme_bw()
   }else if(plottype == 2){
+    # individual algorithm performance vs latent trait
     g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
       geom_point(aes(color=Algorithm)) +
       facet_wrap(~Algorithm, nrow=2, scales = 'free') +
       xlab(xlab) +
       ylab(ylab)  +
       theme_bw()
-  }else{
+  }else if(plottype == 3){
+    # splines plot
     g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
       geom_smooth(aes(color=Algorithm), se = se, method = "gam", formula = y ~s(x, bs="cs")) +
       xlab(xlab) +
       ylab(ylab) +
       theme_bw() +
       theme(legend.position="bottom", legend.box = "horizontal")
-  }
+  }else{
+    # strengths and weaknesses plot
+    lto_eps1 <- object$strengths$proportions
+
+    # Strengths
+    latenttr <- object$strengths$multilatent
+    dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
+    colnames(dfl2)[2] <- "Algorithm"
+    dfl2 <- dfl2[dfl2$value!=0, ]
+    dfl2$value <- dfl2$value*0.1
+
+    # Weaknesses
+    latenttr2 <- object$weakness$multilatent
+    dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
+    colnames(dfl3)[2] <- "Algorithm"
+    dfl3 <- dfl3[dfl3$value!=0, ]
+    dfl3$value <- dfl3$value*0.1
+
+    dfl21 <- dfl2 %>% mutate(type = "Strengths")
+    dfl31 <- dfl3 %>% mutate(type = "Weaknesses")
+
+    dflall <- dplyr::bind_rows(dfl21, dfl31)
+    num_algos <- length(unique(dflall$Algorithm))
+    colrs <- grDevices::colorRampPalette(RColorBrewer::brewer.pal(8, "Dark2"))(num_algos)
+
+    g1 <- ggplot(dflall, aes(x = latenttrait, y =value, fill = Algorithm)) +
+      geom_tile() +
+      facet_wrap(type ~.,  nrow = 1) +
+      theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  +
+      scale_fill_manual(values = colrs) +
+      xlab(xlab) +
+      coord_fixed(ratio = 3)
+   }
   g1
 }
 
