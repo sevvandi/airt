@@ -13,9 +13,10 @@
 #' @param object For autoplot: the output of the function latent_trait_analysis.
 #' @param xlab For autoplot: the xlabel.
 #' @param ylab For autoplot: the ylabel.
-#' @param individual For autoplot: For individual panels per algorithm. If set to \code{TRUE}
-#' facet_wrap will be used.
+#' @param plottype For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
+#' for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.
 #' @param nrow For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.
+#' @param se For autoplot: for plotting splines with standard errors.
 #' @param ...  Other arguments currently ignored.
 #'
 #'
@@ -42,7 +43,9 @@
 #'out
 #'autoplot(out)
 #'# To plot individual panels
-#'autoplot(out, individual = TRUE)
+#'autoplot(out, plottype = 2)
+#'# To plot smoothing splines
+#'autoplot(out, plottype = 3)
 #'
 #' @importFrom rlang .data
 #' @importFrom magrittr  %>%
@@ -94,26 +97,34 @@ latent_trait_analysis <- function(df, paras, min_item=0, max_item=1, epsilon = 0
 autoplot.latenttrait <- function(object,
                                 xlab = 'Problem Difficulty',
                                 ylab = 'Performance',
-                                individual = FALSE,
+                                plottype = 1,
                                 nrow = 2,
+                                se = TRUE,
                                 ...){
 
   Latent_Trait <- value <- Algorithm <- NULL
 
   dfl <- object$longdf
-  if(individual){
+  if(plottype == 1){
     g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
       geom_point(aes(color=Algorithm)) +
       xlab(xlab) +
-      facet_wrap(~Algorithm, nrow=2, scales = 'free') +
       ylab(ylab) +
       theme_bw()
-  }else{
+  }else if(plottype == 2){
     g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
       geom_point(aes(color=Algorithm)) +
+      facet_wrap(~Algorithm, nrow=2, scales = 'free') +
       xlab(xlab) +
       ylab(ylab)  +
       theme_bw()
+  }else{
+    g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
+      geom_smooth(aes(color=Algorithm), se = se, method = "gam", formula = y ~s(x, bs="cs")) +
+      xlab(xlab) +
+      ylab(ylab) +
+      theme_bw() +
+      theme(legend.position="bottom", legend.box = "horizontal")
   }
   g1
 }

@@ -93,20 +93,18 @@ autoplot(obj)
 The figure above shows the performance of the 4 algorithms on different datasets ordered by dataset easiness. Again, we see that the performance of algorithms A and B increase with dataset easiness while the performance of algorithm C decreases with dataset easiness. Even though  the performance of Algorithm D increases with dataset easiness it is very stable. 
 
 ```{r latent2}
-autoplot(obj, individual = TRUE)
+autoplot(obj, plottype = 2)
 ```
 
 The above figure shows the performance by algorithm. 
 
 ```{r latent3}
-dfl <- obj$longdf
-### Curve fitting - smoothing splines - latent trait
-g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
-# g2
+autoplot(obj, plottype = 3)
 ```
 We fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
 
 ```{r latent4}
+dfl <- obj$longdf
 latent <- obj$strengths
 latent$proportions
 
@@ -134,7 +132,6 @@ dfl3$value <- dfl3$value*0.1
 colrs2 <- colrs[which(sort(unique(dfl$Algorithm)) %in% unique(dfl3$Algorithm))]
 g7 <- ggplot(dfl3, aes(x = latenttrait, y =value, fill = Algorithm)) + geom_tile() + theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank()) +  scale_fill_manual(values = colrs2)  + ggtitle("Algorithm Weaknesses") +  coord_fixed(ratio=1)
 
-g2
 grid.arrange(g6, g7)
 
 ```

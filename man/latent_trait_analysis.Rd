@@ -11,8 +11,9 @@ latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
   object,
   xlab = "Problem Difficulty",
   ylab = "Performance",
-  individual = FALSE,
+  plottype = 1,
   nrow = 2,
+  se = TRUE,
   ...
 )
 }
@@ -34,10 +35,12 @@ the best algorithm is considered. A default}
 
 \item{ylab}{For autoplot: the ylabel.}
 
-\item{individual}{For autoplot: For individual panels per algorithm. If set to \code{TRUE}
-facet_wrap will be used.}
+\item{plottype}{For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
+for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.}
 
 \item{nrow}{For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.}
+
+\item{se}{For autoplot: for plotting splines with standard errors.}
 
 \item{...}{Other arguments currently ignored.}
 }
@@ -70,6 +73,8 @@ out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = 
 out
 autoplot(out)
 # To plot individual panels
-autoplot(out, individual = TRUE)
+autoplot(out, plottype = 2)
+# To plot smoothing splines
+autoplot(out, plottype = 3)
 
 }

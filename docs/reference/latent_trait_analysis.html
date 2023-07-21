@@ -58,8 +58,9 @@ and the performance.</p>
 <span>  <span class="va">object</span>,</span>
 <span>  xlab <span class="op">=</span> <span class="st">"Problem Difficulty"</span>,</span>
 <span>  ylab <span class="op">=</span> <span class="st">"Performance"</span>,</span>
-<span>  individual <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  plottype <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  se <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -99,13 +100,17 @@ the best algorithm is considered. A default</p></dd>
 <dd><p>For autoplot: the ylabel.</p></dd>
 
 
-<dt>individual</dt>
-<dd><p>For autoplot: For individual panels per algorithm. If set to <code>TRUE</code>
-facet_wrap will be used.</p></dd>
+<dt>plottype</dt>
+<dd><p>For autoplot: plottype = 1 for all algorithm performances in a single plot, plottype = 2
+for using facet_wrap to plot individual algorithms and plottype = 3 to plot the smoothing splines.</p></dd>
 
 
 <dt>nrow</dt>
 <dd><p>For autoplot: If <code>individual = TRUE</code>, the number of rows for facet_wrap.</p></dd>
+
+
+<dt>se</dt>
+<dd><p>For autoplot: for plotting splines with standard errors.</p></dd>
 
 
 <dt>...</dt>
@@ -1018,8 +1023,11 @@ facet_wrap will be used.</p></dd>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="latent_trait_analysis-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="co"># To plot individual panels</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span>, individual <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span>, plottype <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="latent_trait_analysis-3.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="co"># To plot smoothing splines</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">out</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="latent_trait_analysis-4.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
