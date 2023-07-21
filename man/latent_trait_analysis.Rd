@@ -2,9 +2,19 @@
 % Please edit documentation in R/latent_trait.R
 \name{latent_trait_analysis}
 \alias{latent_trait_analysis}
+\alias{autoplot.latenttrait}
 \title{Performs the latent trait analysis}
 \usage{
 latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
+
+\method{autoplot}{latenttrait}(
+  object,
+  xlab = "Problem Difficulty",
+  ylab = "Performance",
+  individual = FALSE,
+  nrow = 2,
+  ...
+)
 }
 \arguments{
 \item{df}{The performance data in a matrix or dataframe.}
@@ -15,7 +25,21 @@ latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
 
 \item{max_item}{A vector with the maximum performance value for each algorithm.}
 
-\item{epsilon}{A value defining good algorithm performance. If \code{epsilon = 0}, then only the best algorithm is considered. A default}
+\item{epsilon}{A value defining good algorithm performance. If \code{epsilon = 0}, then only
+the best algorithm is considered. A default}
+
+\item{object}{For autoplot: the output of the function latent_trait_analysis.}
+
+\item{xlab}{For autoplot: the xlabel.}
+
+\item{ylab}{For autoplot: the ylabel.}
+
+\item{individual}{For autoplot: For individual panels per algorithm. If set to \code{TRUE}
+facet_wrap will be used.}
+
+\item{nrow}{For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.}
+
+\item{...}{Other arguments currently ignored.}
 }
 \value{
 A list with the following components:
@@ -28,18 +52,24 @@ A list with the following components:
 \item{\code{weakness}}{The weaknesses of each algorithm and positions on the latent trait that they performs poorly.}
 }
 \description{
-This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model. It fits a smoothing spline to the points to compute the latent trait.
+This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model.
+It fits a smoothing spline to the points to compute the latent trait. The autoplot function plots the latent trait
+and the performance.
 }
 \examples{
+# This is a dummy example.
 set.seed(1)
-x1 <- runif(100)
-x2 <- runif(100)
-x3 <- runif(100)
+x1 <- runif(200)
+x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
+x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 X <- cbind.data.frame(x1, x2, x3)
-max_item <- rep(1,3)
-min_item <- rep(0,3)
+max_item <- rep(max(x1, x2, x3),3)
+min_item <- rep(min(x1, x2, x3),3)
 mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
 out
+autoplot(out)
+# To plot individual panels
+autoplot(out, individual = TRUE)
 
 }

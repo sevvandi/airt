@@ -77,25 +77,18 @@ We can also look at the datasets and their easiness with respect to the algorith
 ```{r latenttrait}
 
 obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item, epsilon = 0 )
-
-dfl <- obj$longdf
-
-g1 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw() 
-g1
+autoplot(obj)
 ```
 
 The figure above shows the performance of the 10 algorithms on different datasets ordered by dataset easiness. Or, we can split it by algorithm. 
 
 
 ```{r latent2}
-
-g3 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_point(aes(color=Algorithm)) + xlab("Latent Trait (Dataset Easiness)") + facet_wrap(~Algorithm, nrow=2) + coord_fixed(ratio=6) + ylab("Performance") + theme_bw() 
-g3
-
+autoplot(obj, individual = TRUE)
 ```
 
 ```{r latent3}
-
+dfl <- obj$longdf
 ### Curve fitting - smoothing splines - latent trait
 g2 <- ggplot(dfl, aes(Latent_Trait, value)) +  geom_smooth(aes(color=Algorithm), se = FALSE, method = "gam", formula = y ~s(x, bs="cs"))+  xlab("Latent Trait (Dataset Easiness)") + ylab("Performance")  + theme_bw()  +theme(legend.position="bottom", legend.box = "horizontal")
 # g2

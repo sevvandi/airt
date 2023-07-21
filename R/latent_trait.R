@@ -1,12 +1,23 @@
 #' Performs the latent trait analysis
 #'
-#' This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model. It fits a smoothing spline to the points to compute the latent trait.
+#' This function performs the latent trait analysis of the datasets/problems after fitting a continuous IRT model.
+#' It fits a smoothing spline to the points to compute the latent trait. The autoplot function plots the latent trait
+#' and the performance.
 #'
 #' @param df The performance data in a matrix or dataframe.
 #' @param paras The parameters from fitting \code{cirtmodel}.
 #' @param max_item A vector with the maximum performance value for each algorithm.
 #' @param min_item A vector with the minimum performance value for each algorithm.
-#' @param epsilon A value defining good algorithm performance. If \code{epsilon = 0}, then only the best algorithm is considered. A default
+#' @param epsilon A value defining good algorithm performance. If \code{epsilon = 0}, then only
+#' the best algorithm is considered. A default
+#' @param object For autoplot: the output of the function latent_trait_analysis.
+#' @param xlab For autoplot: the xlabel.
+#' @param ylab For autoplot: the ylabel.
+#' @param individual For autoplot: For individual panels per algorithm. If set to \code{TRUE}
+#' facet_wrap will be used.
+#' @param nrow For autoplot: If \code{individual = TRUE}, the number of rows for facet_wrap.
+#' @param ...  Other arguments currently ignored.
+#'
 #'
 #' @return A list with the following components:
 #' \item{\code{crmtheta}}{The problem trait output computed from the R package EstCRM.}
@@ -18,16 +29,20 @@
 #' \item{\code{weakness}}{The weaknesses of each algorithm and positions on the latent trait that they performs poorly.}
 #'
 #'@examples
+#' # This is a dummy example.
 #'set.seed(1)
-#'x1 <- runif(100)
-#'x2 <- runif(100)
-#'x3 <- runif(100)
+#'x1 <- runif(200)
+#'x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
+#'x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'max_item <- rep(1,3)
-#'min_item <- rep(0,3)
+#'max_item <- rep(max(x1, x2, x3),3)
+#'min_item <- rep(min(x1, x2, x3),3)
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
 #'out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
 #'out
+#'autoplot(out)
+#'# To plot individual panels
+#'autoplot(out, individual = TRUE)
 #'
 #' @importFrom rlang .data
 #' @importFrom magrittr  %>%
@@ -53,21 +68,55 @@ latent_trait_analysis <- function(df, paras, min_item=0, max_item=1, epsilon = 0
   colnames(dfl)[3] <- "Algorithm"
 
 
-  g2 <- ggplot2::ggplot(dfl,  ggplot2::aes(.data$Latent_Trait, .data$value)) +   ggplot2::geom_smooth( ggplot2::aes(color=.data$Algorithm), method = "gam", formula = y ~s(x, bs="cs"))+   ggplot2::xlab("Latent Trait (Dataset Easiness)") +  ggplot2::ylab("Performance")  +  ggplot2::theme_bw()
+  g2 <- ggplot2::ggplot(dfl,  ggplot2::aes(.data$Latent_Trait, .data$value)) +
+    ggplot2::geom_smooth( ggplot2::aes(color=.data$Algorithm), method = "gam", formula = y ~s(x, bs="cs"))+
+    ggplot2::xlab("Latent Trait (Dataset Easiness)") +  ggplot2::ylab("Performance")  +
+    ggplot2::theme_bw()
   out1 <- latent_length(g2, dfl$Algorithm, oo$thetas, epsilon, good = TRUE)
   out2 <- latent_length(g2, dfl$Algorithm, oo$thetas, epsilon, good = FALSE)
 
   out <- list()
-  out$crmtheta <- oo
-  out$strengths <- out1
-  out$longdf <- dfl
-  out$plt <- g2
-  out$widedf <- df3
-  out$thetas <- oo$thetas
-  out$weakness <- out2
-  return(out)
+  structure(list(
+    crmtheta = oo,
+    strengths = out1,
+    longdf = dfl,
+    plt = g2,
+    widedf = df3,
+    thetas = oo$thetas,
+    weakness = out2,
+    call = match.call()
+  ), class='latenttrait')
 }
 
+
+#' @rdname latent_trait_analysis
+#' @export
+autoplot.latenttrait <- function(object,
+                                xlab = 'Problem Difficulty',
+                                ylab = 'Performance',
+                                individual = FALSE,
+                                nrow = 2,
+                                ...){
+
+  Latent_Trait <- value <- Algorithm <- NULL
+
+  dfl <- object$longdf
+  if(individual){
+    g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
+      geom_point(aes(color=Algorithm)) +
+      xlab(xlab) +
+      facet_wrap(~Algorithm, nrow=2, scales = 'free') +
+      ylab(ylab) +
+      theme_bw()
+  }else{
+    g1 <- ggplot(dfl, aes(Latent_Trait, value)) +
+      geom_point(aes(color=Algorithm)) +
+      xlab(xlab) +
+      ylab(ylab)  +
+      theme_bw()
+  }
+  g1
+}
 
 
 latent_length <- function(gplot, group_names, thetas, epsilon, good = TRUE){
