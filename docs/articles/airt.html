@@ -81,11 +81,11 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span></code></pre></div>
-<p>The goal of <em>airt</em> is to evaluate performance of algorithms
-using Item Response Theory (IRT). You can use <em>airt</em> to evaluate
-the performance of a group of algorithms on a collection of test
-instances. The IRT model is fitted using the R package
-<strong>mirt</strong> .</p>
+<p>The goal of <em>airt</em> is to evaluate the performance of a
+portfolio of algorithms using Item Response Theory (IRT). The IRT models
+are fitted using the R packages <strong>EstCRM</strong> and
+<strong>mirt</strong>. The function in <strong>EstCRM</strong> is
+slightly modified to account for a broader set of parameters.</p>
 <div class="section level2">
 <h2 id="classification-algorithms---continuous-irt-model">Classification Algorithms - Continuous IRT model<a class="anchor" aria-label="anchor" href="#classification-algorithms---continuous-irt-model"></a>
 </h2>
@@ -93,54 +93,161 @@ instances. The IRT model is fitted using the R package
 <em>classification</em> has performance data from 10 classification
 algorithms on 235 datasets. This data is discussed in <span class="citation">(Muñoz et al. 2018)</span> and can be found at the test
 instance library MATILDA <span class="citation">(Smith-Miles
-2019)</span>.</p>
+2019)</span>. Let’s have a look at this dataset.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"classification_cts"</span><span class="op">)</span></span>
-<span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="va">classification_cts</span></span>
-<span><span class="va">max_item</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span>
-<span><span class="va">min_item</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">max.item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="va">max_item</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">min.item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="va">min_item</span>, <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span>
-<span><span class="va">modout</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cirtmodel.html">cirtmodel</a></span><span class="op">(</span><span class="va">df2</span>, <span class="va">max.item</span>, <span class="va">min.item</span><span class="op">)</span></span>
-<span><span class="va">paras</span> <span class="op">&lt;-</span> <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span></span>
-<span></span>
-<span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/heatmaps_crm.html">heatmaps_crm</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span> </span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">classification_cts</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="co">#&gt;          NB       LDA       QDA      CART       J48       KNN     L_SVM</span></span>
+<span><span class="co">#&gt; 1 0.7199042 0.7602850 0.7459878 0.7546605 0.7435086 0.7430308 0.7694158</span></span>
+<span><span class="co">#&gt; 2 0.8358182 0.8404234 0.1045281 0.8270254 0.8347175 0.8328870 0.8284820</span></span>
+<span><span class="co">#&gt; 3 0.8581818 0.8763636 0.8300000 0.8372727 0.8672727 0.8218182 0.8763636</span></span>
+<span><span class="co">#&gt; 4 0.7467141 0.7356707 0.4451558 0.7356707 0.7356707 0.7530488 0.7356707</span></span>
+<span><span class="co">#&gt; 5 0.9650329 0.1408706 0.1408706 0.9397915 0.9619915 0.9277021 0.9647557</span></span>
+<span><span class="co">#&gt; 6 0.7739130 0.8536232 0.5060660 0.8536232 0.8507246 0.8391304 0.8521739</span></span>
+<span><span class="co">#&gt;    poly_SVM   RBF_SVM     RandF</span></span>
+<span><span class="co">#&gt; 1 0.7225890 0.7788021 0.7655677</span></span>
+<span><span class="co">#&gt; 2 0.8212273 0.8300809 0.1045281</span></span>
+<span><span class="co">#&gt; 3 0.8763636 0.8672727 0.8672727</span></span>
+<span><span class="co">#&gt; 4 0.7704268 0.7685976 0.7557249</span></span>
+<span><span class="co">#&gt; 5 0.7341198 0.8483237 0.1408706</span></span>
+<span><span class="co">#&gt; 6 0.8579710 0.8521739 0.8637681</span></span></code></pre></div>
+<p>In this dataset the columns represent algorithms and rows represent
+datasets/instances. The values are performance values. That is, the
+performance of dataset1 to algorithm Naive Bayes (NB) is 0.7199042. This
+dataframe is the input to our AIRT model. We fit it by calling
+<em>cirtmodel</em>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">modout</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cirtmodel.html">cirtmodel</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<p>Now the model is fitted. Let’s have a look at traditional IRT
+parameters.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">paras</span> <span class="op">&lt;-</span> <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span></span>
+<span><span class="va">paras</span></span>
+<span><span class="co">#&gt;                    a           b      alpha</span></span>
+<span><span class="co">#&gt; NB       1.027368059  -1.1185870 1.05927334</span></span>
+<span><span class="co">#&gt; LDA      0.697568059  -1.9584262 0.94906831</span></span>
+<span><span class="co">#&gt; QDA      0.008604556 -37.6665493 0.01731587</span></span>
+<span><span class="co">#&gt; CART     1.598441089  -1.0209521 1.41547455</span></span>
+<span><span class="co">#&gt; J48      1.558295477  -1.1640940 1.52036690</span></span>
+<span><span class="co">#&gt; KNN      1.796892905  -0.8412235 1.64579669</span></span>
+<span><span class="co">#&gt; L_SVM    2.846510834  -1.4371875 1.50572702</span></span>
+<span><span class="co">#&gt; poly_SVM 1.743909296  -1.1499008 1.31318614</span></span>
+<span><span class="co">#&gt; RBF_SVM  3.766472502  -1.4019959 1.53615811</span></span>
+<span><span class="co">#&gt; RandF    0.999442464  -1.7509568 1.43550771</span></span></code></pre></div>
+<p>The parameter <em>a</em> denotes discrimination, <em>b</em> denotes
+difficulty and <em>alpha</em> is a scaling parameter. These are
+traditional IRT parameters. Using these parameters we will find AIRT
+algorithm attributes. These are <strong>algorithm anomalousness,
+consistency and the difficulty limit</strong>.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, <span class="va">modout</span><span class="op">$</span><span class="va">stability</span>, <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">)</span></span>
+<span><span class="co">#&gt;          modout$anomalous modout$stability modout$difficulty_limit</span></span>
+<span><span class="co">#&gt; NB                      0        0.9733610               1.1185870</span></span>
+<span><span class="co">#&gt; LDA                     0        1.4335519               1.9584262</span></span>
+<span><span class="co">#&gt; QDA                     0      116.2175082              37.6665493</span></span>
+<span><span class="co">#&gt; CART                    0        0.6256095               1.0209521</span></span>
+<span><span class="co">#&gt; J48                     0        0.6417268               1.1640940</span></span>
+<span><span class="co">#&gt; KNN                     0        0.5565162               0.8412235</span></span>
+<span><span class="co">#&gt; L_SVM                   0        0.3513073               1.4371875</span></span>
+<span><span class="co">#&gt; poly_SVM                0        0.5734243               1.1499008</span></span>
+<span><span class="co">#&gt; RBF_SVM                 0        0.2655004               1.4019959</span></span>
+<span><span class="co">#&gt; RandF                   0        1.0005578               1.7509568</span></span></code></pre></div>
+<p>If an algorithm is anomalous then the anomalous indicator is 1. In
+this algorithm portfolio, none of the algorithms are anomalous, because
+all anomalous indicators are 0. Anomalous algorithms give good
+performances for difficult problems and poor performances for easy
+problems.</p>
+<p>The difficulty limit gives the highest difficulty level that
+algorithms can handle. In this scenario, QDA has the highest difficulty
+limit. So, QDA can handle the hardest problems. KNN has the lowest
+difficulty limit. It can only handle very easy problems.</p>
+<p>Algorithm consistency (stability) attribute gives how consistent an
+algorithm is. An algorithm can be consistently good for most of the
+problems or it can be consistently poor for many problems. And many
+algorithms can vary in their performance depending on the
+problem/dataset. In this portfolio, QDA is the most consistent
+algorithm.</p>
+<p>Let’s look at these algorithms visually. The <em>heatmaps_crm</em>
+function plots the heatmaps. The part <em>crm</em> stands for continuous
+response model.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/heatmaps_crm.html">heatmaps_crm</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span> </span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span><span class="op">)</span></span></code></pre></div>
-<p><img src="airt_files/figure-html/example2-1.png" width="768"></p>
-<p>The figure above shows the probability density of the fitted IRT
-model over Theta and z values. The y axis denotes the normalized
-performance values. The high density regions are showed by the lighter
-coloured parts.</p>
+<p><img src="airt_files/figure-html/heatmaps-1.png" width="768">
+Let’s discuss these heatmaps. Theta (x axis) represents the dataset
+easiness and z (y axis) represents the normalized performance values.
+The heatmaps show the probability density of the fitted IRT model over
+Theta and z values for each algorithm.</p>
+<p>Apart from QDA all heatmaps have a line (a bit like a lightsaber)
+going through it. If the lightsaber has a positive slope, then the
+algorithm is not anomalous. We see some lightsabers are sharper than
+others. Algorithms with sharper lightsabers are more discriminating. The
+algorithms with no lightsabers (QDA) or blurry lightsabers are more
+consistent. In this portfolio, QDA is the most consistent as it doesn’t
+have any lightsabers. LDA and NB are also somewhat consistent. RBF_SVM
+is the least consistent (most discriminating) as it has a very sharp
+line.</p>
 </div>
 <div class="section level2">
 <h2 id="classification-algorithms--latent-trait-analysis">Classification Algorithms -Latent Trait Analysis<a class="anchor" aria-label="anchor" href="#classification-algorithms--latent-trait-analysis"></a>
 </h2>
-<p>We can also look at the datasets and their easiness with respect to
-the algorithms. This is called the latent trait analysis.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/latent_trait_analysis.html">latent_trait_analysis</a></span><span class="op">(</span><span class="va">df2</span>,<span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>,<span class="va">min.item</span>,<span class="va">max.item</span>, epsilon <span class="op">=</span> <span class="fl">0</span> <span class="op">)</span></span>
+<p>We can also look at the algorithm performance with respect to the
+dataset difficulty. This is called the latent trait analysis. The
+function <em>latent_trait_analysis</em> does this for you. We need to
+pass the IRT parameters to do this analysis.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/latent_trait_analysis.html">latent_trait_analysis</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>, epsilon <span class="op">=</span> <span class="fl">0</span> <span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latenttrait-1.png" width="768"></p>
-<p>The figure above shows the performance of the 10 algorithms on
-different datasets ordered by dataset easiness. Or, we can split it by
-algorithm.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<p>When you use <em>plottype = 1</em>, it plots all algorithms in a
+single plot. To have a separate plot for each algorithm we use
+<em>plottype = 2</em>.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="airt_files/figure-html/latent2-1.png" width="768"></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<p><img src="airt_files/figure-html/latent2-1.png" width="768">
+From these plots we see that certain algorithms give better performances
+for different problem difficulty values. To get a better sense of which
+algorithms are better for which difficulty values we fit smoothing
+splines to the above data. By using <em>plottype = 3</em> in
+<em>autoplot</em> we can see these smoothing splines.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latent3-1.png" width="768"></p>
-<p>Next, we fit smoothing-splines to the performance data by algorithm.
-The figure above shows these smoothing splines for each algorithm as a
-function of the dataset easiness. From this figure, we can get the best
-algorithm for a given dataset easiness. This gives us the proportion of
-the latent trait spectrum occupied by each algorithm. We call this the
-latent trait occupancy.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>From this plot, we can get the best algorithm for a given problem
+difficulty. We can use these splines to compute the proportion of the
+latent trait spectrum occupied by each algorithm. We call this the
+latent trait occupancy (LTO). These are strengths of algorithms.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">obj</span><span class="op">$</span><span class="va">strengths</span><span class="op">$</span><span class="va">proportions</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
+<span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     2    0.362   J48       #D89000</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     4    0.294   L_SVM     #39B600</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>    10    0.221   RBF_SVM   #FF62BC</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     3    0.115   KNN       #A3A500</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     7    0.008<span style="text-decoration: underline;">51</span> poly_SVM  #00B0F6</span></span></code></pre></div>
+<p>The column <em>Proportion</em> gives the latent trait occupancy of
+the algorithm. In this scenario, J48 has the highest latent trait
+occupancy.</p>
+<p>Similar to strengths, we can say an algorithm is weak if it has the
+lowest performance for a given difficulty.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">obj</span><span class="op">$</span><span class="va">weakness</span><span class="op">$</span><span class="va">proportions</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 4</span></span></span>
+<span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     8    0.996   QDA       #9590FF</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>    10    0.004<span style="text-decoration: underline;">26</span> RBF_SVM   #FF62BC</span></span></code></pre></div>
+<p>In this example QDA is the weakness algorithm. QDA is weak for 0.99
+of the latent trait. But now there is a big question. If QDA is the
+weakest algorithm, why did it have such a high difficulty limit? It had
+the highest difficulty limit of all the algorithms. What happened
+here?</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latent%204-1.png" width="768"></p>
 <p>We see latent trait occupancy in the graph above. The 5 algorithms
@@ -156,7 +263,7 @@ it. The lowest performance measurement is P1 and the highest is P5, with
 the others in between. The latent scores <span class="math inline">\(\theta\)</span> represent the easiness of the
 datasets. Let’s fit an IRT model to this data and look at the algorithm
 trace lines.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"classification_poly"</span><span class="op">)</span></span>
 <span><span class="va">modout</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pirtmodel.html">pirtmodel</a></span><span class="op">(</span><span class="va">classification_poly</span>, vpara<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
@@ -185,7 +292,7 @@ performance of the IRT model for each dataset. This is not 100% correct.
 Then we can compare the predicted performance with the actual
 performance values. That is what we do here. Let’s look at the model
 goodness curves.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Model Goodness and Algorithm effectiveness</span></span>
 <span><span class="va">good</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_goodness_poly.html">model_goodness_poly</a></span><span class="op">(</span><span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">)</span></span>
 <span></span>
@@ -218,7 +325,7 @@ this proportion is nearly 100%. In this manner we relax the tolerance.
 The <em>curves</em> list out these coordinates for each algorithm for
 each goodness tolerance level x. The area under the curve is an
 indication of how accurate the IRT model is on a given algorithm.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">good</span><span class="op">$</span><span class="va">goodnessAUC</span></span>
 <span><span class="co">#&gt;               [,1]</span></span>
 <span><span class="co">#&gt; NB       0.9590426</span></span>
@@ -248,7 +355,7 @@ and P4. Next the proportion of datasets that obtains P5, P4 or P3. We do
 this computation for actual performance values and IRT model predicted
 performance values. These two sets of effectiveness curves are shown in
 the 2 graphs below.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">eff</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/effectiveness_poly.html">effectiveness_poly</a></span><span class="op">(</span><span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">eff_curves</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">eff</span><span class="op">$</span><span class="va">actcurves</span><span class="op">)</span></span>
@@ -267,13 +374,13 @@ actual effectiveness curve and the predicted effectiveness curve. This
 will show how much the IRT predicted deviates from the actual, and also
 which algorithms are more effective than others. We show this in the
 graph below.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_eff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">eff</span><span class="op">$</span><span class="va">effectivenessAUC</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">eff</span><span class="op">$</span><span class="va">effectivenessAUC</span><span class="op">)</span> <span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">df_eff</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Algorithm"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_eff</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Actual</span>, <span class="va">Predicted</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html" class="external-link">geom_jitter</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">Algorithm</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external-link">geom_abline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>intercept<span class="op">=</span><span class="fl">0</span>,slope<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, linetype<span class="op">=</span><span class="st">"dotted"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">xlim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="external-link">ylim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Area under Actual Effectiveness Curve (AUAEC)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Area under Predicted Effectiveness Curve (AUPEC)"</span><span class="op">)</span> <span class="op">+</span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness2-1.png" width="768"></p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">measures</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="va">good</span><span class="op">$</span><span class="va">goodnessAUC</span>, <span class="va">eff</span><span class="op">$</span><span class="va">effectivenessAUC</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">measures</span><span class="op">)</span></span>
@@ -305,7 +412,7 @@ highest absolute discrimination value.</p>
 on datasets where the other algorithms perform poorly. We say an
 algorithm is anomalous is the IRT discrimination parameter is negative.
 In this example non of the algorithms are anomalous.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">stab</span> <span class="op">&lt;-</span> <span class="va">modout</span><span class="op">$</span><span class="va">stability</span></span>
 <span><span class="va">anomalous</span> <span class="op">&lt;-</span> <span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="va">stab</span>, <span class="va">anomalous</span><span class="op">)</span></span>

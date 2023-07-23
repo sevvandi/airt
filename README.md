@@ -282,9 +282,10 @@ autoplot(obj2, plottype = 4)
 that in certain parts of the problem difficulty space multiple
 algorithms have strengths, similarly for weaknesses.
 
-Next we look at a polytomous example.
+Next we look at discrete example. Discrete models are called polytomous
+in IRT literature.
 
-## Example - polytomous
+## Example - polytomous (discrete)
 
 ``` r
 # Generating data

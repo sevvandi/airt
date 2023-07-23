@@ -47,50 +47,86 @@ library(ggplot2)
 library(tidyr)
 library(gridExtra)
 ```
-The goal of _airt_ is to evaluate performance of algorithms using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The IRT model is fitted using the R package __mirt__ .
+The goal of _airt_ is to evaluate the performance of a portfolio of algorithms using Item Response Theory (IRT). The IRT models are fitted using the R packages __EstCRM__ and __mirt__. The function in __EstCRM__ is slightly modified to account for a broader set of parameters. 
 
 
 ## Classification Algorithms - Continuous IRT model
 
-This example is on classification algorithms. The data *classification* has performance data from 10 classification algorithms on 235 datasets. This data is discussed in  [@munoz2018instance] and can be found at the test instance library MATILDA [@matilda].
+This example is on classification algorithms. The data *classification* has performance data from 10 classification algorithms on 235 datasets. This data is discussed in  [@munoz2018instance] and can be found at the test instance library MATILDA [@matilda]. Let's have a look at this dataset.
 
 ```{r example2}
 data("classification_cts")
-df2 <- classification_cts
-max_item  <- max(df2)
-min_item <- 0
-max.item <- rep(max_item, dim(df2)[2])
-min.item <- rep(min_item, dim(df2)[2])
-df2 <- as.data.frame(df2)
-modout <- cirtmodel(df2, max.item, min.item)
-paras <- modout$model$param
+df <- classification_cts
+head(df)
+```
+In this dataset the columns represent algorithms and rows represent datasets/instances. The values are performance values. That is, the performance of dataset1 to algorithm Naive Bayes (NB) is 0.7199042.  This dataframe is the input to our AIRT model. We fit it by calling *cirtmodel*.
 
+```{r classificationairt}
+modout <- cirtmodel(df)
+```
+
+Now the model is fitted. Let's have a look at traditional IRT parameters. 
+
+```{r irtparas}
+paras <- modout$model$param
+paras
+```
+
+The parameter *a* denotes discrimination, *b* denotes difficulty and *alpha* is a scaling parameter. These are traditional IRT parameters. Using these parameters we will find AIRT algorithm attributes. These are **algorithm anomalousness, consistency and the difficulty limit**. 
+
+```{r airtparas}
+cbind.data.frame(modout$anomalous, modout$stability, modout$difficulty_limit)
+```
+
+If an algorithm is anomalous then the anomalous indicator is 1. In this algorithm portfolio, none of the algorithms are anomalous, because all anomalous indicators are 0. Anomalous algorithms give good performances for difficult problems and poor performances for easy problems. 
+
+The difficulty limit gives the highest difficulty level that algorithms can handle. In this scenario, QDA has the highest difficulty limit. So, QDA can handle the hardest problems. KNN has the lowest difficulty limit. It can only handle very easy problems. 
+
+Algorithm consistency (stability) attribute gives how consistent an algorithm is. An algorithm can be consistently good for most of the problems or it can be consistently poor for many problems. And many algorithms can vary in their performance depending on the problem/dataset. In this portfolio, QDA is the most consistent algorithm. 
+
+Let's look at these algorithms visually. The *heatmaps_crm* function plots the heatmaps. The part *crm* stands for continuous response model. 
+
+```{r heatmaps}
 obj <- heatmaps_crm(modout) 
 autoplot(obj)
 ```
+Let's discuss these heatmaps. Theta (x axis) represents the dataset easiness and z (y axis) represents the normalized performance values. The heatmaps show the probability density of the fitted IRT model over Theta and z values for each algorithm.
 
-The figure above shows the probability density of the fitted IRT model over Theta and z values. The y axis denotes the normalized performance values.  The high density regions are showed by the lighter coloured parts.
+Apart from QDA all heatmaps have a line (a bit like a lightsaber) going through it.  If the lightsaber has a positive slope, then the algorithm is not anomalous. We see some lightsabers are sharper than others. Algorithms with sharper lightsabers are more discriminating. The algorithms with no lightsabers (QDA) or blurry lightsabers are more consistent. In this portfolio, QDA is the most consistent as it doesn't have any lightsabers. LDA and NB are also somewhat consistent. RBF_SVM is the least consistent (most discriminating) as it has a very sharp line. 
 
 ## Classification Algorithms -Latent Trait Analysis
-We can also look at the datasets and their easiness with respect to the algorithms. This is called the latent trait analysis. 
-```{r latenttrait}
+We can also look at the algorithm performance with respect to the dataset difficulty. This is called the latent trait analysis. The function *latent_trait_analysis* does this for you. We need to pass the IRT parameters to do this analysis.
 
-obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item, epsilon = 0 )
-autoplot(obj)
+```{r latenttrait}
+obj <- latent_trait_analysis(df, modout$model$param, epsilon = 0 )
+autoplot(obj, plottype = 1)
 ```
 
-The figure above shows the performance of the 10 algorithms on different datasets ordered by dataset easiness. Or, we can split it by algorithm. 
-
+When you use *plottype = 1*, it plots all algorithms in a single plot. To have a separate plot for each algorithm we use *plottype = 2*. 
 
 ```{r latent2}
 autoplot(obj, plottype = 2)
 ```
+From these plots we see that certain algorithms give better performances for different problem difficulty values. To get a better sense of which algorithms are better for which difficulty values we fit smoothing splines to the above data. By using *plottype = 3* in *autoplot* we can see these smoothing splines. 
 
 ```{r latent3}
 autoplot(obj, plottype = 3)
 ```
 
-Next, we fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
+From this plot, we can get the best algorithm for a given problem difficulty. We can use these splines to compute the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy (LTO). These are strengths of algorithms. 
+
+```{r lto}
+obj$strengths$proportions
+
+```
+The column *Proportion* gives the latent trait occupancy of the algorithm. In this scenario, J48 has the highest latent trait occupancy.
+
+Similar to strengths, we can say an algorithm is weak if it has the lowest performance for a given difficulty. 
+
+```{r weaknesses}
+obj$weakness$proportions
+```
+In this example QDA is the weakness algorithm. QDA is weak for 0.99 of the latent trait. But now there is a big question. If QDA is the weakest algorithm, why did it have such a high difficulty limit? It had the highest difficulty limit of all the algorithms. What happened here? 
 
 ```{r latent 4}
 autoplot(obj, plottype = 4)
