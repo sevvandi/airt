@@ -21,7 +21,8 @@ A list with the following components:
  \item{\code{difficulty_limit}}{The difficulty limits for each algorithm.  A higher threshold indicates that the algorithm can tackle harder problems.}
 }
 \description{
-This function fits a polytomous Item Response Theory (IRT) model to the algorithm performance data.
+This function fits a polytomous Item Response Theory (IRT) model using the R package mirt
+to the algorithm performance data.
 }
 \examples{
 set.seed(1)
@@ -30,4 +31,9 @@ x2 <- sample(1:5, 100, replace = TRUE)
 x3 <- sample(1:5, 100, replace = TRUE)
 X <- cbind.data.frame(x1, x2, x3)
 mod <- pirtmodel(X)
+
+}
+\references{
+R. Philip Chalmers (2012). mirt: A Multidimensional Item Response Theory Package for the R
+Environment. Journal of Statistical Software, 48(6), 1-29. doi:10.18637/jss.v048.i06
 }

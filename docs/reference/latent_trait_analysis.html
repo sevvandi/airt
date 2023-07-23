@@ -51,7 +51,13 @@ and the performance.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">latent_trait_analysis</span><span class="op">(</span><span class="va">df</span>, <span class="va">paras</span>, min_item <span class="op">=</span> <span class="fl">0</span>, max_item <span class="op">=</span> <span class="fl">1</span>, epsilon <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">latent_trait_analysis</span><span class="op">(</span></span>
+<span>  <span class="va">df</span>,</span>
+<span>  <span class="va">paras</span>,</span>
+<span>  min_item <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  max_item <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  epsilon <span class="op">=</span> <span class="fl">0.01</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S3 method for latenttrait</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span></span>
@@ -61,6 +67,7 @@ and the performance.</p>
 <span>  plottype <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  se <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  ratio <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -112,6 +119,10 @@ plottype = 4 to plot strengths and weaknesses.</p></dd>
 
 <dt>se</dt>
 <dd><p>For autoplot: for plotting splines with standard errors.</p></dd>
+
+
+<dt>ratio</dt>
+<dd><p>For autoplot: for plotting strengths and weaknesses, ratio between x and y axis.</p></dd>
 
 
 <dt>...</dt>

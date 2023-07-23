@@ -19,8 +19,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/sevvandi/airt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-
-The goal of _airt_ is to evaluate algorithm performances using Item Response Theory (IRT). You can use _airt_ to evaluate the performance of a group of algorithms on a collection of test instances.  The polytomous IRT model is fitted using the R package _mirt_ and the continuous IRT model is fitted using updates to the code in _EstCRM_.  
+The goal of _airt_ is to evaluate a portfolio of algorithms using Item Response Theory (IRT). To fit the IRT models, I have used the R packages _mirt_ and _EstCRM_.  
 
 ## Installation
 
@@ -37,7 +36,8 @@ You can install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("sevvandi/airt")
 ```
 ## Example - continuous
-Let us consider some synthetic performance data. In this example the performance of  algorithm A is positively correlated with the performance of algorithm B, but negatively correlated with the performanc of algorithm C. Algorithm D is positively correlated with algorithm A. However, algorithm D has very high performance values.
+Let us consider some synthetic performance data. For this example, I will generate performance values for 4 algorithms that are correlated with each other. 
+
 ```{r excont}
 library(airt)
 library(ggplot2)
@@ -58,59 +58,102 @@ algo4 <- algo4/max(algo4)
 
 df <- cbind.data.frame(algo1, algo2, algo3, algo4)
 colnames(df) <- c("A", "B", "C", "D")
-g1 <- ggplot(df, aes(A, B)) + geom_point()+ coord_fixed() + xlab("Algorithm A") + ylab("Algorithm B") + theme_bw()
-
-g2 <- ggplot(df, aes(A, C)) + geom_point() + coord_fixed() + xlab("Algorithm A") + ylab("Algorithm C")  + theme_bw()
-
-g3 <- ggplot(df, aes(A, D)) + geom_point()+  xlab("Algorithm A") + ylab("Algorithm D") + coord_fixed() + ylim(0,1) + theme_bw()
-grid.arrange(g1, g2, g3, layout_matrix=cbind(1,2,3))
+head(df)
 ```
 
-Let us fit a continuous IRT model to this data. 
-```{r ctsirtfit}
-df2 <- df
-max_item  <- max(df2)
-min_item <- 0
-max.item <- rep(max_item, dim(df2)[2])
-min.item <- rep(min_item, dim(df2)[2])
-df2 <- as.data.frame(df2)
-modout <- cirtmodel(df2, max.item, min.item)
-paras <- modout$model$param
+This dataframe gives the performances of algorithms A, B, C and D. Each row is an dataset/instance and each column denotes an algorithm. Let us fit a continuous IRT model to this data. The input to the airt model is the dataframe df. 
 
+
+```{r ctsirtfit}
+modout <- cirtmodel(df)
+paras <- modout$model$param
+paras
+```
+
+Now we have our AIRT model. The *paras* contain the standard IRT parameters from the EstCRM R package. Here *a* denotes discrimination, *b* difficulty and *alpha* the scaling parameter. From these parameters we construct algorithm attributes/features.  They are *anomalousness*, *consistency* (or stability) and *difficulty limit*. These are AIRT algorithm attributes and are available in the output *modout*. 
+
+
+```{r airtmetrics}
+cbind.data.frame(modout$anomalous, modout$stability, modout$difficulty_limit)
+```
+
+The *anomalous* feature is either 1 or 0. If it is 1, the algorithm is anomalous and if it is 0, it is not. We can see that algorithm C is anomalous. That is, it performs well for difficult datasets/problems and poorly for easy datasets/problems. The other algorithm perform in a normal way, they gives good performances for easy problems and poor performances for difficult problems. 
+
+The *difficultly limit* tells us the highest difficulty level the algorithm can handle. If an algorithm has a high difficulty limit, it is good because, then it can handle very hard problems. In this case, Algorithm D has the highest difficulty limit. Thus, it can handle very difficult problems.  Also observe that C has a negative difficulty limit. This is because it is anomalous. 
+
+The *stability/consistency* feature tells us how consistent an algorithm is.
+Some algorithms are consistently good for many problems and some are consistently poor. Others can vary a lot depending on the problem. Algorithm D has the highest consistency in the portfolio. That means, it is consistently good or consistently bad. Because its difficulty limit is very high, we know it is consistently good. But we can't say it by just looking at the stability/consistency value. In this portfolio, the least consistent algorithm is A. That is, it fluctuates a lot depending on the problem.  
+
+By plotting heatmaps we can visually see these characteristics.  
+
+```{r heatmaps}
 obj <- heatmaps_crm(modout) #, thetarange = c(-8, -2)
 autoplot(obj,nrow = 1)
 ```
 
-The figure above shows the probability density of the fitted IRT model over Theta and z values. The y axis denotes the normalized performance values.  The high density regions are showed by the lighter coloured parts. We see that algorithms A and B obtain high performance values for high Theta values. Theta denotes the dataset easiness. However, algorithm C obtains high performance values for low Theta values. These are difficult datasets. Algorithm C gets low performance values for easy datasets. Algorithm D, does not discriminate among the datasets, as such it is a stable algorithm. 
+The figure above shows the probability density heatmaps for algorithms. The y axis denotes the normalized performance values. The x axis gives the problem easiness. Lower x/Theta values denote more difficult problems and higher Theta values denote easier problems. For algorithm A, B and C we see lines across the panes. These lines denote high density regions. Let's say we look at Theta = 0 for algorithm A. The place where the yellow line intersects Theta = 0 (vertical line, not drawn) is the highest probable region. That denotes the the most probably performance for that type of problem. Generally, sharper lines indicate more discriminating algorithms and blurry lines or no lines (algorithm D) indicate more stable algorithms. If the line has a positive slope, then it is not anomalous. If the line has a negative slope (algorithm C), then it is anomalous. 
 
-We can also look at the datasets and their easiness with respect to the algorithms. This is called the latent trait analysis. 
+We see that algorithms A and B obtain high performance values for high Theta values. That is because these algorithms are normal, i.e., not anomalous.  However, algorithm C obtains high performance values for low Theta values. These are difficult datasets. Hence, algorithm C is anomalous. Algorithm D, does not discriminate among the datasets, as such it is a more consistent algorithm. These are the insights we can get from the heatmaps. 
+
+Next, let's do a latent trait analysis. Latent trait analysis looks at the algorithm performance with respect to the dataset difficulty. The datasets are ordered in the latent trait according to their difficulty. IRT does this for us. Let's look at the latent trait. 
+
 ```{r latenttrait}
-obj <- latent_trait_analysis(df2,modout$model$param,min.item,max.item, epsilon = 0 )
-autoplot(obj)
+obj <- latent_trait_analysis(df, modout$model$param, epsilon = 0 )
+autoplot(obj, plottype = 1)
 ```
 
-The figure above shows the performance of the 4 algorithms on different datasets ordered by dataset easiness. Again, we see that the performance of algorithms A and B increase with dataset easiness while the performance of algorithm C decreases with dataset easiness. Even though  the performance of Algorithm D increases with dataset easiness it is very stable. 
+The figure above shows the performance of the 4 algorithms on different datasets ordered by dataset difficulty. Again, we see that the performance of algorithms A and B decrease with dataset difficulty while the performance of algorithm C increases with dataset difficulty. Even though  the performance of Algorithm D somewhat decreases with dataset difficulty it is very consistent. We can plot it by algorithm (if the portfolio has lots of algorithms) by using *plottype = 2*. 
 
 ```{r latent2}
 autoplot(obj, plottype = 2)
 ```
-
-The above figure shows the performance by algorithm. 
+From the plots above we can see that different algorithms perform well for different problem difficulties. That is, different algorithms have different strengths. Well, different weaknesses as well. To properly, quantify the *strengths* and *weaknesses*, we first fit smoothing splines to the data above. We can do this by using *plottype = 3*. 
 
 ```{r latent3}
 autoplot(obj, plottype = 3)
 ```
-We fit smoothing-splines to the performance data by algorithm. The figure above shows these smoothing splines for each algorithm as a function of the dataset easiness. From this figure, we can get the best algorithm for a given dataset easiness. This gives us the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy. 
+This plot shows the smoothing splines for each algorithm as a function of the problem difficulty. From this figure, we can get the best algorithm for a given problem difficulty. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets. 
+
+We can also compute the  proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy (LTO). 
+
+```{r lto}
+obj$strengths$proportions
+```
+
+In the above table LTO is given by the *Proportion* column. We see that algorithms D, A, C and D occupy 0.865, 0.070 and 0.0.065 of the latent trait respectively. 
+
+Just like the strengths, we can look at the weaknesses. An algorithm is weak for a given problem difficulty, if the associated curve is at the bottom. From the graph above we see that Algorithm C is weak for easy problems, and Algorithm A is weak for difficulty problems.  We can get latent trait occupancy (LTO) for weaknesses as well. 
+
+```{r weaknesslto}
+obj$weakness$proportions
+```
+
+We can put these in a strengths and weaknesses diagram by using *plottype = 4*.
+
 
 ```{r latent4}
 autoplot(obj, plottype = 4)
 ```
-We see that algorithms A, C and D occupy 0.065, 0.0.065 and 0.87 of the latent trait respectively. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets. 
+All this was done using *epsilon = 0*, which only considers one algorithm for a given problem difficulty. If we want to consider the algorithms that give close enough performances for a given problem difficulty, we can set *epsilon* to a different value. Say we let *epsilon = 0.05*. This would consider algorithms having similar performances up to 0.05. We can do the same analysis as before. The strengths would be slightly different in this case
+
+```{r strengthseps0.05}
+obj2 <- latent_trait_analysis(df, modout$model$param, epsilon = 0.05 )
+obj2$strengths$proportions
+```
+
+Now, all 4 algorithms have strengths. We see that the latent trait occupancy (proportion in the table above) of D has increased to 0.94, that is a large proportion of the problem space. And if we add up the proportions, the sum is greater than 1. This is because there is an overlap of strong algorithms in the latent trait.  Let us look at the strengths and weaknesses plot. 
+
+```{r latenteps0.05}
+
+autoplot(obj2, plottype = 4)
+```
+We see that in certain parts of the problem difficulty space multiple algorithms have strengths, similarly for weaknesses.
 
 Next we look at a polytomous example. 
 
 ## Example - polytomous
 ```{r example}
+# Generating data
 set.seed(1)
 algo1 <- sample(1:5, 100, replace = TRUE)
 inds1 <- which(algo1 %in% c(4,5))
@@ -121,22 +164,32 @@ algo3 <- rep(0, 100)
 algo3[inds1] <- sample(1:2, length(inds1), replace = TRUE)
 algo3[-inds1] <- sample(3:5, (100-length(inds1)), replace = TRUE)
 algorithms <- cbind.data.frame(algo1, algo2, algo3)
+
+# Fitting the polytomous model
 mod <- pirtmodel(algorithms)
 
+# Tracelines for each algorithm
 gdf <- tracelines_poly(mod)
+
+# Plotting
 autoplot(gdf)
 
+# AIRT metrics
 mod$stability
-
 mod$anomalous
 ```
 We see that _algo3_ is anomalous. That is, it performs well on test instances that others perform poorly. For _algo1_ and _algo_2_,  the highest level of performance P5 is achieved for high values of $\theta$. But for _algo3_ the P5 is achieved for low values of $\theta$.  
 
 
 ## More on _airt_
-The pkgdown site describes the functionality of _airt_ : https://sevvandi.github.io/airt/.
+The pkgdown site describes the functionality of _airt_ : https://sevvandi.github.io/airt/. More details are available at [@airtPaper].
 
 ## Acknowledgements
 Firstly, thanks to Rob Hyndman for coming up with the name _airt_, which is an old Scottish word meaing _to guide_. Also, thanks to Phil Chalmers for being very quick in responding to emails about his R package _mirt_. 
 
 Many people helped me with the hex sticker. A big thank you to Patricia Menendez Galvan, Di Cook,  Emi Tanaka, Nishka and Sashenka Fernando for giving me great feedback. 
+
+## References
+Zopluoglu C (2022). EstCRM: Calibrating Parameters for the Samejima's Continuous IRT Model. R package version 1.6, https://CRAN.R-project.org/package=EstCRM.
+
+R. Philip Chalmers (2012). mirt: A Multidimensional Item Response Theory Package for the R Environment. Journal of Statistical Software, 48(6), 1-29. 

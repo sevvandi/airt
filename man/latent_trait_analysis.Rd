@@ -5,7 +5,13 @@
 \alias{autoplot.latenttrait}
 \title{Performs the latent trait analysis}
 \usage{
-latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
+latent_trait_analysis(
+  df,
+  paras,
+  min_item = NULL,
+  max_item = NULL,
+  epsilon = 0.01
+)
 
 \method{autoplot}{latenttrait}(
   object,
@@ -14,6 +20,7 @@ latent_trait_analysis(df, paras, min_item = 0, max_item = 1, epsilon = 0.01)
   plottype = 1,
   nrow = 2,
   se = TRUE,
+  ratio = 3,
   ...
 )
 }
@@ -42,6 +49,8 @@ plottype = 4 to plot strengths and weaknesses.}
 \item{nrow}{For autoplot: If \code{plottype = 2}, the number of rows for facet_wrap.}
 
 \item{se}{For autoplot: for plotting splines with standard errors.}
+
+\item{ratio}{For autoplot: for plotting strengths and weaknesses, ratio between x and y axis.}
 
 \item{...}{Other arguments currently ignored.}
 }

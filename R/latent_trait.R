@@ -18,6 +18,7 @@
 #' plottype = 4 to plot strengths and weaknesses.
 #' @param nrow For autoplot: If \code{plottype = 2}, the number of rows for facet_wrap.
 #' @param se For autoplot: for plotting splines with standard errors.
+#' @param ratio For autoplot: for plotting strengths and weaknesses, ratio between x and y axis.
 #' @param ...  Other arguments currently ignored.
 #'
 #'
@@ -57,7 +58,13 @@
 #' @importFrom dplyr mutate filter rename group_by summarize n left_join arrange desc select
 #' @importFrom graphics hist
 #' @export
-latent_trait_analysis <- function(df, paras, min_item=0, max_item=1, epsilon = 0.01){
+latent_trait_analysis <- function(df, paras, min_item=NULL, max_item=NULL, epsilon = 0.01){
+  if(is.null(max_item)){
+    max_item <- apply(df, 2, max)
+  }
+  if(is.null(min_item)){
+    min_item <- apply(df, 2, min)
+  }
   oo <- EstCRM::EstCRMperson(df, paras, min_item ,max_item)
   # UPDATE START: updated latent trait to dataset difficulty = multiply by -1
   oo$thetas[, 2] <- -1*oo$thetas[, 2]
@@ -104,6 +111,7 @@ autoplot.latenttrait <- function(object,
                                 plottype = 1,
                                 nrow = 2,
                                 se = TRUE,
+                                ratio = 3,
                                 ...){
 
   latenttrait <- Latent_Trait <- value <- Algorithm <- NULL
@@ -163,7 +171,7 @@ autoplot.latenttrait <- function(object,
       theme(axis.title.y=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank())  +
       scale_fill_manual(values = colrs) +
       xlab(xlab) +
-      coord_fixed(ratio = 3)
+      coord_fixed(ratio = ratio)
    }
   g1
 }
