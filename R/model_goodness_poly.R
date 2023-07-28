@@ -97,7 +97,9 @@ actual_vs_predicted_poly <- function(mod, num=1){
 #'
 #' This function computes the goodness of the IRT model for all algorithms using the empirical cumulative distribution function of errors.
 #'
-#' @inheritParams model_goodness_for_algo_poly
+#' @param model The output from pirtmodel function.
+#' @param object For autoplot: The output of the model_goodness_poly function.
+#' @param ... Other arguments currently ignored.
 #'
 #' @return  A list with the following components:
 #' \item{\code{goodnessAUC}}{The area under the model goodness curve for each algorithm. }
@@ -111,10 +113,12 @@ actual_vs_predicted_poly <- function(mod, num=1){
 #'x3 <- sample(1:5, 100, replace = TRUE)
 #'X <- cbind.data.frame(x1, x2, x3)
 #'mod <- pirtmodel(X)
-#'out <- model_goodness_poly(mod$model)
+#'out <- model_goodness_poly(mod)
 #'out
+#'autoplot(out)
 #' @export
-model_goodness_poly <- function(mod){
+model_goodness_poly <- function(model){
+  mod <- model$model
   dd <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$item)[1]
   mse <- acc <- matrix(0, ncol=1, nrow=dd)
   for(i in 1:dd){
@@ -129,9 +133,35 @@ model_goodness_poly <- function(mod){
   }
   colnames(curves) <- c("x", rownames(coef(mod, simplify=TRUE)$items))
   rownames(acc) <- rownames(coef(mod, simplify=TRUE)$items)
-  out <- list()
-  out$goodnessAUC <- acc
-  out$mse <- mse
-  out$curves <- curves
-  return(out)
+  structure(list(
+    goodnessAUC = acc,
+    mse = mse,
+    curves = curves,
+    call = match.call()
+  ), class='modelgoodnesspoly')
+}
+
+
+#' @rdname model_goodness_poly
+#' @export
+autoplot.modelgoodnesspoly <- function(object,
+                                      ...){
+  Algorithm <- x <- value <- NULL
+
+  num_algos <- NROW(object$goodnessAUC)
+  colrs2 <- grDevices::colorRampPalette(RColorBrewer::brewer.pal(8, "Dark2"))(num_algos)
+
+  good_curves <- as.data.frame(object$curves)
+
+  good_df <- good_curves %>%
+    tidyr::pivot_longer(cols=2:dim(good_curves)[2], names_to=c("Algorithm"))
+
+  ggplot(good_df, aes(x,value)) +
+    geom_point() +
+    geom_line(aes(color = Algorithm), size=1) +
+    xlab("Goodness Tolerance")  +
+    ylab("Model Goodness") +
+    theme_bw() +
+    scale_color_manual(values = colrs2)
+
 }
