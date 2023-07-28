@@ -2,7 +2,8 @@
 #'
 #' This function computes the actual and predicted effectiveness of the collection of algorithms for different tolerance values.
 #'
-#' @param mod A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.
+#' @inheritParams autoplot.effectivenesscrm
+#' @param model The output of pirtmodel function.
 #'
 #' @return  A list with the following components:
 #' \item{\code{effectivenessAUC}}{The area under the actual and predicted effectiveness curves. }
@@ -16,10 +17,18 @@
 #'x3 <- sample(1:5, 100, replace = TRUE)
 #'X <- cbind.data.frame(x1, x2, x3)
 #'mod <- pirtmodel(X)
-#'out <- effectiveness_poly(mod$model)
+#'out <- effectiveness_poly(mod)
 #'out
+#' # For actual effectiveness curves
+#' autoplot(out, plottype = 1)
+#' # For predicted effectiveness curves
+#' autoplot(out, plottype = 2)
+#' # For Actual and Predicted Effectiveness (AUAEC, AUPEC)
+#' autoplot(out, plottype = 3)
 #' @export
-effectiveness_poly <-  function(mod){
+effectiveness_poly <-  function(model){
+
+  mod <- model$model
   dd <- dim(coef(mod, IRTpars = TRUE, simplify=TRUE)$item)[1]
   rel <- matrix(0, ncol=2, nrow=dd)
   colnames(rel) <- c("Actual", "Predicted")
@@ -40,13 +49,58 @@ effectiveness_poly <-  function(mod){
   }
   colnames(prdcurves) <- colnames(actcurves) <- c("x", rownames(coef(mod, simplify=TRUE)$items))
   rownames(rel) <- rownames(coef(mod, simplify=TRUE)$items)
-  out <- list()
-  out$effectivenessAUC <- rel
-  out$actcurves <- actcurves
-  out$prdcurves <- prdcurves
-  return(out)
+
+  structure(list(
+    effectivenessAUC = rel,
+    actcurves = actcurves,
+    prdcurves = prdcurves,
+    call = match.call()
+  ), class='effectivenesspoly')
 }
 
+
+#' @rdname effectiveness_poly
+#' @export
+autoplot.effectivenesspoly <- function(object,
+                                      plottype = 1,
+                                      ...){
+  Predicted <- Actual <- Algorithm <- x <- value <- NULL
+  num_algos <- NROW(object$effectivenessAUC)
+  colrs2 <- grDevices::colorRampPalette(RColorBrewer::brewer.pal(8, "Dark2"))(num_algos)
+  if(plottype == 1){
+    eff_curves <- as.data.frame(object$actcurves)
+    eff_df1 <- eff_curves %>%
+      tidyr::pivot_longer(cols=2:dim(eff_curves)[2], names_to=c("Algorithm"))
+    p <- ggplot(eff_df1, aes(x,value)) +
+      geom_line(aes(color = Algorithm), size=1)  +
+      ylab("Actual Effectiveness") + xlab("Effectiveness Tolerance") +
+      theme_bw() +
+      scale_color_manual(values = colrs2)
+  }else if(plottype == 2){
+    eff_curves <- as.data.frame(object$prdcurves)
+    eff_df1 <- eff_curves %>%
+      tidyr::pivot_longer(cols=2:dim(eff_curves)[2], names_to=c("Algorithm"))
+    p <- ggplot(eff_df1, aes(x,value)) +
+      geom_line(aes(color = Algorithm), size=1)  +
+      ylab("Predicted Effectiveness") +
+      xlab("Effectiveness Tolerance") +
+      theme_bw() +
+      scale_color_manual(values = colrs2)
+  }else if(plottype == 3){
+    df_eff <- cbind.data.frame(as.data.frame(object$effectivenessAUC), rownames(object$effectivenessAUC) )
+    colnames(df_eff)[3] <- "Algorithm"
+    p <- ggplot(df_eff, aes(Actual, Predicted)) +
+      geom_jitter(aes(color=Algorithm), size=2) +
+      geom_abline(aes(intercept=0,slope=1), linetype="dotted") +
+      xlab("AUAEC") +
+      ylab("AUPEC") +
+      theme_bw() +
+      scale_color_manual(values = colrs2)
+
+  }
+  p
+
+}
 
 #' Computes the actual and predicted effectiveness of a given algorithm.
 #'

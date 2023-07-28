@@ -2,12 +2,24 @@
 % Please edit documentation in R/algo_effectiveness_poly.R
 \name{effectiveness_poly}
 \alias{effectiveness_poly}
+\alias{autoplot.effectivenesspoly}
 \title{Computes the actual and predicted effectiveness of the collection of algorithms.}
 \usage{
-effectiveness_poly(mod)
+effectiveness_poly(model)
+
+\method{autoplot}{effectivenesspoly}(object, plottype = 1, ...)
 }
 \arguments{
-\item{mod}{A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.}
+\item{model}{The output of pirtmodel function.}
+
+\item{object}{For autoplot: The output of the function effectiveness_crm}
+
+\item{plottype}{For autoplot: If plottype = 1, then actual effectiveness is plotted,
+if plottype = 2, then predicted effectiveness is plotted. If plottype = 3,  area under the
+actual effectiveness curve (AUAEC) is plotted against area under the predicted effectiveness
+curve (AUPEC).}
+
+\item{...}{Other arguments currently ignored.}
 }
 \value{
 A list with the following components:
@@ -25,6 +37,12 @@ x2 <- sample(1:5, 100, replace = TRUE)
 x3 <- sample(1:5, 100, replace = TRUE)
 X <- cbind.data.frame(x1, x2, x3)
 mod <- pirtmodel(X)
-out <- effectiveness_poly(mod$model)
+out <- effectiveness_poly(mod)
 out
+# For actual effectiveness curves
+autoplot(out, plottype = 1)
+# For predicted effectiveness curves
+autoplot(out, plottype = 2)
+# For Actual and Predicted Effectiveness (AUAEC, AUPEC)
+autoplot(out, plottype = 3)
 }
