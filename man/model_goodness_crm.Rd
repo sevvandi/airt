@@ -2,12 +2,19 @@
 % Please edit documentation in R/model_goodness_crm.R
 \name{model_goodness_crm}
 \alias{model_goodness_crm}
+\alias{autoplot.modelgoodnesscrm}
 \title{Computes the goodness of IRT model for all algorithms.}
 \usage{
-model_goodness_crm(mod)
+model_goodness_crm(model)
+
+\method{autoplot}{modelgoodnesscrm}(object, ...)
 }
 \arguments{
-\item{mod}{A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.}
+\item{model}{The output of function cirtmodel.}
+
+\item{object}{For autoplot: The output of model_goodness_crm.}
+
+\item{...}{Other arguments currently ignored.}
 }
 \value{
 A list with the following components:
@@ -21,14 +28,13 @@ This function computes the goodness of the IRT model for all algorithms for diff
 \examples{
 \donttest{
 set.seed(1)
-x1 <- runif(100)
-x2 <- runif(100)
-x3 <- runif(100)
+x1 <- runif(200)
+x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
+x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 X <- cbind.data.frame(x1, x2, x3)
-max_item <- rep(1,3)
-min_item <- rep(0,3)
-mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
-out <- model_goodness_crm(mod$model)
+mod <- cirtmodel(X)
+out <- model_goodness_crm(mod)
 out
+autoplot(out)
 }
 }
