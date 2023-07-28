@@ -2,12 +2,24 @@
 % Please edit documentation in R/algo_effectiveness_crm.R
 \name{effectiveness_crm}
 \alias{effectiveness_crm}
+\alias{autoplot.effectivenesscrm}
 \title{Computes the actual and predicted effectiveness of the collection of algorithms.}
 \usage{
-effectiveness_crm(mod)
+effectiveness_crm(model)
+
+\method{autoplot}{effectivenesscrm}(object, plottype = 1, ...)
 }
 \arguments{
-\item{mod}{A fitted \code{mirt} model using the function \code{irtmodel} or \code{R} package \code{mirt}.}
+\item{model}{The output of the function cirtmodel.}
+
+\item{object}{For autoplot: The output of the function effectiveness_crm}
+
+\item{plottype}{For autoplot: If plottype = 1, then actual effectiveness is plotted,
+if plottype = 2, then predicted effectiveness is plotted. If plottype = 3,  area under the
+actual effectiveness curve (AUAEC) is plotted against area under the predicted effectiveness
+curve (AUPEC).}
+
+\item{...}{Other arguments currently ignored.}
 }
 \value{
 A list with the following components:
@@ -20,14 +32,19 @@ This function computes the actual and predicted effectiveness of the collection 
 }
 \examples{
 set.seed(1)\donttest{
-x1 <- runif(100)
-x2 <- runif(100)
-x3 <- runif(100)
+x1 <- runif(200)
+x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
+x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 X <- cbind.data.frame(x1, x2, x3)
-max_item <- rep(1,3)
-min_item <- rep(0,3)
-mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
-out <- effectiveness_crm(mod$model)
+mod <- cirtmodel(X)
+out <- effectiveness_crm(mod)
 out
+# For the actual effectiveness plot
+autoplot(out, plottype = 1)
+# For the predicted effectivness plot
+autoplot(out, plottype = 2)
+# For actual and predicted effectiveness plot
+autoplot(out, plottype = 3)
+
 }
 }

@@ -18,9 +18,7 @@
 #'x2 <- runif(100)
 #'x3 <- runif(100)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'max_item <- rep(1,3)
-#'min_item <- rep(0,3)
-#'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
+#'mod <- cirtmodel(X)
 #'
 #'@references Zopluoglu C (2022). EstCRM: Calibrating Parameters for the Samejima's Continuous IRT Model. R
 #'package version 1.6, \url{https://CRAN.R-project.org/package=EstCRM}.
