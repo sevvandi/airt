@@ -10,7 +10,8 @@
 
 The goal of *airt* is to evaluate a portfolio of algorithms using Item
 Response Theory (IRT). To fit the IRT models, I have used the R packages
-*mirt* and *EstCRM*.
+*mirt* and *EstCRM*. The fitting function is *EstCRM* is slightly
+changed to accommodate for the algorithm evaluation setting.
 
 ## Installation
 
@@ -29,7 +30,7 @@ You can install the development version from
 devtools::install_github("sevvandi/airt")
 ```
 
-## Example - continuous
+## Example - Continuous Performance Data
 
 Let us consider some synthetic performance data. For this example, I
 will generate performance values for 4 algorithms that are correlated
@@ -70,6 +71,8 @@ row is an dataset/instance and each column denotes an algorithm. Let us
 fit a continuous IRT model to this data. The input to the airt model is
 the dataframe df.
 
+### Fitting the IRT model
+
 ``` r
 modout <- cirtmodel(df)
 paras <- modout$model$param
@@ -89,12 +92,12 @@ we construct algorithm attributes/features. They are *anomalousness*,
 algorithm attributes and are available in the output *modout*.
 
 ``` r
-cbind.data.frame(modout$anomalous, modout$stability, modout$difficulty_limit)
-#>   modout$anomalous modout$stability modout$difficulty_limit
-#> A                0        0.3505443              0.05943140
-#> B                0        0.2590183              0.12775543
-#> C                1        0.5781220             -0.09323845
-#> D                0        1.8696240              0.46017926
+cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$stability, difficulty_limit = modout$difficulty_limit)
+#>   anomalousness consistency difficulty_limit
+#> A             0   0.3505443       0.05943140
+#> B             0   0.2590183       0.12775543
+#> C             1   0.5781220      -0.09323845
+#> D             0   1.8696240       0.46017926
 ```
 
 The *anomalous* feature is either 1 or 0. If it is 1, the algorithm is
@@ -152,6 +155,8 @@ anomalous. Algorithm D, does not discriminate among the datasets, as
 such it is a more consistent algorithm. These are the insights we can
 get from the heatmaps.
 
+### The Problem Difficulty Space and Algorithm Performance
+
 Next, let’s do a latent trait analysis. Latent trait analysis looks at
 the algorithm performance with respect to the dataset difficulty. The
 datasets are ordered in the latent trait according to their difficulty.
@@ -203,6 +208,8 @@ problem difficulty. From this figure, we can get the best algorithm for
 a given problem difficulty. Algorithm C is best for difficult datasets,
 while algorithm D dominates the middle of the spectrum. Algorithm A is
 better for easy datasets.
+
+### Strengths and Weaknesses of Algorithms
 
 We can also compute the proportion of the latent trait spectrum occupied
 by each algorithm. We call this the latent trait occupancy (LTO).
@@ -285,7 +292,10 @@ algorithms have strengths, similarly for weaknesses.
 Next we look at discrete example. Discrete models are called polytomous
 in IRT literature.
 
-## Example - polytomous (discrete)
+## Example - Polytomous (discrete) Performance Data
+
+Polytomous data is ordered. A bit like grades A, B, C, D where A \> B \>
+C \> D. We can think if it as discrete.
 
 ``` r
 # Generating data
@@ -301,8 +311,7 @@ algo3[-inds1] <- sample(3:5, (100-length(inds1)), replace = TRUE)
 algorithms <- cbind.data.frame(algo1, algo2, algo3)
 
 # Fitting the polytomous model
-mod <- pirtmodel(algorithms)
-#> Iteration: 1, Log-Lik: -539.061, Max-Change: 1.21454Iteration: 2, Log-Lik: -434.043, Max-Change: 1.03064Iteration: 3, Log-Lik: -407.239, Max-Change: 0.78911Iteration: 4, Log-Lik: -400.194, Max-Change: 0.51251Iteration: 5, Log-Lik: -397.982, Max-Change: 0.33354Iteration: 6, Log-Lik: -397.157, Max-Change: 0.22781Iteration: 7, Log-Lik: -396.601, Max-Change: 0.10977Iteration: 8, Log-Lik: -396.515, Max-Change: 0.09151Iteration: 9, Log-Lik: -396.466, Max-Change: 0.07606Iteration: 10, Log-Lik: -396.384, Max-Change: 0.03591Iteration: 11, Log-Lik: -396.378, Max-Change: 0.03656Iteration: 12, Log-Lik: -396.373, Max-Change: 0.02963Iteration: 13, Log-Lik: -396.357, Max-Change: 0.03294Iteration: 14, Log-Lik: -396.354, Max-Change: 0.02403Iteration: 15, Log-Lik: -396.352, Max-Change: 0.02184Iteration: 16, Log-Lik: -396.348, Max-Change: 0.01044Iteration: 17, Log-Lik: -396.348, Max-Change: 0.01064Iteration: 18, Log-Lik: -396.348, Max-Change: 0.01132Iteration: 19, Log-Lik: -396.346, Max-Change: 0.01316Iteration: 20, Log-Lik: -396.346, Max-Change: 0.00796Iteration: 21, Log-Lik: -396.346, Max-Change: 0.00823Iteration: 22, Log-Lik: -396.345, Max-Change: 0.00348Iteration: 23, Log-Lik: -396.345, Max-Change: 0.00418Iteration: 24, Log-Lik: -396.345, Max-Change: 0.00264Iteration: 25, Log-Lik: -396.345, Max-Change: 0.00038Iteration: 26, Log-Lik: -396.345, Max-Change: 0.00021Iteration: 27, Log-Lik: -396.345, Max-Change: 0.00827Iteration: 28, Log-Lik: -396.345, Max-Change: 0.00096Iteration: 29, Log-Lik: -396.345, Max-Change: 0.00035Iteration: 30, Log-Lik: -396.345, Max-Change: 0.00086Iteration: 31, Log-Lik: -396.345, Max-Change: 0.00192Iteration: 32, Log-Lik: -396.345, Max-Change: 0.00308Iteration: 33, Log-Lik: -396.345, Max-Change: 0.00026Iteration: 34, Log-Lik: -396.345, Max-Change: 0.00024Iteration: 35, Log-Lik: -396.345, Max-Change: 0.00295Iteration: 36, Log-Lik: -396.345, Max-Change: 0.00035Iteration: 37, Log-Lik: -396.345, Max-Change: 0.00030Iteration: 38, Log-Lik: -396.345, Max-Change: 0.00018Iteration: 39, Log-Lik: -396.345, Max-Change: 0.00080Iteration: 40, Log-Lik: -396.345, Max-Change: 0.00061Iteration: 41, Log-Lik: -396.345, Max-Change: 0.00037Iteration: 42, Log-Lik: -396.345, Max-Change: 0.00020Iteration: 43, Log-Lik: -396.345, Max-Change: 0.00387Iteration: 44, Log-Lik: -396.345, Max-Change: 0.00442Iteration: 45, Log-Lik: -396.344, Max-Change: 0.00028Iteration: 46, Log-Lik: -396.344, Max-Change: 0.00026Iteration: 47, Log-Lik: -396.344, Max-Change: 0.00283Iteration: 48, Log-Lik: -396.344, Max-Change: 0.00056Iteration: 49, Log-Lik: -396.344, Max-Change: 0.00031Iteration: 50, Log-Lik: -396.344, Max-Change: 0.00021Iteration: 51, Log-Lik: -396.344, Max-Change: 0.00016Iteration: 52, Log-Lik: -396.344, Max-Change: 0.00366Iteration: 53, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 54, Log-Lik: -396.344, Max-Change: 0.00020Iteration: 55, Log-Lik: -396.344, Max-Change: 0.00018Iteration: 56, Log-Lik: -396.344, Max-Change: 0.00076Iteration: 57, Log-Lik: -396.344, Max-Change: 0.00029Iteration: 58, Log-Lik: -396.344, Max-Change: 0.00014Iteration: 59, Log-Lik: -396.344, Max-Change: 0.00071Iteration: 60, Log-Lik: -396.344, Max-Change: 0.00047Iteration: 61, Log-Lik: -396.344, Max-Change: 0.00013Iteration: 62, Log-Lik: -396.344, Max-Change: 0.00062Iteration: 63, Log-Lik: -396.344, Max-Change: 0.00050Iteration: 64, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 65, Log-Lik: -396.344, Max-Change: 0.00065Iteration: 66, Log-Lik: -396.344, Max-Change: 0.00048Iteration: 67, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 68, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 69, Log-Lik: -396.344, Max-Change: 0.00047Iteration: 70, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 71, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 72, Log-Lik: -396.344, Max-Change: 0.00046Iteration: 73, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 74, Log-Lik: -396.344, Max-Change: 0.00062Iteration: 75, Log-Lik: -396.344, Max-Change: 0.00046Iteration: 76, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 77, Log-Lik: -396.344, Max-Change: 0.00061Iteration: 78, Log-Lik: -396.344, Max-Change: 0.00045Iteration: 79, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 80, Log-Lik: -396.344, Max-Change: 0.00061Iteration: 81, Log-Lik: -396.344, Max-Change: 0.00045Iteration: 82, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 83, Log-Lik: -396.344, Max-Change: 0.00060Iteration: 84, Log-Lik: -396.344, Max-Change: 0.00044Iteration: 85, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 86, Log-Lik: -396.344, Max-Change: 0.00059Iteration: 87, Log-Lik: -396.344, Max-Change: 0.00044Iteration: 88, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 89, Log-Lik: -396.344, Max-Change: 0.00059Iteration: 90, Log-Lik: -396.344, Max-Change: 0.00043Iteration: 91, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 92, Log-Lik: -396.344, Max-Change: 0.00058Iteration: 93, Log-Lik: -396.344, Max-Change: 0.00043Iteration: 94, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 95, Log-Lik: -396.344, Max-Change: 0.00057Iteration: 96, Log-Lik: -396.344, Max-Change: 0.00042Iteration: 97, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 98, Log-Lik: -396.344, Max-Change: 0.00057Iteration: 99, Log-Lik: -396.344, Max-Change: 0.00042Iteration: 100, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 101, Log-Lik: -396.344, Max-Change: 0.00056Iteration: 102, Log-Lik: -396.344, Max-Change: 0.00041Iteration: 103, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 104, Log-Lik: -396.344, Max-Change: 0.00055Iteration: 105, Log-Lik: -396.344, Max-Change: 0.00041Iteration: 106, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 107, Log-Lik: -396.344, Max-Change: 0.00055Iteration: 108, Log-Lik: -396.344, Max-Change: 0.00040Iteration: 109, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 110, Log-Lik: -396.344, Max-Change: 0.00054Iteration: 111, Log-Lik: -396.344, Max-Change: 0.00040Iteration: 112, Log-Lik: -396.344, Max-Change: 0.00010
+mod <- pirtmodel(algorithms, vpara = FALSE)
 
 # Tracelines for each algorithm
 gdf <- tracelines_poly(mod)
@@ -316,11 +325,13 @@ autoplot(gdf)
 ``` r
 
 # AIRT metrics
-mod$stability
-#>     algo1     algo2     algo3 
-#> 0.6132055 0.4744101 0.2955284
-mod$anomalous
-#> [1] 0 0 1
+cbind.data.frame(anomalousness = mod$anomalous, 
+                 consistency =  mod$stability, 
+                 difficulty_limit = mod$difficulty_limit[ ,1])
+#>       anomalousness consistency difficulty_limit
+#> algo1             0   0.6132055        0.8049593
+#> algo2             0   0.4744101        0.7410049
+#> algo3             1   0.2955284       -1.0099760
 ```
 
 We see that *algo3* is anomalous. That is, it performs well on test

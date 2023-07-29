@@ -73,7 +73,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of <em>airt</em> is to evaluate a portfolio of algorithms using Item Response Theory (IRT). To fit the IRT models, I have used the R packages <em>mirt</em> and <em>EstCRM</em>.</p>
+<p>The goal of <em>airt</em> is to evaluate a portfolio of algorithms using Item Response Theory (IRT). To fit the IRT models, I have used the R packages <em>mirt</em> and <em>EstCRM</em>. The fitting function is <em>EstCRM</em> is slightly changed to accommodate for the algorithm evaluation setting.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -86,7 +86,7 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"sevvandi/airt"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example---continuous">Example - continuous<a class="anchor" aria-label="anchor" href="#example---continuous"></a>
+<h2 id="example---continuous-performance-data">Example - Continuous Performance Data<a class="anchor" aria-label="anchor" href="#example---continuous-performance-data"></a>
 </h2>
 <p>Let us consider some synthetic performance data. For this example, I will generate performance values for 4 algorithms that are correlated with each other.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -118,6 +118,9 @@
 <span><span class="co">#&gt; 5 0.2016819 0.2134300 0.8944309 0.8970685</span></span>
 <span><span class="co">#&gt; 6 0.8983897 0.9519739 0.3346240 0.9807495</span></span></code></pre></div>
 <p>This dataframe gives the performances of algorithms A, B, C and D. Each row is an dataset/instance and each column denotes an algorithm. Let us fit a continuous IRT model to this data. The input to the airt model is the dataframe df.</p>
+<div class="section level3">
+<h3 id="fitting-the-irt-model">Fitting the IRT model<a class="anchor" aria-label="anchor" href="#fitting-the-irt-model"></a>
+</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">modout</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cirtmodel.html">cirtmodel</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
 <span><span class="va">paras</span> <span class="op">&lt;-</span> <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span></span>
@@ -129,12 +132,12 @@
 <span><span class="co">#&gt; D  0.5348669 -0.46017926  0.4229044</span></span></code></pre></div>
 <p>Now we have our AIRT model. The <em>paras</em> contain the standard IRT parameters from the EstCRM R package. Here <em>a</em> denotes discrimination, <em>b</em> difficulty and <em>alpha</em> the scaling parameter. From these parameters we construct algorithm attributes/features. They are <em>anomalousness</em>, <em>consistency</em> (or stability) and <em>difficulty limit</em>. These are AIRT algorithm attributes and are available in the output <em>modout</em>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, <span class="va">modout</span><span class="op">$</span><span class="va">stability</span>, <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   modout$anomalous modout$stability modout$difficulty_limit</span></span>
-<span><span class="co">#&gt; A                0        0.3505443              0.05943140</span></span>
-<span><span class="co">#&gt; B                0        0.2590183              0.12775543</span></span>
-<span><span class="co">#&gt; C                1        0.5781220             -0.09323845</span></span>
-<span><span class="co">#&gt; D                0        1.8696240              0.46017926</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>anomalousness <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, consistency <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">stability</span>, difficulty_limit <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   anomalousness consistency difficulty_limit</span></span>
+<span><span class="co">#&gt; A             0   0.3505443       0.05943140</span></span>
+<span><span class="co">#&gt; B             0   0.2590183       0.12775543</span></span>
+<span><span class="co">#&gt; C             1   0.5781220      -0.09323845</span></span>
+<span><span class="co">#&gt; D             0   1.8696240       0.46017926</span></span></code></pre></div>
 <p>The <em>anomalous</em> feature is either 1 or 0. If it is 1, the algorithm is anomalous and if it is 0, it is not. We can see that algorithm C is anomalous. That is, it performs well for difficult datasets/problems and poorly for easy datasets/problems. The other algorithm perform in a normal way, they gives good performances for easy problems and poor performances for difficult problems.</p>
 <p>The <em>difficultly limit</em> tells us the highest difficulty level the algorithm can handle. If an algorithm has a high difficulty limit, it is good because, then it can handle very hard problems. In this case, Algorithm D has the highest difficulty limit. Thus, it can handle very difficult problems. Also observe that C has a negative difficulty limit. This is because it is anomalous.</p>
 <p>The <em>stability/consistency</em> feature tells us how consistent an algorithm is. Some algorithms are consistently good for many problems and some are consistently poor. Others can vary a lot depending on the problem. Algorithm D has the highest consistency in the portfolio. That means, it is consistently good or consistently bad. Because its difficulty limit is very high, we know it is consistently good. But we can’t say it by just looking at the stability/consistency value. In this portfolio, the least consistent algorithm is A. That is, it fluctuates a lot depending on the problem.</p>
@@ -145,6 +148,10 @@
 <p><img src="reference/figures/README-heatmaps-1.png" width="100%"></p>
 <p>The figure above shows the probability density heatmaps for algorithms. The y axis denotes the normalized performance values. The x axis gives the problem easiness. Lower x/Theta values denote more difficult problems and higher Theta values denote easier problems. For algorithm A, B and C we see lines across the panes. These lines denote high density regions. Let’s say we look at Theta = 0 for algorithm A. The place where the yellow line intersects Theta = 0 (vertical line, not drawn) is the highest probable region. That denotes the the most probably performance for that type of problem. Generally, sharper lines indicate more discriminating algorithms and blurry lines or no lines (algorithm D) indicate more stable algorithms. If the line has a positive slope, then it is not anomalous. If the line has a negative slope (algorithm C), then it is anomalous.</p>
 <p>We see that algorithms A and B obtain high performance values for high Theta values. That is because these algorithms are normal, i.e., not anomalous. However, algorithm C obtains high performance values for low Theta values. These are difficult datasets. Hence, algorithm C is anomalous. Algorithm D, does not discriminate among the datasets, as such it is a more consistent algorithm. These are the insights we can get from the heatmaps.</p>
+</div>
+<div class="section level3">
+<h3 id="the-problem-difficulty-space-and-algorithm-performance">The Problem Difficulty Space and Algorithm Performance<a class="anchor" aria-label="anchor" href="#the-problem-difficulty-space-and-algorithm-performance"></a>
+</h3>
 <p>Next, let’s do a latent trait analysis. Latent trait analysis looks at the algorithm performance with respect to the dataset difficulty. The datasets are ordered in the latent trait according to their difficulty. IRT does this for us. Let’s look at the latent trait.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/latent_trait_analysis.html">latent_trait_analysis</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>, epsilon <span class="op">=</span> <span class="fl">0</span> <span class="op">)</span></span>
@@ -167,6 +174,10 @@
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-latent3-1.png" width="100%"> This plot shows the smoothing splines for each algorithm as a function of the problem difficulty. From this figure, we can get the best algorithm for a given problem difficulty. Algorithm C is best for difficult datasets, while algorithm D dominates the middle of the spectrum. Algorithm A is better for easy datasets.</p>
+</div>
+<div class="section level3">
+<h3 id="strengths-and-weaknesses-of-algorithms">Strengths and Weaknesses of Algorithms<a class="anchor" aria-label="anchor" href="#strengths-and-weaknesses-of-algorithms"></a>
+</h3>
 <p>We can also compute the proportion of the latent trait spectrum occupied by each algorithm. We call this the latent trait occupancy (LTO).</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span><span class="op">$</span><span class="va">strengths</span><span class="op">$</span><span class="va">proportions</span></span>
@@ -208,9 +219,11 @@
 <p><img src="reference/figures/README-latenteps0.05-1.png" width="100%"> We see that in certain parts of the problem difficulty space multiple algorithms have strengths, similarly for weaknesses.</p>
 <p>Next we look at discrete example. Discrete models are called polytomous in IRT literature.</p>
 </div>
+</div>
 <div class="section level2">
-<h2 id="example---polytomous-discrete">Example - polytomous (discrete)<a class="anchor" aria-label="anchor" href="#example---polytomous-discrete"></a>
+<h2 id="example---polytomous-discrete-performance-data">Example - Polytomous (discrete) Performance Data<a class="anchor" aria-label="anchor" href="#example---polytomous-discrete-performance-data"></a>
 </h2>
+<p>Polytomous data is ordered. A bit like grades A, B, C, D where A &gt; B &gt; C &gt; D. We can think if it as discrete.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Generating data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
@@ -225,8 +238,7 @@
 <span><span class="va">algorithms</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span><span class="va">algo1</span>, <span class="va">algo2</span>, <span class="va">algo3</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Fitting the polytomous model</span></span>
-<span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/pirtmodel.html">pirtmodel</a></span><span class="op">(</span><span class="va">algorithms</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Iteration: 1, Log-Lik: -539.061, Max-Change: 1.21454Iteration: 2, Log-Lik: -434.043, Max-Change: 1.03064Iteration: 3, Log-Lik: -407.239, Max-Change: 0.78911Iteration: 4, Log-Lik: -400.194, Max-Change: 0.51251Iteration: 5, Log-Lik: -397.982, Max-Change: 0.33354Iteration: 6, Log-Lik: -397.157, Max-Change: 0.22781Iteration: 7, Log-Lik: -396.601, Max-Change: 0.10977Iteration: 8, Log-Lik: -396.515, Max-Change: 0.09151Iteration: 9, Log-Lik: -396.466, Max-Change: 0.07606Iteration: 10, Log-Lik: -396.384, Max-Change: 0.03591Iteration: 11, Log-Lik: -396.378, Max-Change: 0.03656Iteration: 12, Log-Lik: -396.373, Max-Change: 0.02963Iteration: 13, Log-Lik: -396.357, Max-Change: 0.03294Iteration: 14, Log-Lik: -396.354, Max-Change: 0.02403Iteration: 15, Log-Lik: -396.352, Max-Change: 0.02184Iteration: 16, Log-Lik: -396.348, Max-Change: 0.01044Iteration: 17, Log-Lik: -396.348, Max-Change: 0.01064Iteration: 18, Log-Lik: -396.348, Max-Change: 0.01132Iteration: 19, Log-Lik: -396.346, Max-Change: 0.01316Iteration: 20, Log-Lik: -396.346, Max-Change: 0.00796Iteration: 21, Log-Lik: -396.346, Max-Change: 0.00823Iteration: 22, Log-Lik: -396.345, Max-Change: 0.00348Iteration: 23, Log-Lik: -396.345, Max-Change: 0.00418Iteration: 24, Log-Lik: -396.345, Max-Change: 0.00264Iteration: 25, Log-Lik: -396.345, Max-Change: 0.00038Iteration: 26, Log-Lik: -396.345, Max-Change: 0.00021Iteration: 27, Log-Lik: -396.345, Max-Change: 0.00827Iteration: 28, Log-Lik: -396.345, Max-Change: 0.00096Iteration: 29, Log-Lik: -396.345, Max-Change: 0.00035Iteration: 30, Log-Lik: -396.345, Max-Change: 0.00086Iteration: 31, Log-Lik: -396.345, Max-Change: 0.00192Iteration: 32, Log-Lik: -396.345, Max-Change: 0.00308Iteration: 33, Log-Lik: -396.345, Max-Change: 0.00026Iteration: 34, Log-Lik: -396.345, Max-Change: 0.00024Iteration: 35, Log-Lik: -396.345, Max-Change: 0.00295Iteration: 36, Log-Lik: -396.345, Max-Change: 0.00035Iteration: 37, Log-Lik: -396.345, Max-Change: 0.00030Iteration: 38, Log-Lik: -396.345, Max-Change: 0.00018Iteration: 39, Log-Lik: -396.345, Max-Change: 0.00080Iteration: 40, Log-Lik: -396.345, Max-Change: 0.00061Iteration: 41, Log-Lik: -396.345, Max-Change: 0.00037Iteration: 42, Log-Lik: -396.345, Max-Change: 0.00020Iteration: 43, Log-Lik: -396.345, Max-Change: 0.00387Iteration: 44, Log-Lik: -396.345, Max-Change: 0.00442Iteration: 45, Log-Lik: -396.344, Max-Change: 0.00028Iteration: 46, Log-Lik: -396.344, Max-Change: 0.00026Iteration: 47, Log-Lik: -396.344, Max-Change: 0.00283Iteration: 48, Log-Lik: -396.344, Max-Change: 0.00056Iteration: 49, Log-Lik: -396.344, Max-Change: 0.00031Iteration: 50, Log-Lik: -396.344, Max-Change: 0.00021Iteration: 51, Log-Lik: -396.344, Max-Change: 0.00016Iteration: 52, Log-Lik: -396.344, Max-Change: 0.00366Iteration: 53, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 54, Log-Lik: -396.344, Max-Change: 0.00020Iteration: 55, Log-Lik: -396.344, Max-Change: 0.00018Iteration: 56, Log-Lik: -396.344, Max-Change: 0.00076Iteration: 57, Log-Lik: -396.344, Max-Change: 0.00029Iteration: 58, Log-Lik: -396.344, Max-Change: 0.00014Iteration: 59, Log-Lik: -396.344, Max-Change: 0.00071Iteration: 60, Log-Lik: -396.344, Max-Change: 0.00047Iteration: 61, Log-Lik: -396.344, Max-Change: 0.00013Iteration: 62, Log-Lik: -396.344, Max-Change: 0.00062Iteration: 63, Log-Lik: -396.344, Max-Change: 0.00050Iteration: 64, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 65, Log-Lik: -396.344, Max-Change: 0.00065Iteration: 66, Log-Lik: -396.344, Max-Change: 0.00048Iteration: 67, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 68, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 69, Log-Lik: -396.344, Max-Change: 0.00047Iteration: 70, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 71, Log-Lik: -396.344, Max-Change: 0.00063Iteration: 72, Log-Lik: -396.344, Max-Change: 0.00046Iteration: 73, Log-Lik: -396.344, Max-Change: 0.00012Iteration: 74, Log-Lik: -396.344, Max-Change: 0.00062Iteration: 75, Log-Lik: -396.344, Max-Change: 0.00046Iteration: 76, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 77, Log-Lik: -396.344, Max-Change: 0.00061Iteration: 78, Log-Lik: -396.344, Max-Change: 0.00045Iteration: 79, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 80, Log-Lik: -396.344, Max-Change: 0.00061Iteration: 81, Log-Lik: -396.344, Max-Change: 0.00045Iteration: 82, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 83, Log-Lik: -396.344, Max-Change: 0.00060Iteration: 84, Log-Lik: -396.344, Max-Change: 0.00044Iteration: 85, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 86, Log-Lik: -396.344, Max-Change: 0.00059Iteration: 87, Log-Lik: -396.344, Max-Change: 0.00044Iteration: 88, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 89, Log-Lik: -396.344, Max-Change: 0.00059Iteration: 90, Log-Lik: -396.344, Max-Change: 0.00043Iteration: 91, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 92, Log-Lik: -396.344, Max-Change: 0.00058Iteration: 93, Log-Lik: -396.344, Max-Change: 0.00043Iteration: 94, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 95, Log-Lik: -396.344, Max-Change: 0.00057Iteration: 96, Log-Lik: -396.344, Max-Change: 0.00042Iteration: 97, Log-Lik: -396.344, Max-Change: 0.00011Iteration: 98, Log-Lik: -396.344, Max-Change: 0.00057Iteration: 99, Log-Lik: -396.344, Max-Change: 0.00042Iteration: 100, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 101, Log-Lik: -396.344, Max-Change: 0.00056Iteration: 102, Log-Lik: -396.344, Max-Change: 0.00041Iteration: 103, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 104, Log-Lik: -396.344, Max-Change: 0.00055Iteration: 105, Log-Lik: -396.344, Max-Change: 0.00041Iteration: 106, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 107, Log-Lik: -396.344, Max-Change: 0.00055Iteration: 108, Log-Lik: -396.344, Max-Change: 0.00040Iteration: 109, Log-Lik: -396.344, Max-Change: 0.00010Iteration: 110, Log-Lik: -396.344, Max-Change: 0.00054Iteration: 111, Log-Lik: -396.344, Max-Change: 0.00040Iteration: 112, Log-Lik: -396.344, Max-Change: 0.00010</span></span>
+<span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/pirtmodel.html">pirtmodel</a></span><span class="op">(</span><span class="va">algorithms</span>, vpara <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Tracelines for each algorithm</span></span>
 <span><span class="va">gdf</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tracelines_poly.html">tracelines_poly</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
@@ -237,11 +249,13 @@
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># AIRT metrics</span></span>
-<span><span class="va">mod</span><span class="op">$</span><span class="va">stability</span></span>
-<span><span class="co">#&gt;     algo1     algo2     algo3 </span></span>
-<span><span class="co">#&gt; 0.6132055 0.4744101 0.2955284</span></span>
-<span><span class="va">mod</span><span class="op">$</span><span class="va">anomalous</span></span>
-<span><span class="co">#&gt; [1] 0 0 1</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>anomalousness <span class="op">=</span> <span class="va">mod</span><span class="op">$</span><span class="va">anomalous</span>, </span>
+<span>                 consistency <span class="op">=</span>  <span class="va">mod</span><span class="op">$</span><span class="va">stability</span>, </span>
+<span>                 difficulty_limit <span class="op">=</span> <span class="va">mod</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">[</span> ,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt;       anomalousness consistency difficulty_limit</span></span>
+<span><span class="co">#&gt; algo1             0   0.6132055        0.8049593</span></span>
+<span><span class="co">#&gt; algo2             0   0.4744101        0.7410049</span></span>
+<span><span class="co">#&gt; algo3             1   0.2955284       -1.0099760</span></span></code></pre></div>
 <p>We see that <em>algo3</em> is anomalous. That is, it performs well on test instances that others perform poorly. For <em>algo1</em> and <em>algo_2</em>, the highest level of performance P5 is achieved for high values of <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%5Ctheta" title="\theta" alt="">. But for <em>algo3</em> the P5 is achieved for low values of <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%5Ctheta" title="\theta" alt="">.</p>
 </div>
 <div class="section level2">
