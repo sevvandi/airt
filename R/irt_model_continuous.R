@@ -9,7 +9,7 @@
 #' @return A list with the following components:
 #' \item{\code{model}}{The IRT model.  }
 #' \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
-#'  \item{\code{stability}}{The stability of each algorithm.}
+#'  \item{\code{consistency}}{The consistency of each algorithm.}
 #'  \item{\code{difficulty_limit}}{The difficulty limit of each algorithm. A higher difficulty limit indicates that the algorithm can tackle harder problems.}
 #'
 #'@examples
@@ -42,7 +42,7 @@ cirtmodel <- function(df, max.item=NULL, min.item=NULL){
   out <- list()
   out$model <- mod
   out$anomalous <- anomalous
-  out$stability <- stability
+  out$consistency <- stability
   out$difficulty_limit <- -1*paras[ ,2]  # updated to change to difficulty
   return(out)
 }

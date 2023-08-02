@@ -72,19 +72,19 @@ paras <- modout$model$param
 paras
 ```
 
-Now we have our AIRT model. The *paras* contain the standard IRT parameters from the EstCRM R package. Here *a* denotes discrimination, *b* difficulty and *alpha* the scaling parameter. From these parameters we construct algorithm attributes/features.  They are *anomalousness*, *consistency* (or stability) and *difficulty limit*. These are AIRT algorithm attributes and are available in the output *modout*. 
+Now we have our AIRT model. The *paras* contain the standard IRT parameters from the EstCRM R package. Here *a* denotes discrimination, *b* difficulty and *alpha* the scaling parameter. From these parameters we construct algorithm attributes/features.  They are *anomalousness*, *consistency* and *difficulty limit*. These are AIRT algorithm attributes and are available in the output *modout*. 
 
 
 ```{r airtmetrics}
-cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$stability, difficulty_limit = modout$difficulty_limit)
+cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$consistency, difficulty_limit = modout$difficulty_limit)
 ```
 
 The *anomalous* feature is either 1 or 0. If it is 1, the algorithm is anomalous and if it is 0, it is not. We can see that algorithm C is anomalous. That is, it performs well for difficult datasets/problems and poorly for easy datasets/problems. The other algorithm perform in a normal way, they gives good performances for easy problems and poor performances for difficult problems. 
 
 The *difficultly limit* tells us the highest difficulty level the algorithm can handle. If an algorithm has a high difficulty limit, it is good because, then it can handle very hard problems. In this case, Algorithm D has the highest difficulty limit. Thus, it can handle very difficult problems.  Also observe that C has a negative difficulty limit. This is because it is anomalous. 
 
-The *stability/consistency* feature tells us how consistent an algorithm is.
-Some algorithms are consistently good for many problems and some are consistently poor. Others can vary a lot depending on the problem. Algorithm D has the highest consistency in the portfolio. That means, it is consistently good or consistently bad. Because its difficulty limit is very high, we know it is consistently good. But we can't say it by just looking at the stability/consistency value. In this portfolio, the least consistent algorithm is A. That is, it fluctuates a lot depending on the problem.  
+The *consistency* feature tells us how consistent an algorithm is.
+Some algorithms are consistently good for many problems and some are consistently poor. Others can vary a lot depending on the problem. Algorithm D has the highest consistency in the portfolio. That means, it is consistently good or consistently bad. Because its difficulty limit is very high, we know it is consistently good. But we can't say it by just looking at the consistency value. In this portfolio, the least consistent algorithm is A. That is, it fluctuates a lot depending on the problem.  
 
 By plotting heatmaps we can visually see these characteristics.  
 
@@ -186,7 +186,7 @@ autoplot(gdf)
 
 # AIRT metrics
 cbind.data.frame(anomalousness = mod$anomalous, 
-                 consistency =  mod$stability, 
+                 consistency =  mod$consistency, 
                  difficulty_limit = mod$difficulty_limit[ ,1])
 ```
 We see that _algo3_ is anomalous. That is, it performs well on test instances that others perform poorly. For _algo1_ and _algo_2_,  the highest level of performance P5 is achieved for high values of $\theta$. But for _algo3_ the P5 is achieved for low values of $\theta$.  

@@ -76,14 +76,13 @@ paras
 The parameter *a* denotes discrimination, *b* denotes difficulty and *alpha* is a scaling parameter. These are traditional IRT parameters. Using these parameters we will find AIRT algorithm attributes. These are **algorithm anomalousness, consistency and the difficulty limit**. 
 
 ```{r airtparas}
-cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$stability, difficulty_limit = modout$difficulty_limit)
 ```
 
 If an algorithm is anomalous then the anomalous indicator is 1. In this algorithm portfolio, none of the algorithms are anomalous, because all anomalous indicators are 0. Anomalous algorithms give good performances for difficult problems and poor performances for easy problems. 
 
 The difficulty limit gives the highest difficulty level that algorithms can handle. In this scenario, QDA has the highest difficulty limit. So, QDA can handle the hardest problems. KNN has the lowest difficulty limit. It can only handle very easy problems. 
 
-Algorithm consistency (stability) attribute gives how consistent an algorithm is. An algorithm can be consistently good for most of the problems or it can be consistently poor for many problems. And many algorithms can vary in their performance depending on the problem/dataset. In this portfolio, QDA is the most consistent algorithm. 
+Algorithm consistency attribute gives how consistent an algorithm is. An algorithm can be consistently good for most of the problems or it can be consistently poor for many problems. And many algorithms can vary in their performance depending on the problem/dataset. In this portfolio, QDA is the most consistent algorithm. 
 
 Let's look at these algorithms visually. The *heatmaps_crm* function plots the heatmaps. The part *crm* stands for continuous response model. 
 
@@ -196,7 +195,7 @@ The trace lines give the probability of getting performance levels from P1 to P5
 We can look at some of the AIRT attributes.
 
 ```{r poly2}
-cbind.data.frame(consistency = modout$stability, anomalousness = modout$anomalous, difficulty_level = modout$difficulty_limit[, 1])
+cbind.data.frame(consistency = modout$consistency, anomalousness = modout$anomalous, difficulty_level = modout$difficulty_limit[, 1])
 ```
 
 ### Model Goodness

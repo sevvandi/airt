@@ -88,11 +88,11 @@ Now we have our AIRT model. The *paras* contain the standard IRT
 parameters from the EstCRM R package. Here *a* denotes discrimination,
 *b* difficulty and *alpha* the scaling parameter. From these parameters
 we construct algorithm attributes/features. They are *anomalousness*,
-*consistency* (or stability) and *difficulty limit*. These are AIRT
-algorithm attributes and are available in the output *modout*.
+*consistency* and *difficulty limit*. These are AIRT algorithm
+attributes and are available in the output *modout*.
 
 ``` r
-cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$stability, difficulty_limit = modout$difficulty_limit)
+cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$consistency, difficulty_limit = modout$difficulty_limit)
 #>   anomalousness consistency difficulty_limit
 #> A             0   0.3505443       0.05943140
 #> B             0   0.2590183       0.12775543
@@ -114,15 +114,15 @@ Algorithm D has the highest difficulty limit. Thus, it can handle very
 difficult problems. Also observe that C has a negative difficulty limit.
 This is because it is anomalous.
 
-The *stability/consistency* feature tells us how consistent an algorithm
-is. Some algorithms are consistently good for many problems and some are
+The *consistency* feature tells us how consistent an algorithm is. Some
+algorithms are consistently good for many problems and some are
 consistently poor. Others can vary a lot depending on the problem.
 Algorithm D has the highest consistency in the portfolio. That means, it
 is consistently good or consistently bad. Because its difficulty limit
 is very high, we know it is consistently good. But we can’t say it by
-just looking at the stability/consistency value. In this portfolio, the
-least consistent algorithm is A. That is, it fluctuates a lot depending
-on the problem.
+just looking at the consistency value. In this portfolio, the least
+consistent algorithm is A. That is, it fluctuates a lot depending on the
+problem.
 
 By plotting heatmaps we can visually see these characteristics.
 
@@ -326,7 +326,7 @@ autoplot(gdf)
 
 # AIRT metrics
 cbind.data.frame(anomalousness = mod$anomalous, 
-                 consistency =  mod$stability, 
+                 consistency =  mod$consistency, 
                  difficulty_limit = mod$difficulty_limit[ ,1])
 #>       anomalousness consistency difficulty_limit
 #> algo1             0   0.6132055        0.8049593

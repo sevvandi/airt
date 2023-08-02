@@ -10,7 +10,7 @@
 #' @return A list with the following components:
 #' \item{\code{model}}{The IRT model using the R package \code{mirt}.  }
 #' \item{\code{anomalous}}{A binary value for each algorithm. It is set to 1 if an algorithm is anomalous. Otherwise it is set to 0.  }
-#'  \item{\code{stability}}{The stability of each algorithm.}
+#'  \item{\code{consistency}}{The consistency of each algorithm.}
 #'  \item{\code{difficulty_limit}}{The difficulty limits for each algorithm.  A higher threshold indicates that the algorithm can tackle harder problems.}
 #'
 #'@examples
@@ -80,7 +80,7 @@ pirtmodel <- function(dat, ncycle=NULL, vpara= TRUE){
   out <- list()
   out$model <- mod
   out$anomalous <- anomalous
-  out$stability <- stability
+  out$consistency <- stability
   out$difficulty_limit <- difficulty_limit
   return(out)
 }

@@ -144,19 +144,6 @@ difficulty and <em>alpha</em> is a scaling parameter. These are
 traditional IRT parameters. Using these parameters we will find AIRT
 algorithm attributes. These are <strong>algorithm anomalousness,
 consistency and the difficulty limit</strong>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>anomalousness <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, consistency <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">stability</span>, difficulty_limit <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">)</span></span>
-<span><span class="co">#&gt;          anomalousness consistency difficulty_limit</span></span>
-<span><span class="co">#&gt; NB                   0   0.9733610        1.1185870</span></span>
-<span><span class="co">#&gt; LDA                  0   1.4335519        1.9584262</span></span>
-<span><span class="co">#&gt; QDA                  0 116.2175082       37.6665493</span></span>
-<span><span class="co">#&gt; CART                 0   0.6256095        1.0209521</span></span>
-<span><span class="co">#&gt; J48                  0   0.6417268        1.1640940</span></span>
-<span><span class="co">#&gt; KNN                  0   0.5565162        0.8412235</span></span>
-<span><span class="co">#&gt; L_SVM                0   0.3513073        1.4371875</span></span>
-<span><span class="co">#&gt; poly_SVM             0   0.5734243        1.1499008</span></span>
-<span><span class="co">#&gt; RBF_SVM              0   0.2655004        1.4019959</span></span>
-<span><span class="co">#&gt; RandF                0   1.0005578        1.7509568</span></span></code></pre></div>
 <p>If an algorithm is anomalous then the anomalous indicator is 1. In
 this algorithm portfolio, none of the algorithms are anomalous, because
 all anomalous indicators are 0. Anomalous algorithms give good
@@ -166,16 +153,15 @@ problems.</p>
 algorithms can handle. In this scenario, QDA has the highest difficulty
 limit. So, QDA can handle the hardest problems. KNN has the lowest
 difficulty limit. It can only handle very easy problems.</p>
-<p>Algorithm consistency (stability) attribute gives how consistent an
-algorithm is. An algorithm can be consistently good for most of the
-problems or it can be consistently poor for many problems. And many
-algorithms can vary in their performance depending on the
-problem/dataset. In this portfolio, QDA is the most consistent
-algorithm.</p>
+<p>Algorithm consistency attribute gives how consistent an algorithm is.
+An algorithm can be consistently good for most of the problems or it can
+be consistently poor for many problems. And many algorithms can vary in
+their performance depending on the problem/dataset. In this portfolio,
+QDA is the most consistent algorithm.</p>
 <p>Let’s look at these algorithms visually. The <em>heatmaps_crm</em>
 function plots the heatmaps. The part <em>crm</em> stands for continuous
 response model.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/heatmaps_crm.html">heatmaps_crm</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span> </span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/heatmaps-1.png" width="768">
@@ -199,7 +185,7 @@ line.</p>
 dataset difficulty. This is called the latent trait analysis. The
 function <em>latent_trait_analysis</em> does this for you. We need to
 pass the IRT parameters to do this analysis.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/latent_trait_analysis.html">latent_trait_analysis</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>, epsilon <span class="op">=</span> <span class="fl">0</span> <span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
@@ -208,7 +194,7 @@ pass the IRT parameters to do this analysis.</p>
 <p>When you use <em>plottype = 1</em>, it plots all algorithms in a
 single plot. To have a separate plot for each algorithm we use
 <em>plottype = 2</em>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latent2-1.png" width="768">
 From these plots we see that certain algorithms give better performances
@@ -216,7 +202,7 @@ for different problem difficulty values. To get a better sense of which
 algorithms are better for which difficulty values we fit smoothing
 splines to the above data. By using <em>plottype = 3</em> in
 <em>autoplot</em> we can see these smoothing splines.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latent3-1.png" width="768"></p>
 </div>
@@ -227,7 +213,7 @@ splines to the above data. By using <em>plottype = 3</em> in
 difficulty. We can use these splines to compute the proportion of the
 latent trait spectrum occupied by each algorithm. We call this the
 latent trait occupancy (LTO). These are strengths of algorithms.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span><span class="op">$</span><span class="va">strengths</span><span class="op">$</span><span class="va">proportions</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
 <span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
@@ -242,7 +228,7 @@ the algorithm. In this scenario, J48 has the highest latent trait
 occupancy.</p>
 <p>Similar to strengths, we can say an algorithm is weak if it has the
 lowest performance for a given difficulty.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span><span class="op">$</span><span class="va">weakness</span><span class="op">$</span><span class="va">proportions</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 4</span></span></span>
 <span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
@@ -254,7 +240,7 @@ of the latent trait. But now there is a big question. If QDA is the
 weakest algorithm, why did it have such a high difficulty limit? It had
 the highest difficulty limit of all the algorithms. What happened
 here?</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">obj</span>, plottype <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/latent4-1.png" width="768"></p>
 <p>We see latent trait occupancy in the graph above. The 5 algorithms
@@ -266,7 +252,7 @@ strength/weakness to each point in the problem space. If we make epsilon
 &gt; 0, then we can get overlapping strengths and weaknesses. That is,
 we will get algorithms that are epsilon-away from the best algorithm in
 our strengths/weakness diagram. Let’s do that.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/latent_trait_analysis.html">latent_trait_analysis</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">modout</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>, epsilon <span class="op">=</span> <span class="fl">0.02</span> <span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(group)`</span></span>
@@ -285,7 +271,7 @@ have a couple of measures. One is the Model Goodness Curve. We first
 call the model_goodness_crm function to compute the model goodness
 metrics. Then by calling autoplot we can plot the curves. The letters
 <em>crm</em> stands for continuous response model.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">modelgood</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_goodness_crm.html">model_goodness_crm</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">modelgood</span><span class="op">)</span></span></code></pre></div>
@@ -298,7 +284,7 @@ each algorithm. For a given algorithm a model is well fitted if the
 curve goes up to 1 on the y-axis quickly. That is, if the Area Under the
 Curve (AUC) is closer to 1. We can check the AUC and the Mean Square
 Error (MSE) for these algorithms.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>AUC <span class="op">=</span> <span class="va">modelgood</span><span class="op">$</span><span class="va">goodnessAUC</span>, MSE <span class="op">=</span> <span class="va">modelgood</span><span class="op">$</span><span class="va">mse</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                AUC         MSE</span></span>
 <span><span class="co">#&gt; NB       0.9398882 0.006986392</span></span>
@@ -315,16 +301,16 @@ Error (MSE) for these algorithms.</p>
 algorithms well apart from QDA. We have another goodness metric called
 effectiveness. Effectiveness generally tells us how good the algorithms
 are.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">modeleff</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/effectiveness_crm.html">effectiveness_crm</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">modeleff</span>, plottype <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness1-1.png" width="768">
 This first plot tells us how good the algorithms actually perform,
 without fitting an IRT model.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">modeleff</span>, plottype <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness2-1.png" width="768"></p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">modeleff</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/effectiveness2-2.png" width="768">
 By using plottype = 2, we can get the predicted effectiveness and by
@@ -346,7 +332,7 @@ binds so that we can fit a polytomous IRT model to it. The lowest
 performance measurement is called P1 and the highest is called P5, with
 the others in between. Let’s fit an IRT model to this data and look at
 the algorithm trace lines.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"classification_poly"</span><span class="op">)</span></span>
 <span><span class="va">modout</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pirtmodel.html">pirtmodel</a></span><span class="op">(</span><span class="va">classification_poly</span>, vpara<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
@@ -362,8 +348,8 @@ all performance levels. Also, some algorithms like QDA have gentler
 transitions between the most likely performance levels, and some like
 RBF_SVM have very sharp transitions.</p>
 <p>We can look at some of the AIRT attributes.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>consistency <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">stability</span>, anomalousness <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, difficulty_level <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind.data.frame</a></span><span class="op">(</span>consistency <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">consistency</span>, anomalousness <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">anomalous</span>, difficulty_level <span class="op">=</span> <span class="va">modout</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt;          consistency anomalousness difficulty_level</span></span>
 <span><span class="co">#&gt; NB        0.52836203             0        1.8606375</span></span>
 <span><span class="co">#&gt; LDA       0.92172649             0        1.0267424</span></span>
@@ -381,13 +367,13 @@ RBF_SVM have very sharp transitions.</p>
 <p>But how good is our IRT model? Can we trust the algorithm trace
 lines? To check how good the IRT model is we compute the goodness of
 model in this way.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">modelgoodness</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_goodness_poly.html">model_goodness_poly</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">modelgoodness</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/goodnesspoly-1.png" width="768">
 We can see the predicted and actual effectivess as well.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">effpoly</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/effectiveness_poly.html">effectiveness_poly</a></span><span class="op">(</span><span class="va">modout</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">effpoly</span>, plottype <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="airt_files/figure-html/effectivenesspoly-1.png" width="768">
