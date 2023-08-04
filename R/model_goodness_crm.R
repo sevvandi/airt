@@ -51,7 +51,7 @@ actual_vs_predicted_crm <- function(mod, num=1){
   # actual values
   dat <- as.data.frame(mod$data)
 
-  max.item <- apply(dat, 2, max) + 0.00001
+  max.item <- apply(dat, 2, max) + 0.001
   min.item <- apply(dat, 2, min)
   max_item <- max.item[num]
 
