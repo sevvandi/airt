@@ -96,6 +96,7 @@ latent_trait_analysis <- function(df, scale = FALSE, scale.method = NULL, max.it
     widedf = df3,
     thetas = oo$thetas,
     weakness = out2,
+    epsilon = epsilon,
     call = match.call()
   ), class='latenttrait')
 }
@@ -147,14 +148,23 @@ autoplot.latenttrait <- function(object,
     dfl2 <- tidyr::pivot_longer(latenttr, cols = 2:dim(latenttr)[2])
     colnames(dfl2)[2] <- "Algorithm"
     dfl2 <- dfl2[dfl2$value!=0, ]
-    dfl2$value <- dfl2$value*0.1
+    if(object$epsilon == 0){
+      dfl2$value <- 0
+    }else{
+      dfl2$value <- dfl2$value*0.1
+    }
 
     # Weaknesses
     latenttr2 <- object$weakness$multilatent
     dfl3 <- tidyr::pivot_longer(latenttr2, cols = 2:dim(latenttr)[2])
     colnames(dfl3)[2] <- "Algorithm"
     dfl3 <- dfl3[dfl3$value!=0, ]
-    dfl3$value <- dfl3$value*0.1
+    if(object$epsilon == 0){
+      dfl3$value <- 0
+    }else{
+      dfl3$value <- dfl3$value*0.1
+    }
+
 
     dfl21 <- dfl2 %>% mutate(type = "Strengths")
     dfl31 <- dfl3 %>% mutate(type = "Weaknesses")
