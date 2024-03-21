@@ -219,9 +219,9 @@ obj$strengths$proportions
 #> # A tibble: 3 × 4
 #>   group Proportion algorithm colour 
 #>   <dbl>      <dbl> <chr>     <chr>  
-#> 1     4      0.855 D         #C77CFF
+#> 1     4      0.87  D         #C77CFF
 #> 2     3      0.075 C         #00BFC4
-#> 3     1      0.07  A         #F8766D
+#> 3     1      0.055 A         #F8766D
 ```
 
 In the above table LTO is given by the *Proportion* column. We see that
@@ -267,7 +267,7 @@ obj2$strengths$proportions
 #> # A tibble: 4 × 4
 #>   group Proportion algorithm colour 
 #>   <dbl>      <dbl> <chr>     <chr>  
-#> 1     4      0.955 D         #C77CFF
+#> 1     4      0.96  D         #C77CFF
 #> 2     1      0.135 A         #F8766D
 #> 3     2      0.125 B         #7CAE00
 #> 4     3      0.125 C         #00BFC4
@@ -329,17 +329,15 @@ cbind.data.frame(anomalousness = mod$anomalous,
                  consistency =  mod$consistency, 
                  difficulty_limit = mod$difficulty_limit[ ,1])
 #>       anomalousness consistency difficulty_limit
-#> algo1             0   0.6132055        0.8049593
-#> algo2             0   0.4744101        0.7410049
-#> algo3             1   0.2955284       -1.0099760
+#> algo1             0   0.6133109        0.8048756
+#> algo2             0   0.4746524        0.7409297
+#> algo3             1   0.2951323       -1.0100934
 ```
 
 We see that *algo3* is anomalous. That is, it performs well on test
 instances that others perform poorly. For *algo1* and *algo_2*, the
-highest level of performance P5 is achieved for high values of
-![\theta](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctheta "\theta").
-But for *algo3* the P5 is achieved for low values of
-![\theta](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Ctheta "\theta").
+highest level of performance P5 is achieved for high values of $\theta$.
+But for *algo3* the P5 is achieved for low values of $\theta$.
 
 ## More on *airt*
 

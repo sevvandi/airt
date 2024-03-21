@@ -2,9 +2,19 @@
 #'
 #' This function fits a continuous Item Response Theory (IRT) model to the algorithm performance data. The function EstCRMitem in the R package EstCRM is updated to accommodate negative discrimination.
 #'
-#' @param df The performance data in a matrix or dataframe.
+#' @param df The performance data in a matrix or dataframe with good performances having
+#' high values and poor performances having low values.
+#' @param scale If \code{TRUE}, the performance data is scaled to 0-1. The default is \code{FALSE}.
+#' @param scale.method The method to scale the data. The default is \code{NULL}. If set to
+#' \code{"single"}, it scales the data to 0-1 for the full dataset. If set to \code{"multiple"}
+#' it scales each column/algorithm separately to 0-1. If \code{scale} is \code{FALSE}, the
+#' data is not scaled.
 #' @param max.item A vector with the maximum performance value for each algorithm.
+#' This can be used to inform the maximum performance value for each algorithm.
+#' Only will be used if scale is \code{FALSE}. Default is 1.
 #' @param min.item A vector with the minimum performance value for each algorithm.
+#' This can be used to inform the minimum performance value for each algorithm.
+#' Only will be used if scale is \code{FALSE}. Default is 0.
 #'
 #' @return A list with the following components:
 #' \item{\code{model}}{The IRT model.  }
@@ -25,13 +35,13 @@
 #'
 #' @importFrom stats cov na.omit sd var
 #' @export
-cirtmodel <- function(df, max.item=NULL, min.item=NULL){
-  if(is.null(max.item)){
-    max.item <- apply(df, 2, max)
-  }
-  if(is.null(min.item)){
-    min.item <- apply(df, 2, min)
-  }
+cirtmodel <- function(df, scale = FALSE, scale.method = NULL, max.item=1 , min.item=0){
+
+  out <- check_prepare_data(df, scale, scale.method, max.item, min.item)
+  df <- out$df
+  max.item <- out$max.item
+  min.item <- out$min.item
+
   mod <- EstCRMitem2(df, max.item, min.item,  max.EMCycle=200, type="Shojima")
   paras <- mod$param
   a_vals <- paras[ ,1]
@@ -45,6 +55,58 @@ cirtmodel <- function(df, max.item=NULL, min.item=NULL){
   out$consistency <- stability
   out$difficulty_limit <- -1*paras[ ,2]  # updated to change to difficulty
   return(out)
+}
+
+
+check_prepare_data <- function(df, scale = FALSE, scale.method = NULL, max.item=1 , min.item=0){
+
+  if(sum(max.item <= min.item) > 0){
+    stop("The maximum performance value is less than or equal to the minimum performance value for some algorithms. Please fix!")
+  }
+
+  if(scale){
+    if(is.null(scale.method)){
+      scale.method <- "single"
+    }
+    if(scale.method == "single"){
+      df <- (df - min(df))/(max(df) - min(df))
+      max.item <- rep(1, NCOL(df))
+      min.item <- rep(0, NCOL(df))
+    }
+    if(scale.method == "multiple"){
+      df <- apply(df, 2, function(x) (x - min(x))/(max(x) - min(x)))
+      max.item <- apply(df, 2, max)
+      min.item <- apply(df, 2, min)
+    }
+    df <- as.data.frame(df)
+  }else{
+    if(length(max.item) == 1){
+      max.item <- rep(max.item, NCOL(df))
+    }else if(length(max.item) != NCOL(df)){
+      stop("The length of max.item vector is not equal to the number of columns in the data. Please check your inputs")
+    }
+
+    if(length(min.item) == 1){
+      min.item <- rep(min.item, NCOL(df))
+    }else if(length(min.item) != NCOL(df)){
+      stop("The length of min.item vector is not equal to the number of columns in the data. Please check your inputs")
+    }
+
+
+    max_df <- apply(df, 2, max)
+    min_df <- apply(df, 2, min)
+    if(sum(max_df > max.item) > 0){
+      stop("The maximum performance value is higher than the user specified maximum performance value for some algorithms. Please fix!")
+    }
+    if(sum(min_df < min.item) > 0){
+      stop("The minimum performance value is lower than the user specified minimum performance value for some algorithms. Please fix!")
+    }
+  }
+  structure(list(
+    df = df,
+    max.item = max.item,
+    min.item = min.item
+  ))
 }
 
 

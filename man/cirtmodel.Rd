@@ -4,14 +4,26 @@
 \alias{cirtmodel}
 \title{Fits a continuous IRT model.}
 \usage{
-cirtmodel(df, max.item = NULL, min.item = NULL)
+cirtmodel(df, scale = FALSE, scale.method = NULL, max.item = 1, min.item = 0)
 }
 \arguments{
-\item{df}{The performance data in a matrix or dataframe.}
+\item{df}{The performance data in a matrix or dataframe with good performances having
+high values and poor performances having low values.}
 
-\item{max.item}{A vector with the maximum performance value for each algorithm.}
+\item{scale}{If \code{TRUE}, the performance data is scaled to 0-1. The default is \code{FALSE}.}
 
-\item{min.item}{A vector with the minimum performance value for each algorithm.}
+\item{scale.method}{The method to scale the data. The default is \code{NULL}. If set to
+\code{"single"}, it scales the data to 0-1 for the full dataset. If set to \code{"multiple"}
+it scales each column/algorithm separately to 0-1. If \code{scale} is \code{FALSE}, the
+data is not scaled.}
+
+\item{max.item}{A vector with the maximum performance value for each algorithm.
+This can be used to inform the maximum performance value for each algorithm.
+Only will be used if scale is \code{FALSE}. Default is 1.}
+
+\item{min.item}{A vector with the minimum performance value for each algorithm.
+This can be used to inform the minimum performance value for each algorithm.
+Only will be used if scale is \code{FALSE}. Default is 0.}
 }
 \value{
 A list with the following components:

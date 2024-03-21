@@ -7,9 +7,11 @@
 \usage{
 latent_trait_analysis(
   df,
+  scale = FALSE,
+  scale.method = NULL,
+  max.item = 1,
+  min.item = 0,
   paras,
-  min_item = NULL,
-  max_item = NULL,
   epsilon = 0.01
 )
 
@@ -25,13 +27,25 @@ latent_trait_analysis(
 )
 }
 \arguments{
-\item{df}{The performance data in a matrix or dataframe.}
+\item{df}{The performance data in a matrix or dataframe with good performances having
+high values and poor performances having low values.}
+
+\item{scale}{If \code{TRUE}, the performance data is scaled to 0-1. The default is \code{FALSE}.}
+
+\item{scale.method}{The method to scale the data. The default is \code{NULL}. If set to
+\code{"single"}, it scales the data to 0-1 for the full dataset. If set to \code{"multiple"}
+it scales each column/algorithm separately to 0-1. If \code{scale} is \code{FALSE}, the
+data is not scaled.}
+
+\item{max.item}{A vector with the maximum performance value for each algorithm.
+This can be used to inform the maximum performance value for each algorithm.
+Only will be used if scale is \code{FALSE}. Default is 1.}
+
+\item{min.item}{A vector with the minimum performance value for each algorithm.
+This can be used to inform the minimum performance value for each algorithm.
+Only will be used if scale is \code{FALSE}. Default is 0.}
 
 \item{paras}{The parameters from fitting \code{cirtmodel}.}
-
-\item{min_item}{A vector with the minimum performance value for each algorithm.}
-
-\item{max_item}{A vector with the maximum performance value for each algorithm.}
 
 \item{epsilon}{A value defining good algorithm performance. If \code{epsilon = 0}, then only
 the best algorithm is considered. A default}
@@ -79,7 +93,7 @@ X <- cbind.data.frame(x1, x2, x3)
 max_item <- rep(max(x1, x2, x3),3)
 min_item <- rep(min(x1, x2, x3),3)
 mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
-out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
+out <- latent_trait_analysis(X, min.item= min_item, max.item = max_item, paras = mod$model$param)
 out
 # To plot performance against the problem difficulty
 autoplot(out)

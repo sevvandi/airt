@@ -22,7 +22,7 @@
 #'x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
 #'x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 #'X <- cbind.data.frame(x1, x2, x3)
-#'mod <- cirtmodel(X)
+#'mod <- cirtmodel(X, scale = TRUE, scale.method = "multiple")
 #'out <- effectiveness_crm(mod)
 #'out
 #'# For the actual effectiveness plot
@@ -102,7 +102,9 @@ autoplot.effectivenesscrm <- function(object,
       xlab("AUAEC") +
       ylab("AUPEC") +
       theme_bw() +
-      scale_color_manual(values = colrs2)
+      scale_color_manual(values = colrs2) +
+      ggplot2::xlim(0,1) +
+      ggplot2::ylim(0,1)
 
   }
   p

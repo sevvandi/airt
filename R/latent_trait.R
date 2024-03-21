@@ -4,10 +4,8 @@
 #' It fits a smoothing spline to the points to compute the latent trait. The autoplot function plots the latent trait
 #' and the performance.
 #'
-#' @param df The performance data in a matrix or dataframe.
+#' @inheritParams cirtmodel
 #' @param paras The parameters from fitting \code{cirtmodel}.
-#' @param max_item A vector with the maximum performance value for each algorithm.
-#' @param min_item A vector with the minimum performance value for each algorithm.
 #' @param epsilon A value defining good algorithm performance. If \code{epsilon = 0}, then only
 #' the best algorithm is considered. A default
 #' @param object For autoplot: the output of the function latent_trait_analysis.
@@ -41,7 +39,7 @@
 #'max_item <- rep(max(x1, x2, x3),3)
 #'min_item <- rep(min(x1, x2, x3),3)
 #'mod <- cirtmodel(X, max.item=max_item, min.item=min_item)
-#'out <- latent_trait_analysis(X, mod$model$param, min_item= min_item, max_item = max_item)
+#'out <- latent_trait_analysis(X, min.item= min_item, max.item = max_item, paras = mod$model$param)
 #'out
 #' # To plot performance against the problem difficulty
 #'autoplot(out)
@@ -58,14 +56,14 @@
 #' @importFrom dplyr mutate filter rename group_by summarize n left_join arrange desc select
 #' @importFrom graphics hist
 #' @export
-latent_trait_analysis <- function(df, paras, min_item=NULL, max_item=NULL, epsilon = 0.01){
-  if(is.null(max_item)){
-    max_item <- apply(df, 2, max)
-  }
-  if(is.null(min_item)){
-    min_item <- apply(df, 2, min)
-  }
-  oo <- EstCRM::EstCRMperson(df, paras, min_item ,max_item)
+latent_trait_analysis <- function(df, scale = FALSE, scale.method = NULL, max.item=1 , min.item=0,  paras, epsilon = 0.01){
+
+  out <- check_prepare_data(df, scale, scale.method, max.item, min.item)
+  df <- out$df
+  max.item <- out$max.item
+  min.item <- out$min.item
+
+  oo <- EstCRM::EstCRMperson(df, paras, min.item = min.item ,max.item = max.item)
   # UPDATE START: updated latent trait to dataset difficulty = multiply by -1
   oo$thetas[, 2] <- -1*oo$thetas[, 2]
   # UPDATE END

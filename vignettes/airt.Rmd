@@ -76,6 +76,7 @@ paras
 The parameter *a* denotes discrimination, *b* denotes difficulty and *alpha* is a scaling parameter. These are traditional IRT parameters. Using these parameters we will find AIRT algorithm attributes. These are **algorithm anomalousness, consistency and the difficulty limit**. 
 
 ```{r airtparas}
+cbind.data.frame(anomalousness = modout$anomalous, consistency = modout$consistency, difficulty_limit = modout$difficulty_limit)
 ```
 
 If an algorithm is anomalous then the anomalous indicator is 1. In this algorithm portfolio, none of the algorithms are anomalous, because all anomalous indicators are 0. Anomalous algorithms give good performances for difficult problems and poor performances for easy problems. 
@@ -98,7 +99,7 @@ Apart from QDA all heatmaps have a line (a bit like a lightsaber) going through 
 We can also look at the algorithm performance with respect to the dataset difficulty. This is called the latent trait analysis. The function *latent_trait_analysis* does this for you. We need to pass the IRT parameters to do this analysis.
 
 ```{r latenttrait}
-obj <- latent_trait_analysis(df, modout$model$param, epsilon = 0 )
+obj <- latent_trait_analysis(df, paras = modout$model$param, epsilon = 0 )
 autoplot(obj, plottype = 1)
 ```
 
@@ -139,7 +140,7 @@ We see latent trait occupancy in the graph above. The 5 algorithms J48, KNN L_SV
 In this example we have used epsilon = 0. That would give a unique strength/weakness to each point in the problem space. If we make epsilon > 0, then we can get overlapping strengths and weaknesses. That is, we will get algorithms that are epsilon-away from the best algorithm in our strengths/weakness diagram. Let's do that. 
 
 ```{r latent5}
-obj2 <- latent_trait_analysis(df, modout$model$param, epsilon = 0.02 )
+obj2 <- latent_trait_analysis(df, paras = modout$model$param, epsilon = 0.02 )
 autoplot(obj2, plottype = 4)
 ```
 Now we see some overlapping strengths and weaknesses. For very easy problems, many algorithms have strengths, and for more difficult problems, we see that KNN and J48 are strong. QDA is weak for most part of the problem space. 

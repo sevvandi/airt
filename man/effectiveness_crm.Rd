@@ -36,7 +36,7 @@ x1 <- runif(200)
 x2 <- 2*x1 + rnorm(200, mean=0, sd=0.1)
 x3 <- 1 - x1 + rnorm(200, mean=0, sd=0.1)
 X <- cbind.data.frame(x1, x2, x3)
-mod <- cirtmodel(X)
+mod <- cirtmodel(X, scale = TRUE, scale.method = "multiple")
 out <- effectiveness_crm(mod)
 out
 # For the actual effectiveness plot

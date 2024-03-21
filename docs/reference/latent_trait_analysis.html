@@ -19,7 +19,7 @@ and the performance."><meta property="og:image" content="/logo.png"><!-- mathjax
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">airt</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
       </span>
     </div>
 
@@ -53,9 +53,11 @@ and the performance.</p>
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">latent_trait_analysis</span><span class="op">(</span></span>
 <span>  <span class="va">df</span>,</span>
+<span>  scale <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  scale.method <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  max.item <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  min.item <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  <span class="va">paras</span>,</span>
-<span>  min_item <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  max_item <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  epsilon <span class="op">=</span> <span class="fl">0.01</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -75,19 +77,35 @@ and the performance.</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>df</dt>
-<dd><p>The performance data in a matrix or dataframe.</p></dd>
+<dd><p>The performance data in a matrix or dataframe with good performances having
+high values and poor performances having low values.</p></dd>
+
+
+<dt>scale</dt>
+<dd><p>If <code>TRUE</code>, the performance data is scaled to 0-1. The default is <code>FALSE</code>.</p></dd>
+
+
+<dt>scale.method</dt>
+<dd><p>The method to scale the data. The default is <code>NULL</code>. If set to
+<code>"single"</code>, it scales the data to 0-1 for the full dataset. If set to <code>"multiple"</code>
+it scales each column/algorithm separately to 0-1. If <code>scale</code> is <code>FALSE</code>, the
+data is not scaled.</p></dd>
+
+
+<dt>max.item</dt>
+<dd><p>A vector with the maximum performance value for each algorithm.
+This can be used to inform the maximum performance value for each algorithm.
+Only will be used if scale is <code>FALSE</code>. Default is 1.</p></dd>
+
+
+<dt>min.item</dt>
+<dd><p>A vector with the minimum performance value for each algorithm.
+This can be used to inform the minimum performance value for each algorithm.
+Only will be used if scale is <code>FALSE</code>. Default is 0.</p></dd>
 
 
 <dt>paras</dt>
 <dd><p>The parameters from fitting <code>cirtmodel</code>.</p></dd>
-
-
-<dt>min_item</dt>
-<dd><p>A vector with the minimum performance value for each algorithm.</p></dd>
-
-
-<dt>max_item</dt>
-<dd><p>A vector with the maximum performance value for each algorithm.</p></dd>
 
 
 <dt>epsilon</dt>
@@ -168,7 +186,7 @@ plottype = 4 to plot strengths and weaknesses.</p></dd>
 <span class="r-in"><span><span class="va">max_item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">x1</span>, <span class="va">x2</span>, <span class="va">x3</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">min_item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">x1</span>, <span class="va">x2</span>, <span class="va">x3</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="cirtmodel.html">cirtmodel</a></span><span class="op">(</span><span class="va">X</span>, max.item<span class="op">=</span><span class="va">max_item</span>, min.item<span class="op">=</span><span class="va">min_item</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu">latent_trait_analysis</span><span class="op">(</span><span class="va">X</span>, <span class="va">mod</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span>, min_item<span class="op">=</span> <span class="va">min_item</span>, max_item <span class="op">=</span> <span class="va">max_item</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu">latent_trait_analysis</span><span class="op">(</span><span class="va">X</span>, min.item<span class="op">=</span> <span class="va">min_item</span>, max.item <span class="op">=</span> <span class="va">max_item</span>, paras <span class="op">=</span> <span class="va">mod</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">param</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `x` argument of `as_tibble.matrix()` must have unique column names if</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> `.name_repair` is omitted as of tibble 2.0.0.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Using compatibility `.name_repair`.</span>
@@ -1027,8 +1045,8 @@ plottype = 4 to plot strengths and weaknesses.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $call</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> latent_trait_analysis(df = X, paras = mod$model$param, min_item = min_item, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     max_item = max_item)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> latent_trait_analysis(df = X, max.item = max_item, min.item = min_item, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     paras = mod$model$param)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "latenttrait"</span>
@@ -1059,7 +1077,7 @@ plottype = 4 to plot strengths and weaknesses.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

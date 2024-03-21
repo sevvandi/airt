@@ -2,6 +2,7 @@
 % Please edit documentation in R/airt-package.R
 \docType{package}
 \name{airt-package}
+\alias{airt}
 \alias{airt-package}
 \title{airt: Evaluation of Algorithm Collections Using Item Response Theory}
 \description{

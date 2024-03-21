@@ -43,7 +43,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">airt</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
       </span>
     </div>
 
@@ -184,9 +184,9 @@
 <span><span class="co">#&gt; # A tibble: 3 × 4</span></span>
 <span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
 <span><span class="co">#&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1     4      0.855 D         #C77CFF</span></span>
+<span><span class="co">#&gt; 1     4      0.87  D         #C77CFF</span></span>
 <span><span class="co">#&gt; 2     3      0.075 C         #00BFC4</span></span>
-<span><span class="co">#&gt; 3     1      0.07  A         #F8766D</span></span></code></pre></div>
+<span><span class="co">#&gt; 3     1      0.055 A         #F8766D</span></span></code></pre></div>
 <p>In the above table LTO is given by the <em>Proportion</em> column. We see that algorithms D, A, C and D occupy 0.865, 0.070 and 0.0.065 of the latent trait respectively.</p>
 <p>Just like the strengths, we can look at the weaknesses. An algorithm is weak for a given problem difficulty, if the associated curve is at the bottom. From the graph above we see that Algorithm C is weak for easy problems, and Algorithm A is weak for difficulty problems. We can get latent trait occupancy (LTO) for weaknesses as well.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -208,7 +208,7 @@
 <span><span class="co">#&gt; # A tibble: 4 × 4</span></span>
 <span><span class="co">#&gt;   group Proportion algorithm colour </span></span>
 <span><span class="co">#&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1     4      0.955 D         #C77CFF</span></span>
+<span><span class="co">#&gt; 1     4      0.96  D         #C77CFF</span></span>
 <span><span class="co">#&gt; 2     1      0.135 A         #F8766D</span></span>
 <span><span class="co">#&gt; 3     2      0.125 B         #7CAE00</span></span>
 <span><span class="co">#&gt; 4     3      0.125 C         #00BFC4</span></span></code></pre></div>
@@ -253,10 +253,10 @@
 <span>                 consistency <span class="op">=</span>  <span class="va">mod</span><span class="op">$</span><span class="va">consistency</span>, </span>
 <span>                 difficulty_limit <span class="op">=</span> <span class="va">mod</span><span class="op">$</span><span class="va">difficulty_limit</span><span class="op">[</span> ,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       anomalousness consistency difficulty_limit</span></span>
-<span><span class="co">#&gt; algo1             0   0.6132055        0.8049593</span></span>
-<span><span class="co">#&gt; algo2             0   0.4744101        0.7410049</span></span>
-<span><span class="co">#&gt; algo3             1   0.2955284       -1.0099760</span></span></code></pre></div>
-<p>We see that <em>algo3</em> is anomalous. That is, it performs well on test instances that others perform poorly. For <em>algo1</em> and <em>algo_2</em>, the highest level of performance P5 is achieved for high values of <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%5Ctheta" title="\theta" alt="">. But for <em>algo3</em> the P5 is achieved for low values of <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%5Ctheta" title="\theta" alt="">.</p>
+<span><span class="co">#&gt; algo1             0   0.6133109        0.8048756</span></span>
+<span><span class="co">#&gt; algo2             0   0.4746524        0.7409297</span></span>
+<span><span class="co">#&gt; algo3             1   0.2951323       -1.0100934</span></span></code></pre></div>
+<p>We see that <em>algo3</em> is anomalous. That is, it performs well on test instances that others perform poorly. For <em>algo1</em> and <em>algo_2</em>, the highest level of performance P5 is achieved for high values of <span class="math inline"><em>θ</em></span>. But for <em>algo3</em> the P5 is achieved for low values of <span class="math inline"><em>θ</em></span>.</p>
 </div>
 <div class="section level2">
 <h2 id="more-on-airt">More on <em>airt</em>
@@ -333,7 +333,7 @@ Kandanaarachchi, Sevvandi, and Kate Smith-Miles. 2023. “Comprehensive Algorith
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
